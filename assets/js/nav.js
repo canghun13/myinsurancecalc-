@@ -90,28 +90,35 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
 
-  // Active state highlighting
+  // Active state
   const currentPath = window.location.pathname;
 
+  // Exact match for dropdown items
   document.querySelectorAll('.nav-links a').forEach(link => {
     const linkPath = new URL(link.href, window.location.origin).pathname;
-    const isActive = linkPath === currentPath || (linkPath !== '/' && currentPath.startsWith(linkPath));
-
-    if (isActive) {
+    if (linkPath === currentPath) {
       link.classList.add('nav-active');
-      // Also highlight parent dropdown toggle
-      const parentDropdown = link.closest('.dropdown');
-      if (parentDropdown) {
-        const parentToggle = parentDropdown.querySelector(':scope > a');
-        if (parentToggle) parentToggle.classList.add('nav-active');
-      }
     }
   });
 
-  // Home link active
-  if (currentPath === '/') {
+  // Home
+  if (currentPath === '/' || currentPath === '/index.html') {
     const homeLink = document.querySelector('.nav-links > li > a[href="/"]');
     if (homeLink) homeLink.classList.add('nav-active');
+  }
+
+  // Highlight Calculators toggle if on a tool page
+  if (currentPath.startsWith('/tools/')) {
+    document.querySelectorAll('.dropdown > a').forEach(a => {
+      if (a.getAttribute('href') === '#') a.classList.add('nav-active');
+    });
+  }
+
+  // Highlight Blog toggle if on a blog page
+  if (currentPath.startsWith('/blog/')) {
+    document.querySelectorAll('.dropdown > a').forEach(a => {
+      if (a.getAttribute('href') === '/blog/') a.classList.add('nav-active');
+    });
   }
 
   // Mobile nav toggle
