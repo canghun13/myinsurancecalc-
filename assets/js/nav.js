@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
               <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
               <li><a href="/tools/disability.html">Disability Insurance</a></li>
+              <li><a href="/tools/home-insurance.html">Home Insurance</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
+              <li><a href="/tools/health-insurance-self-employed.html">Health Insurance (Self-Employed)</a></li>
               <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
               <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
               <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
