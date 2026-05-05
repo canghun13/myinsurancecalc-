@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Insurance Calculator – Electric Vehicle Insurance Cost Estimator | My Insurance Calc</title>
+  <meta name="description" content="Find out how much your electric vehicle costs to insure. EV insurance calculator for Tesla, Rivian, Chevy, Ford, and more. Free, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/ev-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › EV Insurance</p>
+        <h1>EV Insurance Calculator</h1>
+        <p>Electric vehicles cost more to insure than gas cars. Find out what your EV will cost to cover.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your EV Insurance Cost</h2>
+
+            <div class="form-group">
+              <label for="ev-make">EV Make</label>
+              <select id="ev-make">
+                <option value="tesla">Tesla</option>
+                <option value="chevy">Chevrolet (Bolt, Equinox EV)</option>
+                <option value="ford">Ford (Mustang Mach-E, F-150 Lightning)</option>
+                <option value="rivian">Rivian</option>
+                <option value="hyundai">Hyundai / Kia</option>
+                <option value="bmw">BMW / Mercedes EV</option>
+                <option value="other" selected>Other EV</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ev-value">Vehicle Value ($)</label>
+              <input type="number" id="ev-value" placeholder="e.g. 55000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="battery-size">Battery Size (kWh)</label>
+              <select id="battery-size">
+                <option value="small">Under 50 kWh (short range)</option>
+                <option value="medium" selected>50–75 kWh (mid range)</option>
+                <option value="large">75–100 kWh (long range)</option>
+                <option value="xlarge">100+ kWh (performance / truck)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="driver-age">Driver Age</label>
+              <select id="driver-age">
+                <option value="young">Under 25</option>
+                <option value="prime" selected>25–55</option>
+                <option value="senior">55+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="driving-record">Driving Record</label>
+              <select id="driving-record">
+                <option value="clean" selected>Clean (no incidents)</option>
+                <option value="minor">1 minor incident</option>
+                <option value="major">1+ major incidents / DUI</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ev-coverage">Coverage Level</label>
+              <select id="ev-coverage">
+                <option value="liability">Liability only (minimum)</option>
+                <option value="full" selected>Full coverage (recommended for EVs)</option>
+                <option value="premium">Full + gap + battery protection</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcEV()">Calculate Now</button>
+
+            <div class="result-box" id="ev-result">
+              <h3>ESTIMATED MONTHLY PREMIUM</h3>
+              <div class="result-amount" id="ev-amount"></div>
+              <div id="ev-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">EVs typically cost 15–25% more to insure than comparable gas vehicles. Estimates based on national averages.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Why Is EV Insurance More Expensive?</h2>
+            <p>Electric vehicles cost significantly more to insure than comparable gas-powered cars — often 15–40% more. Understanding why can help you find ways to reduce your premium.</p>
+
+            <h3>Higher Repair Costs</h3>
+            <p>EV repairs require specialized technicians and parts. The battery pack alone can cost $10,000–$20,000+ to replace. Even minor fender-benders can be expensive because EVs use aluminum frames and specialized electronics that are costly to repair.</p>
+
+            <h3>Battery Replacement Risk</h3>
+            <p>Insurers factor in the risk of battery damage in accidents. A damaged battery may need full replacement, dramatically increasing claim costs compared to a standard engine repair.</p>
+
+            <h3>Higher Vehicle Values</h3>
+            <p>Most EVs cost more than equivalent gas vehicles, which means higher comprehensive and collision premiums. As EV prices come down — particularly for models like the Chevy Equinox EV — this gap is narrowing.</p>
+
+            <h3>How to Reduce Your EV Insurance Premium</h3>
+            <p>Shop multiple insurers — some specialize in EVs and offer better rates. Raise your deductible to lower your monthly premium. Ask about EV-specific discounts. Consider telematics programs that reward safe driving. Bundle your home and auto insurance for a multi-policy discount.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance</a></li>
+              <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
+              <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>EV Insurance Facts</h3>
+            <ul>
+              <li>EVs cost ~<strong>24% more</strong> to insure</li>
+              <li>Tesla Model Y: avg <strong>$2,280/yr</strong></li>
+              <li>Battery replacement: <strong>$10K–$20K</strong></li>
+              <li>Gap insurance: <strong>strongly recommended</strong></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcEV() {
+  const make = document.getElementById('ev-make').value;
+  const value = parseFloat(document.getElementById('ev-value').value) || 50000;
+  const battery = document.getElementById('battery-size').value;
+  const age = document.getElementById('driver-age').value;
+  const record = document.getElementById('driving-record').value;
+  const coverage = document.getElementById('ev-coverage').value;
+
+  // Base annual rate as % of vehicle value
+  const makeMult = { tesla: 1.35, chevy: 0.95, ford: 1.05, rivian: 1.25, hyundai: 1.0, bmw: 1.3, other: 1.1 };
+  const batteryMult = { small: 0.9, medium: 1.0, large: 1.1, xlarge: 1.25 };
+  const ageMult = { young: 1.45, prime: 1.0, senior: 1.1 };
+  const recordMult = { clean: 1.0, minor: 1.25, major: 1.75 };
+  const coverageMult = { liability: 0.35, full: 1.0, premium: 1.22 };
+
+  const baseRate = 0.042; // 4.2% of vehicle value annually
+  const annual = value * baseRate * makeMult[make] * batteryMult[battery] * ageMult[age] * recordMult[record] * coverageMult[coverage];
+  const monthly = annual / 12;
+  const gasEquivalent = annual / 1.2; // EV ~20% more than gas
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('ev-amount').textContent = '$' + monthly.toFixed(2) + '/mo';
+  document.getElementById('ev-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Monthly premium</td><td style="text-align:right">$${monthly.toFixed(2)}</td></tr>
+      <tr><td>Annual premium</td><td style="text-align:right">${fmt(annual)}</td></tr>
+      <tr><td>Gas car equivalent est.</td><td style="text-align:right">${fmt(gasEquivalent)}/yr</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>EV premium increase</td><td style="text-align:right">~${fmt(annual - gasEquivalent)}/yr more</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:0.82rem;">💡 Tip: Full coverage is strongly recommended for EVs due to high battery replacement costs.</p>
+  `;
+
+  document.getElementById('ev-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

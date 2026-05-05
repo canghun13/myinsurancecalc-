@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disability Insurance Calculator – How Much Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Calculate how much disability insurance you need to protect your income. Free calculator — no signup required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/disability.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Disability Insurance</p>
+        <h1>Disability Insurance Calculator</h1>
+        <p>Find out how much disability coverage you need to protect your income if you're unable to work.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage Need</h2>
+
+            <div class="form-group">
+              <label for="monthly-income">Monthly Gross Income ($)</label>
+              <input type="number" id="monthly-income" placeholder="e.g. 6000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="monthly-expenses">Essential Monthly Expenses ($)</label>
+              <input type="number" id="monthly-expenses" placeholder="e.g. 3500" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="employer-coverage">Employer Disability Coverage (% of income)</label>
+              <select id="employer-coverage">
+                <option value="0">None (self-employed / no employer plan)</option>
+                <option value="40">40% — partial employer plan</option>
+                <option value="60" selected>60% — typical employer plan</option>
+                <option value="70">70% — generous employer plan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="emergency-fund">Emergency Fund (months of expenses)</label>
+              <select id="emergency-fund">
+                <option value="0">None</option>
+                <option value="1">1 month</option>
+                <option value="3" selected>3 months</option>
+                <option value="6">6 months</option>
+                <option value="12">12+ months</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="occupation">Occupation Risk Level</label>
+              <select id="occupation">
+                <option value="low">Low risk (office / professional)</option>
+                <option value="medium" selected>Medium risk (sales / service)</option>
+                <option value="high">High risk (trade / physical labor)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcDisability()">Calculate Now</button>
+
+            <div class="result-box" id="dis-result">
+              <h3>RECOMMENDED MONTHLY BENEFIT</h3>
+              <div class="result-amount" id="dis-amount"></div>
+              <div id="dis-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimates for informational purposes only. Consult a licensed insurance advisor for personalized coverage.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Why Disability Insurance Matters</h2>
+            <p>Most people insure their car, home, and life — but forget about their most valuable asset: their ability to earn income. Studies show that 1 in 4 workers will experience a disability that prevents them from working for 90 days or more at some point in their career.</p>
+
+            <h3>Short-Term vs Long-Term Disability</h3>
+            <p><strong>Short-term disability</strong> typically covers 3–6 months of missed income. Many employers offer this as part of their benefits package. <strong>Long-term disability</strong> kicks in after the short-term period ends and can cover you for years — or until retirement age. Most financial experts recommend having long-term disability coverage that replaces 60–70% of your income.</p>
+
+            <h3>What Affects Your Premium?</h3>
+            <p>Disability insurance premiums depend on your age, health, occupation, benefit amount, and elimination period (the waiting period before benefits begin). Office workers pay less than those in physically demanding jobs. Choosing a longer elimination period (90 days vs 30 days) significantly reduces your premium.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
+              <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
+              <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>1 in 4 workers will be disabled before retirement</li>
+              <li>Average LTD claim: <strong>34 months</strong></li>
+              <li>Recommended benefit: <strong>60–70% of income</strong></li>
+              <li>Premium: ~<strong>1–3% of annual income</strong></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcDisability() {
+  const income = parseFloat(document.getElementById('monthly-income').value) || 0;
+  const expenses = parseFloat(document.getElementById('monthly-expenses').value) || 0;
+  const employerPct = parseFloat(document.getElementById('employer-coverage').value) / 100;
+  const emergencyMonths = parseFloat(document.getElementById('emergency-fund').value) || 0;
+  const occupation = document.getElementById('occupation').value;
+
+  const employerBenefit = income * employerPct;
+  const gap = Math.max(0, expenses - employerBenefit);
+
+  // Occupation multiplier for suggested buffer
+  const occBuffer = { low: 1.0, medium: 1.1, high: 1.25 };
+  const recommended = gap * occBuffer[occupation];
+
+  const annualPremiumLow = recommended * 12 * 0.01;
+  const annualPremiumHigh = recommended * 12 * 0.03;
+  const coverageWithEmergency = Math.max(0, recommended - (expenses * emergencyMonths / 12));
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('dis-amount').textContent = fmt(recommended) + '/mo';
+  document.getElementById('dis-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Monthly income</td><td style="text-align:right">${fmt(income)}</td></tr>
+      <tr><td>Employer covers (${(employerPct*100).toFixed(0)}%)</td><td style="text-align:right">−${fmt(employerBenefit)}</td></tr>
+      <tr><td>Monthly expense gap</td><td style="text-align:right">${fmt(gap)}</td></tr>
+      <tr><td>Occupation buffer</td><td style="text-align:right">×${occBuffer[occupation]}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Recommended benefit</td><td style="text-align:right">${fmt(recommended)}/mo</td></tr>
+      <tr><td>Est. annual premium</td><td style="text-align:right">${fmt(annualPremiumLow)}–${fmt(annualPremiumHigh)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('dis-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

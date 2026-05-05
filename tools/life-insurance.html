@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Insurance Calculator – How Much Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Use our free life insurance calculator to find out exactly how much coverage your family needs based on your income, debts, and dependents." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/life-insurance.html" />
+  <meta property="og:title" content="Life Insurance Calculator – My Insurance Calc" />
+  <meta property="og:description" content="Find out how much life insurance you need. Free, instant, no signup." />
+  <meta property="og:url" content="https://myinsurancecalc.com/tools/life-insurance.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Life Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/life-insurance.html",
+    "description": "Free life insurance calculator to estimate how much coverage you need.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<main>
+  <section class="tool-page">
+    <div class="container">
+
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Life Insurance</p>
+        <h1>Life Insurance Calculator</h1>
+        <p>Find out exactly how much life insurance coverage your family needs — based on your real numbers.</p>
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- Calculator -->
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage</h2>
+
+            <div class="form-group">
+              <label for="annual-income">Annual Income ($)</label>
+              <input type="number" id="annual-income" placeholder="e.g. 75000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="years-income">Years of Income to Replace</label>
+              <select id="years-income">
+                <option value="5">5 years</option>
+                <option value="10" selected>10 years</option>
+                <option value="15">15 years</option>
+                <option value="20">20 years</option>
+                <option value="25">25 years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="total-debt">Total Debts (mortgage, loans, etc.) ($)</label>
+              <input type="number" id="total-debt" placeholder="e.g. 250000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="dependents">Number of Dependents</label>
+              <select id="dependents">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="education-cost">Future Education Costs ($)</label>
+              <input type="number" id="education-cost" placeholder="e.g. 50000 per child" min="0" value="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="existing-savings">Existing Savings & Assets ($)</label>
+              <input type="number" id="existing-savings" placeholder="e.g. 30000" min="0" value="0" />
+            </div>
+
+            <button class="btn-calc" onclick="calcLife()">Calculate Coverage Needed</button>
+
+            <div class="result-box" id="life-result">
+              <h3>RECOMMENDED COVERAGE</h3>
+              <div class="result-amount" id="life-amount"></div>
+              <div id="life-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">This is an estimate based on the DIME method. Consult a licensed insurance advisor for personalized advice.</p>
+            </div>
+          </div>
+
+          <!-- Article content for SEO -->
+          <div class="article-body" style="margin-top:48px;">
+            <h2>How Much Life Insurance Do You Need?</h2>
+            <p>Most financial experts recommend having life insurance coverage equal to 10–12 times your annual income. But that rule of thumb doesn't account for your specific debts, dependents, or financial goals. A more precise approach is the <strong>DIME method</strong>.</p>
+
+            <h3>The DIME Method Explained</h3>
+            <p>DIME stands for Debt, Income, Mortgage, and Education. It adds up the four major financial obligations your family would face if you passed away:</p>
+            <ul>
+              <li><strong>Debt:</strong> All outstanding personal debts (credit cards, car loans, student loans)</li>
+              <li><strong>Income:</strong> Your annual income multiplied by the number of years your family would need support</li>
+              <li><strong>Mortgage:</strong> The remaining balance on your home loan</li>
+              <li><strong>Education:</strong> Estimated future education costs for your children</li>
+            </ul>
+
+            <h3>Term Life vs Whole Life</h3>
+            <p>Once you know how much coverage you need, the next decision is what type of policy to get. Term life insurance covers you for a set period (10, 20, or 30 years) and is typically the most affordable option. Whole life insurance lasts your entire life and builds cash value over time but costs significantly more.</p>
+            <p>For most families, <strong>term life insurance</strong> is the right choice — you get the coverage you need at a price that makes sense.</p>
+
+            <h3>When Should You Get Life Insurance?</h3>
+            <p>The best time to get life insurance is when you're young and healthy. Premiums are based on your age and health at the time you apply — locking in a policy in your 20s or 30s can save you thousands over the life of the policy.</p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/term-vs-whole.html">Term vs Whole Life Comparison</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance Calculator</a></li>
+              <li><a href="/tools/pet-insurance.html">Pet Insurance Calculator</a></li>
+              <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance Calculator</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Average term life premium: <strong>$26/mo</strong></li>
+              <li>Most common term length: <strong>20 years</strong></li>
+              <li>Recommended coverage: <strong>10–12x income</strong></li>
+              <li>Best age to buy: <strong>25–35</strong></li>
+            </ul>
+          </div>
+
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcLife() {
+  const income = parseFloat(document.getElementById('annual-income').value) || 0;
+  const years = parseFloat(document.getElementById('years-income').value) || 10;
+  const debt = parseFloat(document.getElementById('total-debt').value) || 0;
+  const dependents = parseFloat(document.getElementById('dependents').value) || 0;
+  const education = parseFloat(document.getElementById('education-cost').value) || 0;
+  const savings = parseFloat(document.getElementById('existing-savings').value) || 0;
+
+  const incomeNeed = income * years;
+  const educationNeed = education * dependents;
+  const total = incomeNeed + debt + educationNeed - savings;
+  const coverage = Math.max(total, 0);
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('life-amount').textContent = fmt(coverage);
+  document.getElementById('life-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Income replacement (${years} yrs)</td><td style="text-align:right">${fmt(incomeNeed)}</td></tr>
+      <tr><td>Debts & mortgage</td><td style="text-align:right">${fmt(debt)}</td></tr>
+      <tr><td>Education costs</td><td style="text-align:right">${fmt(educationNeed)}</td></tr>
+      <tr><td>Minus existing savings</td><td style="text-align:right">−${fmt(savings)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Total needed</td><td style="text-align:right">${fmt(coverage)}</td></tr>
+    </table>
+  `;
+
+  const box = document.getElementById('life-result');
+  box.classList.add('visible');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+</body>
+</html>

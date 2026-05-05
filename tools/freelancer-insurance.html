@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelancer Insurance Calculator – What Coverage Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Self-employed? Find out what insurance you need and estimate your total annual coverage cost. Free freelancer insurance calculator." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/freelancer-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .coverage-list { list-style: none; margin-top: 16px; }
+    .coverage-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .coverage-list li:last-child { border-bottom: none; }
+    .coverage-badge { font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+    .badge-required { background: #fee2e2; color: #dc2626; }
+    .badge-recommended { background: #fef3c7; color: #d97706; }
+    .badge-optional { background: #f0fdf4; color: #16a34a; }
+  </style>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Freelancer Insurance</p>
+        <h1>Freelancer Insurance Calculator</h1>
+        <p>Find out exactly what insurance you need as a self-employed worker — and what it will cost.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Your Freelance Profile</h2>
+
+            <div class="form-group">
+              <label for="freelance-type">Type of Work</label>
+              <select id="freelance-type">
+                <option value="creative">Creative (designer, writer, photographer)</option>
+                <option value="tech" selected>Tech (developer, consultant, IT)</option>
+                <option value="consulting">Business consulting / coaching</option>
+                <option value="trade">Trades (contractor, electrician, plumber)</option>
+                <option value="health">Health / wellness</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="annual-revenue">Annual Revenue ($)</label>
+              <input type="number" id="annual-revenue" placeholder="e.g. 80000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="has-clients">Do you work with business clients?</label>
+              <select id="has-clients">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No — consumers only</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="has-dependents">Dependents relying on your income?</label>
+              <select id="has-dependents">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="has-health">Do you have health insurance?</label>
+              <select id="has-health">
+                <option value="no" selected>No — need my own</option>
+                <option value="spouse">Covered by spouse/partner</option>
+                <option value="yes">Yes — already covered</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcFreelancer()">Calculate Now</button>
+
+            <div class="result-box" id="free-result">
+              <h3>ESTIMATED ANNUAL INSURANCE COST</h3>
+              <div class="result-amount" id="free-amount"></div>
+              <ul class="coverage-list" id="free-list"></ul>
+              <p class="result-note">Estimates based on average market rates for independent contractors. Actual costs vary by state, insurer, and individual profile.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What Insurance Do Freelancers Actually Need?</h2>
+            <p>Going independent means losing the safety net of employer-provided benefits. That doesn't mean going without — it means building your own coverage stack.</p>
+
+            <h3>Health Insurance</h3>
+            <p>This is non-negotiable. Without an employer plan, you'll need to get coverage through the ACA Marketplace, a professional association, or a spouse's plan. Costs vary significantly by state and income level — subsidies may reduce your premium substantially.</p>
+
+            <h3>Professional Liability (E&O) Insurance</h3>
+            <p>Also called Errors & Omissions insurance, this covers you if a client claims your work caused them financial harm. Essential for consultants, designers, developers, and anyone providing advice or professional services.</p>
+
+            <h3>General Liability Insurance</h3>
+            <p>Covers bodily injury and property damage claims. Required by many clients and co-working spaces. Even if you work from home, it's worth having if you meet clients in person.</p>
+
+            <h3>Disability Insurance</h3>
+            <p>Your ability to work IS your business. If you get sick or injured and can't work, there's no employer sick pay. Long-term disability insurance can replace 60–70% of your income while you recover.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance</a></li>
+              <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Freelancer Facts</h3>
+            <ul>
+              <li>59M+ freelancers in the US</li>
+              <li>Only <strong>~30%</strong> have E&O coverage</li>
+              <li>Avg E&O claim: <strong>$35,000</strong></li>
+              <li>Health coverage: largest single cost</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcFreelancer() {
+  const type = document.getElementById('freelance-type').value;
+  const revenue = parseFloat(document.getElementById('annual-revenue').value) || 0;
+  const hasClients = document.getElementById('has-clients').value;
+  const hasDependents = document.getElementById('has-dependents').value;
+  const hasHealth = document.getElementById('has-health').value;
+
+  const items = [];
+  let total = 0;
+
+  // Health insurance
+  if (hasHealth === 'no') {
+    const healthCost = 5400; // avg annual ~$450/mo
+    items.push({ name: 'Health Insurance', cost: healthCost, priority: 'required' });
+    total += healthCost;
+  } else if (hasHealth === 'spouse') {
+    items.push({ name: 'Health Insurance', cost: 0, note: 'Covered by spouse', priority: 'required' });
+  }
+
+  // Professional liability / E&O
+  const eoCosts = { creative: 600, tech: 900, consulting: 1100, trade: 1200, health: 1500 };
+  if (hasClients === 'yes') {
+    const eoCost = eoCosts[type];
+    items.push({ name: 'Professional Liability (E&O)', cost: eoCost, priority: 'required' });
+    total += eoCost;
+  }
+
+  // General liability
+  const glCost = 500;
+  items.push({ name: 'General Liability', cost: glCost, priority: 'recommended' });
+  total += glCost;
+
+  // Disability
+  if (hasDependents === 'yes') {
+    const disCost = Math.round(revenue * 0.02);
+    items.push({ name: 'Disability Insurance', cost: disCost, priority: 'recommended' });
+    total += disCost;
+  } else {
+    const disCost = Math.round(revenue * 0.015);
+    items.push({ name: 'Disability Insurance', cost: disCost, priority: 'optional' });
+    total += disCost;
+  }
+
+  // Life insurance (if dependents)
+  if (hasDependents === 'yes') {
+    const lifeCost = 400;
+    items.push({ name: 'Life Insurance (term)', cost: lifeCost, priority: 'recommended' });
+    total += lifeCost;
+  }
+
+  // Cyber liability for tech
+  if (type === 'tech') {
+    items.push({ name: 'Cyber Liability', cost: 750, priority: 'recommended' });
+    total += 750;
+  }
+
+  const fmt = v => v === 0 ? 'Covered' : '$' + Math.round(v).toLocaleString() + '/yr';
+  const badgeClass = p => ({ required: 'badge-required', recommended: 'badge-recommended', optional: 'badge-optional' }[p]);
+  const badgeLabel = p => p.charAt(0).toUpperCase() + p.slice(1);
+
+  document.getElementById('free-amount').textContent = '$' + Math.round(total).toLocaleString() + '/yr';
+  document.getElementById('free-list').innerHTML = items.map(item => `
+    <li>
+      <span>${item.name}${item.note ? ' <small style="color:var(--text-muted)">(' + item.note + ')</small>' : ''}</span>
+      <span style="display:flex;align-items:center;gap:8px;">
+        <strong>${fmt(item.cost)}</strong>
+        <span class="coverage-badge ${badgeClass(item.priority)}">${badgeLabel(item.priority)}</span>
+      </span>
+    </li>
+  `).join('');
+
+  document.getElementById('free-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
