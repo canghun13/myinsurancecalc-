@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
-          <li class="dropdown">
+          <li class="dropdown" id="nav-calculators">
             <a href="#">Calculators ▾</a>
             <ul class="dropdown-menu">
               <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
             </ul>
           </li>
-          <li class="dropdown">
+          <li class="dropdown" id="nav-blog">
             <a href="/blog/">Blog ▾</a>
             <ul class="dropdown-menu" style="min-width:260px;">
               <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);">Life Insurance</li>
@@ -90,34 +90,35 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
 
-  // Active state
   const currentPath = window.location.pathname;
 
-  // Exact match for dropdown items
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    const linkPath = new URL(link.href, window.location.origin).pathname;
-    if (linkPath === currentPath) {
-      link.classList.add('nav-active');
-    }
-  });
-
-  // Home
+  // Home active
   if (currentPath === '/' || currentPath === '/index.html') {
     const homeLink = document.querySelector('.nav-links > li > a[href="/"]');
     if (homeLink) homeLink.classList.add('nav-active');
   }
 
-  // Highlight Calculators toggle if on a tool page
+  // Calculators active — ONLY on /tools/ pages
   if (currentPath.startsWith('/tools/')) {
-    document.querySelectorAll('.dropdown > a').forEach(a => {
-      if (a.getAttribute('href') === '#') a.classList.add('nav-active');
+    const calcToggle = document.querySelector('#nav-calculators > a');
+    if (calcToggle) calcToggle.classList.add('nav-active');
+    // Highlight current tool in dropdown
+    document.querySelectorAll('#nav-calculators .dropdown-menu a').forEach(link => {
+      if (new URL(link.href, window.location.origin).pathname === currentPath) {
+        link.classList.add('nav-active');
+      }
     });
   }
 
-  // Highlight Blog toggle if on a blog page
+  // Blog active — ONLY on /blog/ pages
   if (currentPath.startsWith('/blog/')) {
-    document.querySelectorAll('.dropdown > a').forEach(a => {
-      if (a.getAttribute('href') === '/blog/') a.classList.add('nav-active');
+    const blogToggle = document.querySelector('#nav-blog > a');
+    if (blogToggle) blogToggle.classList.add('nav-active');
+    // Highlight current article in dropdown
+    document.querySelectorAll('#nav-blog .dropdown-menu a').forEach(link => {
+      if (new URL(link.href, window.location.origin).pathname === currentPath) {
+        link.classList.add('nav-active');
+      }
     });
   }
 
@@ -131,14 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Dropdown: hover desktop / click mobile
   document.querySelectorAll('.dropdown').forEach(drop => {
     const dropToggle = drop.querySelector(':scope > a');
-
     drop.addEventListener('mouseenter', () => {
       if (window.innerWidth > 768) drop.classList.add('active');
     });
     drop.addEventListener('mouseleave', () => {
       if (window.innerWidth > 768) drop.classList.remove('active');
     });
-
     if (dropToggle) {
       dropToggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
