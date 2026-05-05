@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Blog active — ONLY on /blog/ pages
-  if (currentPath.startsWith('/blog/')) {
+  if (currentPath.startsWith('/blog/') || currentPath === '/blog') {
     const blogToggle = document.querySelector('#nav-blog > a');
     if (blogToggle) blogToggle.classList.add('nav-active');
     // Highlight current article in dropdown
