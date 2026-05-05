@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
               <li style="border-top:1px solid var(--border);margin-top:4px;"><a href="/blog/" style="font-weight:600;">View All Articles →</a></li>
             </ul>
           </li>
+        </ul>
+      </nav>
+    </div>
+  </header>`;
 
   const footer = `
   <footer class="site-footer">
@@ -58,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/tools/life-insurance.html">Life Insurance</a></li>
             <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
             <li><a href="/tools/disability.html">Disability Insurance</a></li>
+            <li><a href="/tools/home-insurance.html">Home Insurance</a></li>
+            <li><a href="/tools/renters-insurance.html">Renters Insurance</a></li>
+            <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
             <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
             <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
             <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
@@ -83,19 +90,55 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
 
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
+  // Active state highlighting
+  const currentPath = window.location.pathname;
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const linkPath = new URL(link.href, window.location.origin).pathname;
+    const isActive = linkPath === currentPath || (linkPath !== '/' && currentPath.startsWith(linkPath));
+
+    if (isActive) {
+      link.classList.add('nav-active');
+      // Also highlight parent dropdown toggle
+      const parentDropdown = link.closest('.dropdown');
+      if (parentDropdown) {
+        const parentToggle = parentDropdown.querySelector(':scope > a');
+        if (parentToggle) parentToggle.classList.add('nav-active');
+      }
+    }
+  });
+
+  // Home link active
+  if (currentPath === '/') {
+    const homeLink = document.querySelector('.nav-links > li > a[href="/"]');
+    if (homeLink) homeLink.classList.add('nav-active');
   }
 
-  // Dropdown hover for desktop
-  const dropdowns = document.querySelectorAll('.dropdown');
-  dropdowns.forEach(drop => {
-    drop.addEventListener('mouseenter', () => drop.classList.add('active'));
-    drop.addEventListener('mouseleave', () => drop.classList.remove('active'));
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  }
+
+  // Dropdown: hover desktop / click mobile
+  document.querySelectorAll('.dropdown').forEach(drop => {
+    const dropToggle = drop.querySelector(':scope > a');
+
+    drop.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 768) drop.classList.add('active');
+    });
+    drop.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 768) drop.classList.remove('active');
+    });
+
+    if (dropToggle) {
+      dropToggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          drop.classList.toggle('active');
+        }
+      });
+    }
   });
 });
