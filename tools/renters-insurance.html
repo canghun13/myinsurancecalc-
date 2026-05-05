@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renters Insurance Calculator – How Much Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Find out how much renters insurance you need and what it costs. Free calculator — instant results, no signup." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/renters-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Renters Insurance</p>
+        <h1>Renters Insurance Calculator</h1>
+        <p>Renters insurance costs less than most people think. Find out exactly how much you need.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage</h2>
+
+            <div class="form-group">
+              <label for="rent-belongings">Total Value of Belongings ($)</label>
+              <input type="number" id="rent-belongings" placeholder="e.g. 25000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="rent-electronics">Electronics & Tech ($)</label>
+              <input type="number" id="rent-electronics" placeholder="e.g. 5000" min="0" value="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="rent-jewelry">Jewelry & Valuables ($)</label>
+              <input type="number" id="rent-jewelry" placeholder="e.g. 2000" min="0" value="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="rent-location">Location</label>
+              <select id="rent-location">
+                <option value="low">Low cost area (rural / small city)</option>
+                <option value="medium" selected>Medium cost area</option>
+                <option value="high">High cost area (NYC, SF, LA)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rent-liability">Liability Coverage</label>
+              <select id="rent-liability">
+                <option value="100000">$100,000</option>
+                <option value="300000" selected>$300,000 (recommended)</option>
+                <option value="500000">$500,000</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcRenters()">Calculate Now</button>
+
+            <div class="result-box" id="rent-result">
+              <h3>ESTIMATED MONTHLY PREMIUM</h3>
+              <div class="result-amount" id="rent-amount"></div>
+              <div id="rent-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Renters insurance is one of the best value purchases in personal finance. Estimates based on national averages.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Why Every Renter Needs Insurance</h2>
+            <p>Your landlord's insurance covers the building — not your stuff. If there's a fire, flood, or break-in, you're on your own without renters insurance. The good news: renters insurance is remarkably affordable, typically $15–$30/month for solid coverage.</p>
+
+            <h3>What Renters Insurance Covers</h3>
+            <p>A standard renters policy covers three things: your personal belongings (against theft, fire, water damage, and more), liability (if someone is injured in your apartment and sues you), and additional living expenses (hotel costs if your apartment becomes uninhabitable).</p>
+
+            <h3>Actual Cash Value vs Replacement Cost</h3>
+            <p>Pay attention to this distinction. Actual cash value policies pay what your items are worth today — after depreciation. A 3-year-old laptop might only be worth $200 even if it costs $800 to replace. Replacement cost coverage pays what it actually costs to replace items with new equivalents. Always choose replacement cost coverage if your budget allows.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Avg monthly cost: <strong>$15–$30</strong></li>
+              <li>Most renters are uninsured</li>
+              <li>Choose <strong>replacement cost</strong> over ACV</li>
+              <li>Bundle with auto to save 5–15%</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcRenters() {
+  const belongings = parseFloat(document.getElementById('rent-belongings').value) || 0;
+  const electronics = parseFloat(document.getElementById('rent-electronics').value) || 0;
+  const jewelry = parseFloat(document.getElementById('rent-jewelry').value) || 0;
+  const location = document.getElementById('rent-location').value;
+  const liability = parseFloat(document.getElementById('rent-liability').value);
+
+  const totalProperty = belongings + electronics + jewelry;
+  const locMult = { low: 0.85, medium: 1.0, high: 1.4 };
+  const liabAdd = { 100000: 0, 300000: 2, 500000: 4 };
+
+  const monthlyBase = (totalProperty * 0.003 / 12) * locMult[location];
+  const monthly = monthlyBase + liabAdd[liability];
+  const annual = monthly * 12;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('rent-amount').textContent = '$' + Math.max(monthly, 12).toFixed(2) + '/mo';
+  document.getElementById('rent-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Personal property coverage</td><td style="text-align:right">${fmt(totalProperty)}</td></tr>
+      <tr><td>Liability coverage</td><td style="text-align:right">${fmt(liability)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right">$${Math.max(monthly, 12).toFixed(2)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. annual premium</td><td style="text-align:right">${fmt(Math.max(annual, 144))}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('rent-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Insurance Calculator – How Much Coverage Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Calculate how much homeowners insurance you need. Free home insurance calculator — instant results, no signup required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/home-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Home Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/home-insurance.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Home Insurance</p>
+        <h1>Home Insurance Calculator</h1>
+        <p>Find out how much homeowners insurance you need and what it should cost.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage</h2>
+
+            <div class="form-group">
+              <label for="home-value">Home Market Value ($)</label>
+              <input type="number" id="home-value" placeholder="e.g. 350000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="rebuild-cost">Estimated Rebuild Cost per sq ft ($)</label>
+              <select id="rebuild-cost">
+                <option value="100">$100/sq ft (basic construction)</option>
+                <option value="150" selected>$150/sq ft (average)</option>
+                <option value="200">$200/sq ft (above average)</option>
+                <option value="300">$300/sq ft (high-end)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="home-size">Home Size (sq ft)</label>
+              <input type="number" id="home-size" placeholder="e.g. 2000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="personal-property">Personal Property Value ($)</label>
+              <input type="number" id="personal-property" placeholder="e.g. 50000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="home-age">Home Age</label>
+              <select id="home-age">
+                <option value="new">0–10 years (new)</option>
+                <option value="mid" selected>11–30 years</option>
+                <option value="old">31–50 years</option>
+                <option value="vold">50+ years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="home-location">Location Risk</label>
+              <select id="home-location">
+                <option value="low">Low risk (no flood/fire/quake zone)</option>
+                <option value="medium" selected>Medium risk</option>
+                <option value="high">High risk (flood/wildfire/hurricane zone)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcHome()">Calculate Now</button>
+
+            <div class="result-box" id="home-result">
+              <h3>RECOMMENDED COVERAGE</h3>
+              <div class="result-amount" id="home-amount"></div>
+              <div id="home-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimates for informational purposes only. Actual premiums vary by insurer, location, and home details.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>How Much Home Insurance Do You Need?</h2>
+            <p>The most common mistake homeowners make is insuring their home for its market value instead of its rebuild cost. These two numbers are often very different — and only one of them matters for insurance purposes.</p>
+
+            <h3>Dwelling Coverage</h3>
+            <p>Your dwelling coverage should equal the cost to rebuild your home from the ground up — not what you paid for it or what it's worth on the market. Rebuild costs depend on local labor rates, materials, and your home's size and construction quality. A good rule of thumb: multiply your home's square footage by local construction costs per square foot.</p>
+
+            <h3>Personal Property Coverage</h3>
+            <p>Standard policies cover your belongings at 50–70% of your dwelling coverage. Do a home inventory to estimate the real value of your furniture, electronics, appliances, clothing, and other possessions. High-value items like jewelry, art, or collectibles may need separate riders.</p>
+
+            <h3>Liability Coverage</h3>
+            <p>If someone is injured on your property and sues you, liability coverage pays for legal costs and settlements. Most experts recommend at least $300,000 in liability coverage — and an umbrella policy if your net worth exceeds that.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Avg annual premium: <strong>$1,428/yr</strong></li>
+              <li>Insure rebuild cost, not market value</li>
+              <li>Min liability: <strong>$300,000</strong></li>
+              <li>Flood not included — buy separately</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcHome() {
+  const homeValue = parseFloat(document.getElementById('home-value').value) || 0;
+  const rebuildCost = parseFloat(document.getElementById('rebuild-cost').value);
+  const size = parseFloat(document.getElementById('home-size').value) || 0;
+  const personalProp = parseFloat(document.getElementById('personal-property').value) || 0;
+  const age = document.getElementById('home-age').value;
+  const location = document.getElementById('home-location').value;
+
+  const dwelling = size * rebuildCost;
+  const ageMult = { new: 1.0, mid: 1.1, old: 1.2, vold: 1.35 };
+  const locMult = { low: 1.0, medium: 1.15, high: 1.45 };
+
+  const annualPremium = (dwelling * 0.004 + personalProp * 0.002) * ageMult[age] * locMult[location];
+  const monthlyPremium = annualPremium / 12;
+  const liability = 300000;
+  const lossOfUse = dwelling * 0.2;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('home-amount').textContent = fmt(dwelling);
+  document.getElementById('home-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Dwelling coverage</td><td style="text-align:right">${fmt(dwelling)}</td></tr>
+      <tr><td>Personal property</td><td style="text-align:right">${fmt(personalProp)}</td></tr>
+      <tr><td>Liability coverage</td><td style="text-align:right">${fmt(liability)}</td></tr>
+      <tr><td>Loss of use (20%)</td><td style="text-align:right">${fmt(lossOfUse)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. annual premium</td><td style="text-align:right">${fmt(annualPremium)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right">${fmt(monthlyPremium)}/mo</td></tr>
+    </table>
+  `;
+
+  document.getElementById('home-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

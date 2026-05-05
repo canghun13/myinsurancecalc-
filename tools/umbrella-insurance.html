@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umbrella Insurance Calculator – How Much Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Calculate how much umbrella insurance you need based on your net worth and liability exposure. Free calculator, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/umbrella-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Umbrella Insurance</p>
+        <h1>Umbrella Insurance Calculator</h1>
+        <p>Umbrella insurance protects your assets when your other policies aren't enough. Find out how much you need.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage Need</h2>
+
+            <div class="form-group">
+              <label for="net-worth">Estimated Net Worth ($)</label>
+              <input type="number" id="net-worth" placeholder="e.g. 500000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="annual-income-umb">Annual Income ($)</label>
+              <input type="number" id="annual-income-umb" placeholder="e.g. 100000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="existing-auto-liability">Existing Auto Liability Coverage ($)</label>
+              <select id="existing-auto-liability">
+                <option value="100000">$100,000</option>
+                <option value="250000" selected>$250,000</option>
+                <option value="300000">$300,000</option>
+                <option value="500000">$500,000</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="existing-home-liability">Existing Home/Renters Liability ($)</label>
+              <select id="existing-home-liability">
+                <option value="100000">$100,000</option>
+                <option value="300000" selected>$300,000</option>
+                <option value="500000">$500,000</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="risk-factors">Additional Risk Factors</label>
+              <select id="risk-factors">
+                <option value="low">Low (no pool, dogs, teen drivers)</option>
+                <option value="medium" selected>Medium (one or two risk factors)</option>
+                <option value="high">High (pool, rental property, teen drivers, dogs)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcUmbrella()">Calculate Now</button>
+
+            <div class="result-box" id="umb-result">
+              <h3>RECOMMENDED UMBRELLA COVERAGE</h3>
+              <div class="result-amount" id="umb-amount"></div>
+              <div id="umb-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Umbrella policies are sold in $1M increments. Estimates for informational purposes only.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What Is Umbrella Insurance?</h2>
+            <p>Umbrella insurance is extra liability coverage that kicks in when your auto or home insurance limits are exhausted. If you're sued for $1.5 million and your auto policy only covers $300,000, your umbrella policy covers the remaining $1.2 million — protecting your savings, investments, and future earnings.</p>
+
+            <h3>Who Needs Umbrella Insurance?</h3>
+            <p>Anyone with significant assets to protect. As a rule of thumb, your umbrella coverage should at least equal your net worth. The more you own, the more you have to lose in a lawsuit. High-risk factors that increase your need: owning a pool, having teen drivers, owning rental property, owning aggressive dog breeds, or frequently hosting guests.</p>
+
+            <h3>How Much Does It Cost?</h3>
+            <p>Umbrella insurance is one of the best values in insurance. A $1 million policy typically costs $150–$300 per year. Each additional $1 million adds roughly $50–$75 per year. For the protection it provides, it's remarkably affordable.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>$1M policy costs: <strong>~$200/yr</strong></li>
+              <li>Sold in <strong>$1M increments</strong></li>
+              <li>Covers: lawsuits, libel, slander</li>
+              <li>Coverage = at least your net worth</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcUmbrella() {
+  const netWorth = parseFloat(document.getElementById('net-worth').value) || 0;
+  const income = parseFloat(document.getElementById('annual-income-umb').value) || 0;
+  const autoLiab = parseFloat(document.getElementById('existing-auto-liability').value);
+  const homeLiab = parseFloat(document.getElementById('existing-home-liability').value);
+  const risk = document.getElementById('risk-factors').value;
+
+  const riskAdd = { low: 0, medium: 1000000, high: 2000000 };
+  const incomeProtection = income * 5;
+  const base = Math.max(netWorth, incomeProtection) + riskAdd[risk];
+  const existingCoverage = autoLiab + homeLiab;
+  const needed = Math.max(base - existingCoverage, 1000000);
+  const rounded = Math.ceil(needed / 1000000) * 1000000;
+
+  const annualLow = 150 + ((rounded / 1000000) - 1) * 50;
+  const annualHigh = 300 + ((rounded / 1000000) - 1) * 75;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('umb-amount').textContent = fmt(rounded);
+  document.getElementById('umb-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Net worth</td><td style="text-align:right">${fmt(netWorth)}</td></tr>
+      <tr><td>Income protection (5x)</td><td style="text-align:right">${fmt(incomeProtection)}</td></tr>
+      <tr><td>Risk factor buffer</td><td style="text-align:right">${fmt(riskAdd[risk])}</td></tr>
+      <tr><td>Existing liability coverage</td><td style="text-align:right">−${fmt(existingCoverage)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Recommended umbrella</td><td style="text-align:right">${fmt(rounded)}</td></tr>
+      <tr><td>Est. annual premium</td><td style="text-align:right">${fmt(annualLow)}–${fmt(annualHigh)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('umb-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

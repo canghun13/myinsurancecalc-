@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Insurance Calculator for Self-Employed & Freelancers | My Insurance Calc</title>
+  <meta name="description" content="Estimate your health insurance cost as a self-employed worker or freelancer. Find out if you qualify for ACA subsidies. Free calculator." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/health-insurance-self-employed.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Health Insurance (Self-Employed)</p>
+        <h1>Health Insurance Calculator for Self-Employed</h1>
+        <p>Estimate your monthly health insurance premium as a freelancer or self-employed worker — and find out if you qualify for ACA subsidies.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your Premium</h2>
+
+            <div class="form-group">
+              <label for="health-age">Your Age</label>
+              <input type="number" id="health-age" placeholder="e.g. 35" min="18" max="64" />
+            </div>
+
+            <div class="form-group">
+              <label for="health-household">Household Size</label>
+              <select id="health-household">
+                <option value="1" selected>1 (just me)</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5+ people</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="health-income">Estimated Annual Income ($)</label>
+              <input type="number" id="health-income" placeholder="e.g. 60000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="health-plan">Plan Type</label>
+              <select id="health-plan">
+                <option value="bronze">Bronze (lowest premium, highest deductible)</option>
+                <option value="silver" selected>Silver (moderate premium & deductible)</option>
+                <option value="gold">Gold (higher premium, lower deductible)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="health-state">State Cost Level</label>
+              <select id="health-state">
+                <option value="low">Low cost state</option>
+                <option value="medium" selected>Average cost state</option>
+                <option value="high">High cost state (NY, CA, MA)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcHealth()">Calculate Now</button>
+
+            <div class="result-box" id="health-result">
+              <h3>ESTIMATED MONTHLY PREMIUM</h3>
+              <div class="result-amount" id="health-amount"></div>
+              <div id="health-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">ACA subsidy eligibility depends on your exact income relative to the federal poverty level. Check healthcare.gov for accurate subsidy amounts.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Health Insurance Options for the Self-Employed</h2>
+            <p>Going without health insurance isn't a viable option — a single hospital visit can result in tens of thousands of dollars in bills. As a self-employed worker, you have several paths to coverage.</p>
+
+            <h3>ACA Marketplace Plans</h3>
+            <p>The Affordable Care Act marketplace (healthcare.gov) offers plans in four tiers: Bronze, Silver, Gold, and Platinum. If your income falls between 100–400% of the federal poverty level, you may qualify for premium tax credits that significantly reduce your monthly cost. In some cases, subsidies can reduce premiums to near zero.</p>
+
+            <h3>The Self-Employed Health Insurance Deduction</h3>
+            <p>If you're self-employed and not eligible for coverage through a spouse's employer plan, you can deduct 100% of your health insurance premiums from your federal taxes. This significantly reduces the real cost of your coverage — a $500/month premium in the 22% tax bracket effectively costs you $390/month after the deduction.</p>
+
+            <h3>Bronze vs Silver vs Gold</h3>
+            <p>Bronze plans have the lowest monthly premiums but the highest out-of-pocket costs when you use care. Silver plans balance premium and cost-sharing. Gold plans make sense if you use healthcare frequently and can predict your needs. For most healthy self-employed workers, a Silver plan with a Health Savings Account (HSA) offers the best value.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance Calculator</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Deduct 100% of premiums from taxes</li>
+              <li>Silver + HSA: best value for most</li>
+              <li>Subsidies available up to 400% FPL</li>
+              <li>Open enrollment: <strong>Nov 1 – Jan 15</strong></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcHealth() {
+  const age = parseFloat(document.getElementById('health-age').value) || 35;
+  const household = parseFloat(document.getElementById('health-household').value);
+  const income = parseFloat(document.getElementById('health-income').value) || 0;
+  const plan = document.getElementById('health-plan').value;
+  const state = document.getElementById('health-state').value;
+
+  // FPL 2026 estimates
+  const fpl = { 1: 15060, 2: 20440, 3: 25820, 4: 31200, 5: 36580 };
+  const fplIncome = fpl[Math.min(household, 5)];
+  const incomeRatio = income / fplIncome;
+
+  // Base premiums by age (monthly, silver, average state)
+  const agePremium = 200 + Math.max(0, age - 21) * 8;
+  const planMult = { bronze: 0.72, silver: 1.0, gold: 1.28 };
+  const stateMult = { low: 0.82, medium: 1.0, high: 1.35 };
+  const householdAdd = (household - 1) * agePremium * 0.7;
+
+  const fullPremium = (agePremium + householdAdd) * planMult[plan] * stateMult[state];
+
+  // Subsidy estimate (simplified)
+  let subsidy = 0;
+  let subsidyNote = '';
+  if (incomeRatio <= 4.0 && incomeRatio >= 1.0) {
+    const capPct = Math.min(0.085, 0.02 + (incomeRatio - 1) * 0.021);
+    const cap = income * capPct / 12;
+    subsidy = Math.max(0, fullPremium - cap);
+    subsidyNote = `You may qualify for ~$${Math.round(subsidy)}/mo in ACA subsidies.`;
+  } else if (incomeRatio < 1.0) {
+    subsidyNote = 'You may qualify for Medicaid. Check your state's eligibility.';
+  } else {
+    subsidyNote = 'Your income exceeds subsidy eligibility — full premium applies.';
+  }
+
+  const afterSubsidy = Math.max(fullPremium - subsidy, 0);
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('health-amount').textContent = '$' + Math.round(afterSubsidy) + '/mo';
+  document.getElementById('health-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Full monthly premium</td><td style="text-align:right">${fmt(fullPremium)}</td></tr>
+      <tr><td>Estimated ACA subsidy</td><td style="text-align:right">−${fmt(subsidy)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>After-subsidy premium</td><td style="text-align:right">${fmt(afterSubsidy)}/mo</td></tr>
+      <tr><td>Annual cost</td><td style="text-align:right">${fmt(afterSubsidy * 12)}/yr</td></tr>
+    </table>
+    <p style="margin-top:12px;">${subsidyNote}</p>
+    <p style="margin-top:8px;font-size:0.8rem;">Tax deduction saves ~${fmt(afterSubsidy * 12 * 0.22)}/yr at 22% bracket.</p>
+  `;
+
+  document.getElementById('health-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
