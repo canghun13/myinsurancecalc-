@@ -574,6 +574,11 @@ img { max-width: 100%; display: block; }
 
   .dropdown.active .dropdown-menu { display: block; }
 
+  /* 모바일 메뉴 오픈시 active 배경 제거 */
+  .nav-links > li > a.nav-active {
+    background: transparent;
+  }
+
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .tool-layout { grid-template-columns: 1fr; }
   .article-layout { grid-template-columns: 1fr; }
