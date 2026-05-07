@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
               <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
               <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
+              <li><a href="/tools/car-insurance.html">Car Insurance</a></li>
             </ul>
           </li>
           <li class="dropdown" id="nav-blog">
@@ -42,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/blog/term-vs-whole-life-insurance.html">Term vs Whole Life</a></li>
               <li><a href="/blog/life-insurance-for-pilots.html">Life Insurance for Pilots</a></li>
               <li><a href="/blog/life-insurance-after-cancer.html">Life Insurance After Cancer</a></li>
+              <li><a href="/blog/life-insurance-for-truck-drivers.html">Life Insurance for Truck Drivers</a></li>
+              <li><a href="/blog/life-insurance-after-dui.html">Life Insurance After a DUI</a></li>
               <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:4px;">Freelancer / Gig</li>
               <li><a href="/blog/freelancer-insurance-guide.html">Freelancer Insurance Guide</a></li>
               <li><a href="/blog/insurance-for-gig-workers.html">Insurance for Gig Workers</a></li>
@@ -52,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/blog/disability-insurance-guide.html">Disability Insurance Guide</a></li>
               <li><a href="/blog/pet-insurance-worth-it.html">Is Pet Insurance Worth It?</a></li>
               <li><a href="/blog/umbrella-insurance-explained.html">Umbrella Insurance Explained</a></li>
+              <li><a href="/blog/insurance-for-college-students.html">Insurance for College Students</a></li>
               <li style="border-top:1px solid var(--border);margin-top:4px;"><a href="/blog/" style="font-weight:600;">View All Articles →</a></li>
             </ul>
           </li>
@@ -80,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
             <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
             <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
+            <li><a href="/tools/car-insurance.html">Car Insurance</a></li>
           </ul>
         </div>
         <div class="footer-links">
