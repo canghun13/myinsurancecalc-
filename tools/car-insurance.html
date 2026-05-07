@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Insurance Calculator – Estimate Your Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate your car insurance premium in seconds. Enter your vehicle, age, driving record, and coverage level to get a personalized cost estimate." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/car-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <h1>Car Insurance Calculator</h1>
+        <p>Estimate your monthly car insurance premium based on your vehicle, driver profile, and coverage preferences.</p>
+      </div>
+
+      <div class="adslot"><!-- AdSense --></div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Enter Your Details</h2>
+
+            <div class="form-group">
+              <label for="age">Driver Age</label>
+              <input type="number" id="age" min="16" max="85" placeholder="e.g. 32" />
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="vehicle-year">Vehicle Year</label>
+              <select id="vehicle-year">
+                <option value="new">2022–2026 (New)</option>
+                <option value="mid" selected>2015–2021 (Mid-age)</option>
+                <option value="old">2010–2014 (Older)</option>
+                <option value="classic">2009 or older</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="vehicle-type">Vehicle Type</label>
+              <select id="vehicle-type">
+                <option value="sedan">Sedan / Coupe</option>
+                <option value="suv">SUV / Crossover</option>
+                <option value="truck">Pickup Truck</option>
+                <option value="sports">Sports Car</option>
+                <option value="luxury">Luxury Vehicle</option>
+                <option value="ev">Electric Vehicle (EV)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="coverage">Coverage Level</label>
+              <select id="coverage">
+                <option value="state-min">State Minimum (Liability Only)</option>
+                <option value="basic">Basic (Liability + Collision)</option>
+                <option value="standard" selected>Standard (Full Coverage)</option>
+                <option value="premium">Premium (Full + Low Deductible)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="driving-record">Driving Record</label>
+              <select id="driving-record">
+                <option value="clean">Clean (No incidents in 5+ years)</option>
+                <option value="minor">Minor violation (1 ticket in 3 years)</option>
+                <option value="accident">At-fault accident in last 3 years</option>
+                <option value="major">Major violation (DUI/reckless driving)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="annual-miles">Annual Miles Driven</label>
+              <select id="annual-miles">
+                <option value="low">Under 7,500 (Low)</option>
+                <option value="avg" selected>7,500–15,000 (Average)</option>
+                <option value="high">15,000–25,000 (High)</option>
+                <option value="very-high">Over 25,000 (Very High)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="credit">Credit Score Range</label>
+              <select id="credit">
+                <option value="excellent">Excellent (750+)</option>
+                <option value="good" selected>Good (670–749)</option>
+                <option value="fair">Fair (580–669)</option>
+                <option value="poor">Poor (Below 580)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calculateInsurance()">Estimate My Premium</button>
+
+            <div class="result-box" id="result">
+              <h3>Estimated Monthly Premium</h3>
+              <div class="result-amount" id="monthly-result">—</div>
+              <div class="result-note" id="result-range"></div>
+              <div class="result-note" style="margin-top:12px;" id="result-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+
+          <!-- Educational content -->
+          <div style="margin-top:40px;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:16px;">What Affects Your Car Insurance Rate?</h2>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Age</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Young drivers (under 25) pay the highest rates — statistically, they're involved in more accidents. Rates typically peak at 16–19, drop significantly by 25, and remain relatively stable through your 50s before rising slightly again after 70.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Driving Record</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">This is the biggest controllable factor. A single at-fault accident can raise your premium 20–50% for 3–5 years. A DUI can double or triple your rate. Keeping a clean record is the single best way to keep premiums low.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Vehicle Type</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Sports cars and luxury vehicles cost more to insure because they cost more to repair and are more likely to be stolen. Sedans and minivans are generally the cheapest to insure. EVs cost more due to expensive battery repairs.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Coverage Level</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">State minimum liability-only coverage is cheapest, but leaves your own vehicle unprotected. Full coverage (liability + collision + comprehensive) adds significant protection and is typically required if you have a car loan. The right level depends on your vehicle's value and your financial situation.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Credit Score</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">In most states, insurers use your credit score as a rating factor. Statistically, people with lower credit scores file more claims. Moving from poor to good credit can save 20–30% on your premium.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Annual Mileage</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">The more you drive, the higher your accident exposure. Low-mileage drivers (under 7,500 miles/year) can qualify for discounts with many insurers. Usage-based programs that track your actual driving can offer meaningful savings if you drive safely and infrequently.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">How to Lower Your Car Insurance Premium</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Bundle with home or renters insurance (save 5–15%)</li>
+              <li>Raise your deductible from $500 to $1,000 (save 10–20%)</li>
+              <li>Ask about good student, good driver, and low-mileage discounts</li>
+              <li>Drop collision/comprehensive on older vehicles worth less than $4,000</li>
+              <li>Improve your credit score over time</li>
+              <li>Shop and compare quotes every 1–2 years</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>Average Premiums by State</h3>
+            <ul>
+              <li>Michigan — $230/mo (highest)</li>
+              <li>Louisiana — $210/mo</li>
+              <li>Florida — $190/mo</li>
+              <li>California — $160/mo</li>
+              <li>Texas — $145/mo</li>
+              <li>New York — $140/mo</li>
+              <li>Ohio — $85/mo</li>
+              <li>Maine — $75/mo (lowest)</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Coverage Guide</h3>
+            <ul>
+              <li><strong>Liability:</strong> Covers others if you cause an accident</li>
+              <li><strong>Collision:</strong> Covers your car in an accident</li>
+              <li><strong>Comprehensive:</strong> Theft, weather, animals</li>
+              <li><strong>Uninsured motorist:</strong> Protects you from uninsured drivers</li>
+              <li><strong>PIP/MedPay:</strong> Medical expenses regardless of fault</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Tools</h3>
+            <ul>
+              <li><a href="/tools/ev-insurance.html">EV Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function calculateInsurance() {
+  const age = parseInt(document.getElementById('age').value);
+  const gender = document.getElementById('gender').value;
+  const vehicleYear = document.getElementById('vehicle-year').value;
+  const vehicleType = document.getElementById('vehicle-type').value;
+  const coverage = document.getElementById('coverage').value;
+  const drivingRecord = document.getElementById('driving-record').value;
+  const annualMiles = document.getElementById('annual-miles').value;
+  const credit = document.getElementById('credit').value;
+
+  if (!age || age < 16 || age > 85) {
+    alert('Please enter a valid age between 16 and 85.');
+    return;
+  }
+
+  // Base rate (monthly)
+  let base = 100;
+
+  // Age factor
+  if (age < 20) base *= 2.8;
+  else if (age < 25) base *= 1.9;
+  else if (age < 30) base *= 1.3;
+  else if (age < 65) base *= 1.0;
+  else if (age < 75) base *= 1.1;
+  else base *= 1.3;
+
+  // Gender (young drivers only)
+  if (age < 25 && gender === 'male') base *= 1.1;
+
+  // Vehicle year
+  const yearFactors = { new: 1.4, mid: 1.0, old: 0.75, classic: 0.65 };
+  base *= yearFactors[vehicleYear];
+
+  // Vehicle type
+  const typeFactors = { sedan: 1.0, suv: 1.1, truck: 1.05, sports: 1.35, luxury: 1.5, ev: 1.25 };
+  base *= typeFactors[vehicleType];
+
+  // Coverage level
+  const coverageFactors = { 'state-min': 0.5, basic: 0.75, standard: 1.0, premium: 1.3 };
+  base *= coverageFactors[coverage];
+
+  // Driving record
+  const recordFactors = { clean: 1.0, minor: 1.25, accident: 1.45, major: 2.0 };
+  base *= recordFactors[drivingRecord];
+
+  // Annual miles
+  const mileFactors = { low: 0.88, avg: 1.0, high: 1.12, 'very-high': 1.25 };
+  base *= mileFactors[annualMiles];
+
+  // Credit score
+  const creditFactors = { excellent: 0.85, good: 1.0, fair: 1.2, poor: 1.45 };
+  base *= creditFactors[credit];
+
+  const low = Math.round(base * 0.85);
+  const high = Math.round(base * 1.15);
+  const mid = Math.round(base);
+
+  const coverageLabels = {
+    'state-min': 'Liability Only',
+    'basic': 'Basic Coverage',
+    'standard': 'Full Coverage',
+    'premium': 'Premium Coverage'
+  };
+
+  document.getElementById('monthly-result').textContent = '$' + mid + '/mo';
+  document.getElementById('result-range').textContent = 'Estimated range: $' + low + ' – $' + high + ' per month';
+  document.getElementById('result-breakdown').innerHTML =
+    'Coverage: <strong>' + coverageLabels[coverage] + '</strong><br>' +
+    'Annual estimate: <strong>$' + (mid * 12).toLocaleString() + ' – $' + (high * 12).toLocaleString() + '</strong><br><br>' +
+    '<em>This is an estimate based on national averages. Your actual rate will vary by state and insurer. Always compare quotes from multiple carriers.</em>';
+
+  const resultBox = document.getElementById('result');
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
