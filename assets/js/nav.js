@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </li>
           <li class="dropdown" id="nav-blog">
             <a href="/blog/">Blog ▾</a>
-            <ul class="dropdown-menu" style="min-width:260px;">
+            <ul class="dropdown-menu" style="min-width:260px;right:0;left:auto;">
               <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);">Life Insurance</li>
               <li><a href="/blog/how-much-life-insurance-do-i-need.html">How Much Do I Need?</a></li>
               <li><a href="/blog/term-vs-whole-life-insurance.html">Term vs Whole Life</a></li>
