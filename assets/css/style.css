@@ -125,6 +125,8 @@ img { max-width: 100%; display: block; }
 #nav-blog .dropdown-menu {
   right: 0;
   left: auto;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .dropdown.active .dropdown-menu { display: block; }
