@@ -122,6 +122,11 @@ img { max-width: 100%; display: block; }
   z-index: 200;
 }
 
+#nav-blog .dropdown-menu {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
 .dropdown.active .dropdown-menu { display: block; }
 
 .dropdown-menu li a {
