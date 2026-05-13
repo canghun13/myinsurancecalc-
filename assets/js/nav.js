@@ -164,7 +164,11 @@ document.addEventListener('DOMContentLoaded', function () {
       dropToggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
           e.preventDefault();
-          drop.classList.toggle('active');
+          const isActive = drop.classList.contains('active');
+          // 다른 드롭다운 전부 닫기
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+          // 클릭한 거 토글
+          if (!isActive) drop.classList.add('active');
         }
       });
     }
