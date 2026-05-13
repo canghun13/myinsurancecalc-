@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dwelling Coverage Calculator – How Much Home Insurance Do You Need? | My Insurance Calc</title>
+  <meta name="description" content="Calculate how much dwelling coverage you need for your home insurance. Based on your home's size, construction type, and local rebuild costs." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/dwelling-coverage.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <h1>Dwelling Coverage Calculator</h1>
+        <p>Find out exactly how much dwelling coverage your home insurance policy should include — based on your home's size, construction, and local rebuild costs.</p>
+      </div>
+
+      <div class="adslot"><!-- AdSense --></div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Dwelling Coverage</h2>
+
+            <div class="form-group">
+              <label for="sqft">Home Size (square feet)</label>
+              <input type="number" id="sqft" min="200" max="20000" placeholder="e.g. 1800" />
+            </div>
+
+            <div class="form-group">
+              <label for="construction">Construction Type</label>
+              <select id="construction">
+                <option value="wood">Wood Frame</option>
+                <option value="brick" selected>Brick / Masonry</option>
+                <option value="concrete">Concrete / Steel</option>
+                <option value="log">Log Home</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="age">Home Age</label>
+              <select id="age">
+                <option value="new">0–10 years</option>
+                <option value="mid" selected>11–30 years</option>
+                <option value="old">31–50 years</option>
+                <option value="very-old">50+ years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quality">Construction Quality</label>
+              <select id="quality">
+                <option value="basic">Basic / Standard</option>
+                <option value="mid" selected>Mid-range</option>
+                <option value="high">High-end / Custom</option>
+                <option value="luxury">Luxury</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="region">Region</label>
+              <select id="region">
+                <option value="low">Low cost (e.g. Midwest, rural South)</option>
+                <option value="mid" selected>Average (e.g. Southeast, Midwest cities)</option>
+                <option value="high">High cost (e.g. Northeast, Mountain West)</option>
+                <option value="very-high">Very high cost (e.g. California, NYC metro)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="garage">Attached Garage?</label>
+              <select id="garage">
+                <option value="none">No garage</option>
+                <option value="single">Single car garage</option>
+                <option value="double" selected>Double car garage</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="features">Special Features</label>
+              <select id="features">
+                <option value="none" selected>None</option>
+                <option value="pool">In-ground pool</option>
+                <option value="finished-basement">Finished basement</option>
+                <option value="both">Pool + Finished basement</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calculateDwelling()">Calculate My Coverage</button>
+
+            <div class="result-box" id="result">
+              <h3>Recommended Dwelling Coverage</h3>
+              <div class="result-amount" id="dwelling-result">—</div>
+              <div class="result-note" id="result-range"></div>
+              <div class="result-note" style="margin-top:12px;" id="result-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+
+          <div style="margin-top:40px;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:16px;">What Is Dwelling Coverage?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:20px;">Dwelling coverage (also called Coverage A) is the part of your homeowners insurance policy that pays to rebuild or repair the physical structure of your home if it's damaged or destroyed by a covered event — like fire, windstorm, hail, or lightning.</p>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:20px;">It does <strong>not</strong> cover the land your home sits on. It only covers the cost to rebuild the structure itself, including walls, roof, floors, built-in appliances, and attached structures like a garage.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Market Value vs. Rebuild Cost: A Critical Difference</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:20px;">The most common mistake homeowners make is insuring their home for its <em>market value</em> instead of its <em>rebuild cost</em>. These are very different numbers.</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;margin-bottom:20px;">
+              <li><strong>Market value</strong> includes the land and is influenced by location, school districts, and neighborhood demand</li>
+              <li><strong>Rebuild cost</strong> is purely what it would cost to reconstruct the physical structure using current labor and materials</li>
+            </ul>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:20px;">In expensive markets like San Francisco or New York, the market value can be 2–3x the rebuild cost. In rural areas, the rebuild cost might actually exceed market value. Always base your dwelling coverage on rebuild cost — not what you paid for the home or what it would sell for today.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">What Else Does Home Insurance Cover?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:12px;">A standard homeowners policy includes several coverage types beyond dwelling:</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;margin-bottom:20px;">
+              <li><strong>Other structures (Coverage B)</strong> — Detached garage, fence, shed — typically 10% of dwelling coverage</li>
+              <li><strong>Personal property (Coverage C)</strong> — Your belongings inside — typically 50–70% of dwelling coverage</li>
+              <li><strong>Loss of use (Coverage D)</strong> — Temporary housing while your home is repaired — typically 20% of dwelling coverage</li>
+              <li><strong>Liability (Coverage E)</strong> — Protects you if someone is injured on your property — typically $100,000–$300,000</li>
+              <li><strong>Medical payments (Coverage F)</strong> — Minor injuries to guests, regardless of fault — typically $1,000–$5,000</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Tips to Make Sure You're Not Underinsured</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Ask your insurer for a replacement cost estimator — most use a tool that calculates rebuild cost based on your home's details</li>
+              <li>Review your coverage annually — construction costs change, and your coverage should keep pace</li>
+              <li>Consider an inflation guard endorsement — automatically adjusts your coverage limit annually based on construction cost inflation</li>
+              <li>Add extended replacement cost coverage — pays 20–50% above your limit if rebuild costs exceed your coverage amount</li>
+              <li>Document your home's features — photos and a home inventory help support claims and ensure accurate coverage calculations</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>Average Rebuild Costs by Region</h3>
+            <ul>
+              <li>California — $250–$400/sq ft</li>
+              <li>Northeast — $200–$350/sq ft</li>
+              <li>Pacific Northwest — $180–$300/sq ft</li>
+              <li>Southeast — $120–$180/sq ft</li>
+              <li>Midwest — $110–$160/sq ft</li>
+              <li>Mountain West — $150–$250/sq ft</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Coverage Quick Guide</h3>
+            <ul>
+              <li><strong>Dwelling (A):</strong> Rebuild cost of structure</li>
+              <li><strong>Other structures (B):</strong> ~10% of A</li>
+              <li><strong>Personal property (C):</strong> ~50–70% of A</li>
+              <li><strong>Loss of use (D):</strong> ~20% of A</li>
+              <li><strong>Liability (E):</strong> $100K–$500K</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Tools</h3>
+            <ul>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function calculateDwelling() {
+  const sqft = parseInt(document.getElementById('sqft').value);
+  const construction = document.getElementById('construction').value;
+  const age = document.getElementById('age').value;
+  const quality = document.getElementById('quality').value;
+  const region = document.getElementById('region').value;
+  const garage = document.getElementById('garage').value;
+  const features = document.getElementById('features').value;
+
+  if (!sqft || sqft < 200 || sqft > 20000) {
+    alert('Please enter a valid home size between 200 and 20,000 sq ft.');
+    return;
+  }
+
+  // Base cost per sq ft by region
+  const regionBase = { low: 120, mid: 155, high: 220, 'very-high': 310 };
+  let costPerSqft = regionBase[region];
+
+  // Construction type multiplier
+  const constructionMult = { wood: 1.0, brick: 1.1, concrete: 1.15, log: 1.2 };
+  costPerSqft *= constructionMult[construction];
+
+  // Age multiplier (older homes cost more to rebuild to code)
+  const ageMult = { new: 0.95, mid: 1.0, old: 1.1, 'very-old': 1.2 };
+  costPerSqft *= ageMult[age];
+
+  // Quality multiplier
+  const qualityMult = { basic: 0.85, mid: 1.0, high: 1.3, luxury: 1.7 };
+  costPerSqft *= qualityMult[quality];
+
+  let total = Math.round(sqft * costPerSqft);
+
+  // Garage
+  const garageAdd = { none: 0, single: 15000, double: 25000 };
+  total += garageAdd[garage];
+
+  // Special features
+  const featuresAdd = { none: 0, pool: 30000, 'finished-basement': 40000, both: 70000 };
+  total += featuresAdd[features];
+
+  // Round to nearest 5000
+  total = Math.round(total / 5000) * 5000;
+  const low = total - 10000;
+  const high = total + 15000;
+
+  document.getElementById('dwelling-result').textContent = '$' + total.toLocaleString();
+  document.getElementById('result-range').textContent = 'Recommended range: $' + low.toLocaleString() + ' – $' + high.toLocaleString();
+  document.getElementById('result-breakdown').innerHTML =
+    'Home size: <strong>' + sqft.toLocaleString() + ' sq ft</strong><br>' +
+    'Est. rebuild cost/sq ft: <strong>$' + Math.round(costPerSqft) + '</strong><br>' +
+    'Annual premium estimate: <strong>$' + Math.round(total * 0.0065).toLocaleString() + ' – $' + Math.round(total * 0.009).toLocaleString() + '/yr</strong><br><br>' +
+    '<em>This is an estimate based on average rebuild costs. Actual coverage needs vary. Ask your insurer for a formal replacement cost assessment.</em>';
+
+  const resultBox = document.getElementById('result');
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
