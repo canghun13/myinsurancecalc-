@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SR-22 Insurance Cost Calculator – Estimate Your Rate After a DUI | My Insurance Calc</title>
+  <meta name="description" content="Estimate how much SR-22 insurance will cost after a DUI, reckless driving, or license suspension. See filing fees, premium increases, and how long you'll need it." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/sr22-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <h1>SR-22 Insurance Cost Calculator</h1>
+        <p>Estimate your monthly insurance cost after an SR-22 requirement — including filing fees and premium increases based on your violation and driving profile.</p>
+      </div>
+
+      <div class="adslot"><!-- AdSense --></div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Enter Your Details</h2>
+
+            <div class="form-group">
+              <label for="violation">Reason for SR-22 Requirement</label>
+              <select id="violation">
+                <option value="dui">DUI / DWI</option>
+                <option value="reckless">Reckless Driving</option>
+                <option value="uninsured">Driving Without Insurance</option>
+                <option value="suspended">License Suspension / Too Many Points</option>
+                <option value="at-fault">At-Fault Accident (Uninsured)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="age">Driver Age</label>
+              <input type="number" id="age" min="16" max="85" placeholder="e.g. 28" />
+            </div>
+
+            <div class="form-group">
+              <label for="prior-rate">Current or Prior Monthly Premium (before violation)</label>
+              <input type="number" id="prior-rate" min="30" max="500" placeholder="e.g. 120" />
+              <small style="color:var(--text-muted);font-size:0.82rem;">Leave blank to use national average for your age.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="state-tier">State Penalty Tier</label>
+              <select id="state-tier">
+                <option value="high">High-penalty state (CA, FL, MI, NY, LA)</option>
+                <option value="mid" selected>Average state</option>
+                <option value="low">Lower-penalty state (OH, ME, IA, VT)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="vehicle-type">Vehicle Type</label>
+              <select id="vehicle-type">
+                <option value="sedan" selected>Sedan / Coupe</option>
+                <option value="suv">SUV / Crossover</option>
+                <option value="truck">Pickup Truck</option>
+                <option value="sports">Sports Car</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="coverage">Coverage Level Required</label>
+              <select id="coverage">
+                <option value="state-min">State Minimum (Liability Only)</option>
+                <option value="standard" selected>Standard (Full Coverage)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calculateSR22()">Estimate My SR-22 Cost</button>
+
+            <div class="result-box" id="result">
+              <h3>Estimated Monthly Cost with SR-22</h3>
+              <div class="result-amount" id="monthly-result">—</div>
+              <div class="result-note" id="result-detail"></div>
+              <div class="result-note" style="margin-top:12px;" id="result-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+
+          <div style="margin-top:40px;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:16px;">What Is SR-22 Insurance?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">SR-22 is not actually a type of insurance — it's a certificate of financial responsibility that your insurer files with your state's DMV on your behalf. It proves that you carry at least the minimum required auto insurance coverage.</p>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-top:12px;">You're typically required to carry an SR-22 after a serious driving violation such as a DUI, reckless driving conviction, driving without insurance, or accumulating too many points on your license. The requirement usually lasts 2–3 years depending on your state and violation.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">How Much Does SR-22 Filing Cost?</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">The SR-22 filing fee itself is relatively small — typically $15–$35 as a one-time or annual charge. The real cost is the increase in your insurance premium that comes with the underlying violation on your driving record. A DUI can increase your premium by 70–150% or more, depending on your state and insurer.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">How Long Do You Need SR-22?</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Most states require SR-22 for 3 years after a DUI or serious violation. Some states require it for only 2 years; others up to 5 years for repeat offenses. Your state DMV will specify the exact duration when you're required to file.</p>
+            <p style="color:var(--text-muted);font-size:0.95rem;margin-top:8px;">If your policy lapses or is cancelled during the SR-22 period, your insurer must notify the DMV, which typically results in immediate license suspension. Continuous coverage is essential.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Non-Owner SR-22</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">If you don't own a vehicle but still need to satisfy an SR-22 requirement (for example, to reinstate your license), you can get a non-owner SR-22 policy. These are typically cheaper than standard policies — often $200–$500 per year — because they only provide liability coverage when you drive someone else's vehicle.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">How to Lower Your SR-22 Insurance Cost</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Shop multiple insurers — SR-22 rates vary enormously between carriers for the same violation</li>
+              <li>Consider high-risk specialists like The General, Dairyland, or Bristol West who are more competitive for SR-22 drivers</li>
+              <li>Raise your deductible if you can afford the out-of-pocket cost in a claim</li>
+              <li>Ask about defensive driving course discounts — some states mandate discounts for completion</li>
+              <li>Maintain continuous coverage — any lapse resets the clock and can make rates worse</li>
+              <li>After the SR-22 period ends, immediately shop for better rates — your violation ages off and you may see significant savings</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">SR-22 vs. FR-44</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Florida and Virginia use FR-44 instead of SR-22 for DUI violations. The FR-44 requires higher liability coverage limits than state minimums — typically double — making it more expensive than a standard SR-22 filing. If you're in Florida or Virginia and had a DUI, expect higher costs than the national SR-22 average.</p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>SR-22 Duration by State</h3>
+            <ul>
+              <li>Most states — 3 years</li>
+              <li>California — 3 years</li>
+              <li>Florida (FR-44) — 3 years</li>
+              <li>Virginia (FR-44) — 3 years</li>
+              <li>Indiana — 3 years</li>
+              <li>Arizona — 3 years</li>
+              <li>New York — 3 years</li>
+              <li>Ohio — 3–5 years</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Average Premium Increase by Violation</h3>
+            <ul>
+              <li>DUI / DWI — +80% to +150%</li>
+              <li>Reckless driving — +50% to +100%</li>
+              <li>Uninsured accident — +40% to +80%</li>
+              <li>License suspension — +30% to +60%</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Tools & Articles</h3>
+            <ul>
+              <li><a href="/tools/car-insurance.html">Car Insurance Calculator</a></li>
+              <li><a href="/blog/life-insurance-after-dui.html">Life Insurance After a DUI</a></li>
+              <li><a href="/blog/how-to-lower-car-insurance.html">How to Lower Car Insurance</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function calculateSR22() {
+  const violation = document.getElementById('violation').value;
+  const age = parseInt(document.getElementById('age').value);
+  const priorRateInput = document.getElementById('prior-rate').value;
+  const stateTier = document.getElementById('state-tier').value;
+  const vehicleType = document.getElementById('vehicle-type').value;
+  const coverage = document.getElementById('coverage').value;
+
+  if (!age || age < 16 || age > 85) {
+    alert('Please enter a valid age between 16 and 85.');
+    return;
+  }
+
+  // Base rate: use user input or national average by age
+  let baseRate;
+  if (priorRateInput && parseFloat(priorRateInput) > 0) {
+    baseRate = parseFloat(priorRateInput);
+  } else {
+    // National average estimates by age
+    if (age < 20) baseRate = 280;
+    else if (age < 25) baseRate = 190;
+    else if (age < 30) baseRate = 140;
+    else if (age < 65) baseRate = 110;
+    else baseRate = 125;
+
+    // Vehicle type adjustment on base
+    const vehicleAdj = { sedan: 1.0, suv: 1.1, truck: 1.05, sports: 1.35 };
+    baseRate *= vehicleAdj[vehicleType];
+
+    // Coverage adjustment
+    if (coverage === 'state-min') baseRate *= 0.55;
+  }
+
+  // Violation multiplier
+  const violationMultipliers = {
+    dui: 1.95,
+    reckless: 1.65,
+    uninsured: 1.50,
+    suspended: 1.35,
+    'at-fault': 1.45
+  };
+  let newRate = baseRate * violationMultipliers[violation];
+
+  // State tier adjustment
+  const stateTierAdj = { high: 1.2, mid: 1.0, low: 0.85 };
+  newRate *= stateTierAdj[stateTier];
+
+  // SR-22 filing fee (monthly equivalent)
+  const filingFeeMonthly = 2; // ~$25/year
+  newRate += filingFeeMonthly;
+
+  const low = Math.round(newRate * 0.85);
+  const high = Math.round(newRate * 1.15);
+  const mid = Math.round(newRate);
+
+  const violationLabels = {
+    dui: 'DUI / DWI',
+    reckless: 'Reckless Driving',
+    uninsured: 'Driving Without Insurance',
+    suspended: 'License Suspension',
+    'at-fault': 'At-Fault Accident (Uninsured)'
+  };
+
+  const increase = Math.round(((mid - baseRate) / baseRate) * 100);
+  const yearlyCost = mid * 12;
+  const sr22Period = violation === 'dui' ? 3 : 3;
+
+  document.getElementById('monthly-result').textContent = '$' + mid + '/mo';
+  document.getElementById('result-detail').textContent =
+    'Estimated range: $' + low + ' – $' + high + ' per month';
+  document.getElementById('result-breakdown').innerHTML =
+    'Violation: <strong>' + violationLabels[violation] + '</strong><br>' +
+    'Estimated premium increase: <strong>+' + increase + '%</strong><br>' +
+    'Annual cost: <strong>~$' + yearlyCost.toLocaleString() + '</strong><br>' +
+    'SR-22 period: <strong>~' + sr22Period + ' years</strong> (varies by state)<br>' +
+    'Total estimated SR-22 period cost: <strong>~$' + (yearlyCost * sr22Period).toLocaleString() + '</strong><br><br>' +
+    '<em>Estimates based on national averages. Actual rates vary significantly by state and insurer. Always compare quotes from multiple carriers — SR-22 rates vary more between insurers than standard policies.</em>';
+
+  const resultBox = document.getElementById('result');
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

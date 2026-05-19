@@ -21,9 +21,36 @@
         <p>Practical, jargon-free articles to help you make smarter insurance decisions.</p>
       </div>
 
+      <div class="blog-search-wrap">
+        <input type="text" id="blogSearch" placeholder="Search articles…" autocomplete="off" />
+        <span id="blogSearchCount"></span>
+      </div>
+
       <div class="adslot"><!-- AdSense --></div>
 
-      <div class="blog-grid">
+      <div class="blog-grid" id="blogGrid">
+
+        <a href="/blog/life-insurance-after-breast-cancer.html" class="blog-card">
+          <span class="blog-tag">Life Insurance</span>
+          <h3>Life Insurance After Breast Cancer: What Survivors Need to Know</h3>
+          <p>Stage-by-stage guide to what coverage is available, waiting periods, and how to get the best rate as a breast cancer survivor.</p>
+          <span class="blog-meta">9 min read</span>
+        </a>
+
+        <a href="/blog/life-insurance-after-colon-cancer.html" class="blog-card">
+          <span class="blog-tag">Life Insurance</span>
+          <h3>Life Insurance After Colon Cancer: Your Options Explained</h3>
+          <p>How insurers evaluate colorectal cancer history, CEA levels, and surveillance results — and when standard rates become available.</p>
+          <span class="blog-meta">9 min read</span>
+        </a>
+
+        <a href="/blog/life-insurance-after-prostate-cancer.html" class="blog-card">
+          <span class="blog-tag">Life Insurance</span>
+          <h3>Life Insurance After Prostate Cancer: Your Options Explained</h3>
+          <p>Prostate cancer survivors often qualify for standard rates. Learn how Gleason score, PSA levels, and time since treatment affect your options.</p>
+          <span class="blog-meta">9 min read</span>
+        </a>
+
         <a href="/blog/how-much-life-insurance-do-i-need.html" class="blog-card">
           <span class="blog-tag">Life Insurance</span>
           <h3>How Much Life Insurance Do I Actually Need?</h3>
@@ -151,5 +178,28 @@
 </main>
 
 <script src="/assets/js/nav.js"></script>
+<script>
+(function(){
+  var input = document.getElementById('blogSearch');
+  var count = document.getElementById('blogSearchCount');
+  var grid  = document.getElementById('blogGrid');
+  if(!input || !grid) return;
+  var cards = Array.from(grid.querySelectorAll('.blog-card'));
+
+  function filter(){
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var text = card.textContent.toLowerCase();
+      var show = !q || text.indexOf(q) !== -1;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    count.textContent = q ? visible + ' result' + (visible !== 1 ? 's' : '') : '';
+  }
+
+  input.addEventListener('input', filter);
+})();
+</script>
 </body>
 </html>

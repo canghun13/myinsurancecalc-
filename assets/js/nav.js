@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
               <li><a href="/tools/car-insurance.html">Car Insurance</a></li>
               <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage</a></li>
+              <li><a href="/tools/sr22-insurance.html">SR-22 Insurance</a></li>
             </ul>
           </li>
           <li class="dropdown" id="nav-blog">
@@ -47,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/blog/life-insurance-for-truck-drivers.html">Life Insurance for Truck Drivers</a></li>
               <li><a href="/blog/life-insurance-after-dui.html">Life Insurance After a DUI</a></li>
               <li><a href="/blog/life-insurance-after-thyroid-cancer.html">Life Insurance After Thyroid Cancer</a></li>
+              <li><a href="/blog/life-insurance-after-breast-cancer.html">Life Insurance After Breast Cancer</a></li>
+              <li><a href="/blog/life-insurance-after-colon-cancer.html">Life Insurance After Colon Cancer</a></li>
+              <li><a href="/blog/life-insurance-after-prostate-cancer.html">Life Insurance After Prostate Cancer</a></li>
               <li><a href="/blog/life-insurance-for-nurses.html">Life Insurance for Nurses</a></li>
               <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:4px;">Freelancer / Gig</li>
               <li><a href="/blog/freelancer-insurance-guide.html">Freelancer Insurance Guide</a></li>
@@ -90,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
             <li><a href="/tools/car-insurance.html">Car Insurance</a></li>
             <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage</a></li>
+            <li><a href="/tools/sr22-insurance.html">SR-22 Insurance</a></li>
           </ul>
         </div>
         <div class="footer-links">
