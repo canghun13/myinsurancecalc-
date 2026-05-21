@@ -622,3 +622,15 @@ img { max-width: 100%; display: block; }
   color: #64748b;
   white-space: nowrap;
 }
+
+/* ── Article Disclaimer ── */
+.article-disclaimer {
+  margin-top: 40px;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-left: 3px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.6;
+}
