@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motorcycle Insurance Calculator – Estimate Your Monthly Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate your motorcycle insurance cost by bike type, engine size, rider age, experience, and coverage level. Instant estimate with no signup required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/motorcycle-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <h1>Motorcycle Insurance Calculator</h1>
+        <p>Estimate your monthly motorcycle insurance premium based on your bike type, engine size, rider profile, and coverage level. No signup required.</p>
+      </div>
+
+      <div class="adslot"><!-- AdSense --></div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Enter Your Details</h2>
+
+            <div class="form-group">
+              <label for="bike-type">Bike Type</label>
+              <select id="bike-type">
+                <option value="cruiser">Cruiser (Harley-Davidson, Indian, Honda Shadow)</option>
+                <option value="standard" selected>Standard / Naked (Honda CB, Kawasaki Z, Yamaha MT)</option>
+                <option value="touring">Touring (Honda Gold Wing, BMW R Series)</option>
+                <option value="sport">Sport / Supersport (CBR, R6, ZX-6R, Ducati)</option>
+                <option value="adventure">Adventure / Dual-Sport (BMW GS, KTM Adventure)</option>
+                <option value="scooter">Scooter / Moped</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="engine-cc">Engine Size (cc)</label>
+              <select id="engine-cc">
+                <option value="under300">Under 300cc</option>
+                <option value="300to600">300cc – 600cc</option>
+                <option value="600to1000" selected>600cc – 1000cc</option>
+                <option value="over1000">Over 1000cc</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rider-age">Rider Age</label>
+              <input type="number" id="rider-age" min="16" max="85" placeholder="e.g. 32" />
+            </div>
+
+            <div class="form-group">
+              <label for="experience">Years of Riding Experience</label>
+              <select id="experience">
+                <option value="0">0 – 1 year (New rider)</option>
+                <option value="2">2 – 3 years</option>
+                <option value="4" selected>4 – 7 years</option>
+                <option value="8">8+ years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="msf-course">Completed MSF / Safety Course?</label>
+              <select id="msf-course">
+                <option value="yes">Yes</option>
+                <option value="no" selected>No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bike-value">Estimated Bike Value ($)</label>
+              <input type="number" id="bike-value" min="500" max="100000" placeholder="e.g. 8000" />
+            </div>
+
+            <div class="form-group">
+              <label for="coverage-type">Coverage Level</label>
+              <select id="coverage-type">
+                <option value="liability">Liability Only (State Minimum)</option>
+                <option value="standard" selected>Standard (Liability + Collision)</option>
+                <option value="full">Full Coverage (Comprehensive + Collision + Liability)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="storage">How Is the Bike Stored?</label>
+              <select id="storage">
+                <option value="garage" selected>Locked garage or secured storage</option>
+                <option value="driveway">Driveway / off-street</option>
+                <option value="street">Street parked</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="violations">Violations or At-Fault Claims (Last 3 Years)</label>
+              <select id="violations">
+                <option value="0" selected>None</option>
+                <option value="1">1 minor violation or claim</option>
+                <option value="2">2 violations or claims</option>
+                <option value="3">3 or more / serious violation (DUI, reckless)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calculateMoto()">Estimate My Premium</button>
+
+            <div class="result-box" id="result">
+              <h3>Estimated Monthly Premium</h3>
+              <div class="result-amount" id="monthly-result">—</div>
+              <div class="result-note" id="result-detail"></div>
+              <div class="result-note" style="margin-top:12px;" id="result-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+
+          <div style="margin-top:40px;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:16px;">What Affects Motorcycle Insurance Rates?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Motorcycle insurance is priced using many of the same factors as car insurance, but with a few key differences. Bike type and engine size carry more weight in motorcycle underwriting than vehicle type does in auto insurance, because risk profiles vary much more dramatically between, say, a scooter and a 1000cc supersport.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Bike Type</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Sport and supersport bikes consistently rank among the most expensive to insure. They're faster, statistically involved in more accidents, and attract younger riders who are priced as higher risk. Cruisers and standard bikes are significantly cheaper to insure. Scooters and mopeds are typically the least expensive.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Engine Size (cc)</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Higher displacement engines are generally associated with higher speeds and greater risk, which translates to higher premiums. A 300cc beginner bike will cost substantially less to insure than a 1000cc performance machine, even for the same rider.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Rider Age and Experience</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">New riders pay significantly more regardless of age. Statistically, the first 1–2 years of riding are the highest-risk period, and insurers price accordingly. Riders under 25 face an additional age surcharge similar to young drivers on auto policies. After 5+ years of clean riding, discounts become meaningful.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Safety Course Completion</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Completing an approved rider safety course (such as the MSF Basic RiderCourse) qualifies for a discount at most major insurers — typically 5–15%. Some states also mandate that insurers offer this discount. It's one of the easiest and most reliable ways to reduce your premium as a new rider.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Coverage Level</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Liability-only coverage protects others if you cause an accident, but pays nothing for your bike. Collision coverage pays for damage to your bike in an accident regardless of fault. Comprehensive covers non-collision events: theft, fire, weather damage, vandalism. For bikes worth less than approximately $2,000, liability-only may make financial sense. For financed bikes, lenders typically require full coverage.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Storage and Security</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">A bike stored in a locked garage is significantly less likely to be stolen or vandalized than one parked on the street. Many insurers offer storage discounts of 5–15% for garaged bikes. Anti-theft devices (disc locks, GPS trackers, alarm systems) can also qualify for additional discounts.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Average Motorcycle Insurance Costs by Bike Type</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">These are approximate annual ranges for full coverage based on typical national averages. Actual rates vary significantly by state, rider profile, and insurer.</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>Cruiser:</strong> Approximately $200–$600/year</li>
+              <li><strong>Standard / Naked:</strong> Approximately $300–$700/year</li>
+              <li><strong>Touring:</strong> Approximately $400–$900/year</li>
+              <li><strong>Adventure / Dual-Sport:</strong> Approximately $350–$800/year</li>
+              <li><strong>Sport / Supersport:</strong> Approximately $700–$2,500+/year</li>
+              <li><strong>Scooter / Moped:</strong> Approximately $100–$300/year</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">How to Lower Your Motorcycle Insurance Premium</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Complete an MSF or state-approved safety course for an immediate discount</li>
+              <li>Choose a less powerful bike — dropping from a 1000cc sport bike to a 600cc standard saves significantly</li>
+              <li>Store your bike in a locked garage and add an anti-theft device</li>
+              <li>Bundle with your auto or renters/homeowners policy — multi-policy discounts apply at most major insurers</li>
+              <li>Raise your deductible if you have savings to cover a higher out-of-pocket cost</li>
+              <li>Ask about seasonal or storage discounts if you don't ride year-round</li>
+              <li>Shop multiple carriers — motorcycle insurance rates vary more between insurers than auto insurance</li>
+              <li>Maintain a clean driving record — even car violations can affect your motorcycle premium</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Motorcycle-Specific Coverages to Consider</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Beyond the standard collision, comprehensive, and liability, several coverages are specific to or especially valuable for motorcyclists:</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>Accessory and custom parts coverage</strong> — Standard policies often cover only the factory bike. If you've added custom exhaust, saddlebags, lights, or other aftermarket parts, you may need additional coverage for those items.</li>
+              <li><strong>Riding gear coverage</strong> — Some insurers offer coverage for helmets, jackets, gloves, and boots if they're damaged in an accident. Motorcycle gear is expensive and worth protecting.</li>
+              <li><strong>Roadside assistance</strong> — Motorcycles break down and run out of fuel differently than cars. Motorcycle-specific roadside assistance includes flatbed towing (many tow trucks can't handle motorcycles) and fuel delivery.</li>
+              <li><strong>Trip interruption coverage</strong> — If your bike breaks down far from home during a trip, some policies cover lodging and transportation while it's repaired.</li>
+              <li><strong>Uninsured/underinsured motorist coverage</strong> — Particularly important for motorcyclists, who are more vulnerable in accidents with uninsured drivers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>Typical Monthly Ranges</h3>
+            <ul>
+              <li>Scooter — $8–$25/mo</li>
+              <li>Cruiser — $17–$50/mo</li>
+              <li>Standard — $25–$58/mo</li>
+              <li>Touring — $33–$75/mo</li>
+              <li>Adventure — $29–$67/mo</li>
+              <li>Sport / Supersport — $58–$208+/mo</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Key Rate Factors</h3>
+            <ul>
+              <li>Bike type &amp; engine size</li>
+              <li>Rider age &amp; experience</li>
+              <li>Safety course completion</li>
+              <li>Coverage level</li>
+              <li>Storage location</li>
+              <li>Driving record</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Tools &amp; Articles</h3>
+            <ul>
+              <li><a href="/tools/car-insurance.html">Car Insurance Calculator</a></li>
+              <li><a href="/tools/sr22-insurance.html">SR-22 Insurance Calculator</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance Calculator</a></li>
+              <li><a href="/blog/how-to-lower-car-insurance.html">How to Lower Car Insurance</a></li>
+              <li><a href="/blog/does-car-insurance-cover-ev-battery.html">Does Insurance Cover EV Battery?</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function calculateMoto() {
+  const bikeType = document.getElementById('bike-type').value;
+  const engineCc = document.getElementById('engine-cc').value;
+  const age = parseInt(document.getElementById('rider-age').value);
+  const experience = document.getElementById('experience').value;
+  const msfCourse = document.getElementById('msf-course').value;
+  const bikeValueInput = document.getElementById('bike-value').value;
+  const coverageType = document.getElementById('coverage-type').value;
+  const storage = document.getElementById('storage').value;
+  const violations = document.getElementById('violations').value;
+
+  if (!age || age < 16 || age > 85) {
+    alert('Please enter a valid rider age between 16 and 85.');
+    return;
+  }
+
+  // Base monthly rate by bike type
+  const bikeBase = {
+    cruiser: 28,
+    standard: 38,
+    touring: 52,
+    sport: 95,
+    adventure: 45,
+    scooter: 14
+  };
+  let base = bikeBase[bikeType];
+
+  // Engine size adjustment
+  const ccAdj = { under300: 0.70, '300to600': 0.90, '600to1000': 1.0, over1000: 1.30 };
+  base *= ccAdj[engineCc];
+
+  // Age adjustment
+  if (age < 21) base *= 1.55;
+  else if (age < 25) base *= 1.30;
+  else if (age < 30) base *= 1.10;
+  else if (age >= 65) base *= 1.12;
+
+  // Experience adjustment
+  const expAdj = { '0': 1.50, '2': 1.20, '4': 1.0, '8': 0.88 };
+  base *= expAdj[experience];
+
+  // MSF course discount
+  if (msfCourse === 'yes') base *= 0.91;
+
+  // Coverage adjustment
+  const covAdj = { liability: 0.42, standard: 0.75, full: 1.0 };
+  base *= covAdj[coverageType];
+
+  // Bike value adjustment for full/standard (collision risk)
+  if (bikeValueInput && parseFloat(bikeValueInput) > 0 && coverageType !== 'liability') {
+    const val = parseFloat(bikeValueInput);
+    if (val < 3000) base *= 0.80;
+    else if (val > 15000) base *= 1.25;
+    else if (val > 8000) base *= 1.10;
+  }
+
+  // Storage adjustment
+  const storageAdj = { garage: 0.92, driveway: 1.0, street: 1.12 };
+  base *= storageAdj[storage];
+
+  // Violations adjustment
+  const violAdj = { '0': 1.0, '1': 1.35, '2': 1.65, '3': 2.10 };
+  base *= violAdj[violations];
+
+  const mid = Math.round(base);
+  const low = Math.round(base * 0.82);
+  const high = Math.round(base * 1.22);
+  const annual = mid * 12;
+
+  const bikeLabels = {
+    cruiser: 'Cruiser', standard: 'Standard / Naked', touring: 'Touring',
+    sport: 'Sport / Supersport', adventure: 'Adventure / Dual-Sport', scooter: 'Scooter / Moped'
+  };
+  const covLabels = {
+    liability: 'Liability Only', standard: 'Standard (Liability + Collision)', full: 'Full Coverage'
+  };
+
+  let tips = [];
+  if (msfCourse === 'no') tips.push('Complete an MSF safety course for a 5–15% discount');
+  if (storage === 'street') tips.push('Storing in a locked garage could reduce your premium by ~8–12%');
+  if (bikeType === 'sport') tips.push('Switching to a standard or cruiser could significantly reduce your rate');
+  if (violations !== '0') tips.push('Rates improve substantially after 3 years with a clean record');
+
+  let breakdownHTML =
+    'Bike type: <strong>' + bikeLabels[bikeType] + '</strong><br>' +
+    'Coverage: <strong>' + covLabels[coverageType] + '</strong><br>' +
+    'Estimated annual cost: <strong>~$' + annual.toLocaleString() + '</strong><br><br>';
+
+  if (tips.length > 0) {
+    breakdownHTML += '<strong>Ways to lower your rate:</strong><br><ul style="margin:6px 0 0 16px;line-height:1.9;">';
+    tips.forEach(t => { breakdownHTML += '<li>' + t + '</li>'; });
+    breakdownHTML += '</ul><br>';
+  }
+
+  breakdownHTML += '<em>Estimates based on national averages. Actual premiums vary by state, insurer, and individual profile. Always compare quotes from multiple carriers before purchasing.</em>';
+
+  document.getElementById('monthly-result').textContent = '$' + mid + '/mo';
+  document.getElementById('result-detail').textContent = 'Estimated range: $' + low + ' – $' + high + ' per month';
+  document.getElementById('result-breakdown').innerHTML = breakdownHTML;
+
+  const resultBox = document.getElementById('result');
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
