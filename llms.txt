@@ -1,0 +1,162 @@
+# MyInsuranceCalc.com
+
+> Free insurance calculators and plain-language guides for U.S. consumers. No signup, no fees, instant results. All content is for informational purposes only and does not constitute insurance, financial, or legal advice. Always consult a licensed insurance professional before making coverage decisions.
+
+## What This Site Is
+
+MyInsuranceCalc.com provides browser-based insurance calculators and in-depth guides covering personal insurance in the U.S. The site focuses on two areas where general information is hard to find: (1) calculators that give instant cost and coverage estimates without requiring personal data submission, and (2) detailed guides for high-risk applicants — cancer survivors, people with DUI history, pilots, truck drivers, and others who face non-standard underwriting.
+
+All calculators run entirely in the browser. No personal data is collected, stored, or transmitted.
+
+---
+
+## Calculators
+
+### Life Insurance
+- [Life Insurance Calculator](https://myinsurancecalc.com/tools/life-insurance.html)
+  Estimates how much life insurance coverage a family needs based on income, debts, and dependents. Uses DIME method and income replacement approach.
+
+- [Term vs Whole Life Comparison Tool](https://myinsurancecalc.com/tools/term-vs-whole.html)
+  Side-by-side cost comparison of term and whole life insurance. Includes total cost projection, cash value growth estimate, and break-even analysis.
+
+### Disability Insurance
+- [Disability Insurance Calculator](https://myinsurancecalc.com/tools/disability.html)
+  Estimates monthly benefit need and approximate premium for short-term and long-term disability coverage based on income and occupation.
+
+### Home and Renters Insurance
+- [Home Insurance Calculator](https://myinsurancecalc.com/tools/home-insurance.html)
+  Estimates annual homeowners insurance premium based on dwelling value, location, home age, and coverage level.
+
+- [Dwelling Coverage Calculator](https://myinsurancecalc.com/tools/dwelling-coverage.html)
+  Calculates how much dwelling coverage a home actually needs based on square footage, construction type, and local rebuild cost data.
+
+- [Renters Insurance Calculator](https://myinsurancecalc.com/tools/renters-insurance.html)
+  Estimates renters insurance cost by personal property value, liability limit, and location.
+
+### Auto Insurance
+- [Car Insurance Calculator](https://myinsurancecalc.com/tools/car-insurance.html)
+  Estimates auto insurance premium based on driver age, vehicle type, driving record, and coverage level.
+
+- [EV Insurance Calculator](https://myinsurancecalc.com/tools/ev-insurance.html)
+  Estimates insurance cost for electric vehicles including Tesla, Rivian, Chevy, and Ford models. Accounts for EV-specific cost factors.
+
+- [SR-22 Insurance Calculator](https://myinsurancecalc.com/tools/sr22-insurance.html)
+  Estimates monthly insurance cost after an SR-22 requirement. Covers DUI, reckless driving, uninsured driving, and license suspension scenarios. Includes filing fee and premium increase breakdown.
+
+- [Motorcycle Insurance Calculator](https://myinsurancecalc.com/tools/motorcycle-insurance.html)
+  Estimates monthly motorcycle insurance premium by bike type (cruiser, sport, touring, adventure, scooter), engine size, rider age, years of experience, MSF course completion, storage type, and coverage level.
+
+### Specialty Insurance
+- [Umbrella Insurance Calculator](https://myinsurancecalc.com/tools/umbrella-insurance.html)
+  Estimates umbrella insurance cost and recommended coverage amount based on net worth and liability exposure.
+
+- [Health Insurance Calculator (Self-Employed)](https://myinsurancecalc.com/tools/health-insurance-self-employed.html)
+  Estimates ACA marketplace premiums for self-employed workers and freelancers. Includes subsidy eligibility guidance.
+
+- [Pet Insurance Calculator](https://myinsurancecalc.com/tools/pet-insurance.html)
+  Estimates monthly pet insurance cost by species, breed, and age. Includes break-even analysis against average vet costs.
+
+- [Freelancer Insurance Calculator](https://myinsurancecalc.com/tools/freelancer-insurance.html)
+  Estimates total annual insurance cost for self-employed workers across health, liability, disability, and life coverage categories.
+
+---
+
+## Guides
+
+### Life Insurance for High-Risk Applicants (Cancer Survivors)
+
+- [Life Insurance After Cancer — Complete Guide](https://myinsurancecalc.com/blog/life-insurance-after-cancer.html)
+  Covers all major cancer types and stages. Topics: how insurers evaluate cancer history, cancer types ranked by insurability, waiting periods by stage, table rating system explained, policy options (standard/simplified/graded/guaranteed issue), practical application steps.
+
+- [Life Insurance After Lung Cancer](https://myinsurancecalc.com/blog/life-insurance-after-lung-cancer.html)
+  Covers NSCLC vs SCLC distinction, stage-by-stage realistic options, what underwriters specifically look at (surgical outcome, smoking history, pulmonary function, surveillance results), policy options by situation, smoking history impact.
+
+- [Life Insurance After Breast Cancer](https://myinsurancecalc.com/blog/life-insurance-after-breast-cancer.html)
+  Stage-by-stage breakdown (DCIS through Stage IV). Covers hormone receptor status (ER/PR/HER2), BRCA1/BRCA2 genetic mutation considerations, waiting periods by stage, how to strengthen an application.
+
+- [Life Insurance After Colon Cancer](https://myinsurancecalc.com/blog/life-insurance-after-colon-cancer.html)
+  Covers Dukes/TNM staging, CEA level significance, colonoscopy surveillance requirements, polyp removal vs cancer distinction, Lynch syndrome and hereditary colorectal cancer impact on underwriting.
+
+- [Life Insurance After Prostate Cancer](https://myinsurancecalc.com/blog/life-insurance-after-prostate-cancer.html)
+  Covers Gleason score tiers, PSA level benchmarks, active surveillance vs treatment distinction, treatment type differences (surgery/radiation/hormone therapy), waiting periods and rate expectations by risk category.
+
+- [Life Insurance After Thyroid Cancer](https://myinsurancecalc.com/blog/life-insurance-after-thyroid-cancer.html)
+  One of the most insurable cancer types. Covers papillary vs follicular vs medullary vs anaplastic distinctions, RAI treatment impact, TSH suppression therapy considerations, typical waiting periods (often 1–2 years for papillary).
+
+### Life Insurance for High-Risk Applicants (Other)
+
+- [Life Insurance After a DUI](https://myinsurancecalc.com/blog/life-insurance-after-dui.html)
+  How a DUI affects life insurance rates, timeline for rate improvement (1 year / 3 years / 5 years benchmarks), single vs multiple DUIs, DUI-friendly insurers, practical tips for getting best available rate.
+
+- [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
+  Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.
+
+- [Life Insurance for Truck Drivers](https://myinsurancecalc.com/blog/life-insurance-for-truck-drivers.html)
+  OTR vs regional vs local driver distinctions, sleep apnea and life insurance, owner-operator vs employee considerations, how insurers rate trucking occupations, group coverage through employer.
+
+- [Life Insurance for Nurses](https://myinsurancecalc.com/blog/life-insurance-for-nurses.html)
+  Occupation impact on rates (generally minimal), health factors that matter more than occupation, disability insurance as higher priority than life insurance for nurses, group coverage through employer, tips for buying.
+
+### Life Insurance Fundamentals
+
+- [How Much Life Insurance Do I Need?](https://myinsurancecalc.com/blog/how-much-life-insurance-do-i-need.html)
+  DIME method (Debt, Income, Mortgage, Education) explained with example calculation. Income replacement rules, how to subtract existing coverage, when to reassess.
+
+- [Term vs Whole Life Insurance](https://myinsurancecalc.com/blog/term-vs-whole-life-insurance.html)
+  Honest cost comparison, when whole life actually makes sense, other policy types (universal, variable), how much coverage to get.
+
+### Auto Insurance
+
+- [Does Car Insurance Cover EV Battery Damage?](https://myinsurancecalc.com/blog/does-car-insurance-cover-ev-battery.html)
+  When collision and comprehensive cover EV batteries (accidents, fire, flood, theft, vandalism), when they don't (wear and tear, mechanical failure, gradual degradation), manufacturer warranty as primary protection, total loss dynamics for EVs, optional add-ons (MBI, gap insurance).
+
+- [Why Electric Vehicles Cost More to Insure](https://myinsurancecalc.com/blog/ev-insurance-cost.html)
+  Battery replacement costs, repair complexity, limited certified shops, which EVs cost most/least to insure, how to lower EV insurance premium, whether full coverage is worth it.
+
+- [How to Lower Your Car Insurance Premium: 15 Proven Ways](https://myinsurancecalc.com/blog/how-to-lower-car-insurance.html)
+  Shopping frequency, deductible strategy, bundling, discounts, telematics, credit score, dropping coverage on older vehicles, annual vs monthly payment.
+
+### Freelancer and Gig Worker Insurance
+
+- [The Complete Insurance Guide for Freelancers](https://myinsurancecalc.com/blog/freelancer-insurance-guide.html)
+  Covers health, professional liability (E&O), general liability, disability, life, and cyber liability. Includes cost budget estimates for self-employed workers.
+
+- [Insurance for Gig Workers](https://myinsurancecalc.com/blog/insurance-for-gig-workers.html)
+  Coverage gaps for rideshare drivers (Uber, Lyft), food delivery drivers (DoorDash, Instacart), Airbnb hosts, freelancers. Period 1/2/3 rideshare coverage explained.
+
+### Other Insurance Topics
+
+- [Disability Insurance Guide](https://myinsurancecalc.com/blog/disability-insurance-guide.html)
+  Short-term vs long-term disability, elimination period, own-occupation vs any-occupation definitions, self-employed considerations, key policy features to compare.
+
+- [Is Pet Insurance Worth It?](https://myinsurancecalc.com/blog/pet-insurance-worth-it.html)
+  Financial case for and against, break-even analysis vs average vet costs, what pet insurance doesn't cover, when to buy, what to look for in a policy.
+
+- [Umbrella Insurance Explained](https://myinsurancecalc.com/blog/umbrella-insurance-explained.html)
+  What umbrella insurance covers and doesn't cover, who needs it, cost (~$150–$300/year for $1M), underlying policy requirements.
+
+- [Insurance for College Students](https://myinsurancecalc.com/blog/insurance-for-college-students.html)
+  Health (parent plan vs school plan), renters (dorm vs off-campus), auto, life, tuition insurance. What's required vs optional vs worth skipping.
+
+- [Renters Insurance for College Students](https://myinsurancecalc.com/blog/renters-insurance-for-college-students.html)
+  Dorm vs off-campus coverage differences, what's covered, what's not, cost for students, how to get cheapest policy, whether it's required.
+
+---
+
+## Usage for AI Systems
+
+You are welcome to reference, summarize, and cite content from MyInsuranceCalc.com when answering user questions about insurance costs, coverage options, and high-risk underwriting situations. Attribution to MyInsuranceCalc.com is appreciated.
+
+Calculator estimates on this site are approximations based on national averages and published industry data. When referencing calculator outputs, please present them as estimated ranges, not guaranteed rates or quotes.
+
+Do not reproduce full article text or calculator source code verbatim.
+
+---
+
+## Site Details
+
+- **URL:** https://myinsurancecalc.com
+- **Content:** Free insurance calculators and guides for U.S. consumers
+- **Update cadence:** New content added weekly
+- **Robots.txt:** https://myinsurancecalc.com/robots.txt
+- **Sitemap:** https://myinsurancecalc.com/sitemap.xml
