@@ -46,6 +46,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Motorcycle Insurance Calculator](https://myinsurancecalc.com/tools/motorcycle-insurance.html)
   Estimates monthly motorcycle insurance premium by bike type (cruiser, sport, touring, adventure, scooter), engine size, rider age, years of experience, MSF course completion, storage type, and coverage level.
 
+- [Travel Insurance Calculator](https://myinsurancecalc.com/tools/travel-insurance.html)
+  Estimates travel insurance cost by destination region, trip length, traveler age, number of travelers, total non-refundable trip cost, coverage level (basic/standard/comprehensive+CFAR), pre-existing condition waiver, and cruise flag. Includes detailed coverage explanations for trip cancellation, emergency medical, evacuation, baggage, and CFAR.
+
 ### Specialty Insurance
 - [Umbrella Insurance Calculator](https://myinsurancecalc.com/tools/umbrella-insurance.html)
   Estimates umbrella insurance cost and recommended coverage amount based on net worth and liability exposure.
@@ -70,6 +73,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 
 - [Life Insurance After Lung Cancer](https://myinsurancecalc.com/blog/life-insurance-after-lung-cancer.html)
   Covers NSCLC vs SCLC distinction, stage-by-stage realistic options, what underwriters specifically look at (surgical outcome, smoking history, pulmonary function, surveillance results), policy options by situation, smoking history impact.
+
+- [Life Insurance After Skin Cancer](https://myinsurancecalc.com/blog/life-insurance-after-skin-cancer.html)
+  Critical distinction between BCC/SCC (often standard rates immediately after treatment) and melanoma. Melanoma underwriting covers Breslow thickness tiers (in situ, T1a under 0.8mm, T1b, T2 1–2mm, T3 2–4mm, T4 over 4mm), Clark level, ulceration impact, sentinel lymph node biopsy results, stage-by-stage waiting periods, and surveillance documentation requirements.
 
 - [Life Insurance After Breast Cancer](https://myinsurancecalc.com/blog/life-insurance-after-breast-cancer.html)
   Stage-by-stage breakdown (DCIS through Stage IV). Covers hormone receptor status (ER/PR/HER2), BRCA1/BRCA2 genetic mutation considerations, waiting periods by stage, how to strengthen an application.

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Insurance Calculator – Estimate Your Trip Coverage Cost | My Insurance Calc</title>
+  <meta name="description" content="Estimate travel insurance cost for your trip instantly. Based on destination, trip length, traveler age, trip cost, and coverage level. Free, no signup required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/travel-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Travel Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/travel-insurance.html",
+    "description": "Estimate travel insurance cost for your trip based on destination, trip length, traveler age, trip cost, and coverage level. Free, no signup required.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <h1>Travel Insurance Calculator</h1>
+        <p>Estimate what travel insurance should cost for your trip — based on destination risk, trip length, traveler age, total trip cost, and coverage level. No signup required.</p>
+      </div>
+
+      <div class="adslot"><!-- AdSense --></div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Enter Your Trip Details</h2>
+
+            <div class="form-group">
+              <label for="destination">Destination Region</label>
+              <select id="destination">
+                <option value="domestic">Domestic (U.S. travel)</option>
+                <option value="canada-mexico">Canada or Mexico</option>
+                <option value="europe" selected>Europe</option>
+                <option value="caribbean">Caribbean / Bahamas</option>
+                <option value="latam">Central / South America</option>
+                <option value="asia-pacific">Asia Pacific (Japan, Australia, SE Asia)</option>
+                <option value="middle-east-africa">Middle East / Africa</option>
+                <option value="high-risk">High-Risk Region (travel advisory in effect)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="trip-days">Trip Length (days)</label>
+              <input type="number" id="trip-days" min="1" max="365" placeholder="e.g. 10" />
+            </div>
+
+            <div class="form-group">
+              <label for="traveler-age">Oldest Traveler's Age</label>
+              <input type="number" id="traveler-age" min="1" max="99" placeholder="e.g. 45" />
+            </div>
+
+            <div class="form-group">
+              <label for="travelers">Number of Travelers</label>
+              <select id="travelers">
+                <option value="1" selected>1 traveler</option>
+                <option value="2">2 travelers</option>
+                <option value="3">3 travelers</option>
+                <option value="4">4 travelers</option>
+                <option value="5">5+ travelers</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="trip-cost">Total Non-Refundable Trip Cost ($)</label>
+              <input type="number" id="trip-cost" min="0" max="100000" placeholder="e.g. 4000" />
+              <small style="color:var(--text-muted);font-size:0.82rem;">Flights, hotels, tours — prepaid and non-refundable portions only.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="coverage-level">Coverage Level</label>
+              <select id="coverage-level">
+                <option value="basic">Basic (Trip cancellation + medical only)</option>
+                <option value="standard" selected>Standard (Cancel, medical, baggage, delay)</option>
+                <option value="comprehensive">Comprehensive (All standard + CFAR + evacuation)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pre-existing">Pre-Existing Medical Condition?</label>
+              <select id="pre-existing">
+                <option value="no" selected>No</option>
+                <option value="yes">Yes — waiver coverage needed</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cruise">Cruise Trip?</label>
+              <select id="cruise">
+                <option value="no" selected>No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calculateTravel()">Estimate My Cost</button>
+
+            <div class="result-box" id="result">
+              <h3>Estimated Travel Insurance Cost</h3>
+              <div class="result-amount" id="travel-result">—</div>
+              <div class="result-note" id="result-detail"></div>
+              <div class="result-note" style="margin-top:12px;" id="result-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+
+          <div style="margin-top:40px;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:16px;">What Does Travel Insurance Actually Cover?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Travel insurance isn't one product — it's a bundle of coverages that vary significantly between plans. Understanding what each component covers helps you avoid paying for things you don't need and make sure you have what you do.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Trip Cancellation</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Reimburses your non-refundable trip costs if you have to cancel for a covered reason before departure. Covered reasons typically include illness or injury (you or a covered travel companion), death of a family member, natural disaster at your destination, jury duty, and job loss. Standard policies do not cover "I changed my mind" — that requires Cancel For Any Reason (CFAR) coverage.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Trip Interruption</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers the unused portion of your trip and additional transportation costs if you have to cut a trip short for a covered reason. Often pays 150% of trip cost to cover last-minute flight changes. More valuable than trip cancellation for many travelers because it also covers the cost of getting home unexpectedly.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Emergency Medical Coverage</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">This is the coverage most people underestimate — and it's often the most important. Standard U.S. health insurance (including Medicare) typically provides minimal or no coverage outside the U.S. A hospitalization abroad can cost $10,000–$100,000+, and emergency evacuation from remote locations can exceed $50,000–$200,000. Travel medical coverage pays for emergency treatment and evacuation directly — most policies cover $50,000–$500,000 in medical expenses and evacuation costs.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Emergency Medical Evacuation</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Arranges and pays for transport to an appropriate medical facility — or back to the U.S. — if you can't be treated locally. This is one of the most expensive potential travel costs. Medical evacuation from Asia or Africa can cost $50,000–$250,000 without insurance. High-quality plans include 24/7 evacuation assistance services that coordinate the logistics directly, not just reimburse you after the fact.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Baggage Loss and Delay</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers lost, stolen, or delayed baggage. Baggage loss coverage typically reimburses $500–$2,500 for personal items. Baggage delay coverage (usually $100–$300) covers essential purchases if your bags don't arrive when you do. Most credit card travel benefits also include some baggage coverage — check before buying a policy with high baggage limits.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Travel Delay</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers expenses incurred due to significant trip delays (typically 3–12+ hours depending on the plan) — meals, accommodations, and transportation. Usually capped at $100–$200/day with a total cap of $500–$1,500. More valuable on complex multi-leg international itineraries where delays compound.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Cancel For Any Reason (CFAR)</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">An optional upgrade that allows you to cancel for any reason not covered by the standard policy and receive a partial reimbursement — typically 50–75% of non-refundable costs. Costs 40–60% more than a standard policy and must usually be purchased within 14–21 days of the initial trip deposit. Worth considering if you have significant uncertainty about whether you'll be able to travel (major work commitments, health concerns, or family situations).</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">How Travel Insurance Is Priced</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Standard travel insurance typically costs 4–10% of your total non-refundable trip cost. The main variables:</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>Trip cost</strong> — The most direct driver. Higher trip cost = higher premium, because the cancellation and interruption benefit scales with it.</li>
+              <li><strong>Traveler age</strong> — Premiums increase significantly with age, primarily because medical coverage risk increases. A 70-year-old may pay 2–3x what a 35-year-old pays for the same trip.</li>
+              <li><strong>Destination</strong> — Medical costs and evacuation distances vary by region. Travel to remote destinations or areas with limited medical infrastructure costs more to insure.</li>
+              <li><strong>Trip length</strong> — Longer trips have higher exposure to cancellation, medical, and delay events.</li>
+              <li><strong>Coverage level</strong> — Comprehensive plans with CFAR and high medical limits cost more than basic cancellation-only plans.</li>
+              <li><strong>Pre-existing conditions</strong> — Most policies exclude pre-existing conditions unless you purchase a waiver within 14–21 days of your initial deposit.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">When Travel Insurance Is Worth It</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>International travel</strong> — Your U.S. health insurance rarely covers you abroad. Emergency medical and evacuation coverage alone justifies the cost for most international trips.</li>
+              <li><strong>Non-refundable trip costs over $2,000</strong> — The cancellation benefit becomes meaningful when you have significant prepaid, non-refundable expenses.</li>
+              <li><strong>Cruises</strong> — Cruise travel involves significant prepaid costs, limited medical facilities at sea, and potential for itinerary changes that make travel insurance particularly valuable.</li>
+              <li><strong>Travel to remote or developing regions</strong> — Limited local medical care and high evacuation costs make insurance critical.</li>
+              <li><strong>Travelers over 60</strong> — Higher medical risk makes the medical and evacuation coverage significantly more valuable.</li>
+              <li><strong>Travel during hurricane season to Caribbean or Gulf destinations (June–November)</strong> — Weather cancellation risk is real and measurable.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">When You May Not Need It</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Domestic travel with fully refundable bookings — if you can cancel without penalty, trip cancellation coverage adds minimal value.</li>
+              <li>Short, low-cost trips — the math often doesn't work out for a $400 domestic weekend trip.</li>
+              <li>When your credit card already provides meaningful travel coverage — many premium travel credit cards include trip cancellation, delay, and baggage coverage. Check your card benefits before buying a separate policy.</li>
+              <li>When you have international health coverage — some employers provide international health insurance that covers travel medical without a separate policy.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Pre-Existing Medical Conditions and Travel Insurance</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Standard travel insurance policies exclude coverage for conditions that were being treated or investigated within a lookback period (typically 60–180 days before purchase). If you have a pre-existing condition and want it covered:</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Purchase your policy within 14–21 days of making your initial trip deposit (the window varies by insurer)</li>
+              <li>Look for policies that include a pre-existing condition waiver as standard rather than requiring separate purchase</li>
+              <li>Be aware that the waiver covers the condition itself — not a general deterioration unrelated to travel</li>
+              <li>Insurers may still decline to cover certain conditions or require medical review for high-risk conditions</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Cruise Travel Insurance</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Cruise travel has specific insurance considerations that make coverage more valuable than on standard trips:</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li>Cruise deposits and final payments are typically 100% non-refundable within 90–120 days of departure</li>
+              <li>Medical facilities on ships are limited — serious conditions require evacuation to port</li>
+              <li>Itinerary changes (missed ports) are common and may affect pre-booked shore excursions</li>
+              <li>Some cruise lines sell their own insurance, but third-party policies often provide better coverage and are worth comparing</li>
+              <li>Look for policies that include "missed connection" coverage if you're flying to meet your cruise</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>Typical Cost Range</h3>
+            <ul>
+              <li>Basic plan: 3–5% of trip cost</li>
+              <li>Standard plan: 5–8% of trip cost</li>
+              <li>Comprehensive + CFAR: 8–12% of trip cost</li>
+              <li>Age 65+: add 50–100% to above</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Coverage Quick Reference</h3>
+            <ul>
+              <li>Trip cancellation — non-refundable costs</li>
+              <li>Emergency medical — $50K–$500K</li>
+              <li>Evacuation — up to $500K+</li>
+              <li>Baggage loss — $500–$2,500</li>
+              <li>Trip delay — $100–$200/day</li>
+              <li>CFAR — 50–75% reimbursement</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Tools & Articles</h3>
+            <ul>
+              <li><a href="/tools/health-insurance-self-employed.html">Health Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+              <li><a href="/blog/freelancer-insurance-guide.html">Freelancer Insurance Guide</a></li>
+              <li><a href="/blog/how-much-life-insurance-do-i-need.html">How Much Life Insurance Do I Need?</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function calculateTravel() {
+  const destination = document.getElementById('destination').value;
+  const days = parseInt(document.getElementById('trip-days').value);
+  const age = parseInt(document.getElementById('traveler-age').value);
+  const travelers = parseInt(document.getElementById('travelers').value);
+  const tripCost = parseFloat(document.getElementById('trip-cost').value) || 0;
+  const coverageLevel = document.getElementById('coverage-level').value;
+  const preExisting = document.getElementById('pre-existing').value;
+  const cruise = document.getElementById('cruise').value;
+
+  if (!days || days < 1 || days > 365) {
+    alert('Please enter a valid trip length between 1 and 365 days.');
+    return;
+  }
+  if (!age || age < 1 || age > 99) {
+    alert('Please enter a valid age between 1 and 99.');
+    return;
+  }
+
+  // Base rate as % of trip cost
+  const coverageBase = { basic: 0.045, standard: 0.065, comprehensive: 0.092 };
+  let rate = coverageBase[coverageLevel];
+
+  // Destination adjustment
+  const destAdj = {
+    domestic: 0.70,
+    'canada-mexico': 0.85,
+    europe: 1.0,
+    caribbean: 1.05,
+    latam: 1.10,
+    'asia-pacific': 1.15,
+    'middle-east-africa': 1.30,
+    'high-risk': 1.55
+  };
+  rate *= destAdj[destination];
+
+  // Age adjustment (most significant factor)
+  let ageAdj = 1.0;
+  if (age < 30) ageAdj = 0.80;
+  else if (age < 40) ageAdj = 0.90;
+  else if (age < 50) ageAdj = 1.0;
+  else if (age < 60) ageAdj = 1.20;
+  else if (age < 65) ageAdj = 1.45;
+  else if (age < 70) ageAdj = 1.80;
+  else if (age < 75) ageAdj = 2.20;
+  else ageAdj = 2.70;
+  rate *= ageAdj;
+
+  // Trip length adjustment (longer trips = slightly higher rate %)
+  if (days > 30) rate *= 1.10;
+  else if (days > 14) rate *= 1.05;
+  else if (days <= 3) rate *= 0.92;
+
+  // Pre-existing condition waiver
+  if (preExisting === 'yes') rate *= 1.18;
+
+  // Cruise
+  if (cruise === 'yes') rate *= 1.12;
+
+  // Calculate based on trip cost
+  let basePremium = 0;
+  if (tripCost > 0) {
+    basePremium = tripCost * rate;
+  } else {
+    // If no trip cost entered, estimate based on destination and days
+    const destDailyCost = {
+      domestic: 150, 'canada-mexico': 180, europe: 280, caribbean: 250,
+      latam: 200, 'asia-pacific': 300, 'middle-east-africa': 320, 'high-risk': 280
+    };
+    const estimatedTripCost = destDailyCost[destination] * days * travelers;
+    basePremium = estimatedTripCost * rate;
+  }
+
+  // Multi-traveler discount
+  let travelerAdj = 1.0;
+  if (travelers === 2) travelerAdj = 1.85;
+  else if (travelers === 3) travelerAdj = 2.60;
+  else if (travelers === 4) travelerAdj = 3.25;
+  else if (travelers >= 5) travelerAdj = 3.80;
+  basePremium *= travelerAdj;
+
+  const mid = Math.round(basePremium);
+  const low = Math.round(basePremium * 0.82);
+  const high = Math.round(basePremium * 1.22);
+  const perTraveler = Math.round(mid / travelers);
+  const pctOfTrip = tripCost > 0 ? ((mid / tripCost) * 100).toFixed(1) : null;
+
+  const destLabels = {
+    domestic: 'Domestic', 'canada-mexico': 'Canada / Mexico', europe: 'Europe',
+    caribbean: 'Caribbean', latam: 'Central / South America',
+    'asia-pacific': 'Asia Pacific', 'middle-east-africa': 'Middle East / Africa',
+    'high-risk': 'High-Risk Region'
+  };
+  const covLabels = { basic: 'Basic', standard: 'Standard', comprehensive: 'Comprehensive + CFAR' };
+
+  let tips = [];
+  if (coverageLevel === 'comprehensive' && age < 40 && !cruise) {
+    tips.push('For healthy travelers under 40, a standard plan often provides sufficient coverage at lower cost');
+  }
+  if (age >= 65) {
+    tips.push('Age 65+ travelers should prioritize high medical and evacuation limits over trip cancellation coverage');
+  }
+  if (preExisting === 'yes') {
+    tips.push('Buy your policy within 14–21 days of your first trip deposit to qualify for pre-existing condition waiver');
+  }
+  if (destination === 'high-risk') {
+    tips.push('Check U.S. State Dept. travel advisory for your specific destination — some policies exclude active conflict zones');
+  }
+
+  let breakdownHTML =
+    'Destination: <strong>' + destLabels[destination] + '</strong><br>' +
+    'Coverage: <strong>' + covLabels[coverageLevel] + '</strong><br>' +
+    'Trip length: <strong>' + days + ' days</strong><br>' +
+    'Travelers: <strong>' + travelers + '</strong> (~$' + perTraveler + ' per person)<br>';
+
+  if (pctOfTrip) {
+    breakdownHTML += 'Approx. % of trip cost: <strong>' + pctOfTrip + '%</strong><br>';
+  }
+
+  if (tips.length > 0) {
+    breakdownHTML += '<br><strong>Things to consider:</strong><ul style="margin:6px 0 0 16px;line-height:1.9;">';
+    tips.forEach(t => { breakdownHTML += '<li>' + t + '</li>'; });
+    breakdownHTML += '</ul>';
+  }
+
+  breakdownHTML += '<br><em>Estimates based on industry averages. Actual premiums vary by insurer and specific plan terms. Always compare policies from multiple providers before purchasing.</em>';
+
+  document.getElementById('travel-result').textContent = '$' + low + ' – $' + high;
+  document.getElementById('result-detail').textContent = 'Estimated total premium for your trip (~$' + mid + ' midpoint)';
+  document.getElementById('result-breakdown').innerHTML = breakdownHTML;
+
+  const resultBox = document.getElementById('result');
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
