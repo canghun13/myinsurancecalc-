@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boat Insurance Calculator – Estimate Your Coverage Cost | My Insurance Calc</title>
+  <meta name="description" content="Estimate boat insurance cost instantly. Based on boat type, value, length, engine type, usage, and storage. Free boat insurance calculator — no signup required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/boat-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Boat Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/boat-insurance.html",
+    "description": "Estimate boat insurance cost based on boat type, value, length, engine type, usage, and storage location. Free, no signup required.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <h1>Boat Insurance Calculator</h1>
+        <p>Estimate what boat insurance should cost based on your vessel type, value, length, usage, and storage. No signup required — instant results.</p>
+      </div>
+
+      <div class="adslot"><!-- AdSense --></div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Enter Your Boat Details</h2>
+
+            <div class="form-group">
+              <label for="boat-type">Boat Type</label>
+              <select id="boat-type">
+                <option value="pontoon">Pontoon Boat</option>
+                <option value="fishing" selected>Fishing Boat (bass, walleye, etc.)</option>
+                <option value="bowrider">Bowrider / Runabout</option>
+                <option value="ski-wake">Ski / Wake Boat</option>
+                <option value="deck">Deck Boat</option>
+                <option value="sailboat">Sailboat</option>
+                <option value="cruiser">Cruiser / Cabin Cruiser</option>
+                <option value="personal-watercraft">Personal Watercraft (Jet Ski / WaveRunner)</option>
+                <option value="jon-boat">Jon Boat / Small Aluminum</option>
+                <option value="center-console">Center Console (offshore fishing)</option>
+                <option value="houseboat">Houseboat</option>
+                <option value="yacht">Yacht (40 ft+)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="boat-value">Boat Value ($)</label>
+              <input type="number" id="boat-value" min="500" max="2000000" placeholder="e.g. 25000" />
+              <small style="color:var(--text-muted);font-size:0.82rem;">Current market value, including motor and trailer if applicable.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="boat-length">Boat Length (feet)</label>
+              <input type="number" id="boat-length" min="8" max="120" placeholder="e.g. 22" />
+            </div>
+
+            <div class="form-group">
+              <label for="engine-type">Engine / Propulsion</label>
+              <select id="engine-type">
+                <option value="outboard" selected>Outboard Motor</option>
+                <option value="inboard">Inboard Motor</option>
+                <option value="stern-drive">Stern Drive (I/O)</option>
+                <option value="jet">Jet Drive</option>
+                <option value="sail">Sail (no engine)</option>
+                <option value="electric">Electric Motor</option>
+                <option value="no-engine">No Engine (canoe, kayak, rowboat)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="horsepower">Total Horsepower</label>
+              <select id="horsepower">
+                <option value="under50">Under 50 HP</option>
+                <option value="50to150" selected>50–150 HP</option>
+                <option value="150to300">150–300 HP</option>
+                <option value="over300">Over 300 HP</option>
+                <option value="na">N/A (sail or electric)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="usage">Primary Use</label>
+              <select id="usage">
+                <option value="lake" selected>Freshwater lake / river</option>
+                <option value="coastal">Coastal / inshore saltwater</option>
+                <option value="offshore">Offshore (open ocean)</option>
+                <option value="racing">Racing or high-performance</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="storage">Storage Method</label>
+              <select id="storage">
+                <option value="dry-stack">Dry stack / marina storage</option>
+                <option value="home-garage" selected>Home garage or driveway</option>
+                <option value="slip">Wet slip (moored at marina)</option>
+                <option value="moored">Moored on water (no slip)</option>
+                <option value="storage-facility">Offsite storage facility</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="owner-age">Owner's Age</label>
+              <input type="number" id="owner-age" min="16" max="85" placeholder="e.g. 42" />
+            </div>
+
+            <div class="form-group">
+              <label for="boating-experience">Boating Experience</label>
+              <select id="boating-experience">
+                <option value="new">New boater (under 2 years)</option>
+                <option value="some" selected>Some experience (2–5 years)</option>
+                <option value="experienced">Experienced (5–10 years)</option>
+                <option value="veteran">Veteran (10+ years)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="safety-course">Boating Safety Course Completed?</label>
+              <select id="safety-course">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="coverage-type">Coverage Type</label>
+              <select id="coverage-type">
+                <option value="liability-only">Liability Only</option>
+                <option value="agreed-value" selected>Agreed Value (full replacement)</option>
+                <option value="actual-cash">Actual Cash Value (depreciated)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="liability-limit">Liability Limit</label>
+              <select id="liability-limit">
+                <option value="100k">$100,000</option>
+                <option value="300k" selected>$300,000</option>
+                <option value="500k">$500,000</option>
+                <option value="1m">$1,000,000</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calculateBoat()">Estimate My Cost</button>
+
+            <div class="result-box" id="result">
+              <h3>Estimated Annual Boat Insurance Cost</h3>
+              <div class="result-amount" id="boat-result">—</div>
+              <div class="result-note" id="result-detail"></div>
+              <div class="result-note" style="margin-top:12px;" id="result-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+
+          <div style="margin-top:40px;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:16px;">What Does Boat Insurance Cover?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Boat insurance (also called watercraft or marine insurance) is a specialized policy that protects your vessel, your passengers, and your financial liability on the water. Unlike a standard home or auto policy, boat insurance is written specifically for the unique risks of watercraft operation.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Physical Damage Coverage</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers damage to your boat from collisions, sinking, fire, theft, vandalism, storms, and other covered perils. There are two main types:</p>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>Agreed Value</strong> — Pays the full insured value with no depreciation. If your boat is totaled, you receive the full agreed amount. Generally the better choice for newer or higher-value boats.</li>
+              <li><strong>Actual Cash Value (ACV)</strong> — Pays the depreciated market value at the time of loss. Premiums are lower, but your payout shrinks as the boat ages. May leave you significantly underinsured on older vessels.</li>
+            </ul>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Liability Coverage</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers bodily injury and property damage you cause to others while operating your boat. This is the most important coverage if you're on the water around other people, docks, and vessels. Most policies offer limits from $100,000 to $1,000,000. Serious accidents — a collision injuring multiple people, or sinking another vessel — can easily exceed $100,000 in liability.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Medical Payments</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Pays medical expenses for you and your passengers injured on the boat, regardless of who was at fault. Typically $1,000–$10,000 per person. Relatively inexpensive to add and valuable for guests who may not have robust health insurance.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Uninsured/Underinsured Watercraft</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers your injuries and damages if you're hit by an uninsured or underinsured boater. Unlike auto insurance, boat insurance requirements vary dramatically by state — many states don't require any boat insurance at all, meaning a significant portion of boaters on the water have no coverage.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Towing and Assistance</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers on-water towing if your boat breaks down — similar to roadside assistance for your car. Without this, a tow from open water can cost $500–$3,000+ depending on distance. Often offered as an add-on or through a membership service like BoatUS or Sea Tow.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Fuel Spill Liability</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers costs associated with accidental fuel spills from your vessel — cleanup, fines, and third-party property damage. Federal law can hold boat owners liable for fuel spill cleanup costs. Most comprehensive boat policies include this; verify if you have inboard engines or large fuel tanks.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Trailer Coverage</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Many boat policies extend to cover the trailer as well. If your trailer isn't covered under your boat policy, it may be covered under your auto policy while being towed — check both before assuming coverage exists.</p>
+
+            <h3 style="font-size:1.05rem;font-weight:600;margin:24px 0 8px;">Personal Effects and Equipment</h3>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Covers personal items on the boat — fishing equipment, electronics, water sports gear, clothing. Usually capped at $1,000–$5,000. High-value fishing equipment or navigation electronics may need to be scheduled separately.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">What Affects Boat Insurance Rates?</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>Boat value and type</strong> — Higher value and higher-performance vessels cost more to insure. A $100,000 offshore center console costs significantly more than a $15,000 pontoon boat.</li>
+              <li><strong>Horsepower</strong> — Higher horsepower boats are associated with higher accident severity and typically carry higher premiums.</li>
+              <li><strong>Where you boat</strong> — Offshore ocean use carries higher risk than a small freshwater lake. Saltwater also causes accelerated corrosion, which affects physical damage risk.</li>
+              <li><strong>Storage method</strong> — Boats stored in water (wet slips) are exposed to more weather and theft risk than boats stored at home. Dry stack storage at a marina is generally low-risk.</li>
+              <li><strong>Owner experience and age</strong> — Newer boaters and very young operators typically pay more. Completing a boating safety course (NASBLA-approved) can reduce premiums with many carriers.</li>
+              <li><strong>Navigational territory</strong> — Some policies specify geographic limits (Great Lakes only, coastal waters within X miles, etc.). Offshore or international navigational territory costs more.</li>
+              <li><strong>Claims history</strong> — Prior boating claims or moving violations affect rates similarly to auto insurance.</li>
+              <li><strong>Deductible selected</strong> — Higher deductibles reduce premiums. Typical deductibles range from $250 to $1,000 for physical damage coverage.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Is Boat Insurance Required?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Unlike auto insurance, only a handful of states legally require boat insurance (Arkansas and Utah, for example). However, marinas frequently require proof of liability insurance to rent a slip, and lenders typically require physical damage coverage if the boat is financed.</p>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Even where not legally required, the financial case for liability coverage is strong. A serious boating accident can result in hundreds of thousands of dollars in liability — well beyond what most boat owners could pay out of pocket.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Does Your Homeowners Policy Cover Your Boat?</h2>
+            <p style="color:var(--text-muted);font-size:0.95rem;">Many homeowners and renters insurance policies provide limited coverage for small boats — typically canoes, kayaks, and small motorboats under 25–50 HP. For larger or more powerful boats, homeowners coverage is usually inadequate or entirely absent. Even where homeowners coverage technically applies, the liability limits are often insufficient for a serious on-water accident.</p>
+            <p style="color:var(--text-muted);font-size:0.95rem;">A dedicated boat insurance policy is almost always the better choice for any motorized vessel or sailboat of meaningful value.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:40px 0 16px;">Tips for Lowering Your Boat Insurance Premium</h2>
+            <ul style="color:var(--text-muted);font-size:0.95rem;line-height:2;margin-left:20px;">
+              <li><strong>Complete a boating safety course.</strong> Most insurers offer a 5–15% discount for NASBLA-approved safety courses. The U.S. Coast Guard Auxiliary and Power Squadrons offer free or low-cost courses.</li>
+              <li><strong>Bundle with your home and auto insurer.</strong> Many carriers offer multi-policy discounts of 5–15% if you bundle boat insurance with your existing policies.</li>
+              <li><strong>Choose a higher deductible.</strong> Raising your physical damage deductible from $250 to $1,000 can meaningfully reduce premiums if you can comfortably self-insure smaller losses.</li>
+              <li><strong>Store your boat at home or in dry storage.</strong> Wet slip storage typically costs more to insure than dry storage due to weather and theft exposure.</li>
+              <li><strong>Pay annually instead of monthly.</strong> Many insurers charge installment fees. Paying the annual premium upfront can save 3–8%.</li>
+              <li><strong>Lay-up period discounts.</strong> If you don't use your boat during winter months, ask about lay-up or seasonal discounts. Some carriers reduce premiums for the months the boat is in storage.</li>
+              <li><strong>Maintain a clean boating and driving record.</strong> Prior claims and traffic violations affect boat insurance rates similarly to auto insurance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>Typical Annual Cost Ranges</h3>
+            <ul>
+              <li>Jon boat / small aluminum: $75–$200</li>
+              <li>Pontoon (under $30K): $200–$500</li>
+              <li>Fishing / bass boat: $250–$600</li>
+              <li>Bowrider / ski boat: $300–$700</li>
+              <li>Center console (offshore): $500–$1,500+</li>
+              <li>Sailboat: $400–$1,200</li>
+              <li>Cruiser / cabin cruiser: $600–$2,000+</li>
+              <li>Personal watercraft: $150–$500</li>
+              <li>Yacht (40 ft+): $2,000–$10,000+</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Discounts to Ask About</h3>
+            <ul>
+              <li>Boating safety course (5–15%)</li>
+              <li>Multi-policy bundle (5–15%)</li>
+              <li>Claims-free history</li>
+              <li>Lay-up / seasonal storage</li>
+              <li>USCG Auxiliary member</li>
+              <li>Agreed value policy</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Tools &amp; Articles</h3>
+            <ul>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+              <li><a href="/tools/car-insurance.html">Car Insurance Calculator</a></li>
+              <li><a href="/blog/umbrella-insurance-explained.html">Umbrella Insurance Explained</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function calculateBoat() {
+  const boatType = document.getElementById('boat-type').value;
+  const boatValue = parseFloat(document.getElementById('boat-value').value);
+  const boatLength = parseInt(document.getElementById('boat-length').value);
+  const engineType = document.getElementById('engine-type').value;
+  const horsepower = document.getElementById('horsepower').value;
+  const usage = document.getElementById('usage').value;
+  const storage = document.getElementById('storage').value;
+  const ownerAge = parseInt(document.getElementById('owner-age').value);
+  const experience = document.getElementById('boating-experience').value;
+  const safetyCourse = document.getElementById('safety-course').value;
+  const coverageType = document.getElementById('coverage-type').value;
+  const liabilityLimit = document.getElementById('liability-limit').value;
+
+  if (!boatValue || boatValue < 500) {
+    alert('Please enter a valid boat value.');
+    return;
+  }
+  if (!boatLength || boatLength < 8) {
+    alert('Please enter a valid boat length (minimum 8 feet).');
+    return;
+  }
+  if (!ownerAge || ownerAge < 16) {
+    alert('Please enter a valid owner age.');
+    return;
+  }
+
+  // Base rate as % of boat value
+  const typeBase = {
+    'jon-boat': 0.014,
+    'personal-watercraft': 0.020,
+    'pontoon': 0.016,
+    'fishing': 0.017,
+    'bowrider': 0.018,
+    'ski-wake': 0.020,
+    'deck': 0.017,
+    'sailboat': 0.018,
+    'center-console': 0.021,
+    'cruiser': 0.019,
+    'houseboat': 0.022,
+    'yacht': 0.020
+  };
+
+  let rate = typeBase[boatType] || 0.018;
+
+  // Horsepower adjustment
+  const hpAdj = { under50: 0.85, '50to150': 1.0, '150to300': 1.18, over300: 1.40, na: 0.90 };
+  rate *= hpAdj[horsepower] || 1.0;
+
+  // Usage adjustment
+  const usageAdj = { lake: 1.0, coastal: 1.15, offshore: 1.40, racing: 1.65 };
+  rate *= usageAdj[usage] || 1.0;
+
+  // Storage adjustment
+  const storageAdj = {
+    'dry-stack': 0.92,
+    'home-garage': 0.88,
+    'slip': 1.12,
+    'moored': 1.20,
+    'storage-facility': 0.95
+  };
+  rate *= storageAdj[storage] || 1.0;
+
+  // Coverage type adjustment
+  const coverageAdj = { 'liability-only': 0.35, 'agreed-value': 1.0, 'actual-cash': 0.85 };
+  rate *= coverageAdj[coverageType] || 1.0;
+
+  // Liability limit adjustment
+  const liabilityAdj = { '100k': 0.88, '300k': 1.0, '500k': 1.10, '1m': 1.22 };
+  rate *= liabilityAdj[liabilityLimit] || 1.0;
+
+  // Owner age
+  let ageAdj = 1.0;
+  if (ownerAge < 25) ageAdj = 1.30;
+  else if (ownerAge < 30) ageAdj = 1.12;
+  else if (ownerAge < 55) ageAdj = 1.0;
+  else if (ownerAge < 65) ageAdj = 1.05;
+  else ageAdj = 1.12;
+  rate *= ageAdj;
+
+  // Experience
+  const expAdj = { new: 1.20, some: 1.05, experienced: 1.0, veteran: 0.93 };
+  rate *= expAdj[experience] || 1.0;
+
+  // Safety course discount
+  if (safetyCourse === 'yes') rate *= 0.92;
+
+  // Length adjustment (very large boats add cost)
+  if (boatLength > 40) rate *= 1.10;
+  else if (boatLength > 25) rate *= 1.05;
+  else if (boatLength < 14) rate *= 0.92;
+
+  const annual = boatValue * rate;
+  const mid = Math.round(annual);
+  const low = Math.round(annual * 0.80);
+  const high = Math.round(annual * 1.25);
+  const monthly = Math.round(mid / 12);
+
+  const typeLabels = {
+    'jon-boat': 'Jon Boat', 'personal-watercraft': 'Personal Watercraft',
+    'pontoon': 'Pontoon Boat', 'fishing': 'Fishing Boat',
+    'bowrider': 'Bowrider / Runabout', 'ski-wake': 'Ski / Wake Boat',
+    'deck': 'Deck Boat', 'sailboat': 'Sailboat',
+    'center-console': 'Center Console', 'cruiser': 'Cruiser',
+    'houseboat': 'Houseboat', 'yacht': 'Yacht'
+  };
+  const coverageLabels = {
+    'liability-only': 'Liability Only',
+    'agreed-value': 'Agreed Value',
+    'actual-cash': 'Actual Cash Value'
+  };
+  const liabilityLabels = { '100k': '$100,000', '300k': '$300,000', '500k': '$500,000', '1m': '$1,000,000' };
+
+  let tips = [];
+  if (coverageType === 'actual-cash' && boatValue > 20000) {
+    tips.push('For boats over $20,000, agreed value coverage is generally recommended — ACV payouts shrink significantly as the boat depreciates');
+  }
+  if (liabilityLimit === '100k' && (usage === 'coastal' || usage === 'offshore')) {
+    tips.push('$100,000 liability may be insufficient for offshore or coastal use — consider $300,000–$500,000 minimum');
+  }
+  if (safetyCourse === 'no') {
+    tips.push('Completing a NASBLA-approved boating safety course typically reduces premiums 5–15% with most insurers');
+  }
+  if (usage === 'offshore') {
+    tips.push('Verify your policy\'s navigational territory — many standard policies limit offshore coverage to within 25–75 miles of shore');
+  }
+  if (storage === 'slip' || storage === 'moored') {
+    tips.push('Ask your insurer about hurricane haul-out provisions if you store in an area with tropical storm risk');
+  }
+
+  let breakdownHTML =
+    'Boat type: <strong>' + typeLabels[boatType] + '</strong><br>' +
+    'Boat value: <strong>$' + boatValue.toLocaleString() + '</strong><br>' +
+    'Coverage: <strong>' + coverageLabels[coverageType] + '</strong><br>' +
+    'Liability limit: <strong>' + liabilityLabels[liabilityLimit] + '</strong><br>' +
+    'Est. monthly: <strong>~$' + monthly + '/month</strong><br>';
+
+  if (tips.length > 0) {
+    breakdownHTML += '<br><strong>Things to consider:</strong><ul style="margin:6px 0 0 16px;line-height:1.9;">';
+    tips.forEach(t => { breakdownHTML += '<li>' + t + '</li>'; });
+    breakdownHTML += '</ul>';
+  }
+
+  breakdownHTML += '<br><em>Estimates based on industry averages. Actual premiums vary by insurer, state, claims history, and specific policy terms. Always compare quotes from multiple carriers before purchasing.</em>';
+
+  document.getElementById('boat-result').textContent = '$' + low + ' – $' + high + '/year';
+  document.getElementById('result-detail').textContent = 'Estimated annual premium (~$' + mid + ' midpoint)';
+  document.getElementById('result-breakdown').innerHTML = breakdownHTML;
+
+  const resultBox = document.getElementById('result');
+  resultBox.classList.add('visible');
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

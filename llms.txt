@@ -147,6 +147,18 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Renters Insurance for College Students](https://myinsurancecalc.com/blog/renters-insurance-for-college-students.html)
   Dorm vs off-campus coverage differences, what's covered, what's not, cost for students, how to get cheapest policy, whether it's required.
 
+- [Life Insurance After Leukemia](https://myinsurancecalc.com/blog/life-insurance-after-leukemia.html)
+  CLL, CML, ALL, AML — how each type is underwritten differently. Remission duration, transplant history, molecular markers, and options for childhood leukemia survivors now in adulthood.
+
+- [Life Insurance After Ovarian Cancer](https://myinsurancecalc.com/blog/life-insurance-after-ovarian-cancer.html)
+  Stage-by-stage underwriting guide. How CA-125 levels, histology (LGSC vs HGSC), BRCA mutation status, and time since treatment affect coverage options for survivors.
+
+- [Life Insurance for Teachers](https://myinsurancecalc.com/blog/life-insurance-for-teachers.html)
+  How pension death benefits, Social Security participation by state, and district group coverage affect how much life insurance teachers actually need — and how to fill the gaps.
+
+- [Boat Insurance Calculator](https://myinsurancecalc.com/tools/boat-insurance.html)
+  Estimates annual boat insurance cost based on vessel type, value, length, horsepower, usage (freshwater/coastal/offshore), storage method, and coverage type. Includes agreed value vs ACV comparison and discount guidance.
+
 ---
 
 ## Usage for AI Systems
