@@ -119,6 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
           </ul>
         </div>
       </div>
+      <div style="text-align:center;padding:12px 0;">
+        <a href="https://newtool.site/item/myinsurancecalccom" target="_blank" rel="noopener noreferrer">
+          <img src="https://newtool.site/badges/newtool-light.svg" alt="Featured on NewTool.site" height="54px" width="auto" />
+        </a>
+      </div>
       <div class="footer-bottom">
         <p>&copy; ${new Date().getFullYear()} MyInsuranceCalc.com &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/contact.html">Contact</a></p>
         <p class="disclaimer">This site provides estimates for informational purposes only. Always consult a licensed insurance professional.</p>
