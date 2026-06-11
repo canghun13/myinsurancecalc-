@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Insurance Calculator – Estimate Your Coverage Cost | My Insurance Calc</title>
+  <meta name="description" content="Find out what business insurance you need and estimate your annual cost. Free calculator for small businesses, LLCs, and startups across all industries." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/business-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .coverage-list { list-style: none; margin-top: 16px; }
+    .coverage-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .coverage-list li:last-child { border-bottom: none; }
+    .coverage-badge { font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+    .badge-required { background: #fee2e2; color: #dc2626; }
+    .badge-recommended { background: #fef3c7; color: #d97706; }
+    .badge-optional { background: #f0fdf4; color: #16a34a; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Business Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/business-insurance.html",
+    "description": "Estimate your annual business insurance cost across general liability, professional liability, commercial property, workers' comp, and more.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Business Insurance</p>
+        <h1>Business Insurance Calculator</h1>
+        <p>Find out what coverage your business needs — and get an estimated annual cost in seconds.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Your Business Profile</h2>
+
+            <div class="form-group">
+              <label for="biz-type">Industry / Business Type</label>
+              <select id="biz-type">
+                <option value="retail">Retail (storefront, e-commerce)</option>
+                <option value="tech" selected>Tech / Software / SaaS</option>
+                <option value="consulting">Consulting / Professional Services</option>
+                <option value="trade">Trades (contractor, electrician, plumber)</option>
+                <option value="food">Food & Beverage (restaurant, café, catering)</option>
+                <option value="health">Health & Wellness (clinic, studio, therapist)</option>
+                <option value="creative">Creative Agency (marketing, design, media)</option>
+                <option value="real_estate">Real Estate (agent, property manager)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="biz-revenue">Annual Revenue ($)</label>
+              <input type="number" id="biz-revenue" placeholder="e.g. 500000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="biz-employees">Number of Employees (including yourself)</label>
+              <select id="biz-employees">
+                <option value="1">1 (solo / owner only)</option>
+                <option value="2_5" selected>2–5</option>
+                <option value="6_20">6–20</option>
+                <option value="21_50">21–50</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="biz-property">Do you have a physical location or equipment?</label>
+              <select id="biz-property">
+                <option value="yes">Yes — office, storefront, or significant equipment</option>
+                <option value="home">Home-based office only</option>
+                <option value="no" selected>No — fully remote / virtual</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="biz-clients">Do you handle client data or provide professional advice?</label>
+              <select id="biz-clients">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="biz-vehicles">Do you use vehicles for business purposes?</label>
+              <select id="biz-vehicles">
+                <option value="yes">Yes — company or employee vehicles</option>
+                <option value="no" selected>No</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcBusiness()">Calculate Now</button>
+
+            <div class="result-box" id="biz-result">
+              <h3>ESTIMATED ANNUAL BUSINESS INSURANCE COST</h3>
+              <div class="result-amount" id="biz-amount"></div>
+              <ul class="coverage-list" id="biz-list"></ul>
+              <p class="result-note">Estimates based on average market rates for small businesses. Actual costs vary by state, insurer, claims history, and specific business operations.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What Business Insurance Do You Actually Need?</h2>
+            <p>Business insurance isn't one policy — it's a stack of coverages that protect different aspects of your operations. Most small businesses need at least general liability; many need several additional layers depending on their industry, employees, and clients.</p>
+
+            <h3>General Liability Insurance</h3>
+            <p>The foundation of any business insurance program. Covers third-party claims of bodily injury, property damage, and personal injury (libel, slander). Required by most commercial leases, client contracts, and event venues. A basic general liability policy typically provides $1 million per occurrence and $2 million aggregate coverage. Costs for small businesses typically range from approximately $400 to $1,500 per year depending on industry and revenue.</p>
+
+            <h3>Professional Liability (Errors & Omissions)</h3>
+            <p>Covers claims that your professional services caused a client financial harm — missed deadlines, errors in work product, failure to deliver as contracted. Essential for consultants, technology companies, financial professionals, healthcare providers, and anyone who provides advice or expertise for compensation. Also covers defense costs even if the claim turns out to be unfounded, which is often the more significant benefit.</p>
+
+            <h3>Commercial Property Insurance</h3>
+            <p>Covers your physical assets — building (if owned), equipment, inventory, furniture, and signage — against fire, theft, vandalism, and certain natural disasters. If your business has significant physical assets, this coverage is critical. Home-based businesses should note that a standard homeowner's policy typically provides minimal or no coverage for business equipment and none for business liability.</p>
+
+            <h3>Business Owner's Policy (BOP)</h3>
+            <p>A bundled package combining general liability and commercial property into a single policy at a lower combined cost than purchasing separately. Designed for small and medium-sized businesses with physical locations. A BOP is often the most cost-effective starting point for businesses with both liability and property exposures. Not available for all industries — higher-risk businesses (contractors, certain food service) typically need standalone policies.</p>
+
+            <h3>Workers' Compensation Insurance</h3>
+            <p>Covers medical expenses and lost wages for employees injured on the job. Required by law in most states for businesses with one or more employees (rules vary by state). Sole proprietors are typically exempt but can often opt in. Workers' comp is priced based on payroll and industry classification — higher-risk industries (construction, healthcare, manufacturing) pay significantly higher rates than office-based businesses.</p>
+
+            <h3>Cyber Liability Insurance</h3>
+            <p>Covers costs related to data breaches and cyberattacks — notification costs, credit monitoring for affected customers, legal defense, regulatory fines, and business interruption losses. Increasingly important for any business that stores customer data, processes payments, or relies heavily on technology systems. Cyber incidents affecting small businesses have increased significantly in recent years; most small businesses underestimate this exposure.</p>
+
+            <h3>Commercial Auto Insurance</h3>
+            <p>Required if you use vehicles for business purposes beyond basic commuting. Personal auto policies typically exclude business use — if an employee is in an accident while making a delivery or client visit in their personal vehicle, the claim may be denied without a commercial policy or hired/non-owned auto endorsement. Even if you don't own company vehicles, a non-owned auto endorsement can cover business use of personal vehicles.</p>
+
+            <h3>Umbrella / Excess Liability</h3>
+            <p>Provides additional liability coverage above the limits of your general liability, commercial auto, and employers' liability policies. Cost-effective way to increase your total liability protection. Particularly valuable for businesses with significant public exposure, high-value contracts, or client-facing operations where a large claim could exceed standard policy limits.</p>
+
+            <h2>How to Reduce Your Business Insurance Costs</h2>
+            <p>Several factors can meaningfully reduce what you pay for business insurance. Bundling coverage into a BOP is often the most straightforward cost reduction for eligible businesses. Maintaining a clean claims history is the single biggest factor over time — a single significant claim can increase premiums substantially for several years. Higher deductibles reduce premiums but increase your out-of-pocket cost per claim, so calibrate carefully based on your cash flow. Paying annually rather than monthly often provides a discount. Shopping coverage across multiple insurers every 2–3 years helps ensure you're not overpaying as your business evolves.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
+              <li><a href="/tools/home-insurance.html">Home Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>40% of small businesses face a liability claim within 10 years</li>
+              <li>Average GL claim: <strong>~$75,000</strong></li>
+              <li>BOP saves approx. <strong>15–25%</strong> vs. separate policies</li>
+              <li>Workers' comp required in <strong>most states</strong> with 1+ employee</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Articles</h3>
+            <ul>
+              <li><a href="/blog/freelancer-insurance-guide.html">Freelancer Insurance Guide</a></li>
+              <li><a href="/blog/insurance-for-gig-workers.html">Insurance for Gig Workers</a></li>
+              <li><a href="/blog/umbrella-insurance-explained.html">Umbrella Insurance Explained</a></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcBusiness() {
+  const type = document.getElementById('biz-type').value;
+  const revenue = parseFloat(document.getElementById('biz-revenue').value) || 0;
+  const employees = document.getElementById('biz-employees').value;
+  const property = document.getElementById('biz-property').value;
+  const clients = document.getElementById('biz-clients').value;
+  const vehicles = document.getElementById('biz-vehicles').value;
+
+  const items = [];
+  let total = 0;
+
+  // General Liability
+  const glBase = { retail: 900, tech: 600, consulting: 500, trade: 1400, food: 1200, health: 1000, creative: 550, real_estate: 700 };
+  const glCost = glBase[type] || 700;
+  items.push({ name: 'General Liability', cost: glCost, priority: 'required' });
+  total += glCost;
+
+  // Professional Liability / E&O
+  if (clients === 'yes') {
+    const plBase = { retail: 0, tech: 1200, consulting: 1400, trade: 900, food: 0, health: 1800, creative: 900, real_estate: 1100 };
+    const plCost = plBase[type] || 1000;
+    if (plCost > 0) {
+      items.push({ name: 'Professional Liability (E&O)', cost: plCost, priority: 'required' });
+      total += plCost;
+    }
+  }
+
+  // Commercial Property or BOP
+  if (property === 'yes') {
+    const propBase = { retail: 1800, tech: 1000, consulting: 900, trade: 1200, food: 2200, health: 1400, creative: 900, real_estate: 900 };
+    const propCost = propBase[type] || 1200;
+    items.push({ name: 'Commercial Property / BOP', cost: propCost, priority: 'required' });
+    total += propCost;
+  } else if (property === 'home') {
+    items.push({ name: 'Home Business Endorsement', cost: 200, priority: 'recommended' });
+    total += 200;
+  }
+
+  // Workers Comp
+  const wcEmp = { '1': 0, '2_5': 1, '6_20': 1, '21_50': 1 };
+  if (wcEmp[employees]) {
+    const wcBase = { retail: 1200, tech: 600, consulting: 500, trade: 3500, food: 2000, health: 1800, creative: 700, real_estate: 800 };
+    const wcCost = wcBase[type] || 900;
+    const empMult = { '2_5': 1, '6_20': 3.5, '21_50': 10 };
+    const wcTotal = Math.round(wcCost * (empMult[employees] || 1));
+    items.push({ name: "Workers' Compensation", cost: wcTotal, priority: 'required' });
+    total += wcTotal;
+  }
+
+  // Cyber Liability
+  if (clients === 'yes' && ['tech', 'consulting', 'health', 'real_estate'].includes(type)) {
+    const cyberCost = revenue > 500000 ? 1800 : 900;
+    items.push({ name: 'Cyber Liability', cost: cyberCost, priority: 'recommended' });
+    total += cyberCost;
+  }
+
+  // Commercial Auto
+  if (vehicles === 'yes') {
+    const autoCost = 1400;
+    items.push({ name: 'Commercial Auto', cost: autoCost, priority: 'required' });
+    total += autoCost;
+  }
+
+  // Umbrella
+  if (revenue > 250000) {
+    items.push({ name: 'Umbrella / Excess Liability', cost: 600, priority: 'recommended' });
+    total += 600;
+  } else {
+    items.push({ name: 'Umbrella / Excess Liability', cost: 500, priority: 'optional' });
+    total += 500;
+  }
+
+  const fmt = v => '$' + Math.round(v).toLocaleString() + '/yr';
+  const badgeClass = p => ({ required: 'badge-required', recommended: 'badge-recommended', optional: 'badge-optional' }[p]);
+  const badgeLabel = p => p.charAt(0).toUpperCase() + p.slice(1);
+
+  document.getElementById('biz-amount').textContent = '$' + Math.round(total).toLocaleString() + '/yr';
+  document.getElementById('biz-list').innerHTML = items.map(item => `
+    <li>
+      <span>${item.name}</span>
+      <span style="display:flex;align-items:center;gap:8px;">
+        <strong>${fmt(item.cost)}</strong>
+        <span class="coverage-badge ${badgeClass(item.priority)}">${badgeLabel(item.priority)}</span>
+      </span>
+    </li>
+  `).join('');
+
+  document.getElementById('biz-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
