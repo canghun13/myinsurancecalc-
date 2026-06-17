@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/tools/travel-insurance.html">Travel Insurance</a></li>
               <li><a href="/tools/boat-insurance.html">Boat Insurance</a></li>
               <li><a href="/tools/business-insurance.html">Business Insurance</a></li>
+              <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors</a></li>
             </ul>
           </li>
           <li class="dropdown" id="nav-blog">
@@ -62,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="/blog/life-insurance-after-leukemia.html">Life Insurance After Leukemia</a></li>
               <li><a href="/blog/life-insurance-after-ovarian-cancer.html">Life Insurance After Ovarian Cancer</a></li>
               <li><a href="/blog/life-insurance-after-bladder-cancer.html">Life Insurance After Bladder Cancer</a></li>
+              <li><a href="/blog/life-insurance-after-lymphoma.html">Life Insurance After Lymphoma</a></li>
+              <li><a href="/blog/life-insurance-after-cervical-cancer.html">Life Insurance After Cervical Cancer</a></li>
+              <li><a href="/blog/life-insurance-for-remote-workers.html">Life Insurance for Remote Workers</a></li>
               <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:4px;">Freelancer / Gig</li>
               <li><a href="/blog/freelancer-insurance-guide.html">Freelancer Insurance Guide</a></li>
               <li><a href="/blog/insurance-for-gig-workers.html">Insurance for Gig Workers</a></li>
@@ -110,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/tools/travel-insurance.html">Travel Insurance</a></li>
             <li><a href="/tools/boat-insurance.html">Boat Insurance</a></li>
             <li><a href="/tools/business-insurance.html">Business Insurance</a></li>
+            <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors</a></li>
           </ul>
         </div>
         <div class="footer-links">

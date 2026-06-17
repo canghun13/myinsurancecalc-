@@ -159,6 +159,18 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Life Insurance After Bladder Cancer](https://myinsurancecalc.com/blog/life-insurance-after-bladder-cancer.html)
   How insurers evaluate grade, stage, recurrence history, and cystoscopy surveillance results for bladder cancer survivors. Covers NMIBC vs MIBC distinction, CIS underwriting complexity, approximate waiting periods, and policy options from standard term to guaranteed issue.
 
+- [Life Insurance After Lymphoma](https://myinsurancecalc.com/blog/life-insurance-after-lymphoma.html)
+  Hodgkin vs. non-Hodgkin lymphoma underwriting. Covers subtype differences (follicular, DLBCL, mantle cell, etc.), remission duration requirements, treatment history (ABVD, R-CHOP, auto-SCT, allo-SCT, CAR-T), mediastinal radiation long-term risk considerations, and policy options by disease profile.
+
+- [Life Insurance After Cervical Cancer](https://myinsurancecalc.com/blog/life-insurance-after-cervical-cancer.html)
+  FIGO stage-by-stage underwriting guide for cervical cancer survivors. Covers histologic type, lymph node status, surgical margin status, treatment received (conization, hysterectomy, chemoradiation), and remission duration requirements. Includes fertility-sparing treatment underwriting notes.
+
+- [Life Insurance for Remote Workers](https://myinsurancecalc.com/blog/life-insurance-for-remote-workers.html)
+  Coverage gaps for fully remote employees, contractors, and digital nomads. Covers employer group life limitations, variable income coverage sizing, portability concerns, digital nomad residency complications, disability insurance priority, and a two-layer coverage strategy.
+
+- [Life Insurance for Seniors Calculator](https://myinsurancecalc.com/tools/life-insurance-seniors.html)
+  Estimates life insurance coverage need for adults age 55–80. Inputs include age, primary coverage goal (final expense, income replacement, debt payoff, legacy), income, spouse income replacement years, mortgage and debt balances, final expense estimate, legacy goal, existing savings, and existing coverage. Provides itemized coverage gap with policy type recommendations based on age and gap amount.
+
 - [Boat Insurance Calculator](https://myinsurancecalc.com/tools/boat-insurance.html)
   Estimates annual boat insurance cost based on vessel type, value, length, horsepower, usage (freshwater/coastal/offshore), storage method, and coverage type. Includes agreed value vs ACV comparison and discount guidance.
 
