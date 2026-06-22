@@ -177,7 +177,7 @@ function calcHealth() {
     subsidy = Math.max(0, fullPremium - cap);
     subsidyNote = `You may qualify for ~$${Math.round(subsidy)}/mo in ACA subsidies.`;
   } else if (incomeRatio < 1.0) {
-    subsidyNote = 'You may qualify for Medicaid. Check your state's eligibility.';
+    subsidyNote = "You may qualify for Medicaid. Check your state's eligibility.";
   } else {
     subsidyNote = 'Your income exceeds subsidy eligibility — full premium applies.';
   }

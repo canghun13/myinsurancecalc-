@@ -154,7 +154,12 @@ function calcDisability() {
   const occupation = document.getElementById('occupation').value;
 
   const employerBenefit = income * employerPct;
-  const gap = Math.max(0, expenses - employerBenefit);
+  // Gap = income not covered by employer (disability insurance replaces income, not expenses)
+  // Expenses used only as a reference floor: coverage should be at least enough for essential expenses
+  const incomeGap = Math.max(0, income - employerBenefit);
+  const expenseGap = Math.max(0, expenses - employerBenefit);
+  // Take the larger of income-based gap or expense-based gap, but cap at income gap if expenses > income (user input error)
+  const gap = expenses > income ? incomeGap : Math.max(incomeGap, expenseGap);
 
   // Occupation multiplier for suggested buffer
   const occBuffer = { low: 1.0, medium: 1.1, high: 1.25 };
