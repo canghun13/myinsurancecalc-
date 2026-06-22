@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Long-Term Care Insurance Calculator – Estimate Your Cost | My Insurance Calc</title>
+  <meta name="description" content="Free long-term care insurance calculator. Estimate how much coverage you need, what it may cost, and whether LTC insurance makes sense for your situation." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/long-term-care-insurance.html" />
+  <meta property="og:title" content="Long-Term Care Insurance Calculator – My Insurance Calc" />
+  <meta property="og:description" content="Estimate long-term care insurance coverage needs and costs. Free, instant, no signup." />
+  <meta property="og:url" content="https://myinsurancecalc.com/tools/long-term-care-insurance.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Long-Term Care Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/long-term-care-insurance.html",
+    "description": "Free long-term care insurance calculator. Estimate coverage needs and monthly premium ranges based on age, benefit amount, and care setting preferences.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<main>
+  <section class="tool-page">
+    <div class="container">
+
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/tools/">Calculators</a> › Long-Term Care Insurance</p>
+        <h1>Long-Term Care Insurance Calculator</h1>
+        <p>Estimate how much long-term care coverage you may need and what it could cost — based on your age, location, and care preferences.</p>
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- Calculator -->
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your LTC Coverage Need</h2>
+
+            <div class="form-group">
+              <label for="ltc-age">Your Current Age</label>
+              <select id="ltc-age">
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55" selected>55</option>
+                <option value="60">60</option>
+                <option value="65">65</option>
+                <option value="70">70</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ltc-gender">Gender</label>
+              <select id="ltc-gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ltc-region">State / Region</label>
+              <select id="ltc-region">
+                <option value="low">Low cost (e.g. TX, AL, MS, AR)</option>
+                <option value="mid" selected>Mid cost (e.g. FL, AZ, OH, IN)</option>
+                <option value="high">High cost (e.g. CA, NY, MA, WA)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ltc-care-type">Preferred Care Setting</label>
+              <select id="ltc-care-type">
+                <option value="home">Home care (in-home aide)</option>
+                <option value="assisted" selected>Assisted living facility</option>
+                <option value="nursing">Nursing home (skilled care)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ltc-benefit-period">Benefit Period</label>
+              <select id="ltc-benefit-period">
+                <option value="2">2 years</option>
+                <option value="3" selected>3 years</option>
+                <option value="5">5 years</option>
+                <option value="0">Unlimited (lifetime)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ltc-inflation">Inflation Protection</label>
+              <select id="ltc-inflation">
+                <option value="none">None</option>
+                <option value="simple">Simple 3% inflation rider</option>
+                <option value="compound" selected>Compound 3% inflation rider</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ltc-assets">Approximate Net Worth / Assets ($)</label>
+              <input type="number" id="ltc-assets" placeholder="e.g. 500000" min="0" />
+            </div>
+
+            <button class="btn-calc" onclick="calcLTC()">Calculate LTC Estimate</button>
+
+            <div class="result-box" id="ltc-result">
+              <h3>YOUR LTC ESTIMATE</h3>
+              <div class="result-amount" id="ltc-daily-benefit"></div>
+              <p style="margin:4px 0 16px;color:var(--text-muted);font-size:0.9rem;">estimated daily benefit needed</p>
+              <div id="ltc-breakdown" style="font-size:0.88rem;color:var(--text-muted);margin-bottom:16px;"></div>
+              <div id="ltc-premium" style="font-size:1rem;font-weight:600;margin-bottom:12px;"></div>
+              <div id="ltc-recommendation" style="font-size:0.9rem;"></div>
+              <p class="result-note">Estimates based on industry average costs and typical underwriting guidelines. Actual premiums vary by carrier, health status, and policy design. Always get quotes from multiple carriers.</p>
+            </div>
+          </div>
+
+          <!-- Article content for SEO -->
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Long-Term Care Insurance: What It Is and Who Needs It</h2>
+            <p>Long-term care (LTC) insurance covers costs associated with extended care services — help with activities of daily living (ADLs) such as bathing, dressing, eating, and mobility — that are not covered by standard health insurance or Medicare. As the population ages, the likelihood of needing some form of long-term care increases significantly: estimates suggest that approximately 70% of people who reach age 65 will need some form of long-term care at some point, with an average need of approximately 3 years. The financial impact can be substantial, making LTC insurance one of the more consequential planning decisions for middle-aged adults and pre-retirees.</p>
+
+            <h2>What Long-Term Care Costs</h2>
+            <p>Long-term care costs vary significantly by state, care setting, and level of care required. National average estimates for common care settings:</p>
+            <ul>
+              <li><strong>Home health aide (44 hours/week):</strong> Approximately $55,000–$75,000 per year nationally, with wide regional variation</li>
+              <li><strong>Adult day health care:</strong> Approximately $20,000–$30,000 per year nationally</li>
+              <li><strong>Assisted living facility (private room):</strong> Approximately $50,000–$70,000 per year nationally</li>
+              <li><strong>Nursing home (semi-private room):</strong> Approximately $85,000–$100,000 per year nationally</li>
+              <li><strong>Nursing home (private room):</strong> Approximately $100,000–$120,000 per year nationally</li>
+            </ul>
+            <p>High-cost states like California, New York, Massachusetts, and Washington can exceed these national averages by 30–60%. Lower-cost states in the South and Midwest may be 20–30% below the national average. These costs also increase over time — historically at approximately 3–4% annually — which is why inflation protection riders are an important consideration in LTC policy design.</p>
+
+            <h2>What Medicare and Medicaid Cover (and Don't Cover)</h2>
+            <p>A common planning mistake is assuming that Medicare or health insurance will cover long-term care costs. Medicare covers only short-term skilled nursing care following a qualifying hospital stay — typically up to 100 days, with significant cost-sharing after day 20. It does not cover custodial care (help with daily activities) when that is the primary need. Medicaid does cover long-term care, but only after you have spent down most of your assets to a very low threshold (which varies by state). Medicaid-covered care is typically provided in Medicaid-certified nursing facilities, with limited ability to choose your care setting. LTC insurance is designed to provide coverage for the gap between what Medicare covers and what Medicaid requires you to spend before assistance begins.</p>
+
+            <h2>Key Policy Features to Understand</h2>
+
+            <h3>Daily or Monthly Benefit Amount</h3>
+            <p>The maximum amount the policy will pay per day (or per month) for covered care services. Choosing the right benefit amount requires estimating the cost of care in your likely location at the time you'll need it, accounting for inflation. Underinsuring — choosing too low a daily benefit to keep premiums affordable — means you'll need to pay the difference out of pocket, potentially defeating the purpose of the policy.</p>
+
+            <h3>Benefit Period</h3>
+            <p>How long the policy will pay benefits — commonly 2, 3, 5 years, or lifetime (unlimited). The average LTC claim lasts approximately 3 years, though a significant minority of claims last 5 years or longer. Longer benefit periods provide more comprehensive protection but cost significantly more in premiums. A 3-year benefit period is a common balance between coverage and cost.</p>
+
+            <h3>Elimination Period</h3>
+            <p>The "deductible" period — the number of days you must receive care and pay out of pocket before insurance benefits begin. Common elimination periods are 30, 60, or 90 days. A 90-day elimination period typically results in meaningfully lower premiums than a 30-day period. If you have sufficient liquid assets to cover 90 days of care costs (approximately $20,000–$25,000 at national average rates), a 90-day elimination period is often the most cost-effective choice.</p>
+
+            <h3>Inflation Protection</h3>
+            <p>Because LTC insurance is typically purchased 20–30 years before it's needed, the daily benefit purchased today needs to keep pace with rising care costs. Without inflation protection, a $200/day benefit purchased at age 55 may cover only a fraction of daily care costs by age 80. A compound 3% inflation rider doubles your daily benefit in approximately 24 years — helping to maintain purchasing power. Simple inflation riders increase the daily benefit more slowly than compound riders. Inflation protection adds significantly to premiums but is typically worth the cost for younger buyers.</p>
+
+            <h3>Tax Deductibility</h3>
+            <p>Premiums for tax-qualified LTC insurance may be deductible as a medical expense, subject to annual per-person limits that increase with age (limits are adjusted periodically by the IRS). Employers can deduct premiums paid for employees. Some states also offer state income tax deductions for LTC premiums. Consult a tax advisor for current limits and applicability to your situation.</p>
+
+            <h2>When to Buy Long-Term Care Insurance</h2>
+            <p>The optimal time to buy LTC insurance is typically between ages 50 and 65. Buying earlier means paying premiums for a longer period before benefits are likely to be needed. Buying later means higher premiums (because age is a primary rating factor) and increasing risk of health conditions that can result in coverage denial. The premium difference between buying at 55 versus 65 is significant — estimates suggest that premiums at age 65 are approximately 60–80% higher than at age 55 for equivalent coverage. Health underwriting for LTC insurance is also stricter than for life insurance; conditions that would result in a table rating for life insurance may result in an outright decline for LTC insurance.</p>
+
+            <h2>Who Needs LTC Insurance and Who Doesn't</h2>
+            <p>LTC insurance is not the right solution for everyone. A practical framework:</p>
+            <ul>
+              <li><strong>LTC insurance typically makes sense if:</strong> your net worth is between approximately $200,000 and $2 million, you want to protect assets from being spent down on care costs, you want to choose your care setting rather than relying on Medicaid, and you are in reasonably good health and can qualify for coverage.</li>
+              <li><strong>LTC insurance may not make sense if:</strong> you have very limited assets (Medicaid will eventually cover your care), you have very substantial assets and can self-insure, you have significant health conditions that would result in a decline or very high premiums, or the premiums represent a significant burden relative to your retirement income.</li>
+            </ul>
+
+            <h2>Alternatives to Traditional LTC Insurance</h2>
+            <p>Traditional standalone LTC insurance has become less available as many carriers have exited the market following underestimated claim costs. Alternatives worth considering:</p>
+            <ul>
+              <li><strong>Hybrid life/LTC policies:</strong> Combine a life insurance death benefit with long-term care benefits. If you need care, the policy pays LTC benefits. If you die without needing care, the remaining death benefit goes to beneficiaries. Premiums are typically paid as a single lump sum or over a shorter period, avoiding the risk of premium increases common in traditional LTC policies.</li>
+              <li><strong>Annuities with LTC riders:</strong> Some annuities include riders that double or triple the annuity income if LTC is needed. Can provide some protection while also generating retirement income.</li>
+              <li><strong>Self-insurance:</strong> For those with substantial assets, setting aside a specific investment account designated for potential LTC costs may be more cost-effective than purchasing insurance premiums, particularly for those in good health who may never need extended care.</li>
+              <li><strong>Short-benefit-period policies:</strong> Some carriers offer 1–2 year benefit period policies at significantly lower premiums. These can cover the most common shorter LTC needs while limiting premium exposure.</li>
+            </ul>
+
+            <h2>How to Get the Best LTC Insurance Rate</h2>
+            <p>LTC insurance premiums vary significantly across carriers, and underwriting criteria differ as well. Working with an independent broker who represents multiple LTC carriers is essential for finding the best combination of coverage and premium. Apply while in good health — health conditions that develop after purchase cannot be used to cancel your policy or increase your premium (unless the carrier gets regulatory approval for a class-wide rate increase), but they can affect your ability to qualify in the first place.</p>
+
+            <p class="article-disclaimer">This calculator provides estimates for informational purposes only. Actual long-term care costs and insurance premiums vary by location, carrier, health status, and policy design. Consult a licensed insurance professional before making coverage decisions.</p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+
+          <div class="sidebar-box">
+            <h3>Related Calculators</h3>
+            <ul>
+              <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance Calculator</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/health-insurance-self-employed.html">Health Insurance Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Avg LTC need: <strong>~3 years</strong></li>
+              <li>Nursing home avg: <strong>$100k+/yr</strong></li>
+              <li>Medicare covers: <strong>short-term only</strong></li>
+              <li>Best age to buy: <strong>50–65</strong></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Related Guides</h3>
+            <ul>
+              <li><a href="/blog/disability-insurance-guide.html">Disability Insurance Guide</a></li>
+              <li><a href="/blog/how-much-life-insurance-do-i-need.html">How Much Life Insurance Do I Need?</a></li>
+              <li><a href="/blog/term-vs-whole-life-insurance.html">Term vs Whole Life Insurance</a></li>
+            </ul>
+          </div>
+
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcLTC() {
+  const age = parseInt(document.getElementById('ltc-age').value) || 55;
+  const gender = document.getElementById('ltc-gender').value;
+  const region = document.getElementById('ltc-region').value;
+  const careType = document.getElementById('ltc-care-type').value;
+  const benefitPeriod = parseInt(document.getElementById('ltc-benefit-period').value);
+  const inflation = document.getElementById('ltc-inflation').value;
+  const assets = parseFloat(document.getElementById('ltc-assets').value) || 0;
+
+  // Base daily cost estimates by region and care type
+  const baseDailyCost = {
+    home:     { low: 130, mid: 165, high: 220 },
+    assisted: { low: 120, mid: 155, high: 200 },
+    nursing:  { low: 220, mid: 275, high: 360 },
+  };
+
+  const dailyCost = baseDailyCost[careType][region];
+
+  // Project cost to likely claim age (assume claim at 80)
+  const yearsToClaimAge = Math.max(80 - age, 10);
+  const inflationRate = 0.03;
+  const projectedDailyCost = Math.round(dailyCost * Math.pow(1 + inflationRate, yearsToClaimAge));
+
+  // Benefit period total
+  const claimYears = benefitPeriod === 0 ? 5 : benefitPeriod; // use 5 for display if unlimited
+  const totalBenefit = projectedDailyCost * 365 * claimYears;
+
+  // Premium estimate base (annual)
+  // Base rates by age (approximate industry midpoints, per $100/day benefit, 3-yr benefit, 90-day EP)
+  const baseRatePerHundred = {
+    45: { male: 900,  female: 1400 },
+    50: { male: 1100, female: 1700 },
+    55: { male: 1400, female: 2200 },
+    60: { male: 1900, female: 3000 },
+    65: { male: 2700, female: 4200 },
+    70: { male: 3900, female: 6000 },
+  };
+
+  const baseRate = baseRatePerHundred[age] ? baseRatePerHundred[age][gender] : baseRatePerHundred[65][gender];
+  const benefitMultiplier = projectedDailyCost / 100;
+
+  // Benefit period multiplier
+  const bpMultiplier = benefitPeriod === 0 ? 2.2 : benefitPeriod === 5 ? 1.5 : benefitPeriod === 3 ? 1.0 : 0.7;
+
+  // Inflation rider multiplier
+  const inflMultiplier = inflation === 'compound' ? 1.0 : inflation === 'simple' ? 0.75 : 0.55;
+
+  const annualPremium = Math.round(baseRate * benefitMultiplier * bpMultiplier * inflMultiplier / 100) * 100;
+  const monthlyPremium = Math.round(annualPremium / 12);
+
+  // Self-insure recommendation
+  let selfInsureNote = '';
+  if (assets > 2000000) {
+    selfInsureNote = '<p style="color:var(--text-muted);font-size:0.88rem;">💡 With substantial assets, self-insuring may be more cost-effective. Consider setting aside a dedicated LTC reserve instead.</p>';
+  } else if (assets < 150000) {
+    selfInsureNote = '<p style="color:var(--text-muted);font-size:0.88rem;">💡 With limited assets, Medicaid may eventually cover LTC costs. Consider discussing with a Medicaid planning attorney before purchasing LTC insurance.</p>';
+  }
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+  const careLabels = { home: 'Home care', assisted: 'Assisted living', nursing: 'Nursing home' };
+  const bpLabel = benefitPeriod === 0 ? 'Unlimited' : benefitPeriod + ' years';
+  const inflLabel = inflation === 'compound' ? 'Compound 3%' : inflation === 'simple' ? 'Simple 3%' : 'None';
+
+  document.getElementById('ltc-daily-benefit').textContent = fmt(projectedDailyCost) + '/day';
+
+  document.getElementById('ltc-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Care setting</td><td style="text-align:right">${careLabels[careType]}</td></tr>
+      <tr><td>Current avg daily cost</td><td style="text-align:right">${fmt(dailyCost)}/day</td></tr>
+      <tr><td>Projected daily cost (age 80)</td><td style="text-align:right">${fmt(projectedDailyCost)}/day</td></tr>
+      <tr><td>Benefit period</td><td style="text-align:right">${bpLabel}</td></tr>
+      <tr><td>Estimated total benefit pool</td><td style="text-align:right">${fmt(totalBenefit)}</td></tr>
+      <tr><td>Inflation protection</td><td style="text-align:right">${inflLabel}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('ltc-premium').innerHTML = `
+    Estimated annual premium: <span style="color:var(--primary)">${fmt(annualPremium)}/yr</span>
+    &nbsp;|&nbsp; ${fmt(monthlyPremium)}/mo
+  `;
+
+  document.getElementById('ltc-recommendation').innerHTML = `
+    <p><strong>Note:</strong> These are rough estimates based on industry averages. Actual premiums depend on your health status, the specific carrier, and policy design. Get quotes from at least 3 carriers through an independent LTC specialist broker.</p>
+    ${selfInsureNote}
+  `;
+
+  const box = document.getElementById('ltc-result');
+  box.classList.add('visible');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+</body>
+</html>

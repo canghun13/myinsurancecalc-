@@ -19,69 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
-          <li class="dropdown" id="nav-calculators">
-            <a href="#">Calculators ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
-              <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
-              <li><a href="/tools/disability.html">Disability Insurance</a></li>
-              <li><a href="/tools/home-insurance.html">Home Insurance</a></li>
-              <li><a href="/tools/renters-insurance.html">Renters Insurance</a></li>
-              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
-              <li><a href="/tools/health-insurance-self-employed.html">Health Insurance (Self-Employed)</a></li>
-              <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
-              <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
-              <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
-              <li><a href="/tools/car-insurance.html">Car Insurance</a></li>
-              <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage</a></li>
-              <li><a href="/tools/sr22-insurance.html">SR-22 Insurance</a></li>
-              <li><a href="/tools/motorcycle-insurance.html">Motorcycle Insurance</a></li>
-              <li><a href="/tools/travel-insurance.html">Travel Insurance</a></li>
-              <li><a href="/tools/boat-insurance.html">Boat Insurance</a></li>
-              <li><a href="/tools/business-insurance.html">Business Insurance</a></li>
-              <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors</a></li>
-            </ul>
-          </li>
-          <li class="dropdown" id="nav-blog">
-            <a href="/blog/">Blog ▾</a>
-            <ul class="dropdown-menu" style="min-width:260px;right:0;left:auto;">
-              <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);">Life Insurance</li>
-              <li><a href="/blog/how-much-life-insurance-do-i-need.html">How Much Do I Need?</a></li>
-              <li><a href="/blog/term-vs-whole-life-insurance.html">Term vs Whole Life</a></li>
-              <li><a href="/blog/life-insurance-for-pilots.html">Life Insurance for Pilots</a></li>
-              <li><a href="/blog/life-insurance-after-cancer.html">Life Insurance After Cancer</a></li>
-              <li><a href="/blog/life-insurance-for-truck-drivers.html">Life Insurance for Truck Drivers</a></li>
-              <li><a href="/blog/life-insurance-after-dui.html">Life Insurance After a DUI</a></li>
-              <li><a href="/blog/life-insurance-after-thyroid-cancer.html">Life Insurance After Thyroid Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-breast-cancer.html">Life Insurance After Breast Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-colon-cancer.html">Life Insurance After Colon Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-prostate-cancer.html">Life Insurance After Prostate Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-lung-cancer.html">Life Insurance After Lung Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-skin-cancer.html">Life Insurance After Skin Cancer</a></li>
-              <li><a href="/blog/life-insurance-for-nurses.html">Life Insurance for Nurses</a></li>
-              <li><a href="/blog/life-insurance-for-teachers.html">Life Insurance for Teachers</a></li>
-              <li><a href="/blog/life-insurance-after-leukemia.html">Life Insurance After Leukemia</a></li>
-              <li><a href="/blog/life-insurance-after-ovarian-cancer.html">Life Insurance After Ovarian Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-bladder-cancer.html">Life Insurance After Bladder Cancer</a></li>
-              <li><a href="/blog/life-insurance-after-lymphoma.html">Life Insurance After Lymphoma</a></li>
-              <li><a href="/blog/life-insurance-after-cervical-cancer.html">Life Insurance After Cervical Cancer</a></li>
-              <li><a href="/blog/life-insurance-for-remote-workers.html">Life Insurance for Remote Workers</a></li>
-              <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:4px;">Freelancer / Gig</li>
-              <li><a href="/blog/freelancer-insurance-guide.html">Freelancer Insurance Guide</a></li>
-              <li><a href="/blog/insurance-for-gig-workers.html">Insurance for Gig Workers</a></li>
-              <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:4px;">Auto</li>
-              <li><a href="/blog/ev-insurance-cost.html">Why EVs Cost More to Insure</a></li>
-              <li><a href="/blog/does-car-insurance-cover-ev-battery.html">Does Insurance Cover EV Battery?</a></li>
-              <li><a href="/blog/how-to-lower-car-insurance.html">How to Lower Car Insurance</a></li>
-              <li style="padding:6px 12px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:4px;">Other</li>
-              <li><a href="/blog/disability-insurance-guide.html">Disability Insurance Guide</a></li>
-              <li><a href="/blog/pet-insurance-worth-it.html">Is Pet Insurance Worth It?</a></li>
-              <li><a href="/blog/umbrella-insurance-explained.html">Umbrella Insurance Explained</a></li>
-              <li><a href="/blog/insurance-for-college-students.html">Insurance for College Students</a></li>
-              <li><a href="/blog/renters-insurance-for-college-students.html">Renters Insurance for College Students</a></li>
-              <li style="border-top:1px solid var(--border);margin-top:4px;"><a href="/blog/" style="font-weight:600;">View All Articles →</a></li>
-            </ul>
-          </li>
+          <li><a href="/tools/" id="nav-calculators">Calculators</a></li>
+          <li><a href="/blog/" id="nav-blog">Blog</a></li>
         </ul>
       </nav>
     </div>
@@ -100,21 +39,24 @@ document.addEventListener('DOMContentLoaded', function () {
           <ul>
             <li><a href="/tools/life-insurance.html">Life Insurance</a></li>
             <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
+            <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors</a></li>
+            <li><a href="/tools/long-term-care-insurance.html">Long-Term Care Insurance</a></li>
             <li><a href="/tools/disability.html">Disability Insurance</a></li>
             <li><a href="/tools/home-insurance.html">Home Insurance</a></li>
             <li><a href="/tools/renters-insurance.html">Renters Insurance</a></li>
+            <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage</a></li>
             <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
+            <li><a href="/tools/health-insurance-self-employed.html">Health Insurance (Self-Employed)</a></li>
             <li><a href="/tools/pet-insurance.html">Pet Insurance</a></li>
             <li><a href="/tools/freelancer-insurance.html">Freelancer Insurance</a></li>
             <li><a href="/tools/ev-insurance.html">EV Insurance</a></li>
             <li><a href="/tools/car-insurance.html">Car Insurance</a></li>
-            <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage</a></li>
             <li><a href="/tools/sr22-insurance.html">SR-22 Insurance</a></li>
             <li><a href="/tools/motorcycle-insurance.html">Motorcycle Insurance</a></li>
             <li><a href="/tools/travel-insurance.html">Travel Insurance</a></li>
             <li><a href="/tools/boat-insurance.html">Boat Insurance</a></li>
             <li><a href="/tools/business-insurance.html">Business Insurance</a></li>
-            <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors</a></li>
+            <li><a href="/tools/" style="font-weight:600;">View All Calculators →</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -145,28 +87,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (homeLink) homeLink.classList.add('nav-active');
   }
 
-  // Calculators active — ONLY on /tools/ pages
+  // Calculators active
   if (currentPath.startsWith('/tools/')) {
-    const calcToggle = document.querySelector('#nav-calculators > a');
-    if (calcToggle) calcToggle.classList.add('nav-active');
-    // Highlight current tool in dropdown
-    document.querySelectorAll('#nav-calculators .dropdown-menu a').forEach(link => {
-      if (new URL(link.href, window.location.origin).pathname === currentPath) {
-        link.classList.add('nav-active');
-      }
-    });
+    const calcLink = document.getElementById('nav-calculators');
+    if (calcLink) calcLink.classList.add('nav-active');
   }
 
-  // Blog active — ONLY on /blog/ pages
+  // Blog active
   if (currentPath.startsWith('/blog/') || currentPath === '/blog') {
-    const blogToggle = document.querySelector('#nav-blog > a');
-    if (blogToggle) blogToggle.classList.add('nav-active');
-    // Highlight current article in dropdown
-    document.querySelectorAll('#nav-blog .dropdown-menu a').forEach(link => {
-      if (new URL(link.href, window.location.origin).pathname === currentPath) {
-        link.classList.add('nav-active');
-      }
-    });
+    const blogLink = document.getElementById('nav-blog');
+    if (blogLink) blogLink.classList.add('nav-active');
   }
 
   // Mobile nav toggle
@@ -175,27 +105,4 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   }
-
-  // Dropdown: hover desktop / click mobile
-  document.querySelectorAll('.dropdown').forEach(drop => {
-    const dropToggle = drop.querySelector(':scope > a');
-    drop.addEventListener('mouseenter', () => {
-      if (window.innerWidth > 768) drop.classList.add('active');
-    });
-    drop.addEventListener('mouseleave', () => {
-      if (window.innerWidth > 768) drop.classList.remove('active');
-    });
-    if (dropToggle) {
-      dropToggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const isActive = drop.classList.contains('active');
-          // 다른 드롭다운 전부 닫기
-          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
-          // 클릭한 거 토글
-          if (!isActive) drop.classList.add('active');
-        }
-      });
-    }
-  });
 });

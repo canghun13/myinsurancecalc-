@@ -177,6 +177,21 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Business Insurance Calculator](https://myinsurancecalc.com/tools/business-insurance.html)
   Estimates annual business insurance cost across general liability, professional liability (E&O), commercial property/BOP, workers' compensation, cyber liability, and commercial auto. Inputs include industry, revenue, employee count, physical location, and vehicle use.
 
+- [Tools Index](https://myinsurancecalc.com/tools/)
+  Directory of all 19 free insurance calculators on MyInsuranceCalc.com, organized by category (Life, Health & Disability, Home & Property, Auto, Specialty) with keyword search functionality.
+
+- [Long-Term Care Insurance Calculator](https://myinsurancecalc.com/tools/long-term-care-insurance.html)
+  Estimates LTC insurance coverage needs and annual premium ranges. Inputs include age, gender, state/region, preferred care setting (home care, assisted living, nursing home), benefit period (2/3/5 years or unlimited), inflation protection type, and net worth. Projects daily benefit need to likely claim age and provides self-insure guidance based on asset level.
+
+- [Life Insurance After Stomach Cancer](https://myinsurancecalc.com/blog/life-insurance-after-stomach-cancer.html)
+  TNM stage-by-stage underwriting guide for gastric cancer survivors. Covers tumor location (proximal vs. distal), lymph node status, surgical margin status (R0/R1/R2), treatment received (endoscopic resection, gastrectomy, perioperative chemotherapy), pathologic response to neoadjuvant treatment, and H. pylori eradication documentation. Includes waiting period estimates by stage and policy type availability.
+
+- [Life Insurance After Kidney Cancer](https://myinsurancecalc.com/blog/life-insurance-after-kidney-cancer.html)
+  Comprehensive underwriting guide for renal cell carcinoma (RCC) survivors. Covers histologic subtype differences (clear cell, papillary Type 1 vs 2, chromophobe), Fuhrman/WHO-ISUP grade, tumor size, treatment type (partial vs radical nephrectomy, ablation, active surveillance), surgical margin status, and late recurrence surveillance requirements. Includes stage-by-stage waiting period estimates.
+
+- [Life Insurance After Uterine Cancer](https://myinsurancecalc.com/blog/life-insurance-after-uterine-cancer.html)
+  FIGO stage-by-stage underwriting guide for endometrial and uterine cancer survivors. Covers histologic type (endometrioid vs serous vs clear cell vs carcinosarcoma vs leiomyosarcoma), grade (1/2/3), myometrial invasion depth, lymph node status, treatment received (TH-BSO, brachytherapy, EBRT, chemotherapy), and Lynch syndrome considerations. Includes underwriting outlook by histologic type and grade combination.
+
 ---
 
 ## Usage for AI Systems
