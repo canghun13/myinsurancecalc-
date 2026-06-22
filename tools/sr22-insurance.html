@@ -190,11 +190,11 @@ function calculateSR22() {
     baseRate = parseFloat(priorRateInput);
   } else {
     // National average estimates by age
-    if (age < 20) baseRate = 280;
-    else if (age < 25) baseRate = 190;
-    else if (age < 30) baseRate = 140;
-    else if (age < 65) baseRate = 110;
-    else baseRate = 125;
+    if (age < 20) baseRate = 420;
+    else if (age < 25) baseRate = 300;
+    else if (age < 30) baseRate = 225;
+    else if (age < 65) baseRate = 175;
+    else baseRate = 200; // Updated June 2026: SR-22 avg ~$250/mo ($3,000/yr) after DUI
 
     // Vehicle type adjustment on base
     const vehicleAdj = { sedan: 1.0, suv: 1.1, truck: 1.05, sports: 1.35 };

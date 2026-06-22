@@ -96,7 +96,7 @@
             <p>Anyone with significant assets to protect. As a rule of thumb, your umbrella coverage should at least equal your net worth. The more you own, the more you have to lose in a lawsuit. High-risk factors that increase your need: owning a pool, having teen drivers, owning rental property, owning aggressive dog breeds, or frequently hosting guests.</p>
 
             <h3>How Much Does It Cost?</h3>
-            <p>Umbrella insurance is one of the best values in insurance. A $1 million policy typically costs $150–$300 per year in estimated national averages. Each additional $1 million adds roughly $50–$75 per year. For the protection it provides, it's remarkably affordable.</p>
+            <p>Umbrella insurance is one of the best values in insurance. A $1 million policy typically costs $250–$600 per year in estimated national averages. Each additional $1 million adds roughly $75–$150 per year. For the protection it provides, it's remarkably affordable.</p>
 
             <h3>What Umbrella Insurance Covers</h3>
             <ul>
@@ -169,8 +169,8 @@ function calcUmbrella() {
   const needed = Math.max(base - existingCoverage, 1000000);
   const rounded = Math.ceil(needed / 1000000) * 1000000;
 
-  const annualLow = 150 + ((rounded / 1000000) - 1) * 50;
-  const annualHigh = 300 + ((rounded / 1000000) - 1) * 75;
+  const annualLow = 250 + ((rounded / 1000000) - 1) * 75; // Updated June 2026: $1M avg $250-600/yr
+  const annualHigh = 600 + ((rounded / 1000000) - 1) * 150;
 
   const fmt = v => '$' + Math.round(v).toLocaleString();
 

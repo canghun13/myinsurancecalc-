@@ -111,7 +111,7 @@
             <p>The average emergency vet visit costs $800–$1,500. A serious illness or surgery can run $3,000–$10,000 or more. Pet insurance helps you avoid the painful decision of choosing between your pet's health and your finances. Whether it makes financial sense depends on your specific pet, breed, age, and risk tolerance.</p>
 
             <h3>The Financial Case For Pet Insurance</h3>
-            <p>Pet insurance works on the same principle as any other insurance: pay a predictable monthly premium to protect against unpredictable large expenses. The math works in your favor when your pet experiences a major illness or injury during the policy period. A policy costing $600/year with 80% reimbursement and a $250 deductible would pay approximately $3,800 on a $5,000 orthopedic surgery — nearly 6 years of premiums returned in a single claim. It works against you if your pet stays healthy throughout the policy period. This is the nature of insurance, not a flaw in the product.</p>
+            <p>Pet insurance works on the same principle as any other insurance: pay a predictable monthly premium to protect against unpredictable large expenses. The math works in your favor when your pet experiences a major illness or injury during the policy period. A policy costing $750/year with 80% reimbursement and a $250 deductible would pay approximately $3,800 on a $5,000 orthopedic surgery — approximately 5 years of premiums returned in a single claim. It works against you if your pet stays healthy throughout the policy period. This is the nature of insurance, not a flaw in the product.</p>
 
             <h3>What Pet Insurance Covers (and What It Doesn't)</h3>
             <p>Most policies cover accidents and illnesses — broken bones, cancer, infections, digestive issues, and similar unexpected conditions. What standard policies typically do not cover:</p>
@@ -182,7 +182,7 @@ function calcPet() {
   const reimbursement = parseFloat(document.getElementById('reimbursement').value);
 
   // Base monthly rates
-  const base = { dog: 35, cat: 18 };
+  const base = { dog: 52, cat: 27 }; // Updated June 2026: avg dog $43-62/mo, cat $23-32/mo (NAPHIA 2026)
   const ageMult = { puppy: 1.1, young: 1.0, adult: 1.4, senior: 1.9 };
   const breedMult = { small: 0.85, medium: 1.0, large: 1.2, xlarge: 1.45 };
   const coverageMult = { accident: 0.6, 'accident-illness': 1.0, comprehensive: 1.4 };

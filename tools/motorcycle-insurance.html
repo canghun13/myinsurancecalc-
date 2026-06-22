@@ -246,13 +246,13 @@ function calculateMoto() {
   }
 
   // Base monthly rate by bike type
-  const bikeBase = {
-    cruiser: 28,
-    standard: 38,
-    touring: 52,
-    sport: 95,
-    adventure: 45,
-    scooter: 14
+  const bikeBase = { // Updated June 2026: cruiser avg ~$45/mo full coverage
+    cruiser: 45,
+    standard: 55,
+    touring: 65,
+    sport: 130,
+    adventure: 60,
+    scooter: 22
   };
   let base = bikeBase[bikeType];
 
