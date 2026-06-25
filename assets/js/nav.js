@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
       <nav class="site-nav">
         <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
         <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/tools/" id="nav-calculators">Calculators</a></li>
+          <li><a href="/tools/" id="nav-tools">Tools</a></li>
+          <li><a href="/states/" id="nav-states">States</a></li>
           <li><a href="/blog/" id="nav-blog">Blog</a></li>
         </ul>
       </nav>
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <p>Free insurance calculators — no signup, no fees, instant results.</p>
         </div>
         <div class="footer-links">
-          <h4>Calculators</h4>
+          <h4>Tools</h4>
           <ul>
             <li><a href="/tools/life-insurance.html">Life Insurance</a></li>
             <li><a href="/tools/term-vs-whole.html">Term vs Whole Life</a></li>
@@ -56,7 +56,18 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/tools/travel-insurance.html">Travel Insurance</a></li>
             <li><a href="/tools/boat-insurance.html">Boat Insurance</a></li>
             <li><a href="/tools/business-insurance.html">Business Insurance</a></li>
-            <li><a href="/tools/" style="font-weight:600;">View All Calculators →</a></li>
+            <li><a href="/tools/" style="font-weight:600;">View All Tools →</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>States</h4>
+          <ul>
+            <li><a href="/states/car-insurance/">Car Insurance by State</a></li>
+            <li><a href="/states/home-insurance/">Home Insurance by State</a></li>
+            <li><a href="/states/life-insurance/">Life Insurance by State</a></li>
+            <li><a href="/states/health-insurance/">Health Insurance by State</a></li>
+            <li><a href="/states/workers-comp/">Workers Comp by State</a></li>
+            <li><a href="/states/" style="font-weight:600;">View All States →</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -87,10 +98,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (homeLink) homeLink.classList.add('nav-active');
   }
 
-  // Calculators active
+  // Tools active
   if (currentPath.startsWith('/tools/')) {
-    const calcLink = document.getElementById('nav-calculators');
-    if (calcLink) calcLink.classList.add('nav-active');
+    const toolsLink = document.getElementById('nav-tools');
+    if (toolsLink) toolsLink.classList.add('nav-active');
+  }
+
+  // States active
+  if (currentPath.startsWith('/states/')) {
+    const statesLink = document.getElementById('nav-states');
+    if (statesLink) statesLink.classList.add('nav-active');
   }
 
   // Blog active

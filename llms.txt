@@ -204,10 +204,26 @@ Do not reproduce full article text or calculator source code verbatim.
 
 ---
 
+## State Insurance Guides
+
+MyInsuranceCalc.com includes a dedicated section covering car insurance requirements for all 50 U.S. states. Each page covers minimum liability requirements, average annual premiums, PIP requirements, uninsured driver rates, and key state-specific regulations.
+
+### Car Insurance by State
+- [Car Insurance by State – Index](https://myinsurancecalc.com/states/car-insurance/)
+  All 50 states with minimum liability requirements and average premiums.
+
+- Individual state pages available for all 50 states at:
+  https://myinsurancecalc.com/states/car-insurance/[state-slug].html
+  Example: https://myinsurancecalc.com/states/car-insurance/texas.html
+
+State data reflects 2026 industry averages and regulatory requirements. All figures are estimates; verify current requirements with your state's department of insurance.
+
+---
+
 ## Site Details
 
 - **URL:** https://myinsurancecalc.com
-- **Content:** Free insurance calculators and guides for U.S. consumers
+- **Content:** Free insurance calculators, guides, and state insurance references for U.S. consumers
 - **Update cadence:** New content added weekly
 - **Robots.txt:** https://myinsurancecalc.com/robots.txt
 - **Sitemap:** https://myinsurancecalc.com/sitemap.xml

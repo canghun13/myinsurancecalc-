@@ -58,4 +58,56 @@
   <url><loc>https://myinsurancecalc.com/about.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://myinsurancecalc.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://myinsurancecalc.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/alabama.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/alaska.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/arizona.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/arkansas.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/california.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/colorado.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/connecticut.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/delaware.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/florida.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/georgia.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/hawaii.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/idaho.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/illinois.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/indiana.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/iowa.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/kansas.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/kentucky.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/louisiana.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/maine.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/maryland.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/massachusetts.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/michigan.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/minnesota.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/mississippi.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/missouri.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/montana.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/nebraska.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/nevada.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/new-hampshire.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/new-jersey.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/new-mexico.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/new-york.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/north-carolina.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/north-dakota.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/ohio.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/oklahoma.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/oregon.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/pennsylvania.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/rhode-island.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/south-carolina.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/south-dakota.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/tennessee.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/texas.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/utah.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/vermont.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/virginia.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/washington.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/west-virginia.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/wisconsin.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/car-insurance/wyoming.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 </urlset>
