@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flood Insurance Calculator – Estimate Your Annual Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate your annual flood insurance cost based on flood zone, home value, and coverage level. See NFIP vs private flood insurance options." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/flood-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Flood Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/flood-insurance.html",
+    "description": "Estimate annual flood insurance premiums based on flood zone, home value, foundation type, and coverage selection. Compare NFIP and private flood options.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/tools/">Calculators</a> › Flood Insurance</p>
+        <h1>Flood Insurance Calculator</h1>
+        <p>Estimate your annual flood insurance premium and see how flood zone, home value, and coverage level affect your cost.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Property Information</h2>
+
+            <div class="form-group">
+              <label for="fl-zone">FEMA Flood Zone</label>
+              <select id="fl-zone">
+                <option value="x_minimal">Zone X — Minimal risk (outside 500-year floodplain)</option>
+                <option value="x_moderate">Zone X (shaded) — Moderate risk (500-year floodplain)</option>
+                <option value="ae_low" selected>Zone AE — High risk, Base Flood Elevation established</option>
+                <option value="ae_high">Zone AE — High risk, property below BFE</option>
+                <option value="ve">Zone VE — Coastal high-risk (wave action)</option>
+                <option value="a_no_bfe">Zone A — High risk, no BFE established</option>
+              </select>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Not sure of your zone? Look up your property at <a href="https://msc.fema.gov" target="_blank" rel="noopener">FEMA's Flood Map Service</a>.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="fl-home-value">Home Replacement Value ($)</label>
+              <input type="number" id="fl-home-value" placeholder="e.g. 350000" min="0" value="350000" />
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Use replacement cost, not market value. NFIP maximum building coverage is $250,000.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="fl-contents">Contents Coverage ($)</label>
+              <input type="number" id="fl-contents" placeholder="e.g. 100000" min="0" value="100000" />
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">NFIP maximum contents coverage is $100,000. Private flood can go higher.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="fl-foundation">Foundation Type</label>
+              <select id="fl-foundation">
+                <option value="slab">Slab on grade</option>
+                <option value="elevated" selected>Elevated (on piers, posts, or pilings)</option>
+                <option value="crawl">Crawl space</option>
+                <option value="basement">Full basement</option>
+                <option value="walkout">Walkout / daylight basement</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fl-stories">Number of Stories</label>
+              <select id="fl-stories">
+                <option value="1">1 story</option>
+                <option value="2" selected>2 stories</option>
+                <option value="3plus">3+ stories</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fl-state">State</label>
+              <select id="fl-state">
+                <option value="AL">Alabama</option><option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option><option value="AR">Arkansas</option>
+                <option value="CA">California</option><option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option><option value="DE">Delaware</option>
+                <option value="FL">Florida</option><option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option><option value="ID">Idaho</option>
+                <option value="IL">Illinois</option><option value="IN">Indiana</option>
+                <option value="IA">Iowa</option><option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option><option value="LA">Louisiana</option>
+                <option value="ME">Maine</option><option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option><option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option><option value="MT">Montana</option>
+                <option value="NE">Nebraska</option><option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option><option value="NY">New York</option>
+                <option value="NC">North Carolina</option><option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option><option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option><option value="TN">Tennessee</option>
+                <option value="TX" selected>Texas</option><option value="UT">Utah</option>
+                <option value="VT">Vermont</option><option value="VA">Virginia</option>
+                <option value="WA">Washington</option><option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+              </select>
+            </div>
+
+            <button class="btn-primary" onclick="calcFlood()">Estimate Premium</button>
+          </div>
+
+          <div class="adslot" style="margin-top:24px;"><!-- AdSense --></div>
+        </div>
+
+        <div>
+          <div class="result-box" id="fl-result" style="display:none;">
+            <h2>Estimated Annual Premium</h2>
+            <div class="result-main">
+              <span class="result-value" id="fl-annual">—</span>
+              <span class="result-label">per year</span>
+            </div>
+            <div id="fl-breakdown"></div>
+          </div>
+
+          <div class="info-box" style="margin-top:24px;">
+            <h3>NFIP vs. Private Flood Insurance</h3>
+            <p style="font-size:0.9rem;">Most flood insurance in the U.S. is provided through FEMA's National Flood Insurance Program (NFIP), but private flood insurance options have expanded significantly and may offer lower premiums, higher coverage limits, or better terms for some properties.</p>
+            <table style="width:100%;font-size:0.85rem;border-collapse:collapse;margin-top:12px;">
+              <thead>
+                <tr style="background:var(--bg-light,#f8fafc);">
+                  <th style="padding:8px;text-align:left;"></th>
+                  <th style="padding:8px;text-align:center;">NFIP</th>
+                  <th style="padding:8px;text-align:center;">Private</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-top:1px solid var(--border);">
+                  <td style="padding:8px;">Max building coverage</td>
+                  <td style="padding:8px;text-align:center;">$250,000</td>
+                  <td style="padding:8px;text-align:center;">Varies (often higher)</td>
+                </tr>
+                <tr style="border-top:1px solid var(--border);background:var(--bg-light,#f8fafc);">
+                  <td style="padding:8px;">Max contents</td>
+                  <td style="padding:8px;text-align:center;">$100,000</td>
+                  <td style="padding:8px;text-align:center;">Varies</td>
+                </tr>
+                <tr style="border-top:1px solid var(--border);">
+                  <td style="padding:8px;">Waiting period</td>
+                  <td style="padding:8px;text-align:center;">30 days</td>
+                  <td style="padding:8px;text-align:center;">Often 10–14 days</td>
+                </tr>
+                <tr style="border-top:1px solid var(--border);background:var(--bg-light,#f8fafc);">
+                  <td style="padding:8px;">Cancellation risk</td>
+                  <td style="padding:8px;text-align:center;">Low</td>
+                  <td style="padding:8px;text-align:center;">Higher in high-risk areas</td>
+                </tr>
+                <tr style="border-top:1px solid var(--border);">
+                  <td style="padding:8px;">Loss of use coverage</td>
+                  <td style="padding:8px;text-align:center;">No</td>
+                  <td style="padding:8px;text-align:center;">Often included</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-box" style="margin-top:16px;">
+            <h3>Why Standard Homeowners Insurance Doesn't Cover Floods</h3>
+            <p style="font-size:0.9rem;">Standard HO-3 homeowners policies specifically exclude flood damage regardless of cause — including heavy rain, storm surge, river overflow, and groundwater seepage. Flood insurance is a completely separate policy. If you've ever had water enter your home from outside, that may qualify as a flood claim — but only if you had a separate flood policy in force.</p>
+          </div>
+
+          <div class="info-box" style="margin-top:16px;">
+            <h3>Home Insurance by State</h3>
+            <p style="font-size:0.9rem;">Flood risk varies dramatically by state. See your state's disaster risk profile and flood insurance recommendations:</p>
+            <ul style="font-size:0.9rem;">
+              <li><a href="/states/home-insurance/florida.html">Florida Home Insurance (extreme flood risk)</a></li>
+              <li><a href="/states/home-insurance/louisiana.html">Louisiana Home Insurance (very high flood risk)</a></li>
+              <li><a href="/states/home-insurance/texas.html">Texas Home Insurance (high flood risk)</a></li>
+              <li><a href="/states/home-insurance/north-carolina.html">North Carolina Home Insurance</a></li>
+              <li><a href="/states/home-insurance/">All 50 States →</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Base rates by flood zone (as % of building coverage value)
+  const zoneRates = {
+    x_minimal:   { low: 0.0015, high: 0.0025 },
+    x_moderate:  { low: 0.0030, high: 0.0055 },
+    ae_low:      { low: 0.0060, high: 0.0120 },
+    ae_high:     { low: 0.0150, high: 0.0280 },
+    ve:          { low: 0.0220, high: 0.0450 },
+    a_no_bfe:    { low: 0.0120, high: 0.0220 },
+  };
+
+  // Foundation multipliers
+  const foundationMult = {
+    slab: 1.00, elevated: 0.65, crawl: 1.10,
+    basement: 1.45, walkout: 1.20
+  };
+
+  // Story multipliers
+  const storiesMult = { '1': 1.00, '2': 0.92, '3plus': 0.88 };
+
+  // State coastal/flood risk multiplier
+  const stateFloodRisk = {
+    FL:1.45, LA:1.55, TX:1.25, NC:1.15, SC:1.18, MS:1.22, AL:1.12,
+    VA:1.08, MD:1.05, NJ:1.18, NY:1.12, MA:1.08, CT:1.05, RI:1.08,
+    GA:1.05, TN:1.08, KY:1.10, WV:1.12, VT:1.08, ND:1.15,
+    HI:1.10, WA:1.05, OR:1.05, CA:1.08, AK:1.05
+  };
+
+  function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+  function calcFlood() {
+    const zone = document.getElementById('fl-zone').value;
+    const homeValue = parseFloat(document.getElementById('fl-home-value').value) || 0;
+    const contents = parseFloat(document.getElementById('fl-contents').value) || 0;
+    const foundation = document.getElementById('fl-foundation').value;
+    const stories = document.getElementById('fl-stories').value;
+    const state = document.getElementById('fl-state').value;
+
+    if (homeValue <= 0) { alert('Please enter your home replacement value.'); return; }
+
+    const rates = zoneRates[zone];
+    const buildingCoverage = Math.min(homeValue, 250000); // NFIP cap
+    const contentsCoverage = Math.min(contents, 100000);  // NFIP cap
+
+    const stateMultiplier = stateFloodRisk[state] || 1.00;
+    const fndMult = foundationMult[foundation];
+    const stMult = storiesMult[stories];
+
+    // NFIP estimate (midpoint of rate range)
+    const midRate = (rates.low + rates.high) / 2;
+    const buildingPremiumBase = buildingCoverage * midRate;
+    const buildingPremium = buildingPremiumBase * fndMult * stMult * stateMultiplier;
+    const contentsPremium = contentsCoverage * midRate * 0.7 * stateMultiplier; // contents rate is lower
+    const nfipTotal = buildingPremium + contentsPremium;
+
+    // Low / High range
+    const nfipLow = buildingCoverage * rates.low * fndMult * stMult * stateMultiplier + contentsCoverage * rates.low * 0.7;
+    const nfipHigh = buildingCoverage * rates.high * fndMult * stMult * stateMultiplier + contentsCoverage * rates.high * 0.7;
+
+    // Private market estimate (typically 10-30% lower for moderate zones, higher for VE/coastal)
+    const privateMultiplier = zone === 've' ? 1.15 : zone === 'ae_high' ? 0.90 : 0.80;
+    const privateLow = nfipLow * privateMultiplier;
+    const privateHigh = nfipHigh * privateMultiplier;
+
+    document.getElementById('fl-annual').textContent = fmt(nfipTotal);
+    document.getElementById('fl-result').style.display = 'block';
+
+    const zoneLabels = {
+      x_minimal: 'Zone X — Minimal risk', x_moderate: 'Zone X (shaded) — Moderate risk',
+      ae_low: 'Zone AE — High risk (above BFE)', ae_high: 'Zone AE — High risk (below BFE)',
+      ve: 'Zone VE — Coastal high risk', a_no_bfe: 'Zone A — High risk, no BFE'
+    };
+
+    const coverageNote = homeValue > 250000
+      ? `<p style="font-size:0.85rem;color:#d97706;background:#fef3c7;padding:10px;border-radius:6px;margin-top:8px;">⚠️ Your home value exceeds the NFIP's $250,000 building coverage limit. Consider supplemental private flood insurance for the difference (${fmt(homeValue - 250000)}).</p>`
+      : '';
+
+    document.getElementById('fl-breakdown').innerHTML = `
+      <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px;">
+        <table style="width:100%;font-size:0.9rem;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Flood zone</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${zoneLabels[zone]}</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Building coverage (NFIP)</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${fmt(buildingCoverage)}</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Contents coverage (NFIP)</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${fmt(contentsCoverage)}</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Foundation type</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${foundation.charAt(0).toUpperCase() + foundation.slice(1).replace('_',' ')}</td>
+          </tr>
+        </table>
+
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--bg-light,#f8fafc);padding:14px;border-radius:8px;">
+            <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin:0 0 6px;">NFIP Estimate Range</p>
+            <p style="font-size:1.1rem;font-weight:700;color:var(--primary);margin:0;">${fmt(nfipLow)} – ${fmt(nfipHigh)}</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin:4px 0 0;">per year</p>
+          </div>
+          <div style="background:var(--bg-light,#f8fafc);padding:14px;border-radius:8px;">
+            <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin:0 0 6px;">Private Flood Estimate</p>
+            <p style="font-size:1.1rem;font-weight:700;color:var(--primary);margin:0;">${fmt(privateLow)} – ${fmt(privateHigh)}</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin:4px 0 0;">per year (varies by carrier)</p>
+          </div>
+        </div>
+
+        ${coverageNote}
+
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:14px;">Estimates are based on 2026 NFIP Risk Rating 2.0 methodology and vary by property-specific elevation, construction type, and claims history. Always obtain an official NFIP quote or private market quote for accurate pricing. A 30-day waiting period typically applies for NFIP coverage.</p>
+      </div>
+    `;
+  }
+</script>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
