@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workers Compensation Calculator – Estimate Your Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate your workers compensation insurance premium by industry, payroll, and state. Free workers comp calculator for small and mid-size businesses." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/workers-comp.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Workers Compensation Calculator",
+    "url": "https://myinsurancecalc.com/tools/workers-comp.html",
+    "description": "Estimate your workers compensation insurance premium based on industry classification, annual payroll, state, and experience modification factor.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/tools/">Calculators</a> › Workers Comp</p>
+        <h1>Workers Compensation Calculator</h1>
+        <p>Estimate your annual workers comp premium based on your industry, payroll, state, and safety record.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Business Information</h2>
+
+            <div class="form-group">
+              <label for="wc-state">State</label>
+              <select id="wc-state">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota (Monopolistic)</option>
+                <option value="OH">Ohio (Monopolistic)</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX" selected>Texas (Optional)</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington (Monopolistic)</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming (Monopolistic)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wc-industry">Industry / Job Classification</label>
+              <select id="wc-industry">
+                <option value="clerical">Clerical / Office Work</option>
+                <option value="retail">Retail Sales</option>
+                <option value="restaurant">Restaurant / Food Service</option>
+                <option value="tech">Technology / Software</option>
+                <option value="healthcare">Healthcare (non-medical)</option>
+                <option value="medical">Medical / Healthcare (clinical)</option>
+                <option value="light_manufacturing">Light Manufacturing / Assembly</option>
+                <option value="heavy_manufacturing">Heavy Manufacturing / Industrial</option>
+                <option value="warehousing">Warehousing / Distribution</option>
+                <option value="construction_gen">Construction (General Contractor)</option>
+                <option value="construction_roofing">Construction (Roofing)</option>
+                <option value="construction_electrical">Construction (Electrical / Plumbing)</option>
+                <option value="trucking">Trucking / Transportation</option>
+                <option value="landscaping">Landscaping / Tree Service</option>
+                <option value="janitorial">Janitorial / Cleaning</option>
+                <option value="agriculture">Agriculture / Farming</option>
+                <option value="logging">Logging / Forestry</option>
+                <option value="oil_gas">Oil &amp; Gas / Mining</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wc-payroll">Annual Payroll ($)</label>
+              <input type="number" id="wc-payroll" placeholder="e.g. 500000" min="0" value="500000" />
+            </div>
+
+            <div class="form-group">
+              <label for="wc-employees">Number of Employees</label>
+              <input type="number" id="wc-employees" placeholder="e.g. 10" min="1" value="10" />
+            </div>
+
+            <div class="form-group">
+              <label for="wc-mod">Experience Modification Factor (X-Mod)</label>
+              <select id="wc-mod">
+                <option value="0.75">0.75 — Excellent safety record (25% below average)</option>
+                <option value="0.85">0.85 — Good safety record (15% below average)</option>
+                <option value="1.00" selected>1.00 — Average (no modification)</option>
+                <option value="1.15">1.15 — Below average (15% above average)</option>
+                <option value="1.30">1.30 — Poor safety record (30% above average)</option>
+                <option value="1.50">1.50 — High claims history (50% above average)</option>
+              </select>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">New businesses default to 1.00. Your mod adjusts based on your actual claims history vs. industry average.</p>
+            </div>
+
+            <button class="btn-primary" onclick="calcWC()">Estimate Premium</button>
+          </div>
+
+          <div class="adslot" style="margin-top:24px;"><!-- AdSense --></div>
+        </div>
+
+        <div>
+          <div class="result-box" id="wc-result" style="display:none;">
+            <h2>Estimated Annual Premium</h2>
+            <div class="result-main">
+              <span class="result-value" id="wc-annual">—</span>
+              <span class="result-label">per year</span>
+            </div>
+            <div class="result-breakdown" id="wc-breakdown"></div>
+          </div>
+
+          <div class="info-box" style="margin-top:24px;">
+            <h3>How Workers Comp Premiums Are Calculated</h3>
+            <p>Workers comp premiums follow a standard formula:</p>
+            <p style="font-family:monospace;background:var(--bg-light,#f8fafc);padding:12px;border-radius:8px;font-size:0.9rem;">(Payroll ÷ 100) × Classification Rate × Experience Mod = Premium</p>
+            <ul style="font-size:0.9rem;margin-top:12px;">
+              <li><strong>Classification rate:</strong> Set by your state based on job type. Clerical work may be $0.25/$100; roofing may be $20+/$100.</li>
+              <li><strong>Experience modification:</strong> Compares your actual claims to the industry average. Below 1.0 means better than average; above 1.0 means worse.</li>
+              <li><strong>Premium audit:</strong> Insurers audit your actual payroll at year end. If payroll was higher than estimated, you owe additional premium.</li>
+            </ul>
+          </div>
+
+          <div class="info-box" style="margin-top:16px;">
+            <h3>Monopolistic States</h3>
+            <p style="font-size:0.9rem;">North Dakota, Ohio, Washington, and Wyoming require all employers to purchase workers comp directly from the state fund — private insurance is not available. If you're in one of these states, contact your state fund directly for accurate pricing.</p>
+          </div>
+
+          <div class="info-box" style="margin-top:16px;">
+            <h3>Texas: Optional Workers Comp</h3>
+            <p style="font-size:0.9rem;">Texas is the only state where workers comp is not mandatory for most private employers. However, non-subscriber employers lose their liability defenses and face direct lawsuits from injured workers. Most Texas employers benefit from carrying coverage.</p>
+          </div>
+
+          <div class="info-box" style="margin-top:16px;">
+            <h3>Workers Comp by State</h3>
+            <p style="font-size:0.9rem;">Requirements, rates, and regulations vary by state. See our state-specific guides:</p>
+            <ul style="font-size:0.9rem;">
+              <li><a href="/states/workers-comp/texas.html">Texas Workers Comp Guide</a></li>
+              <li><a href="/states/workers-comp/california.html">California Workers Comp Guide</a></li>
+              <li><a href="/states/workers-comp/florida.html">Florida Workers Comp Guide</a></li>
+              <li><a href="/states/workers-comp/new-york.html">New York Workers Comp Guide</a></li>
+              <li><a href="/states/workers-comp/">All 50 States →</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="adslot" style="margin-top:32px;"><!-- AdSense --></div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // State rate multipliers (relative to national average of 1.0)
+  const stateRates = {
+    AL:1.05,AK:1.55,AZ:0.85,AR:0.92,CA:1.35,CO:0.92,CT:1.18,DE:0.98,
+    FL:1.08,GA:0.90,HI:1.14,ID:0.87,IL:1.32,IN:0.82,IA:0.85,KS:0.84,
+    KY:1.04,LA:1.14,ME:0.96,MD:1.00,MA:1.12,MI:1.06,MN:0.98,MS:0.95,
+    MO:0.91,MT:1.10,NE:0.85,NV:1.00,NH:0.89,NJ:1.20,NM:1.04,NY:1.58,
+    NC:0.87,ND:0.91,OH:0.95,OK:0.98,OR:1.04,PA:1.11,RI:1.18,SC:0.89,
+    SD:0.82,TN:0.92,TX:0.85,UT:0.84,VT:0.98,VA:0.89,WA:1.07,WV:1.17,
+    WI:0.95,WY:0.98
+  };
+
+  // Base rates per $100 of payroll by industry
+  const industryRates = {
+    clerical: 0.28,
+    retail: 1.05,
+    restaurant: 1.85,
+    tech: 0.32,
+    healthcare: 1.45,
+    medical: 2.20,
+    light_manufacturing: 2.40,
+    heavy_manufacturing: 4.80,
+    warehousing: 3.20,
+    construction_gen: 6.50,
+    construction_roofing: 18.50,
+    construction_electrical: 5.80,
+    trucking: 7.20,
+    landscaping: 8.40,
+    janitorial: 3.10,
+    agriculture: 5.50,
+    logging: 12.80,
+    oil_gas: 9.60
+  };
+
+  const industryLabels = {
+    clerical: 'Clerical / Office', retail: 'Retail Sales',
+    restaurant: 'Restaurant / Food Service', tech: 'Technology / Software',
+    healthcare: 'Healthcare (non-clinical)', medical: 'Medical / Clinical',
+    light_manufacturing: 'Light Manufacturing', heavy_manufacturing: 'Heavy Manufacturing',
+    warehousing: 'Warehousing / Distribution', construction_gen: 'General Contractor',
+    construction_roofing: 'Roofing', construction_electrical: 'Electrical / Plumbing',
+    trucking: 'Trucking / Transportation', landscaping: 'Landscaping',
+    janitorial: 'Janitorial / Cleaning', agriculture: 'Agriculture',
+    logging: 'Logging / Forestry', oil_gas: 'Oil & Gas / Mining'
+  };
+
+  function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+  function calcWC() {
+    const state = document.getElementById('wc-state').value;
+    const industry = document.getElementById('wc-industry').value;
+    const payroll = parseFloat(document.getElementById('wc-payroll').value) || 0;
+    const employees = parseInt(document.getElementById('wc-employees').value) || 1;
+    const mod = parseFloat(document.getElementById('wc-mod').value);
+
+    if (payroll <= 0) { alert('Please enter your annual payroll.'); return; }
+
+    const baseRate = industryRates[industry];
+    const stateMultiplier = stateRates[state] || 1.0;
+    const adjustedRate = baseRate * stateMultiplier;
+    const basePremium = (payroll / 100) * adjustedRate;
+    const finalPremium = basePremium * mod;
+    const perEmployee = finalPremium / employees;
+
+    const monopolistic = ['ND','OH','WA','WY'].includes(state);
+    const optional = state === 'TX';
+
+    document.getElementById('wc-annual').textContent = fmt(finalPremium);
+    document.getElementById('wc-result').style.display = 'block';
+
+    let breakdownHTML = `
+      <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px;">
+        <table style="width:100%;font-size:0.9rem;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Industry classification rate</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${baseRate.toFixed(2)}/$100 payroll</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">State adjustment (${state})</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${(stateMultiplier * 100 - 100).toFixed(0)}%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Adjusted rate</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${adjustedRate.toFixed(2)}/$100 payroll</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Annual payroll</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${fmt(payroll)}</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Base premium</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">${fmt(basePremium)}</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 0;color:var(--text-muted);">Experience mod</td>
+            <td style="padding:8px 0;text-align:right;font-weight:500;">&times; ${mod.toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;font-weight:600;">Estimated annual premium</td>
+            <td style="padding:10px 0;text-align:right;font-weight:700;color:var(--primary);">${fmt(finalPremium)}</td>
+          </tr>
+        </table>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">
+          Per employee: approximately ${fmt(perEmployee)}/year &nbsp;|&nbsp; Monthly: approximately ${fmt(finalPremium/12)}/month
+        </p>
+        ${monopolistic ? `<p style="font-size:0.85rem;color:#d97706;margin-top:8px;background:#fef3c7;padding:10px;border-radius:6px;">⚠️ ${state} is a monopolistic state — all workers comp must be purchased from the state fund. Contact your state fund directly for accurate pricing.</p>` : ''}
+        ${optional ? `<p style="font-size:0.85rem;color:#2563eb;margin-top:8px;background:#eff6ff;padding:10px;border-radius:6px;">ℹ️ Texas workers comp is optional, but non-subscriber employers lose liability defenses. Most employers benefit from carrying coverage.</p>` : ''}
+      </div>
+    `;
+
+    document.getElementById('wc-breakdown').innerHTML = breakdownHTML;
+
+    const stateSlug = {
+      AL:'alabama',AK:'alaska',AZ:'arizona',AR:'arkansas',CA:'california',
+      CO:'colorado',CT:'connecticut',DE:'delaware',FL:'florida',GA:'georgia',
+      HI:'hawaii',ID:'idaho',IL:'illinois',IN:'indiana',IA:'iowa',KS:'kansas',
+      KY:'kentucky',LA:'louisiana',ME:'maine',MD:'maryland',MA:'massachusetts',
+      MI:'michigan',MN:'minnesota',MS:'mississippi',MO:'missouri',MT:'montana',
+      NE:'nebraska',NV:'nevada',NH:'new-hampshire',NJ:'new-jersey',NM:'new-mexico',
+      NY:'new-york',NC:'north-carolina',ND:'north-dakota',OH:'ohio',OK:'oklahoma',
+      OR:'oregon',PA:'pennsylvania',RI:'rhode-island',SC:'south-carolina',
+      SD:'south-dakota',TN:'tennessee',TX:'texas',UT:'utah',VT:'vermont',
+      VA:'virginia',WA:'washington',WV:'west-virginia',WI:'wisconsin',WY:'wyoming'
+    }[state];
+
+    if (stateSlug) {
+      document.getElementById('wc-breakdown').innerHTML += `
+        <div style="margin-top:16px;padding:14px;background:var(--bg-light,#f8fafc);border-radius:8px;">
+          <p style="font-size:0.9rem;margin:0;"><a href="/states/workers-comp/${stateSlug}.html" style="color:var(--primary);font-weight:500;">View full ${state} workers comp guide →</a> — requirements, benefits, employee rights, and state-specific tips.</p>
+        </div>`;
+    }
+  }
+</script>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
