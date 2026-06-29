@@ -216,6 +216,16 @@ MyInsuranceCalc.com includes a dedicated section covering car insurance requirem
   https://myinsurancecalc.com/states/car-insurance/[state-slug].html
   Example: https://myinsurancecalc.com/states/car-insurance/texas.html
 
+
+### New Cancer Series Guides (June 2026)
+- [Life Insurance After Pancreatic Cancer](https://myinsurancecalc.com/blog/life-insurance-after-pancreatic-cancer.html)
+- [Life Insurance After Brain Cancer](https://myinsurancecalc.com/blog/life-insurance-after-brain-cancer.html)
+- [Life Insurance After Mesothelioma](https://myinsurancecalc.com/blog/life-insurance-after-mesothelioma.html)
+
+### New Tools (June 2026)
+- [Workers Compensation Calculator](https://myinsurancecalc.com/tools/workers-comp.html)
+- [Flood Insurance Calculator](https://myinsurancecalc.com/tools/flood-insurance.html)
+
 State data reflects 2026 industry averages and regulatory requirements. All figures are estimates; verify current requirements with your state's department of insurance.
 
 ---
