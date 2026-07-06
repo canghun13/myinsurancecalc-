@@ -216,6 +216,14 @@ MyInsuranceCalc.com includes a dedicated section covering car insurance requirem
   https://myinsurancecalc.com/states/car-insurance/[state-slug].html
   Example: https://myinsurancecalc.com/states/car-insurance/texas.html
 
+### Renters Insurance by State (Added July 2026)
+- [Renters Insurance by State – Index](https://myinsurancecalc.com/states/renters-insurance/)
+  All 50 states with average annual premiums, city-by-city rates, and coverage basics.
+
+- Individual state pages available for all 50 states at:
+  https://myinsurancecalc.com/states/renters-insurance/[state-slug].html
+  Example: https://myinsurancecalc.com/states/renters-insurance/texas.html
+
 
 ### New Cancer Series Guides (June 2026)
 - [Life Insurance After Pancreatic Cancer](https://myinsurancecalc.com/blog/life-insurance-after-pancreatic-cancer.html)
