@@ -94,6 +94,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Life Insurance After a DUI](https://myinsurancecalc.com/blog/life-insurance-after-dui.html)
   How a DUI affects life insurance rates, timeline for rate improvement (1 year / 3 years / 5 years benchmarks), single vs multiple DUIs, DUI-friendly insurers, practical tips for getting best available rate.
 
+- [Life Insurance With Diabetes](https://myinsurancecalc.com/blog/life-insurance-with-diabetes.html)
+  Type 1 vs Type 2 vs gestational diabetes underwriting differences, A1C-based rate class expectations, complications impact, simplified/guaranteed issue alternatives, tips for strengthening an application.
+
 - [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
   Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.
 
