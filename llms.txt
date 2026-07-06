@@ -33,6 +33,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Renters Insurance Calculator](https://myinsurancecalc.com/tools/renters-insurance.html)
   Estimates renters insurance cost by personal property value, liability limit, and location.
 
+- [Landlord Insurance Calculator](https://myinsurancecalc.com/tools/landlord-insurance.html)
+  Estimates landlord (DP-3) insurance premium based on property replacement cost, property type, rental style (long-term vs short-term), and location risk.
+
 ### Auto Insurance
 - [Car Insurance Calculator](https://myinsurancecalc.com/tools/car-insurance.html)
   Estimates auto insurance premium based on driver age, vehicle type, driving record, and coverage level.

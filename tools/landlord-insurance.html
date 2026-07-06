@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landlord Insurance Calculator – Estimate Your Rental Property Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate how much landlord insurance costs for your rental property. Free calculator based on property value, type, rental style, and location — instant results, no signup." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/landlord-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Landlord Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/landlord-insurance.html",
+    "description": "Estimate landlord insurance costs based on property replacement value, property type, rental style, and location risk.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/#tools">Calculators</a> &rsaquo; Landlord Insurance</p>
+        <h1>Landlord Insurance Calculator</h1>
+        <p>Landlord insurance costs more than homeowners coverage — see roughly how much more for your specific rental.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage</h2>
+
+            <div class="form-group">
+              <label for="ll-value">Property Replacement Cost ($)</label>
+              <input type="number" id="ll-value" placeholder="e.g. 250000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="ll-type">Property Type</label>
+              <select id="ll-type">
+                <option value="single" selected>Single-family home</option>
+                <option value="condo">Condo / townhouse unit</option>
+                <option value="multi">Multi-family (2-4 units)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ll-rental">Rental Type</label>
+              <select id="ll-rental">
+                <option value="longterm" selected>Long-term lease (12+ months)</option>
+                <option value="shortterm">Short-term / vacation rental</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ll-location">Location Risk</label>
+              <select id="ll-location">
+                <option value="low">Low risk area (inland, low crime)</option>
+                <option value="medium" selected>Medium risk area</option>
+                <option value="high">High risk (coastal, wildfire, or high crime)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ll-liability">Liability Coverage</label>
+              <select id="ll-liability">
+                <option value="300000">$300,000</option>
+                <option value="500000" selected>$500,000 (recommended)</option>
+                <option value="1000000">$1,000,000</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcLandlord()">Calculate Now</button>
+
+            <div class="result-box" id="ll-result">
+              <h3>ESTIMATED ANNUAL PREMIUM</h3>
+              <div class="result-amount" id="ll-amount"></div>
+              <div id="ll-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Landlord insurance typically costs 15-25% more than a comparable homeowners policy. Estimates based on national averages.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Why Landlord Insurance Costs More Than Homeowners Insurance</h2>
+            <p>If you rent out a property, your homeowners policy generally won't cover it — and even if it technically applies, it isn't priced for the risks a tenant introduces. Landlord insurance (sometimes called a dwelling fire or DP-3 policy) is built specifically for rental property owners. It typically costs 15-25% more than an equivalent homeowners policy because tenants statistically file more claims than owner-occupants, vacancies leave properties more exposed, and landlords carry higher liability risk from tenant and guest injuries.</p>
+
+            <h3>What Landlord Insurance Covers</h3>
+            <p>A standard landlord policy covers three main areas: the dwelling structure itself (against fire, wind, and other covered perils), liability protection (if a tenant or visitor is injured on the property and sues), and loss of rent (reimbursing you for lost rental income if the property becomes uninhabitable after a covered loss, typically up to 12 months). It does not cover your tenants' personal belongings — that's what renters insurance is for, which is why many landlords require tenants to carry their own policy.</p>
+
+            <h3>DP-1, DP-2, and DP-3: Understanding Policy Tiers</h3>
+            <p>Landlord policies come in three tiers. DP-1 is the most basic and cheapest, covering a named list of perils (fire, lightning, windstorm) and best suited for vacant or low-value properties. DP-2 adds broader named perils. DP-3 is the most comprehensive tier — covering all perils except those specifically excluded — and is what most insurers recommend for actively rented properties. The calculator above assumes DP-3-equivalent coverage.</p>
+
+            <h3>Single-Family vs. Condo vs. Multi-Family</h3>
+            <p>Property type changes both your coverage needs and your pricing. Single-family rentals need full dwelling coverage since you're insuring the entire structure. Condo or townhouse landlords typically only need to insure the interior unit and betterments, since the building's exterior and common areas are covered by the HOA's master policy — this usually makes condo landlord policies cheaper per dollar of value. Multi-family properties (2-4 units) carry higher premiums since more tenants means more liability exposure and claim frequency, but you're also often collecting more rental income to offset the cost.</p>
+
+            <h3>Long-Term Lease vs. Short-Term / Vacation Rental</h3>
+            <p>Short-term and vacation rentals (Airbnb, VRBO, and similar) are priced meaningfully higher than long-term leases. More turnover means more wear, more liability exposure from a rotating set of occupants, and higher claim frequency overall. Some standard landlord policies exclude short-term rental activity entirely — always confirm with your insurer that short-term rental use is explicitly covered before listing your property.</p>
+
+            <h3>Loss of Rent Coverage: How Much Do You Need?</h3>
+            <p>Loss of rent (also called fair rental value) coverage reimburses you for the rental income you lose while your property is being repaired after a covered loss. Standard policies typically include 12 months of coverage, which is usually enough for most repairs — but properties in areas with long contractor wait times or supply-chain delays may benefit from extending this to 18-24 months.</p>
+
+            <h3>How Landlord Liability Differs From Homeowners Liability</h3>
+            <ul>
+              <li><strong>Higher limits recommended:</strong> Most agents recommend at least $500,000 in liability coverage for landlords, with $1,000,000 for multi-unit properties or those with amenities like pools.</li>
+              <li><strong>Tenant injury claims:</strong> Landlords face a meaningfully higher rate of slip-and-fall and injury-related liability claims than owner-occupants, since tenants have less incentive to maintain the property themselves.</li>
+              <li><strong>Umbrella policies:</strong> Landlords with multiple properties or higher net worth often add an umbrella policy for liability protection beyond their base landlord policy limits.</li>
+            </ul>
+
+            <h3>How to Lower Your Landlord Insurance Premium</h3>
+            <ul>
+              <li>Require tenants to carry their own renters insurance — this reduces your liability exposure for their belongings and certain injury claims.</li>
+              <li>Bundle multiple rental properties with one insurer for a multi-policy discount.</li>
+              <li>Raise your deductible — moving from $500 to $1,000 or higher can meaningfully reduce your premium.</li>
+              <li>Install security systems, smoke detectors, and updated wiring/plumbing — many insurers offer discounts for reduced-risk properties.</li>
+              <li>Screen tenants carefully and maintain a claims-free history — insurers reward landlords with low claim frequency over time.</li>
+            </ul>
+
+            <p class="article-disclaimer">Calculator estimates are based on national average rates and are for informational purposes only. Actual premiums vary significantly by location, property condition, insurer, and individual factors. This tool does not constitute insurance advice. Consult a licensed insurance professional for personalized guidance.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Costs <strong>15-25% more</strong> than homeowners insurance</li>
+              <li>DP-3 covers the most perils</li>
+              <li>Loss of rent typically covers <strong>12 months</strong></li>
+              <li>Doesn't cover tenants' belongings</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcLandlord() {
+  const value = parseFloat(document.getElementById('ll-value').value) || 0;
+  const type = document.getElementById('ll-type').value;
+  const rental = document.getElementById('ll-rental').value;
+  const location = document.getElementById('ll-location').value;
+  const liability = parseFloat(document.getElementById('ll-liability').value);
+
+  const typeMult = { single: 1.0, condo: 0.8, multi: 1.25 };
+  const rentalMult = { longterm: 1.0, shortterm: 1.35 };
+  const locMult = { low: 0.8, medium: 1.0, high: 1.5 };
+  const liabAdd = { 300000: 0, 500000: 80, 1000000: 180 };
+
+  const base = value * 0.005;
+  const annual = (base * typeMult[type] * rentalMult[rental] * locMult[location]) + liabAdd[liability];
+  const monthly = annual / 12;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('ll-amount').textContent = fmt(Math.max(annual, 400)) + '/yr';
+  document.getElementById('ll-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Property replacement cost</td><td style="text-align:right">${fmt(value)}</td></tr>
+      <tr><td>Liability coverage</td><td style="text-align:right">${fmt(liability)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right">${fmt(Math.max(monthly, 33))}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. annual premium</td><td style="text-align:right">${fmt(Math.max(annual, 400))}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('ll-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
