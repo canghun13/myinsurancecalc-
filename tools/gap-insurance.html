@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAP Insurance Calculator – See If You Need It (Loan or Lease) | My Insurance Calc</title>
+  <meta name="description" content="Find out if you have a GAP — the difference between your loan or lease payoff and your car's actual value. Free calculator for financed and leased vehicles, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/gap-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GAP Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/gap-insurance.html",
+    "description": "Estimate your GAP exposure — the difference between your loan or lease payoff balance and your vehicle's current actual cash value — for financed and leased vehicles.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/#tools">Calculators</a> &rsaquo; GAP Insurance</p>
+        <h1>GAP Insurance Calculator</h1>
+        <p>See exactly how big your gap is — the difference between what you owe and what your car is actually worth.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your GAP</h2>
+
+            <div class="form-group">
+              <label for="gap-mode">Vehicle Status</label>
+              <select id="gap-mode" onchange="toggleGapMode()">
+                <option value="financed" selected>Financed (auto loan)</option>
+                <option value="leased">Leased</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="gap-price">Original Vehicle Price ($)</label>
+              <input type="number" id="gap-price" placeholder="e.g. 38000" min="0" />
+            </div>
+
+            <div class="form-group" id="gap-down-group">
+              <label for="gap-down">Down Payment / Trade-In Value ($)</label>
+              <input type="number" id="gap-down" placeholder="e.g. 3000" min="0" value="0" />
+            </div>
+
+            <div class="form-group" id="gap-apr-group">
+              <label for="gap-apr">Interest Rate / APR (%)</label>
+              <input type="number" id="gap-apr" placeholder="e.g. 6.5" min="0" step="0.1" value="6.5" />
+            </div>
+
+            <div class="form-group">
+              <label for="gap-term">Loan / Lease Term (months)</label>
+              <select id="gap-term">
+                <option value="36">36 months</option>
+                <option value="48">48 months</option>
+                <option value="60" selected>60 months</option>
+                <option value="72">72 months</option>
+                <option value="84">84 months</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="gap-residual-group" style="display:none;">
+              <label for="gap-residual">Lease Residual Value (%)</label>
+              <input type="number" id="gap-residual" placeholder="e.g. 55" min="0" max="100" value="55" />
+            </div>
+
+            <div class="form-group">
+              <label for="gap-months">Months Since Purchase / Lease Start</label>
+              <input type="number" id="gap-months" placeholder="e.g. 14" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="gap-deductible">Your Auto Insurance Deductible ($)</label>
+              <select id="gap-deductible">
+                <option value="0">$0</option>
+                <option value="500" selected>$500</option>
+                <option value="1000">$1,000</option>
+                <option value="1500">$1,500</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcGap()">Calculate My GAP</button>
+
+            <div class="result-box" id="gap-result">
+              <h3 id="gap-headline">ESTIMATED GAP EXPOSURE</h3>
+              <div class="result-amount" id="gap-amount"></div>
+              <div id="gap-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note" id="gap-note">This is the amount your insurance payout likely wouldn't cover if your car were totaled today. Estimates use standard depreciation and amortization curves — actual figures depend on your specific loan/lease terms.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What GAP Insurance Actually Covers</h2>
+            <p>If your car is totaled or stolen, your auto insurance pays out its <strong>actual cash value (ACV)</strong> — what it's worth today, after depreciation — not what you originally paid and not what you still owe. New cars typically lose 20% of their value in the first year alone. If you financed with a small down payment or leased with low money down, it's common for your loan or lease payoff to exceed the car's ACV for a year or more. That difference is your "gap," and it's money you'd owe out of pocket without GAP coverage.</p>
+
+            <h2>Financed vs. Leased: Why the Math Is Different</h2>
+            <h3>Financed Vehicles</h3>
+            <p>Your loan balance declines through amortization — a mix of principal and interest. Early in the loan, a larger share of each payment goes toward interest, so your balance drops more slowly than the car's value does. This mismatch is exactly what creates a gap, and it's largest with longer loan terms (72-84 months), smaller down payments, and higher interest rates.</p>
+            <h3>Leased Vehicles</h3>
+            <p>Lease payoff is structured differently — it declines roughly linearly from the vehicle's negotiated price down to its residual value at lease-end. Because most leases require little or no down payment, and the vehicle depreciates fastest in the first two years, leased drivers often have one of the largest gaps of any vehicle-financing arrangement, especially in year one.</p>
+
+            <h2>Who Actually Needs GAP Insurance</h2>
+            <ul>
+              <li><strong>Leased vehicles</strong> — Most leasing companies require GAP coverage as part of the lease agreement, and for good reason: the gap is usually largest here.</li>
+              <li><strong>Financed with less than 20% down</strong> — Smaller down payments mean your loan balance starts closer to (or above) the car's actual value, creating an immediate gap.</li>
+              <li><strong>Loans longer than 60 months</strong> — Longer terms mean your balance falls more slowly relative to depreciation, extending the window where a gap exists.</li>
+              <li><strong>Vehicles that depreciate quickly</strong> — Certain makes and models lose value faster than average, widening the gap regardless of your loan terms.</li>
+              <li><strong>Rolled-over negative equity</strong> — If you rolled over an existing loan balance into a new purchase, your starting balance is inflated relative to the new car's value, creating a gap from day one.</li>
+            </ul>
+
+            <h2>Who Probably Doesn't Need It</h2>
+            <p>If you made a down payment of 20% or more, financed for 48 months or less, or you're far enough into your loan that your balance has dropped below your car's current value, GAP coverage is providing little to no real benefit. Run the numbers above — if your estimated gap is at or near $0, you can likely skip it or drop it if you already have it.</p>
+
+            <h2>Where to Buy GAP Insurance</h2>
+            <p>GAP coverage is available from three main sources, and pricing varies significantly between them:</p>
+            <ul>
+              <li><strong>Dealership GAP insurance</strong> — Convenient, sold at the point of purchase, but typically the most expensive option — often $500-$900 as a one-time charge rolled into your loan (meaning you pay interest on it too).</li>
+              <li><strong>Auto insurance carrier GAP add-on</strong> — Added to your existing policy for a small increase in your premium, usually far cheaper than dealership GAP over the life of the loan.</li>
+              <li><strong>Standalone GAP insurance providers</strong> — Independent companies that sell GAP coverage separately, often at a one-time low cost, without requiring it to be bundled with your loan or existing auto policy.</li>
+            </ul>
+
+            <p class="article-disclaimer">Calculator estimates use standard industry depreciation curves (approximately 20% in year one, 15% per year thereafter) and standard loan amortization formulas. Actual vehicle values and loan/lease balances vary by make, model, condition, mileage, and specific contract terms. This tool is for informational purposes only and does not constitute financial or insurance advice.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/car-insurance.html">Car Insurance Calculator</a></li>
+              <li><a href="/tools/ev-insurance.html">EV Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>New cars lose <strong>~20%</strong> of value in year 1</li>
+              <li>Leased vehicles often have the biggest gap</li>
+              <li>Carrier add-on usually cheaper than dealer GAP</li>
+              <li>20%+ down payment often means no gap</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function toggleGapMode() {
+  const mode = document.getElementById('gap-mode').value;
+  document.getElementById('gap-down-group').style.display = mode === 'leased' ? 'none' : 'block';
+  document.getElementById('gap-apr-group').style.display = mode === 'leased' ? 'none' : 'block';
+  document.getElementById('gap-residual-group').style.display = mode === 'leased' ? 'block' : 'none';
+}
+
+function vehicleValue(price, monthsElapsed) {
+  const years = monthsElapsed / 12;
+  if (years <= 1) {
+    return price * (1 - 0.20 * years);
+  }
+  return price * 0.80 * Math.pow(0.85, years - 1);
+}
+
+function loanBalance(principal, apr, termMonths, monthsElapsed) {
+  const r = (apr / 100) / 12;
+  if (r === 0) {
+    return Math.max(0, principal * (1 - monthsElapsed / termMonths));
+  }
+  const payment = principal * r / (1 - Math.pow(1 + r, -termMonths));
+  const m = Math.min(monthsElapsed, termMonths);
+  const balance = principal * Math.pow(1 + r, m) - payment * ((Math.pow(1 + r, m) - 1) / r);
+  return Math.max(0, balance);
+}
+
+function leasePayoff(price, residualPct, termMonths, monthsElapsed) {
+  const residual = price * (residualPct / 100);
+  const m = Math.min(monthsElapsed, termMonths);
+  const depreciationTotal = price - residual;
+  const depreciationSoFar = depreciationTotal * (m / termMonths);
+  return Math.max(residual, price - depreciationSoFar);
+}
+
+function calcGap() {
+  const mode = document.getElementById('gap-mode').value;
+  const price = parseFloat(document.getElementById('gap-price').value) || 0;
+  const term = parseFloat(document.getElementById('gap-term').value);
+  const monthsElapsed = parseFloat(document.getElementById('gap-months').value) || 0;
+  const deductible = parseFloat(document.getElementById('gap-deductible').value);
+
+  let balance;
+  if (mode === 'financed') {
+    const down = parseFloat(document.getElementById('gap-down').value) || 0;
+    const apr = parseFloat(document.getElementById('gap-apr').value) || 0;
+    const principal = Math.max(0, price - down);
+    balance = loanBalance(principal, apr, term, monthsElapsed);
+  } else {
+    const residualPct = parseFloat(document.getElementById('gap-residual').value) || 55;
+    balance = leasePayoff(price, residualPct, term, monthsElapsed);
+  }
+
+  const currentValue = vehicleValue(price, monthsElapsed);
+  const insurancePayout = Math.max(0, currentValue - deductible);
+  const gap = Math.max(0, balance - insurancePayout);
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('gap-amount').textContent = fmt(gap);
+  document.getElementById('gap-headline').textContent = gap > 0 ? 'ESTIMATED GAP EXPOSURE' : 'NO SIGNIFICANT GAP DETECTED';
+  document.getElementById('gap-note').textContent = gap > 0
+    ? 'This is roughly what you could owe out of pocket if your car were totaled today and you didn\'t have GAP coverage.'
+    : 'Your estimated loan/lease balance is at or below your car\'s current value — GAP coverage would provide little to no benefit right now.';
+
+  document.getElementById('gap-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>${mode === 'financed' ? 'Est. loan balance' : 'Est. lease payoff'}</td><td style="text-align:right">${fmt(balance)}</td></tr>
+      <tr><td>Est. current vehicle value</td><td style="text-align:right">${fmt(currentValue)}</td></tr>
+      <tr><td>Insurance deductible</td><td style="text-align:right">${fmt(deductible)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. GAP exposure</td><td style="text-align:right">${fmt(gap)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('gap-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

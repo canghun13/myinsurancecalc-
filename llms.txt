@@ -40,6 +40,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Car Insurance Calculator](https://myinsurancecalc.com/tools/car-insurance.html)
   Estimates auto insurance premium based on driver age, vehicle type, driving record, and coverage level.
 
+- [GAP Insurance Calculator](https://myinsurancecalc.com/tools/gap-insurance.html)
+  Estimates GAP exposure (loan/lease payoff vs. vehicle actual cash value) using standard amortization and depreciation curves, for both financed and leased vehicles.
+
 - [EV Insurance Calculator](https://myinsurancecalc.com/tools/ev-insurance.html)
   Estimates insurance cost for electric vehicles including Tesla, Rivian, Chevy, and Ford models. Accounts for EV-specific cost factors.
 
