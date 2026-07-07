@@ -236,6 +236,14 @@ MyInsuranceCalc.com includes a dedicated section covering car insurance requirem
   https://myinsurancecalc.com/states/renters-insurance/[state-slug].html
   Example: https://myinsurancecalc.com/states/renters-insurance/texas.html
 
+### Small Business Insurance by State (Added July 2026)
+- [Small Business Insurance by State – Index](https://myinsurancecalc.com/states/business-insurance/)
+  All 50 states with workers' comp employee thresholds, estimated BOP premiums, monopolistic-state flags, and state-specific formation notes.
+
+- Individual state pages available for all 50 states at:
+  https://myinsurancecalc.com/states/business-insurance/[state-slug].html
+  Example: https://myinsurancecalc.com/states/business-insurance/texas.html
+
 
 ### New Cancer Series Guides (June 2026)
 - [Life Insurance After Pancreatic Cancer](https://myinsurancecalc.com/blog/life-insurance-after-pancreatic-cancer.html)
