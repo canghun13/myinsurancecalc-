@@ -106,6 +106,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Life Insurance With Heart Disease](https://myinsurancecalc.com/blog/life-insurance-after-heart-disease.html)
   Atrial fibrillation, heart attack, stent, and bypass surgery underwriting differences, table rating expectations by condition, waiting periods, and how to strengthen an application.
 
+- [Life Insurance With High Blood Pressure](https://myinsurancecalc.com/blog/life-insurance-with-high-blood-pressure.html)
+  Stage 1 vs Stage 2 hypertension underwriting differences, medication count impact, table rating expectations by control level, guaranteed/simplified issue alternatives, tips for strengthening an application.
+
 - [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
   Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.
 
