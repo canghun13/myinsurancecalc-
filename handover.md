@@ -38,7 +38,8 @@
 - **GSC 프라이버시 필터링 주의**: 쿼리 리포트(검색어 수.csv) 개별 클릭수 합계가 0이어도, 페이지 리포트(페이지.csv) 합계엔 실제 클릭이 잡힐 수 있음 (구글이 저볼륨 쿼리는 익명화). 오류 아니니 당황하지 말 것.
 
 ## 확정된 결정 사항 (재검토 완료, 다시 논의할 필요 없음)
-- **백링크: 당분간 신규 작업 안 함**
+- **백링크: 사용자가 별도 채널(다른 사이트 70~90개)로 직접 충분히 확보 중 — Claude/이 세션 작업 범위 아님. 앞으로 백링크 관련 제안·언급 금지.**
+- **E-E-A-T 저자/신뢰 신호: "MyInsuranceCalc Team" 조직명으로 통일, 실명·자격증·리뷰어(reviewedBy) 없음 — 없는 자격을 지어내지 않음. (7/15 작업 참고)**
 - **PDF 다운로드 기능: 안 함**
 - **renters-insurance by state (51페이지): 완료** (7/9경)
 - **business-insurance by state (51페이지): 완료** — 소상공인 특화 앵글(주별 workers' comp 고용인원 기준, 독점주 4곳 ND/OH/WA/WY, 텍사스 옵트인 등 실제 규정 차별화)로 진행
@@ -83,6 +84,7 @@
 7. **GSC 데이터 기반 정밀 보강**: thyroid-cancer FAQ 확장, nurses/truck-drivers/teachers FAQ 신규, pilots 헬리콥터/초경량기 문구, term-vs-whole 문구매칭, workers-comp/iowa 문구보강
 8. **(7/13) GSC 노출 상위 5개 FAQ-less 페이지 보강**: `how-to-lower-car-insurance.html`(FAQ는 이미 있었음, FAQPage 스키마만 추가), `insurance-for-college-students.html`(FAQ 5개+스키마 신규), `freelancer-insurance-guide.html`(FAQ 5개+스키마 신규 + 기존 div 태그 불균형 버그 수정), `renters-insurance-for-college-students.html`(FAQ 5개+스키마 신규), `umbrella-insurance-explained.html`(FAQ 5개+스키마 신규). 전부 GSC 노출량 순으로 우선순위 선정(1278/738/410/198/126회). 모든 페이지 JSON-LD 파싱 검증 + div 밸런스 확인 완료. 텍스트 추가만 있는 파일들이라 렌더링 확인용 URL 링크는 생략 가능한 수준이지만 아래에 제공함.
 9. **(7/15) GSC 노출 상위 페이지 중 FAQ 없는 3개 페이지 보강**: `tools/health-insurance-self-employed.html`(FAQ 5개+스키마 신규, 노출 234회·순위 42.78), `tools/term-vs-whole.html`(FAQ 5개+스키마 신규, 노출 94회·"term vs whole life insurance calculator" 쿼리 순위 15.19로 top10 임박), `states/business-insurance/maine.html`(FAQ 4개+스키마 신규, 노출 100회·순위 27.39). 셋 다 tools/states 카테고리라 FAQ가 표준 패턴이 아니었지만(tools 24개 중 1개, business-insurance state 51개 중 0개), 노출량 기준 상위이면서 FAQ 없는 페이지만 선별 적용. 이미 FAQ+스키마가 있는 thyroid-cancer/dui/truck-drivers/nurses 등은 추가 조치 없음(순위 20~40대 정체는 콘텐츠가 아니라 도메인 권위 문제로 재확인). 모든 페이지 JSON-LD 파싱 검증(`json.loads`) + div 밸런스 확인 완료.
+10. **(7/15) E-E-A-T 저자 신호 사이트 전체 일괄 추가**: blog/states 전 페이지(388개) Article schema에 `"author": {"@type":"Organization","name":"MyInsuranceCalc Team","url":"https://myinsurancecalc.com/about.html"}` 필드 삽입 (Python으로 JSON 파싱→author 키 삽입→재직렬화, 454개 ld+json 블록 전수 `json.loads` 검증 통과, 파싱 실패 0건). `about.html`에도 Organization schema 신규 추가. 실명/자격증/리뷰어(reviewedBy)는 넣지 않음 — 없는 자격을 지어내는 건 오히려 리스크라고 판단, 조직명(Organization) 신호로 통일. 시각적 바이라인(페이지에 "By MyInsuranceCalc Team" 텍스트 노출)은 이번엔 스키마만 처리, 필요시 다음 세션에 템플릿 레벨로 검토.
 
 ## 작업 규칙 (변동 없음 + 추가)
 - 블로그/툴 추가 시 체크리스트 필수: `blog/index.html` 또는 `tools/index.html` 카드 추가, 메인 `index.html`(최신글/최신툴 섹션 — "New" 배지는 최신 것 하나로 이동) 반영, `sitemap.xml` 추가(XML 유효성 `python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml')"`로 검증), `llms.txt` 반영
