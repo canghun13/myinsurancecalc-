@@ -217,7 +217,7 @@ function calcCondo() {
 
   document.getElementById('condo-amount').textContent = fmt(annual) + '/yr';
   document.getElementById('condo-breakdown').innerHTML = `
-    <table style="width:100%;border-collapse:collapse;">
+    <table class="calc-breakdown-table">
       <tr><td>Interior improvements coverage</td><td style="text-align:right">${fmt(improvements)}</td></tr>
       <tr><td>Personal property coverage</td><td style="text-align:right">${fmt(personal)}</td></tr>
       <tr><td>Liability coverage</td><td style="text-align:right">${fmt(liability)}</td></tr>

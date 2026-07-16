@@ -634,3 +634,48 @@ img { max-width: 100%; display: block; }
   color: #64748b;
   line-height: 1.6;
 }
+
+/* ── Responsive Tables (article content tables) ── */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+.table-scroll table {
+  margin: 0;
+  min-width: 560px;
+}
+@media (max-width: 480px) {
+  .table-scroll table {
+    font-size: 0.82rem;
+  }
+  .table-scroll th,
+  .table-scroll td {
+    padding: 8px 10px !important;
+  }
+}
+
+/* ── Calculator Result Breakdown Table ── */
+.calc-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.calc-breakdown-table td {
+  padding: 4px 0;
+  word-break: break-word;
+}
+.calc-breakdown-table td:first-child {
+  padding-right: 8px;
+  width: 62%;
+}
+.calc-breakdown-table td:last-child {
+  width: 38%;
+}
+@media (max-width: 400px) {
+  .calc-breakdown-table {
+    font-size: 0.82rem;
+  }
+}
+
