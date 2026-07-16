@@ -421,6 +421,7 @@ img { max-width: 100%; display: block; }
   gap: 40px;
   align-items: start;
 }
+.tool-layout > * { min-width: 0; }
 
 .calc-box {
   background: var(--bg-alt);
@@ -521,6 +522,7 @@ img { max-width: 100%; display: block; }
 /* Article */
 .article-page { padding: 48px 0 80px; }
 .article-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; }
+.article-layout > * { min-width: 0; }
 .article-header { margin-bottom: 32px; }
 .article-tag { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); margin-bottom: 12px; display: block; }
 .article-header h1 { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 400; line-height: 1.25; margin-bottom: 16px; }
@@ -674,8 +676,26 @@ img { max-width: 100%; display: block; }
   width: 38%;
 }
 @media (max-width: 400px) {
-  .calc-breakdown-table {
-    font-size: 0.82rem;
+  .calc-breakdown-table, .calc-breakdown-table tbody, .calc-breakdown-table tr {
+    display: block;
+    width: 100%;
+  }
+  .calc-breakdown-table tr {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border, #e2e8f0);
+  }
+  .calc-breakdown-table tr:last-child {
+    border-bottom: none;
+  }
+  .calc-breakdown-table td {
+    display: block;
+    width: 100% !important;
+    padding: 1px 0;
+    text-align: left !important;
+  }
+  .calc-breakdown-table td:last-child {
+    font-weight: 600;
+    font-size: 1.05em;
   }
 }
 
