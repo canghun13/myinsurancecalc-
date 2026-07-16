@@ -36,6 +36,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Landlord Insurance Calculator](https://myinsurancecalc.com/tools/landlord-insurance.html)
   Estimates landlord (DP-3) insurance premium based on property replacement cost, property type, rental style (long-term vs short-term), and location risk.
 
+- [Condo Insurance (HO-6) Calculator](https://myinsurancecalc.com/tools/condo-insurance.html)
+  Estimates HO-6 condo insurance premium based on interior improvements value, personal property value, HOA master policy type (bare walls vs all-in), liability, and deductible.
+
 ### Auto Insurance
 - [Car Insurance Calculator](https://myinsurancecalc.com/tools/car-insurance.html)
   Estimates auto insurance premium based on driver age, vehicle type, driving record, and coverage level.
@@ -109,6 +112,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Life Insurance With High Blood Pressure](https://myinsurancecalc.com/blog/life-insurance-with-high-blood-pressure.html)
   Stage 1 vs Stage 2 hypertension underwriting differences, medication count impact, table rating expectations by control level, guaranteed/simplified issue alternatives, tips for strengthening an application.
 
+- [Life Insurance With Sleep Apnea](https://myinsurancecalc.com/blog/life-insurance-with-sleep-apnea.html)
+  AHI severity classification (mild/moderate/severe), CPAP compliance impact on underwriting, table rating expectations by severity and compliance, guaranteed/simplified issue alternatives.
+
 - [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
   Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.
 
@@ -144,6 +150,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 
 - [Insurance for Gig Workers](https://myinsurancecalc.com/blog/insurance-for-gig-workers.html)
   Coverage gaps for rideshare drivers (Uber, Lyft), food delivery drivers (DoorDash, Instacart), Airbnb hosts, freelancers. Period 1/2/3 rideshare coverage explained.
+
+- [How Does Uber & Lyft Insurance Work?](https://myinsurancecalc.com/blog/how-does-uber-insurance-work.html)
+  Dedicated breakdown of the 3 rideshare coverage periods, the Period 1 coverage gap, rideshare endorsement cost and how it works, delivery driving considerations.
 
 ### Other Insurance Topics
 

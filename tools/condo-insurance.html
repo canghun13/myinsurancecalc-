@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condo Insurance (HO-6) Calculator – Estimate Your Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate your HO-6 condo insurance premium based on personal property value, interior improvements, master policy type, and liability needs. Free, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/condo-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Condo Insurance (HO-6) Calculator",
+    "url": "https://myinsurancecalc.com/tools/condo-insurance.html",
+    "description": "Estimate HO-6 condo insurance premiums based on personal property value, interior improvements, master policy type, deductible, and liability coverage.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    {"@type": "Question", "name": "Does condo insurance cover the building itself?", "acceptedAnswer": {"@type": "Answer", "text": "No. The condo association's master policy covers the building structure and common areas. Your HO-6 policy covers your unit's interior, personal belongings, interior improvements, and personal liability — the parts the master policy doesn't reach."}},
+    {"@type": "Question", "name": "What's the difference between bare walls and all-in master policies?", "acceptedAnswer": {"@type": "Answer", "text": "A bare-walls master policy covers only the building's structural shell, leaving you responsible for insuring drywall, flooring, cabinets, and fixtures. An all-in (or single-entity) master policy covers those interior elements too, meaning your own HO-6 policy mainly needs to cover improvements above builder-grade and your personal belongings."}},
+    {"@type": "Question", "name": "How much does condo insurance cost?", "acceptedAnswer": {"@type": "Answer", "text": "The national average HO-6 premium is approximately $795 per year for $60,000 in personal property coverage with a $1,000 deductible, though costs vary by location, unit value, coverage limits, and your condo association's master policy type."}},
+    {"@type": "Question", "name": "What is loss assessment coverage on a condo policy?", "acceptedAnswer": {"@type": "Answer", "text": "Loss assessment coverage pays your share if the condo association levies a special assessment on all unit owners — for example, after major common-area damage that exceeds the master policy's limits. Standard limits are often just $1,000-$10,000, but can typically be increased to $50,000 or more."}},
+    {"@type": "Question", "name": "Do I need condo insurance if the HOA has a master policy?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The master policy doesn't cover your personal belongings, most interior improvements, or your personal liability if someone is injured in your unit. Most mortgage lenders require an HO-6 policy specifically because the master policy alone leaves major gaps."}}
+  ]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/#tools">Calculators</a> &rsaquo; Condo Insurance</p>
+        <h1>Condo Insurance (HO-6) Calculator</h1>
+        <p>Estimate your condo insurance premium based on your unit's interior value, belongings, and your HOA's master policy type.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your HO-6 Premium</h2>
+
+            <div class="form-group">
+              <label for="condo-improvements">Interior Improvements Value ($)</label>
+              <input type="number" id="condo-improvements" placeholder="e.g. 30000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="condo-personal">Personal Property Value ($)</label>
+              <input type="number" id="condo-personal" placeholder="e.g. 60000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="condo-master">HOA Master Policy Type</label>
+              <select id="condo-master">
+                <option value="allin">All-in / Single-entity (covers original interior fixtures)</option>
+                <option value="bare" selected>Bare walls-in (structure only)</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="condo-liability">Liability Coverage</label>
+              <select id="condo-liability">
+                <option value="100000">$100,000</option>
+                <option value="300000" selected>$300,000 (recommended)</option>
+                <option value="500000">$500,000</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="condo-deductible">Deductible</label>
+              <select id="condo-deductible">
+                <option value="500">$500</option>
+                <option value="1000" selected>$1,000</option>
+                <option value="2500">$2,500</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="condo-risk">Location Risk</label>
+              <select id="condo-risk">
+                <option value="low">Low risk (inland, low crime)</option>
+                <option value="medium" selected>Medium risk</option>
+                <option value="high">High risk (coastal, wildfire, or high crime)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcCondo()">Calculate Now</button>
+
+            <div class="result-box" id="condo-result">
+              <h3>ESTIMATED ANNUAL PREMIUM</h3>
+              <div class="result-amount" id="condo-amount"></div>
+              <div id="condo-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimate based on national average HO-6 rate benchmarks. Actual premiums vary by insurer, unit, and your specific HOA master policy.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>How HO-6 Condo Insurance Works</h2>
+            <p>Condo insurance, formally called an HO-6 policy, protects your individual unit from the walls in — your interior improvements, personal belongings, and personal liability. It's fundamentally different from homeowners insurance: your condo association's master policy already covers the building's exterior, structure, and common areas, so your HO-6 policy is specifically built to fill the gaps the master policy leaves behind. Many condo owners mistakenly assume the master policy handles everything, only to discover after a loss that upgraded flooring, cabinets, or their belongings were never covered.</p>
+
+            <h2>Bare Walls vs. All-In: Why Your Master Policy Type Changes Everything</h2>
+            <p>The single biggest variable in how much HO-6 coverage you need is your condo association's master policy type. A <strong>bare walls-in</strong> master policy covers only the structural shell — studs, subfloor, and building exterior — leaving you responsible for insuring drywall, flooring, cabinets, countertops, and fixtures. An <strong>all-in (single-entity)</strong> master policy is more comprehensive, covering those interior elements as they existed when the building was originally constructed — meaning your own policy mainly needs to cover improvements you've made above the original builder-grade finish. Before buying condo insurance, request your HOA's master policy declaration page; guessing wrong here is the most common and costly mistake condo owners make.</p>
+
+            <h2>What Counts as an "Interior Improvement"</h2>
+            <p>Interior improvements are any upgrades beyond what the unit had when originally built — hardwood floors replacing original carpet, upgraded kitchen cabinets and countertops, custom built-ins, or a renovated bathroom. If your master policy is bare walls-in, you need to insure the full cost of restoring your unit's interior, including these upgrades. If your master policy is all-in, you generally only need to insure the value of improvements above the original builder-grade finish, since the master policy already covers restoring the unit to its original condition.</p>
+
+            <h2>Loss Assessment: The Coverage Gap Most Condo Owners Miss</h2>
+            <p>If a major loss affects a common area — a fire in the parking garage, an elevator failure, a lawsuit over a shared amenity — and the damage exceeds the master policy's limits, the condo association can levy a special assessment on every unit owner to cover the shortfall. These assessments have run anywhere from a few thousand dollars to $50,000 or more per unit in large buildings. Loss assessment coverage on your HO-6 policy pays your share, but standard limits are often just $1,000-$10,000 — usually too low to matter in a real special assessment. Most insurers let you raise this limit to $50,000 or higher for a modest additional premium, and doing so is one of the highest-value upgrades a condo owner can make to their policy.</p>
+
+            <h2>Water Damage From a Neighbor's Unit</h2>
+            <p>One of the most common condo claims involves water damage originating from a neighboring unit — a pipe bursts upstairs and damages your ceiling, flooring, and belongings. Your own HO-6 policy typically covers this damage to your unit's interior and personal property regardless of whose unit the water originated in, though your insurer may separately pursue reimbursement from the responsible party's insurer. This is one of the clearest examples of why relying solely on the master policy leaves a real gap — the master policy generally won't pay for damage confined to the interior of an individual unit.</p>
+
+            <h2>What Determines Your HO-6 Premium</h2>
+            <ul>
+              <li><strong>Interior improvements value</strong> — higher-end finishes and larger units cost more to insure for dwelling coverage.</li>
+              <li><strong>Personal property value</strong> — the total value of your belongings, ideally based on an actual home inventory rather than a guess.</li>
+              <li><strong>Location risk</strong> — coastal, wildfire-prone, and high-crime areas carry meaningfully higher premiums.</li>
+              <li><strong>Liability limit</strong> — most agents recommend at least $300,000 in personal liability coverage for condo owners.</li>
+              <li><strong>Deductible</strong> — a higher deductible lowers your premium but increases your out-of-pocket cost per claim.</li>
+              <li><strong>Claims history and credit-based insurance score</strong> — vary by state and insurer, but can meaningfully affect your quoted rate.</li>
+            </ul>
+
+            <h2>How to Lower Your Condo Insurance Premium</h2>
+            <ul>
+              <li>Confirm your exact master policy type before over-insuring dwelling coverage you don't actually need.</li>
+              <li>Raise your deductible from $500 to $1,000 or $2,500 if you can comfortably cover it out of pocket.</li>
+              <li>Bundle with auto or umbrella insurance for a multi-policy discount.</li>
+              <li>Install monitored security systems and smoke detectors — many insurers offer discounts for reduced-risk units.</li>
+              <li>Do a real home inventory rather than guessing your personal property value — both over- and under-insuring cost you money.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Does condo insurance cover the building itself?</h3>
+            <p>No. The condo association's master policy covers the building structure and common areas. Your HO-6 policy covers your unit's interior, personal belongings, interior improvements, and personal liability — the parts the master policy doesn't reach.</p>
+
+            <h3>What's the difference between bare walls and all-in master policies?</h3>
+            <p>A bare-walls master policy covers only the building's structural shell, leaving you responsible for insuring drywall, flooring, cabinets, and fixtures. An all-in (or single-entity) master policy covers those interior elements too, meaning your own HO-6 policy mainly needs to cover improvements above builder-grade and your personal belongings.</p>
+
+            <h3>How much does condo insurance cost?</h3>
+            <p>The national average HO-6 premium is approximately $795 per year for $60,000 in personal property coverage with a $1,000 deductible, though costs vary by location, unit value, coverage limits, and your condo association's master policy type.</p>
+
+            <h3>What is loss assessment coverage on a condo policy?</h3>
+            <p>Loss assessment coverage pays your share if the condo association levies a special assessment on all unit owners — for example, after major common-area damage that exceeds the master policy's limits. Standard limits are often just $1,000-$10,000, but can typically be increased to $50,000 or more.</p>
+
+            <h3>Do I need condo insurance if the HOA has a master policy?</h3>
+            <p>Yes. The master policy doesn't cover your personal belongings, most interior improvements, or your personal liability if someone is injured in your unit. Most mortgage lenders require an HO-6 policy specifically because the master policy alone leaves major gaps.</p>
+
+            <p class="article-disclaimer">Calculator estimates are based on national average HO-6 rate benchmarks and are for informational purposes only. Actual premiums vary significantly by insurer, location, unit value, and your specific HOA master policy terms. This tool does not constitute insurance advice. Consult a licensed insurance professional and review your HOA's master policy declaration page for personalized guidance.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/landlord-insurance.html">Landlord Insurance Calculator</a></li>
+              <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>National avg: <strong>$795/yr</strong> ($60K contents, $1,000 deductible)</li>
+              <li>Master policy covers structure only</li>
+              <li>Loss assessment default limit often just $1,000</li>
+              <li>Bare walls vs. all-in changes what you need to insure</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcCondo() {
+  const improvements = parseFloat(document.getElementById('condo-improvements').value) || 0;
+  const personal = parseFloat(document.getElementById('condo-personal').value) || 0;
+  const master = document.getElementById('condo-master').value;
+  const liability = parseFloat(document.getElementById('condo-liability').value);
+  const deductible = parseFloat(document.getElementById('condo-deductible').value);
+  const risk = document.getElementById('condo-risk').value;
+
+  const masterMult = { allin: 0.6, bare: 1.0, unsure: 0.85 };
+  const liabAdd = { 100000: 0, 300000: 60, 500000: 130 };
+  const dedMult = { 500: 1.15, 1000: 1.0, 2500: 0.85 };
+  const riskMult = { low: 0.8, medium: 1.0, high: 1.6 };
+
+  const dwellingRate = 0.009; // $9 per $1000
+  const contentsRate = 0.006; // $6 per $1000
+  const baseFee = 100; // minimum policy administration cost
+
+  const dwellingCost = improvements * dwellingRate * masterMult[master];
+  const contentsCost = personal * contentsRate;
+  const base = baseFee + dwellingCost + contentsCost + liabAdd[liability];
+  const annual = Math.max(base * dedMult[deductible] * riskMult[risk], 250);
+  const monthly = annual / 12;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('condo-amount').textContent = fmt(annual) + '/yr';
+  document.getElementById('condo-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Interior improvements coverage</td><td style="text-align:right">${fmt(improvements)}</td></tr>
+      <tr><td>Personal property coverage</td><td style="text-align:right">${fmt(personal)}</td></tr>
+      <tr><td>Liability coverage</td><td style="text-align:right">${fmt(liability)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right">${fmt(monthly)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. annual premium</td><td style="text-align:right">${fmt(annual)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('condo-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
