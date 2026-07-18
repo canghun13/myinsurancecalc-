@@ -115,6 +115,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Life Insurance With Sleep Apnea](https://myinsurancecalc.com/blog/life-insurance-with-sleep-apnea.html)
   AHI severity classification (mild/moderate/severe), CPAP compliance impact on underwriting, table rating expectations by severity and compliance, guaranteed/simplified issue alternatives.
 
+- [Life Insurance With Depression or Anxiety](https://myinsurancecalc.com/blog/life-insurance-with-depression-anxiety.html)
+  Diagnosis type and severity, treatment/medication stability, hospitalization and suicide attempt history, impact on daily functioning, table rating expectations, guaranteed/simplified issue alternatives.
+
 - [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
   Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.
 

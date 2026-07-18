@@ -1,4 +1,19 @@
-# MyInsuranceCalc.com 인수인계 (2026-07-16 업데이트)
+# MyInsuranceCalc.com 인수인계 (2026-07-19 업데이트)
+
+## ✅ 이번 세션(7/19) 핵심 요약 — 다음 세션 필독
+GSC 데이터(Coverage + Performance, 3개월 누적) 분석 후 신규 1건 + 보강 29페이지 실행. "공격적으로 진행" 방침 계속 유지 — 되묻지 않고 바로 실행.
+
+**핵심 발견 4가지:**
+1. **states/life-insurance 카테고리가 새로운 다크호스** — FAQ가 51개 전부 없는데도 개별 페이지 순위가 3~11위(!)까지 나오는 곳이 다수 확인됨 (tools/life-insurance.html도 순위 3). 다만 노출 자체가 아직 총 24회로 극히 작아서(카테고리 중 최저) 표본이 작음 — 진짜 트래픽으로 이어지는지는 다음 export에서 재확인 필요. **다음 세션 최우선 후보로 남겨둠** (노출이 작아 이번엔 workers-comp/business-insurance보다 우선순위 낮춤).
+2. **workers-comp·business-insurance state 카테고리가 여전히 최대 기회 영역** — 노출은 크지만(각각 2,857 / 2,080회) FAQ 미적용 페이지가 다수 남아있었음. 이번 세션에 workers-comp 16개 주, business-insurance 12개 주에 FAQ+스키마 일괄 삽입 완료 (아래 상세 참고).
+3. **"car insurance calc" 쿼리가 순위 4위(!)로 tools/car-insurance.html에서 확인됨** — 노출 18회로 표본은 작지만 페이지1 상단. 타이틀/메타는 이미 최적화되어 있어 추가 조치 없음, 그냥 긍정 신호로만 기록.
+4. **missouri workers-comp가 FAQ 없이도 실클릭 1회(CTR 25%, 순위 23)** 기록 중이었음 — FAQ 미적용 페이지 중 가장 강한 실성과 신호라 이번 배치에 포함해 우선 보강.
+
+**신규 콘텐츠 갭 발견:** 쿼리 전수 스캔 중 "kentucky hair salon insurance"(17회 노출) 등 업종 특화(미용실) 보험 쿼리 3개 주에서 확인 — 아직 볼륨이 작아 별도 페이지 대신 켄터키 business-insurance 페이지에 FAQ 1문항으로 대응. 볼륨 늘면 전용 페이지 검토.
+
+**Coverage export는 이번에도 데이터 변화 없음** (여전히 동일한 30건: NOINDEX 2, 크롤링됨-미색인 5, 대체페이지 1, 발견됨-미색인 22) — 리포팅 지연 지속 중, 색인 반영 확인은 다음 export 대기.
+
+**트래픽**: 클릭 11→11 (변화 없음), 노출 20,473→22,228 (+1,755). 클릭이 정체된 건 우려할 수준은 아님 — 전체 사이트 평균 순위가 대부분 50~90위대(페이지 5~9)라 클릭 자체가 통계적으로 드문 구간, 노출 증가는 색인/크롤링이 계속 확장되고 있다는 신호로 해석.
 
 ## ✅ 공격적 확장 모드 실행 완료 (7/16) — 계속 유지
 7/15에 지시된 "공격적으로 신규/보강 둘 다 진행" 방침을 7/16 세션에서 실제 실행함 (아래 "이번 세션(7/16)" 항목 참고). 이 방침은 계속 유효 — 다음 세션도 되묻지 말고 중복확인+경쟁강도 확인만 거쳐서 여러 건씩 진행할 것.
@@ -10,22 +25,25 @@
 - **작업 방식**: 사용자가 매 세션 GitHub Personal Access Token을 채팅으로 제공 → Claude가 레포 클론/pull → 직접 커밋+푸시. **더 이상 zip 전달 방식 아님.** 작업 끝나면 사용자가 토큰 revoke.
 - 로컬 작업 경로: `/home/claude/work/repo` (컨테이너 리셋되면 새 세션에서 처음부터 클론 필요)
 
-## 콘텐츠 규모 (2026-07-16 기준)
-- 블로그 41개 / 툴 24개 (7/16: 신규 블로그 2개 `how-does-uber-insurance-work.html`, `life-insurance-with-sleep-apnea.html` + 신규 툴 1개 `condo-insurance.html` 추가)
+## 콘텐츠 규모 (2026-07-19 기준)
+- 블로그 42개 / 툴 25개 (7/19: 신규 블로그 1개 `life-insurance-with-depression-anxiety.html` 추가 — 조건별 시리즈 5번째)
 - **States 카테고리 7개 × 50페이지 = 350페이지**: car-insurance, health-insurance, home-insurance, life-insurance, workers-comp, renters-insurance, business-insurance
-- sitemap.xml 총 428개 URL
+- sitemap.xml 총 430개 URL (XML 유효성 검증 완료)
 - 총 400페이지 이상
+- **State FAQ 적용 현황(7/19 기준)**: workers-comp 30/51(잔여 21개), business-insurance 22/51(잔여 29개), renters-insurance 0/51, car/health/home/life-insurance 각 0~1/51 — 아래 "다음 확인 시점"에 잔여 주 목록 상세.
 
 ## 색인 현황
-- **7/16 Coverage export 확인 — 데이터 변화 없음(리포팅 지연)**: 차트가 여전히 **7/10까지만 반영**, 색인 396건·이슈 30건(구성 동일: NOINDEX 2, 크롤링됨-미색인 5, 대체페이지 1, 발견됨-미색인 22)으로 7/15와 완전히 동일. **7/15 후반에 수정한 깨진 링크 100개·div 버그·FAQ 보강 효과는 아직 이 데이터에 반영 안 됨 — 다음 export(보통 1-2주 후)에서 확인.**
-- 트래픽은 계속 우상향: 클릭 10→11, 노출 18,672→20,473 (3개월 누적, +1,801). CTR 자체는 여전히 낮지만 순위 10~15위권 페이지(ev-insurance, colon-cancer, sr22-insurance)에서 실클릭 지속 확인.
-- **workers-comp 카테고리 실제 순위 데이터로 확인된 사실**: nevada workers-comp가 순위 69~70위대에서 **순위 11위(노출 1회)로 급등** — 지난 세션에 고친 깨진 링크+FAQ 보강 효과일 가능성 있음(표본 1회라 확정 아님, 다음 export에서 추세 재확인 필요). new-york home-insurance는 아직 개선 신호 없음(순위 88.78, 오히려 소폭 하락) — 계속 지켜볼 것.
-- **다음 확인 시점**: "발견됨-미색인" 22건 감소 여부, nevada workers-comp 순위 개선이 지속되는지, 이번 세션에 FAQ 추가한 workers-comp 10개+business-insurance 8개 페이지의 순위 변화.
+- **7/19 Coverage export 확인 — 이번에도 데이터 변화 없음(리포팅 지연 지속)**: 이슈 구성 7/15~7/16과 완전 동일(NOINDEX 2, 크롤링됨-미색인 5, 대체페이지 1, 발견됨-미색인 22). 7/15~7/16에 수정/보강한 내용(깨진 링크, FAQ 18페이지, 신규 3건)의 색인 반영은 여전히 미확인 — 리포팅 지연이 예상보다 길어지는 중, 계속 다음 export 대기.
+- 트래픽: 클릭 11→11 (변화 없음), 노출 20,473→22,228 (+1,755, 3개월 누적). 클릭 정체는 우려 신호라기보다 사이트 평균 순위가 여전히 50~90위대(페이지 5~9)인 게 근본 원인 — 노출은 계속 늘고 있어 색인/크롤링 확장은 정상 진행 중으로 판단.
+- **7/19 새로 확인된 순위 신호**: states/life-insurance 카테고리 다수 페이지가 FAQ 없이도 순위 3~11위 기록 (tools/life-insurance.html도 순위 3) — 다만 노출 절대량이 카테고리 중 가장 작음(총 24회)이라 표본 노이즈 가능성 있음, 다음 export에서 노출량이 늘어나는지가 진짜 신호인지 판별하는 기준. missouri workers-comp는 FAQ 없이 이미 실클릭 1회(CTR 25%, 순위 23)를 내고 있어 이번 세션 보강 대상에 우선 포함.
+- **다음 확인 시점**: "발견됨-미색인" 22건 감소 여부, 이번 세션 FAQ 추가한 workers-comp 16곳/business-insurance 12곳의 순위 변화, states/life-insurance 카테고리 노출량이 실제로 늘고 있는지(다크호스 가설 검증), 신규 depression-anxiety 글 색인 여부.
 
-## 신규 콘텐츠 방침 — 전면 해제 상태 (7/16 기준)
+## 신규 콘텐츠 방침 — 전면 해제 상태 (7/16부터 유지)
 - 모라토리엄 완전 해제됨. 신규 블로그/툴 자유롭게 진행 가능. 대량 state 카테고리 신규 생성(51개 일괄)만 사용자 확인 후 진행 권장, 나머지는 바로 실행.
-- **7/16 세션에 실행한 신규 콘텐츠 3건** (아래 "이번 세션(7/16)" 항목 상세 참고): 조건별 시리즈 4번째(수면무호흡증), GSC 데이터로 발견한 실제 키워드 갭(Uber/Lyft 보험 설명 전용 글), 니치 툴 1번째(콘도 HO-6 계산기).
-- **다음 후보(순서대로)**: 조건별 시리즈 — 우울증/불안 → 비만. 니치 툴 — 모바일홈보험, 결혼식보험, 귀중품보험, 최종비용보험, 소상공인 사이버보험, 중대질병보험.
+- **7/19 세션에 실행한 신규 콘텐츠**: 조건별 시리즈 5번째(우울증/불안, `life-insurance-with-depression-anxiety.html`) — 웹서치로 실제 언더라이팅 기준(진단 유형/중증도, 치료·투약 안정성, 입원·자살시도 이력, 일상기능 영향) 조사 반영, 기존 시리즈 4개 글과 양방향 크로스링크. 경쟁강도 확인 결과 이 주제를 다루는 경쟁 사이트(moneygeek, quickquote 등)가 이미 존재하는 중간 경쟁 니치이지만, 기존 당뇨병/심장질환/고혈압/수면무호흡증 페이지가 같은 패턴으로 성과를 내고 있어 롱테일 하위 쿼리 공략 전략을 그대로 적용.
+- **니치 업종 보험 갭(작은 볼륨, 전용 페이지 대신 기존 페이지에 FAQ로 대응)**: "kentucky hair salon insurance"류 쿼리 확인 → 별도 페이지 대신 states/business-insurance/kentucky.html에 FAQ 1문항 추가로 대응(볼륨 26회로 아직 전용 페이지 정당화 안 됨).
+- **다음 후보(순서대로)**: 조건별 시리즈 — 비만(다음 하나 남음, 이후 시리즈 사실상 완료). 니치 툴 — 모바일홈보험, 결혼식보험, 귀중품보험, 최종비용보험, 소상공인 사이버보험, 중대질병보험 (7/19엔 웹서치 키워드 리서치를 새 콘텐츠보다 state FAQ 보강에 우선 투입했음 — 다음 세션에 이 니치 툴 후보들 경쟁강도 확인 후 착수 권장).
+- **미용실 보험처럼 업종 특화 니치가 GSC에 추가로 뜨는지 매 세션 확인할 것** — 볼륨이 쌓이면(주별 20~30회 이상) business-insurance 허브에 업종별 서브섹션 신설도 검토 가능.
 
 ## 운영 방식 변경 (2026-07-11부터)
 - **"자주 업데이트" 체제로 전환**: 기존엔 주간 세션(블로그3+툴1) 단위였는데, 이제는 필요할 때마다 자주 짧게 업데이트하는 방식.
@@ -48,8 +66,8 @@
 
 ## 신규 콘텐츠 후보 리스트 (진행 중 — 자유롭게 이어서 진행)
 ### 조건별 생명보험 시리즈 (cancer 시리즈 패턴 복제)
-- 완료: 당뇨병, 심장질환, 고혈압, **수면무호흡증(7/16 완료)**
-- 남은 순서: 우울증/불안 → 비만
+- 완료: 당뇨병, 심장질환, 고혈압, 수면무호흡증, **우울증/불안(7/19 완료)**
+- 남은 순서: 비만 (1개만 남음 — 완료 시 이 시리즈는 사실상 마무리, 이후엔 다른 신규 카테고리 검토 필요)
 
 ### 고위험 운전자 시리즈 (dui 패턴 복제)
 - 아직 미착수: 사고 후 자동차보험, 과속딱지 후 자동차보험, 면허정지 후 자동차보험, 신규 10대 운전자
@@ -62,9 +80,13 @@
 ### 기타 신규 (GSC 데이터 기반 발견)
 - 완료: Uber/Lyft 보험 설명 전용 글(7/16) — GSC에 "how does uber insurance work" 114회 노출·순위 90.7위로 뜨는데 기존 gig-workers 글이 이 쿼리에 제대로 안 맞는 것 확인, 전용 글로 분리
 
-### state 후보
-- 완료: renters-insurance, business-insurance (총 7개 카테고리)
-- 추가 후보 딱히 논의된 것 없음 (필요시 재검토)
+### state 후보 (신규 생성은 완료, 현재는 기존 51페이지 FAQ 보강이 핵심 작업)
+- 신규 생성 완료: renters-insurance, business-insurance (총 7개 카테고리, 각 51페이지)
+- **FAQ 보강 잔여 현황(7/19 기준, 노출량 순 우선 처리 권장)**:
+  - **workers-comp 잔여 21개 주**: alaska, arizona, arkansas, california, connecticut, delaware, florida, illinois, louisiana, minnesota, mississippi, new-hampshire, new-york, north-carolina, ohio, oklahoma, south-dakota, texas, vermont, washington, west-virginia (washington은 독점주라 FAQ 문구 분기 필요)
+  - **business-insurance 잔여 29개 주**: arizona, arkansas, california, colorado, connecticut, florida, georgia, hawaii, illinois, louisiana, massachusetts, michigan, minnesota, mississippi, missouri, montana, nebraska, nevada, new-jersey, new-mexico, new-york, oklahoma, oregon, pennsylvania, south-carolina, tennessee, texas, utah, virginia
+  - **renters-insurance 51개 전부 FAQ 없음** — 아직 손대지 않음, 노출 총 1,419회로 business-insurance보다 크므로 다음 세션 우선순위 후보
+  - **car/health/home/life-insurance 4개 카테고리도 FAQ 거의 없음** — 노출 절대량은 작지만(life-insurance는 특히 순위가 이미 좋아 다크호스 가능성, 위 "핵심 발견" 참고), 다음 세션에 가볍게 훑어볼 가치 있음
 
 ## 콘텐츠 구조 표준 (2026-07 기준 최신 패턴)
 - **FAQ + FAQPage 스키마가 신규 표준**. 새 블로그 글은 반드시 FAQ 3개 이상 + `<script type="application/ld+json">` FAQPage 스키마 포함.
@@ -97,6 +119,14 @@
     - **보강 18페이지**: workers-comp 10개 주(nebraska/indiana/kansas/south-carolina/kentucky/north-dakota/montana/tennessee/new-jersey/wisconsin — GSC 노출 상위인데 FAQ 없던 주들, 파이썬 스크립트로 주별 실제 데이터(임계값/요율/규제기관) 반영해 일괄 삽입) + business-insurance 8개 주(indiana/delaware/vermont/washington/wyoming/idaho/west-virginia/kentucky — 마찬가지로 GSC 노출 상위·FAQ 없음, washington/wyoming은 독점주라는 사실 반영해 FAQ 문구 분기 처리).
     - **검증**: 사이트 전체 ld+json 487개 블록 파싱 통과, div 밸런스 재검사 중 크로스링크 편집 과정에서 실수로 생긴 중복 `</div>` 2건(heart-disease, high-blood-pressure) 발견 즉시 수정 → 최종 div 불일치 0건.
     - **모든 신규 콘텐츠 체크리스트 완료**: blog/index.html·tools/index.html·index.html(홈페이지 최신글 3개+최신툴 New뱃지 이동)·sitemap.xml(428 URL, XML 검증)·llms.txt 전부 반영.
+14. **(7/19) GSC 데이터 기반 대규모 FAQ 보강 + 신규 1건**:
+    - **workers-comp 16개 주 FAQ+스키마 신규 삽입**: colorado, maine, alabama, virginia, pennsylvania, georgia, rhode-island, oregon, hawaii, massachusetts, idaho, wyoming, maryland, michigan, missouri, new-mexico. 각 주 페이지에 이미 존재하던 데이터박스 수치(threshold/rate/market type)와 본문 규제기관명을 파이썬으로 추출해 FAQ 4문항(의무여부/비용/규제기관/미가입 시 불이익)을 생성 — 새로운 사실을 지어내지 않고 기존 검증된 데이터만 재사용. wyoming은 독점주 문구 분기 처리. alabama 규제기관명(Department of Labor Workers' Compensation Division)은 웹서치로 확인 후 반영.
+    - **business-insurance 12개 주 FAQ+스키마 신규 삽입**: north-carolina, alaska, kansas, new-hampshire, north-dakota, south-dakota, rhode-island, iowa, ohio, maryland, alabama, wisconsin. 동일 방식(기존 데이터박스 값 재사용)으로 FAQ 4문항(workers' comp 의무/비용/GL 의무여부/LLC 오너 처리) 생성. kansas는 급여 기준($20,000/년) threshold라 문구 별도 처리, north-dakota/ohio는 독점주 문구 반영.
+    - **states/business-insurance/kentucky.html에 미용실 보험 FAQ 1문항 추가**: GSC에서 "kentucky hair salon insurance"(17회 노출) 쿼리 확인 → 웹서치로 실제 업계 관행(BOP+전문직배상책임+제품배상책임 3중 구조, workers' comp 1인 기준) 조사 후 반영. 볼륨이 작아(3개 주 합산 26회) 전용 페이지 대신 기존 페이지 보강으로 대응.
+    - **신규 블로그 1건**: `blog/life-insurance-with-depression-anxiety.html` — 조건별 시리즈 5번째. 웹서치로 실제 언더라이팅 기준(진단 유형/중증도, 치료·투약 안정성, 입원 이력, 자살시도 이력, 일상기능 영향) 조사, FAQ 5개+스키마 포함, 시리즈 4개 기존 글(수면무호흡증/당뇨병/심장질환/고혈압)과 양방향 크로스링크(본문+사이드바 총 8개 삽입 지점).
+    - **검증**: 사이트 전체 517개 ld+json 블록 전수 파싱 통과(실패 0), div open/close 밸런스 431개 파일 전체 불일치 0건, 신규/수정 파일 내부링크 전수 확인 결과 깨진 링크 0건.
+    - **체크리스트 완료**: blog/index.html(신규 카드 추가)·index.html(홈페이지 최신글 3개 갱신, uber글을 밀어내고 신규 추가)·sitemap.xml(430 URL, XML 검증 완료)·llms.txt 전부 반영.
+    - **변경 파일 총 38개** (workers-comp 16 + business-insurance 12 + kentucky 1 + 신규 블로그 1 + 크로스링크 4 + blog/index.html + index.html + sitemap.xml + llms.txt).
 
 ## 작업 규칙 (변동 없음 + 추가)
 - 블로그/툴 추가 시 체크리스트 필수: `blog/index.html` 또는 `tools/index.html` 카드 추가, 메인 `index.html`(최신글/최신툴 섹션 — "New" 배지는 최신 것 하나로 이동) 반영, `sitemap.xml` 추가(XML 유효성 `python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml')"`로 검증), `llms.txt` 반영
@@ -111,10 +141,12 @@
 - **화면 렌더링 확인은 Claude가 못 함 — 구조 변경(새 섹션, 스키마, CSS 클래스 등) 있는 파일은 반드시 실제 URL(`https://myinsurancecalc.com/...`)을 링크로 제공해서 사용자가 직접 확인하도록 할 것**. 단순 텍스트/문구 추가만 있는 파일은 태그 밸런스 검증으로 충분.
 
 ## 다음 확인 시점
-- **다음 Coverage export 확인 시**: "발견됨-미색인" 22건 변화, nevada workers-comp 순위 11위 유지되는지, 7/16에 FAQ 추가한 workers-comp 10곳/business-insurance 8곳 순위 변화, 신규 3건(수면무호흡증/우버보험/콘도툴)의 색인 여부.
-- 조건별 시리즈 다음 순번(우울증/불안)과 니치 툴 다음 순번(모바일홈보험 등) 계속 진행 — 매번 웹서치로 경쟁강도만 확인하고 바로 실행.
-- GSC 데이터 받을 때마다 쿼리 전수 스캔해서 실제 키워드 갭 있는지 확인하는 루틴 유지 (7/16에 우버보험 갭 발견한 방식 — 노출은 있는데 기존 페이지 순위가 유독 나쁜 쿼리를 찾는 게 핵심).
-- **전체 사이트 div 태그 밸런스 스캔은 크로스링크 편집처럼 여러 파일을 동시에 만질 때마다 항상 마지막에 재확인할 것** — 이번 세션에도 편집 중 실수로 중복 div가 2건 생겼었음.
+- **다음 Coverage export 확인 시**: "발견됨-미색인" 22건 변화 여부(3번째 세션째 변화 없음 — 리포팅 지연이 예상보다 긴 편이라 다음에도 안 바뀌면 그러려니 할 것), 7/19에 FAQ 추가한 workers-comp 16곳/business-insurance 12곳 순위 변화, 신규 depression-anxiety 글 색인 여부, missouri workers-comp 클릭이 유지/증가하는지.
+- **states/life-insurance 카테고리를 다음 세션 최우선으로 검토**: 노출은 작지만(24회) 순위가 이미 3~11위권으로 좋음 — FAQ 보강으로 확실히 밀어붙일지, 노출량이 자연 증가하는 걸 한 번 더 지켜볼지 다음 export 보고 판단.
+- **state FAQ 보강 잔여분(workers-comp 21곳, business-insurance 29곳, renters-insurance 51곳 전부)을 계속 진행** — 노출량 순으로 우선순위 정해서(위 "state 후보" 섹션 목록 참고) 다음 세션에도 여러 개씩 배치 처리.
+- 조건별 시리즈 마지막 하나(비만)와 니치 툴 후보(모바일홈보험 등) — 매번 웹서치로 경쟁강도 확인하고 바로 실행.
+- GSC 데이터 받을 때마다 쿼리 전수 스캔해서 실제 키워드 갭 있는지 확인하는 루틴 유지 (우버보험/미용실보험 발견한 방식 — 노출은 있는데 대응하는 페이지가 없거나 순위가 유독 나쁜 쿼리를 찾는 게 핵심).
+- **전체 사이트 div 태그 밸런스 + JSON-LD 파싱 스캔은 여러 파일을 동시에 만질 때마다 항상 마지막에 재확인할 것.**
 
 ## 이번 세션(7/16) 전달 자료 참고
 - GSC Performance export(3개월 누적), Coverage export(색인 상태, **여전히 7/10까지만 반영** — 7/15와 데이터 동일, 리포팅 지연 지속) 분석 완료.
@@ -123,3 +155,10 @@
 - **핵심 발견 3 (실제 키워드 갭 발견)**: 쿼리 전수 스캔 중 "how does uber insurance work"(114회 노출, 순위 90.7)를 발견 — 기존 gig-workers 글이 이 쿼리를 제대로 못 잡고 있어서 전용 글로 분리해 대응. 나머지는 새로운 클러스터 없이 기존 페이지가 이미 커버 중.
 - **이번 세션 실행 작업 총정리**: 신규 3건(수면무호흡증 블로그, 우버보험 블로그, 콘도 HO-6 계산기 툴) + 보강 18페이지(workers-comp 10주, business-insurance 8주 FAQ+스키마) + 사이트 전체 검증(487 ld+json 블록, div 밸런스 0건 불일치). 사용자 지시대로 "공격적" 기조 반영 — 매번 확인받지 않고 여러 건 동시 진행, 다만 품질 기준(웹서치 조사 데이터, node 검증, 800단어+, div/JSON 검증)은 유지.
 - 원본 CSV는 재사용 안 해도 됨, 다음번엔 새로 받은 데이터로 분석.
+
+## 이번 세션(7/19) 전달 자료 참고
+- GSC Performance export(3개월 누적, ~7/16까지) + Coverage export 분석 완료. Coverage는 7/15부터 3번째 세션 연속 데이터 변화 없음(리포팅 지연).
+- **작업 순서**: (1) Performance CSV 전수 로드 → 쿼리 1,000개/페이지 286개 노출·순위 분석 → (2) 카테고리별(blog/workers-comp/business-insurance/renters-insurance/car/health/home/life-insurance/tools) 노출·클릭 합산해서 기회 크기 비교 → (3) 각 카테고리 FAQ 보유 현황 스캔(`grep -L "Frequently Asked Questions"`) → (4) 노출량이 크고 FAQ 없는 페이지를 우선순위로 선정 → (5) 각 페이지에 이미 있는 데이터박스 수치를 파이썬으로 추출해 재사용(새 사실 창작 방지) → (6) 불확실한 사실(예: 알라바마 workers comp 규제기관명)만 웹서치로 개별 확인 → (7) 스크립트로 일괄 삽입 → (8) 사이트 전체 JSON-LD·div 밸런스·내부링크 검증.
+- **키워드 리서치 관점**: 신규 콘텐츠(우울증/불안 시리즈)는 웹서치로 사전에 경쟁 강도를 확인함 — moneygeek/quickquote/riskquoter 등 전담 사이트가 이미 다수 존재하는 중간 경쟁 니치였지만, 우리 사이트는 헤드 키워드("life insurance depression")가 아니라 하위 롱테일(진단 유형별/치료이력별 세부 쿼리)을 노리는 전략이라 기존 시리즈(당뇨병 등)와 동일한 논리로 진행 결정. 미용실보험처럼 볼륨이 아직 작은 키워드는 전용 페이지 대신 기존 페이지에 FAQ로 흡수하는 방식으로 리소스 배분.
+- **이번 세션 실행 총정리**: 신규 1건(우울증/불안 블로그, 시리즈 5번째) + 보강 29페이지(workers-comp 16, business-insurance 12, kentucky 미용실 FAQ 1문항) + 크로스링크 4개 파일 + 체크리스트(blog/index, index, sitemap, llms.txt) + 사이트 전체 검증. 변경 파일 총 38개.
+- 다음 세션에서 참고할 만한 발견: states/life-insurance 다크호스 신호, workers-comp/business-insurance 잔여 FAQ 목록(위에 상세), renters-insurance는 아직 FAQ 전무하니 다음 우선순위 후보.
