@@ -74,6 +74,12 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Freelancer Insurance Calculator](https://myinsurancecalc.com/tools/freelancer-insurance.html)
   Estimates total annual insurance cost for self-employed workers across health, liability, disability, and life coverage categories.
 
+- [Wedding Insurance Calculator](https://myinsurancecalc.com/tools/wedding-insurance.html)
+  Estimates wedding liability and cancellation/postponement insurance premium based on guest count, venue type (indoor/outdoor/destination), alcohol service, budget, and liability coverage limit.
+
+- [Valuables & Jewelry Insurance Calculator](https://myinsurancecalc.com/tools/valuables-insurance.html)
+  Estimates jewelry, fine art, electronics, and collectibles insurance premium based on appraised value, item type, storage method (safe vs. worn/home), and coverage type (scheduled vs. blanket).
+
 ---
 
 ## Guides
@@ -151,6 +157,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 
 - [How to Lower Your Car Insurance Premium: 15 Proven Ways](https://myinsurancecalc.com/blog/how-to-lower-car-insurance.html)
   Shopping frequency, deductible strategy, bundling, discounts, telematics, credit score, dropping coverage on older vehicles, annual vs monthly payment.
+
+- [Car Insurance After a License Suspension](https://myinsurancecalc.com/blog/car-insurance-after-license-suspension.html)
+  What triggers an SR-22 requirement, step-by-step reinstatement process, non-owner SR-22 for drivers without a car, typical premium increase and filing fees, how to keep costs down during the filing period.
 
 ### Freelancer and Gig Worker Insurance
 

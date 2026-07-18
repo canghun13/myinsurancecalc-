@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valuables & Jewelry Insurance Calculator | My Insurance Calc</title>
+  <meta name="description" content="Estimate your jewelry, fine art, or valuables insurance premium based on appraised value, item type, storage, and coverage type. Free, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/valuables-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Organization", "name": "MyInsuranceCalc Team", "url": "https://myinsurancecalc.com/about.html"}, "headline": "Valuables & Jewelry Insurance Calculator",
+  "description": "Estimate jewelry, fine art, and valuables insurance premiums based on appraised value, item type, storage method, and coverage type.",
+  "url": "https://myinsurancecalc.com/tools/valuables-insurance.html", "publisher": {"@type": "Organization", "name": "MyInsuranceCalc.com", "url": "https://myinsurancecalc.com"}}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Valuables & Jewelry Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/valuables-insurance.html",
+    "description": "Estimate jewelry, fine art, electronics, and collectibles insurance premiums based on appraised value, item type, storage method, and coverage type.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    {"@type": "Question", "name": "How much does jewelry or valuables insurance cost?", "acceptedAnswer": {"@type": "Answer", "text": "Standard valuables insurance costs approximately 0.5% to 3% of the item's appraised value per year, with most policies landing around 1-2%. A $10,000 engagement ring, for example, typically costs $4 to $25 per month depending on the insurer, storage, and coverage type."}},
+    {"@type": "Question", "name": "Do I need an appraisal to insure my valuables?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes, since your premium is tied to documented value. Recently purchased items can often be insured based on the original purchase receipt alone, while older pieces and heirlooms typically require a current, official appraisal."}},
+    {"@type": "Question", "name": "Is a homeowners/renters rider or a standalone policy cheaper for valuables?", "acceptedAnswer": {"@type": "Answer", "text": "A rider on your existing homeowners or renters policy can look cheaper upfront, but those policies often carry low built-in sublimits (frequently just $1,000-$2,500 for jewelry) and a full policy deductible per claim. A standalone valuables policy usually has no deductible and insures the item at its full appraised value, which is often the better value for higher-worth items."}},
+    {"@type": "Question", "name": "What's the difference between scheduled and blanket valuables coverage?", "acceptedAnswer": {"@type": "Answer", "text": "Scheduled coverage insures each item individually at its own appraised (agreed) value, which is precise but requires updating as you acquire new items. Blanket coverage sets one overall limit across a category of items, which can be more cost-effective and simpler to manage, though it may cap how much any single item can receive in a claim."}},
+    {"@type": "Question", "name": "Does storing valuables in a safe lower my premium?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Many insurers offer a discount for items kept in a home safe or bank safe deposit box when not in use, since secure storage reduces theft risk. Items worn or used regularly outside the home typically carry a higher premium than the same item kept securely stored."}}
+  ]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/#tools">Calculators</a> &rsaquo; Valuables & Jewelry Insurance</p>
+        <h1>Valuables & Jewelry Insurance Calculator</h1>
+        <p>Estimate your insurance premium for jewelry, fine art, electronics, or other valuables based on value, storage, and coverage type.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your Premium</h2>
+
+            <div class="form-group">
+              <label for="val-value">Total Appraised Value ($)</label>
+              <input type="number" id="val-value" placeholder="e.g. 10000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="val-type">Item Type</label>
+              <select id="val-type">
+                <option value="jewelry" selected>Jewelry (rings, watches, etc.)</option>
+                <option value="art">Fine art or antiques</option>
+                <option value="electronics">Electronics or collectibles</option>
+                <option value="instruments">Musical instruments</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="val-security">Typical Storage</label>
+              <select id="val-security">
+                <option value="home" selected>Worn/used regularly or kept at home</option>
+                <option value="safe">Home safe or bank safe deposit box</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="val-coverage">Coverage Type</label>
+              <select id="val-coverage">
+                <option value="scheduled" selected>Scheduled (itemized, agreed value)</option>
+                <option value="blanket">Blanket (single category limit)</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcValuables()">Calculate Now</button>
+
+            <div class="result-box" id="val-result">
+              <h3>ESTIMATED ANNUAL PREMIUM</h3>
+              <div class="result-amount" id="val-amount"></div>
+              <div id="val-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimate based on national average valuables insurance rate benchmarks. Actual premiums vary by insurer, item type, and location.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>How Valuables Insurance Works</h2>
+            <p>Homeowners and renters insurance policies include personal property coverage, but that coverage almost always caps specific categories — jewelry, fine art, and collectibles typically have sublimits as low as $1,000-$2,500 total, regardless of how much coverage you carry overall. If your engagement ring alone is worth more than that sublimit, a standard policy leaves a real gap. Valuables insurance (sometimes called a "rider," "floater," or standalone valuables policy) fills that gap by insuring specific high-value items at their full appraised worth, typically with no deductible and broader covered perils than a standard homeowners claim.</p>
+
+            <h2>Proof of Value: Receipts vs. Appraisals</h2>
+            <p>Because your premium — and your claim payout — is tied directly to documented value, insurers require proof before writing a policy. A recent purchase is usually straightforward: your original sales receipt is often sufficient proof of value. Older pieces, heirlooms, or items without a clear purchase record typically need a current, professional appraisal instead. Appraisals generally need to be updated every few years, since market values for gemstones, precious metals, and art can shift meaningfully over time — an outdated appraisal can mean being underinsured without realizing it.</p>
+
+            <h2>Scheduled vs. Blanket Coverage</h2>
+            <p>Scheduled coverage lists each item individually with its own agreed value — precise, but it means updating your schedule every time you acquire a new piece. Blanket coverage instead sets one overall limit across a category (for example, "$25,000 in jewelry coverage") without listing each item separately, which is often simpler and can be more cost-effective, though it may cap how much any single item can receive in a claim. Many collectors use blanket coverage for a broad base of moderate-value items and schedule only their highest-value individual pieces separately.</p>
+
+            <h2>What Determines Your Premium</h2>
+            <ul>
+              <li><strong>Appraised value</strong> — the single biggest factor; premium scales directly with the documented value of your items.</li>
+              <li><strong>Item type</strong> — fine art and antiques often cost more to insure than jewelry of comparable value, due to more complex restoration, authentication, and market-value risk.</li>
+              <li><strong>Storage and usage</strong> — items worn or used regularly outside the home carry more theft and loss risk than items kept in a safe or bank deposit box, and premiums reflect that.</li>
+              <li><strong>Coverage type</strong> — scheduled (itemized) coverage is typically priced slightly higher than blanket coverage for the same total value, reflecting the more precise, per-item payout structure.</li>
+              <li><strong>Location</strong> — insurers factor in local theft rates and, for homeowners, broader property risk.</li>
+            </ul>
+
+            <h2>How to Lower Your Valuables Insurance Premium</h2>
+            <ul>
+              <li>Store high-value pieces you don't wear or use regularly in a home safe or bank safe deposit box.</li>
+              <li>Consider blanket coverage for a broad base of moderate-value items rather than scheduling every single piece individually.</li>
+              <li>Keep appraisals current — some insurers offer better terms with a recent appraisal on file, since it reduces valuation disputes at claim time.</li>
+              <li>Bundle your valuables policy with your homeowners or renters insurance for a multi-policy discount where available.</li>
+              <li>Compare quotes from at least two insurers — jewelry-specific insurers and general personal articles floaters can price identical coverage quite differently.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>How much does jewelry or valuables insurance cost?</h3>
+            <p>Standard valuables insurance costs approximately 0.5% to 3% of the item's appraised value per year, with most policies landing around 1-2%. A $10,000 engagement ring, for example, typically costs $4 to $25 per month depending on the insurer, storage, and coverage type.</p>
+
+            <h3>Do I need an appraisal to insure my valuables?</h3>
+            <p>Usually, yes, since your premium is tied to documented value. Recently purchased items can often be insured based on the original purchase receipt alone, while older pieces and heirlooms typically require a current, official appraisal.</p>
+
+            <h3>Is a homeowners/renters rider or a standalone policy cheaper for valuables?</h3>
+            <p>A rider on your existing homeowners or renters policy can look cheaper upfront, but those policies often carry low built-in sublimits (frequently just $1,000-$2,500 for jewelry) and a full policy deductible per claim. A standalone valuables policy usually has no deductible and insures the item at its full appraised value, which is often the better value for higher-worth items.</p>
+
+            <h3>What's the difference between scheduled and blanket valuables coverage?</h3>
+            <p>Scheduled coverage insures each item individually at its own appraised (agreed) value, which is precise but requires updating as you acquire new items. Blanket coverage sets one overall limit across a category of items, which can be more cost-effective and simpler to manage, though it may cap how much any single item can receive in a claim.</p>
+
+            <h3>Does storing valuables in a safe lower my premium?</h3>
+            <p>Yes. Many insurers offer a discount for items kept in a home safe or bank safe deposit box when not in use, since secure storage reduces theft risk. Items worn or used regularly outside the home typically carry a higher premium than the same item kept securely stored.</p>
+
+            <p class="article-disclaimer">Calculator estimates are based on national average valuables/jewelry insurance rate benchmarks and are for informational purposes only. Actual premiums vary significantly by insurer, item type, location, and appraisal details. This tool does not constitute insurance advice. Consult a licensed insurance professional for personalized guidance and to obtain a current appraisal.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Typical rate: <strong>0.5%–3%</strong> of appraised value/yr</li>
+              <li>$10K ring ≈ $4–$25/month</li>
+              <li>Homeowners jewelry sublimits often just $1,000–$2,500</li>
+              <li>Standalone policies usually have no deductible</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcValuables() {
+  const value = parseFloat(document.getElementById('val-value').value) || 0;
+  const type = document.getElementById('val-type').value;
+  const security = document.getElementById('val-security').value;
+  const coverage = document.getElementById('val-coverage').value;
+
+  const typeMult = { jewelry: 1.0, art: 1.2, electronics: 0.9, instruments: 1.0 };
+  const secMult = { safe: 0.85, home: 1.1 };
+  const covMult = { scheduled: 1.0, blanket: 0.9 };
+
+  const baseRate = 0.015; // 1.5% of appraised value
+
+  let annual = value * baseRate * typeMult[type] * secMult[security] * covMult[coverage];
+  annual = Math.max(annual, 50);
+  const monthly = annual / 12;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('val-amount').textContent = fmt(annual) + '/yr';
+  document.getElementById('val-breakdown').innerHTML = `
+    <table class="calc-breakdown-table">
+      <tr><td>Appraised value</td><td style="text-align:right">${fmt(value)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right">${fmt(monthly)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. annual premium</td><td style="text-align:right">${fmt(annual)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('val-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Insurance Calculator – Estimate Your Premium | My Insurance Calc</title>
+  <meta name="description" content="Estimate your wedding insurance cost based on guest count, venue type, alcohol service, budget, and liability limit. Free, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/wedding-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Organization", "name": "MyInsuranceCalc Team", "url": "https://myinsurancecalc.com/about.html"}, "headline": "Wedding Insurance Calculator",
+  "description": "Estimate wedding insurance premiums based on guest count, venue type, alcohol service, budget, and liability coverage limit.",
+  "url": "https://myinsurancecalc.com/tools/wedding-insurance.html", "publisher": {"@type": "Organization", "name": "MyInsuranceCalc.com", "url": "https://myinsurancecalc.com"}}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Wedding Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/wedding-insurance.html",
+    "description": "Estimate wedding insurance premiums based on guest count, venue type, alcohol service, cancellation budget, and liability coverage limit.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    {"@type": "Question", "name": "How much does wedding insurance cost?", "acceptedAnswer": {"@type": "Answer", "text": "Basic wedding liability and cancellation coverage typically runs $75 to $550, with an average around $275, depending on guest count, venue type, budget, and coverage limits. Larger events, outdoor or destination venues, and higher liability limits push costs toward the higher end of that range."}},
+    {"@type": "Question", "name": "What does wedding insurance actually cover?", "acceptedAnswer": {"@type": "Answer", "text": "Two main components: liability coverage (protects you if a guest is injured or property is damaged at your event) and cancellation/postponement coverage (reimburses non-refundable deposits and expenses if the wedding must be canceled for a covered reason). Some policies also offer add-ons for gifts, attire, jewelry, or photography/video."}},
+    {"@type": "Question", "name": "Do I need liquor liability if I'm serving alcohol?", "acceptedAnswer": {"@type": "Answer", "text": "Host liquor liability is included in most standard wedding liability policies in the U.S., but some insurers charge an additional $25-$50 for it, and open bars or extended alcohol service can raise the premium further. Many venues specifically require proof of liquor liability coverage before allowing alcohol service."}},
+    {"@type": "Question", "name": "When should I buy wedding insurance?", "acceptedAnswer": {"@type": "Answer", "text": "As soon as you start putting down non-refundable deposits, typically 12-18 months before the wedding. Cancellation coverage only protects losses that occur after the policy's effective date, so buying early protects your earliest deposits too."}},
+    {"@type": "Question", "name": "Does wedding insurance cover a change of heart or cold feet?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cancellation coverage only pays out for specific covered reasons — illness, injury, extreme weather, vendor no-shows or bankruptcy, military deployment, and similar events named in the policy. A simple change of mind about getting married is not a covered reason."}}
+  ]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/#tools">Calculators</a> &rsaquo; Wedding Insurance</p>
+        <h1>Wedding Insurance Calculator</h1>
+        <p>Estimate your wedding insurance premium based on guest count, venue type, alcohol service, and your coverage choices.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your Premium</h2>
+
+            <div class="form-group">
+              <label for="wed-guests">Guest Count</label>
+              <input type="number" id="wed-guests" placeholder="e.g. 150" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="wed-budget">Total Wedding Budget ($)</label>
+              <input type="number" id="wed-budget" placeholder="e.g. 40000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="wed-venue">Venue Type</label>
+              <select id="wed-venue">
+                <option value="indoor" selected>Indoor / established venue</option>
+                <option value="outdoor">Outdoor / tented</option>
+                <option value="destination">Destination (international or remote)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wed-alcohol">Serving Alcohol?</label>
+              <select id="wed-alcohol">
+                <option value="no">No</option>
+                <option value="yes" selected>Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wed-liability">Liability Coverage Limit</label>
+              <select id="wed-liability">
+                <option value="1000000" selected>$1,000,000</option>
+                <option value="2000000">$2,000,000</option>
+                <option value="5000000">$5,000,000</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wed-cancel">Include Cancellation/Postponement Coverage?</label>
+              <select id="wed-cancel">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No, liability only</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcWedding()">Calculate Now</button>
+
+            <div class="result-box" id="wed-result">
+              <h3>ESTIMATED TOTAL PREMIUM</h3>
+              <div class="result-amount" id="wed-amount"></div>
+              <div id="wed-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimate based on national average wedding insurance rate benchmarks. Actual premiums vary by insurer, exact location, and policy terms.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>How Wedding Insurance Works</h2>
+            <p>Wedding insurance is one of the smallest line items in a wedding budget relative to what it protects. Most modern weddings involve tens of thousands of dollars in non-refundable deposits — venue, catering, photography, attire — months or even years before the event happens. A single policy covering both liability and cancellation typically costs a small fraction of one percent of the total wedding budget, which is why planners increasingly treat it as a standard part of the planning checklist rather than an optional extra.</p>
+
+            <h2>Liability vs. Cancellation: Two Different Kinds of Protection</h2>
+            <p>Wedding insurance actually bundles two distinct coverages that protect against very different risks. <strong>Liability coverage</strong> protects you financially if a guest is injured or property is damaged at your event — a guest slips on a dance floor, a candle starts a small fire, a rented tent damages the venue's landscaping. Most venues require proof of liability coverage before signing a contract. <strong>Cancellation and postponement coverage</strong> is different — it reimburses your non-refundable deposits and expenses if the wedding has to be canceled or postponed for a covered reason, such as sudden illness, extreme weather, a vendor going out of business, or military deployment. You can typically buy either piece alone, though most couples buy both together.</p>
+
+            <h2>What Actually Drives Your Premium</h2>
+            <ul>
+              <li><strong>Guest count</strong> — more guests means more liability exposure, so premiums scale with headcount.</li>
+              <li><strong>Venue type</strong> — outdoor and tented venues cost more to insure than an established indoor venue with its own safety infrastructure; international or remote destination weddings cost more still, due to added weather, logistics, and legal complexity.</li>
+              <li><strong>Alcohol service</strong> — serving alcohol typically adds a modest surcharge for host liquor liability, and open bars can raise it further.</li>
+              <li><strong>Total wedding budget</strong> — cancellation coverage is priced against how much you'd need reimbursed if the event were canceled, so a larger non-refundable budget means a higher cancellation premium.</li>
+              <li><strong>Liability coverage limit</strong> — moving from $1 million to $2 million or $5 million in liability coverage raises the premium, though not linearly — the jump from $1M to $2M is usually smaller than you'd expect.</li>
+            </ul>
+
+            <h2>What Wedding Insurance Does Not Cover</h2>
+            <p>Cancellation coverage is built around specific named reasons — it is not a blanket refund for any reason you decide to cancel. A simple change of heart is never a covered reason. Most policies also exclude cancellations due to the couple's own criminal acts, foreseeable circumstances known before the policy was purchased, and losses covered by another policy (like a venue's own event insurance). Read the specific covered-reasons list carefully, since it varies by insurer.</p>
+
+            <h2>How to Lower Your Wedding Insurance Premium</h2>
+            <ul>
+              <li>Buy liability-only coverage if your venue requires it but your deposits are relatively small or mostly refundable.</li>
+              <li>Choose an established indoor venue over an outdoor or tented setup if cost is a major concern — it's one of the biggest premium drivers.</li>
+              <li>Confirm your venue's own insurance requirements before over-buying — some venues specify an exact minimum liability limit, and buying more than required doesn't add much protection for the added cost.</li>
+              <li>Buy early — coverage is inexpensive relative to what it protects, and early purchase means your first deposits are protected too.</li>
+              <li>Compare quotes from at least two or three wedding-specific insurers — pricing for identical coverage can vary meaningfully between companies.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>How much does wedding insurance cost?</h3>
+            <p>Basic wedding liability and cancellation coverage typically runs $75 to $550, with an average around $275, depending on guest count, venue type, budget, and coverage limits. Larger events, outdoor or destination venues, and higher liability limits push costs toward the higher end of that range.</p>
+
+            <h3>What does wedding insurance actually cover?</h3>
+            <p>Two main components: liability coverage (protects you if a guest is injured or property is damaged at your event) and cancellation/postponement coverage (reimburses non-refundable deposits and expenses if the wedding must be canceled for a covered reason). Some policies also offer add-ons for gifts, attire, jewelry, or photography/video.</p>
+
+            <h3>Do I need liquor liability if I'm serving alcohol?</h3>
+            <p>Host liquor liability is included in most standard wedding liability policies in the U.S., but some insurers charge an additional $25-$50 for it, and open bars or extended alcohol service can raise the premium further. Many venues specifically require proof of liquor liability coverage before allowing alcohol service.</p>
+
+            <h3>When should I buy wedding insurance?</h3>
+            <p>As soon as you start putting down non-refundable deposits, typically 12-18 months before the wedding. Cancellation coverage only protects losses that occur after the policy's effective date, so buying early protects your earliest deposits too.</p>
+
+            <h3>Does wedding insurance cover a change of heart or cold feet?</h3>
+            <p>No. Cancellation coverage only pays out for specific covered reasons — illness, injury, extreme weather, vendor no-shows or bankruptcy, military deployment, and similar events named in the policy. A simple change of mind about getting married is not a covered reason.</p>
+
+            <p class="article-disclaimer">Calculator estimates are based on national average wedding insurance rate benchmarks and are for informational purposes only. Actual premiums vary significantly by insurer, exact location, venue requirements, and policy terms. This tool does not constitute insurance advice. Consult a licensed insurance professional and review your venue's specific insurance requirements before purchasing coverage.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+              <li><a href="/tools/renters-insurance.html">Renters Insurance Calculator</a></li>
+              <li><a href="/tools/travel-insurance.html">Travel Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>National avg: <strong>~$275</strong> (range $75–$550)</li>
+              <li>Buy 12–18 months before the wedding</li>
+              <li>Covers liability + cancellation separately</li>
+              <li>Does not cover a simple change of heart</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcWedding() {
+  const guests = parseFloat(document.getElementById('wed-guests').value) || 0;
+  const budget = parseFloat(document.getElementById('wed-budget').value) || 0;
+  const venue = document.getElementById('wed-venue').value;
+  const alcohol = document.getElementById('wed-alcohol').value === 'yes';
+  const liabLimit = parseFloat(document.getElementById('wed-liability').value);
+  const includeCancel = document.getElementById('wed-cancel').value === 'yes';
+
+  const venueMult = { indoor: 1.0, outdoor: 1.3, destination: 1.5 };
+  const liabMult = { 1000000: 1.0, 2000000: 1.2, 5000000: 1.4 };
+
+  let liability = guests * 0.5 * venueMult[venue];
+  if (alcohol) liability += 50;
+  liability *= liabMult[liabLimit];
+
+  const cancellation = includeCancel ? budget * 0.015 : 0;
+  const total = Math.max(liability + cancellation, 75);
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('wed-amount').textContent = fmt(total);
+  document.getElementById('wed-breakdown').innerHTML = `
+    <table class="calc-breakdown-table">
+      <tr><td>Liability coverage premium</td><td style="text-align:right">${fmt(liability)}</td></tr>
+      <tr><td>Cancellation coverage premium</td><td style="text-align:right">${fmt(cancellation)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. total premium</td><td style="text-align:right">${fmt(total)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('wed-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
