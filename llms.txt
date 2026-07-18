@@ -39,6 +39,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Condo Insurance (HO-6) Calculator](https://myinsurancecalc.com/tools/condo-insurance.html)
   Estimates HO-6 condo insurance premium based on interior improvements value, personal property value, HOA master policy type (bare walls vs all-in), liability, and deductible.
 
+- [Mobile & Manufactured Home Insurance Calculator](https://myinsurancecalc.com/tools/mobile-home-insurance.html)
+  Estimates mobile/manufactured home insurance premium based on dwelling value, home age/build era (pre-1976 HUD cutoff), HUD wind zone, anchoring/tie-down system, land ownership (owned vs park), and deductible.
+
 ### Auto Insurance
 - [Car Insurance Calculator](https://myinsurancecalc.com/tools/car-insurance.html)
   Estimates auto insurance premium based on driver age, vehicle type, driving record, and coverage level.
@@ -117,6 +120,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 
 - [Life Insurance With Depression or Anxiety](https://myinsurancecalc.com/blog/life-insurance-with-depression-anxiety.html)
   Diagnosis type and severity, treatment/medication stability, hospitalization and suicide attempt history, impact on daily functioning, table rating expectations, guaranteed/simplified issue alternatives.
+
+- [Life Insurance With Obesity](https://myinsurancecalc.com/blog/life-insurance-with-obesity.html)
+  BMI and carrier build chart thresholds by rate class, GLP-1/Ozempic/Wegovy underwriting treatment, table rating expectations by BMI range, guaranteed/simplified issue alternatives.
 
 - [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
   Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.

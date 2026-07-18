@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile & Manufactured Home Insurance Calculator | My Insurance Calc</title>
+  <meta name="description" content="Estimate your mobile or manufactured home insurance premium based on home age, HUD wind zone, anchoring system, and land ownership. Free, instant results." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/mobile-home-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Organization", "name": "MyInsuranceCalc Team", "url": "https://myinsurancecalc.com/about.html"}, "headline": "Mobile & Manufactured Home Insurance Calculator",
+  "description": "Estimate mobile and manufactured home insurance premiums based on home age, HUD wind zone, anchoring system, land ownership, and deductible.",
+  "url": "https://myinsurancecalc.com/tools/mobile-home-insurance.html", "publisher": {"@type": "Organization", "name": "MyInsuranceCalc.com", "url": "https://myinsurancecalc.com"}}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mobile & Manufactured Home Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/mobile-home-insurance.html",
+    "description": "Estimate mobile and manufactured home insurance premiums based on dwelling value, home age, HUD wind zone, anchoring system, land ownership, and deductible.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    {"@type": "Question", "name": "How much does mobile home insurance cost?", "acceptedAnswer": {"@type": "Answer", "text": "The national average runs approximately $700 to $1,500 per year, though costs vary significantly by the home's age, location, wind zone, and whether it sits on owned land or in a rented community. Older, pre-HUD homes and high-wind coastal locations can push costs well above this range."}},
+    {"@type": "Question", "name": "What's the difference between mobile home insurance and a regular homeowners policy?", "acceptedAnswer": {"@type": "Answer", "text": "A standard HO-3 homeowners policy does not cover manufactured or mobile homes — you need an HO-7 policy or a dedicated mobile home policy instead. These policies account for the home's construction method, transit risk, and anchoring/tie-down system in ways a standard homeowners policy does not."}},
+    {"@type": "Question", "name": "Can I insure a mobile home built before 1976?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but options are more limited. Homes built before June 15, 1976 predate the federal HUD Manufactured Home Construction and Safety Standards and lack the HUD certification label, so many standard carriers decline them outright. Specialty carriers will often write these homes, typically on an actual cash value (depreciated) basis rather than full replacement cost."}},
+    {"@type": "Question", "name": "Do I need different coverage if my home is in a park versus on my own land?", "acceptedAnswer": {"@type": "Answer", "text": "You still need your own HO-7 policy either way — a park or community's master agreement, if one exists, generally does not cover your individual unit's structure, belongings, or liability. Lot lease agreements in many communities also specifically require proof of liability coverage as a condition of tenancy."}},
+    {"@type": "Question", "name": "Does the anchoring or tie-down system affect my premium?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, significantly. Manufactured homes are especially vulnerable to wind damage, so insurers closely evaluate the anchoring system. Homes with modern, certified tie-down systems typically qualify for better rates and broader coverage, while outdated or inadequate anchoring can mean higher premiums or a declined application."}}
+  ]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/#tools">Calculators</a> &rsaquo; Mobile & Manufactured Home Insurance</p>
+        <h1>Mobile & Manufactured Home Insurance Calculator</h1>
+        <p>Estimate your mobile or manufactured home insurance premium based on your home's age, wind zone, anchoring system, and land situation.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your Premium</h2>
+
+            <div class="form-group">
+              <label for="mh-dwelling">Dwelling Replacement Value ($)</label>
+              <input type="number" id="mh-dwelling" placeholder="e.g. 80000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="mh-personal">Personal Property Value ($)</label>
+              <input type="number" id="mh-personal" placeholder="e.g. 30000" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="mh-age">Home Age / Build Era</label>
+              <select id="mh-age">
+                <option value="new" selected>Built 1994 or later</option>
+                <option value="mid">Built 1976–1994</option>
+                <option value="old">Built before June 15, 1976 (pre-HUD)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mh-land">Land Situation</label>
+              <select id="mh-land">
+                <option value="own" selected>Own land</option>
+                <option value="park">Rented lot / mobile home community</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mh-anchor">Anchoring / Tie-Down System</label>
+              <select id="mh-anchor">
+                <option value="modern" selected>Modern, certified tie-down system</option>
+                <option value="older">Older or unknown condition</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mh-wind">Wind / Storm Risk (HUD Wind Zone)</label>
+              <select id="mh-wind">
+                <option value="low">Zone I — Low risk (most of the U.S. interior)</option>
+                <option value="medium" selected>Zone II — Moderate risk</option>
+                <option value="high">Zone III — High risk (Gulf & Atlantic coast, tornado alley)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mh-deductible">Deductible</label>
+              <select id="mh-deductible">
+                <option value="500">$500</option>
+                <option value="1000" selected>$1,000</option>
+                <option value="2500">$2,500</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcMobileHome()">Calculate Now</button>
+
+            <div class="result-box" id="mh-result">
+              <h3>ESTIMATED ANNUAL PREMIUM</h3>
+              <div class="result-amount" id="mh-amount"></div>
+              <div id="mh-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimate based on national average manufactured/mobile home rate benchmarks. Actual premiums vary by insurer, exact location, and home condition.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>How Mobile & Manufactured Home Insurance Works</h2>
+            <p>Mobile and manufactured home insurance is not the same product as a standard homeowners policy. A standard HO-3 policy is written for site-built homes and doesn't contemplate how a factory-built home is constructed, transported, or anchored — so insurers use a dedicated HO-7 policy form (or a similar manufactured-home-specific form) instead. Coverage categories look similar to homeowners insurance — dwelling, personal property, liability, loss of use — but the underwriting factors and settlement terms differ in ways that matter, especially for older homes.</p>
+
+            <h2>Mobile Home vs. Manufactured Home: The 1976 Cutoff That Changes Everything</h2>
+            <p>The terms "mobile home" and "manufactured home" are often used interchangeably, but there's a technical distinction that directly affects your insurance options. Homes built on or after June 15, 1976 are classified as manufactured homes, built to the federal HUD Manufactured Home Construction and Safety Standards and carrying a HUD certification label (a small red metal plate on each transportable section). Homes built before that date are classified as mobile homes under the pre-HUD definition. Without that certification label, standard carriers have no way to verify the home meets any consistent construction standard, so most decline pre-1976 homes outright. Specialty carriers will often still write them, but typically only on an actual cash value (depreciated) basis rather than full replacement cost, with a more thorough inspection of the electrical system, plumbing, roof, and anchoring.</p>
+
+            <h2>Why Anchoring and Wind Zone Matter So Much</h2>
+            <p>Because manufactured homes are lighter and structured differently than site-built homes, they're materially more vulnerable to wind damage — which is why the anchoring or tie-down system is one of the first things underwriters evaluate. HUD wind zones (Zone I, II, and III) rate different parts of the country by wind risk, with Zone III covering the Gulf Coast, Atlantic coast, and other high-wind regions. A home with a modern, certified tie-down system in a Zone I area will see meaningfully better pricing and broader carrier availability than an identical home with an outdated anchoring system in a Zone III coastal area — the combination of both factors compounds rather than simply adding together.</p>
+
+            <h2>Replacement Cost vs. Actual Cash Value</h2>
+            <p>Replacement cost coverage pays to repair or replace your home with new materials of similar quality, without deducting for age or wear. Actual cash value (ACV) coverage pays the depreciated value of the home at the time of loss — which, for an older manufactured home, can be dramatically less than what it would cost to replace it. Newer homes built to current HUD standards typically qualify for replacement cost coverage; pre-1976 mobile homes are frequently limited to ACV only, since insurers view the older construction standards and potential structural issues as higher risk. If replacement cost coverage is available for your home, it's generally worth the extra premium.</p>
+
+            <h2>Do You Need Different Coverage in a Park vs. on Your Own Land?</h2>
+            <p>Whether your home sits on land you own or on a rented lot in a manufactured home community, you still need your own individual HO-7 policy — a community's shared agreements, where they exist, generally don't extend to your unit's structure, belongings, or liability, similar to how a condo association's master policy doesn't cover an individual unit's interior. Many lot lease agreements specifically require proof of liability coverage as a condition of tenancy, so check your lease terms in addition to your lender's requirements if you're financing the home.</p>
+
+            <h2>What Determines Your Premium</h2>
+            <ul>
+              <li><strong>Home age and build era</strong> — post-1994 homes typically see the broadest carrier availability and best rates; pre-1976 homes face the most limited market and highest costs.</li>
+              <li><strong>Anchoring/tie-down system</strong> — modern, certified systems qualify for better rates; outdated systems raise premiums or risk decline.</li>
+              <li><strong>HUD wind zone</strong> — Zone III (coastal, tornado-prone) areas carry meaningfully higher premiums than Zone I.</li>
+              <li><strong>Land situation</strong> — owned land vs. a rented lot in a community can affect both pricing and specific coverage requirements.</li>
+              <li><strong>Dwelling and personal property value</strong> — higher coverage limits raise your premium proportionally.</li>
+              <li><strong>Deductible</strong> — a higher deductible lowers your premium but increases your out-of-pocket cost per claim.</li>
+            </ul>
+
+            <h2>How to Lower Your Mobile Home Insurance Premium</h2>
+            <ul>
+              <li>Update or certify your anchoring/tie-down system — some carriers offer explicit discounts for certified anchor systems.</li>
+              <li>Upgrade older electrical systems, roofing, or plumbing if your home predates 1976 — documented improvements can expand carrier options and lower rates.</li>
+              <li>Raise your deductible from $500 to $1,000 or $2,500 if you can comfortably cover it out of pocket.</li>
+              <li>Bundle with auto or umbrella insurance for a multi-policy discount.</li>
+              <li>Confirm your exact HUD wind zone and shop carriers that specialize in manufactured housing in your region — coverage and pricing availability varies more by carrier here than for standard homeowners insurance.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>How much does mobile home insurance cost?</h3>
+            <p>The national average runs approximately $700 to $1,500 per year, though costs vary significantly by the home's age, location, wind zone, and whether it sits on owned land or in a rented community. Older, pre-HUD homes and high-wind coastal locations can push costs well above this range.</p>
+
+            <h3>What's the difference between mobile home insurance and a regular homeowners policy?</h3>
+            <p>A standard HO-3 homeowners policy does not cover manufactured or mobile homes — you need an HO-7 policy or a dedicated mobile home policy instead. These policies account for the home's construction method, transit risk, and anchoring/tie-down system in ways a standard homeowners policy does not.</p>
+
+            <h3>Can I insure a mobile home built before 1976?</h3>
+            <p>Yes, but options are more limited. Homes built before June 15, 1976 predate the federal HUD Manufactured Home Construction and Safety Standards and lack the HUD certification label, so many standard carriers decline them outright. Specialty carriers will often write these homes, typically on an actual cash value (depreciated) basis rather than full replacement cost.</p>
+
+            <h3>Do I need different coverage if my home is in a park versus on my own land?</h3>
+            <p>You still need your own HO-7 policy either way — a park or community's master agreement, if one exists, generally does not cover your individual unit's structure, belongings, or liability. Lot lease agreements in many communities also specifically require proof of liability coverage as a condition of tenancy.</p>
+
+            <h3>Does the anchoring or tie-down system affect my premium?</h3>
+            <p>Yes, significantly. Manufactured homes are especially vulnerable to wind damage, so insurers closely evaluate the anchoring system. Homes with modern, certified tie-down systems typically qualify for better rates and broader coverage, while outdated or inadequate anchoring can mean higher premiums or a declined application.</p>
+
+            <p class="article-disclaimer">Calculator estimates are based on national average manufactured/mobile home insurance rate benchmarks and are for informational purposes only. Actual premiums vary significantly by insurer, exact location, home condition, and HUD compliance status. This tool does not constitute insurance advice. Consult a licensed insurance professional who specializes in manufactured housing for personalized guidance.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/condo-insurance.html">Condo Insurance (HO-6) Calculator</a></li>
+              <li><a href="/tools/landlord-insurance.html">Landlord Insurance Calculator</a></li>
+              <li><a href="/tools/dwelling-coverage.html">Dwelling Coverage Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>National avg: <strong>$700–$1,500/yr</strong></li>
+              <li>HUD code cutoff: <strong>June 15, 1976</strong></li>
+              <li>Uses HO-7 form, not HO-3</li>
+              <li>Anchoring system directly affects your rate</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function calcMobileHome() {
+  const dwelling = parseFloat(document.getElementById('mh-dwelling').value) || 0;
+  const personal = parseFloat(document.getElementById('mh-personal').value) || 0;
+  const age = document.getElementById('mh-age').value;
+  const land = document.getElementById('mh-land').value;
+  const anchor = document.getElementById('mh-anchor').value;
+  const wind = document.getElementById('mh-wind').value;
+  const deductible = parseFloat(document.getElementById('mh-deductible').value);
+
+  const ageMult = { new: 1.0, mid: 1.15, old: 1.6 };
+  const landMult = { own: 1.0, park: 1.1 };
+  const anchorMult = { modern: 0.9, older: 1.2 };
+  const windMult = { low: 0.8, medium: 1.0, high: 1.7 };
+  const dedMult = { 500: 1.15, 1000: 1.0, 2500: 0.85 };
+
+  const dwellingRate = 0.011; // $11 per $1000 -- manufactured homes rate higher than standard site-built
+  const contentsRate = 0.006; // $6 per $1000
+  const baseFee = 80;
+
+  const dwellingCost = dwelling * dwellingRate * ageMult[age] * landMult[land] * anchorMult[anchor] * windMult[wind];
+  const contentsCost = personal * contentsRate;
+  const base = baseFee + dwellingCost + contentsCost;
+  const annual = Math.max(base * dedMult[deductible], 300);
+  const monthly = annual / 12;
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('mh-amount').textContent = fmt(annual) + '/yr';
+  document.getElementById('mh-breakdown').innerHTML = `
+    <table class="calc-breakdown-table">
+      <tr><td>Dwelling coverage</td><td style="text-align:right">${fmt(dwelling)}</td></tr>
+      <tr><td>Personal property coverage</td><td style="text-align:right">${fmt(personal)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right">${fmt(monthly)}</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Est. annual premium</td><td style="text-align:right">${fmt(annual)}</td></tr>
+    </table>
+  `;
+
+  document.getElementById('mh-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
