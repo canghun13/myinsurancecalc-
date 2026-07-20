@@ -83,6 +83,12 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [EMR Calculator](https://myinsurancecalc.com/tools/emr-calculator.html)
   Estimates a workers' compensation Experience Modification Rate (EMR / X-Mod) from 3-year total payroll, incurred losses, and industry classification. Includes explanation of the real NCCI primary/excess/ballast formula and tips to lower EMR over time.
 
+- [Critical Illness Insurance Calculator](https://myinsurancecalc.com/tools/critical-illness-insurance.html)
+  Estimates critical illness insurance premium from age, coverage amount ($10K-$100K), and tobacco use, using published group voluntary rate schedules. Includes comparison table of critical illness vs. disability insurance.
+
+- [Teen Driver Insurance Calculator](https://myinsurancecalc.com/tools/teen-driver-insurance.html)
+  Estimates the added cost of putting a teen driver (age 16-21) on a family car insurance policy, factoring in gender, good student discount, driver's ed, and away-at-school/distant student discount.
+
 ---
 
 ## Guides
@@ -163,6 +169,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 
 - [Car Insurance After a License Suspension](https://myinsurancecalc.com/blog/car-insurance-after-license-suspension.html)
   What triggers an SR-22 requirement, step-by-step reinstatement process, non-owner SR-22 for drivers without a car, typical premium increase and filing fees, how to keep costs down during the filing period.
+
+- [Non-Owner SR-22 Insurance](https://myinsurancecalc.com/blog/non-owner-sr22-insurance.html)
+  What non-owner SR-22 insurance covers and doesn't cover, state-by-state cost ($262-$1,487/yr, national avg $631), the difference between SR-22, SR-22A, and FR-44 certificates, and how to switch to owner coverage without a lapse when buying a car.
 
 ### Freelancer and Gig Worker Insurance
 

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Critical Illness Insurance Calculator – Estimate Your Cost | My Insurance Calc</title>
+  <meta name="description" content="Estimate your critical illness insurance premium by age, coverage amount, and tobacco use. See how critical illness insurance compares to disability insurance." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/critical-illness-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Critical Illness Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/critical-illness-insurance.html",
+    "description": "Estimate your critical illness insurance premium by age, coverage amount, and tobacco use.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is critical illness insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Critical illness insurance pays a lump-sum cash benefit directly to you if you're diagnosed with a covered condition \u2014 typically cancer, heart attack, stroke, kidney failure, or major organ transplant, depending on the policy. The payout isn't tied to actual medical bills; you can spend it on anything, from treatment costs and deductibles to mortgage payments or lost income."}}, {"@type": "Question", "name": "How is critical illness insurance different from disability insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Disability insurance replaces a portion of your income on an ongoing basis while you're unable to work. Critical illness insurance pays a one-time lump sum immediately upon diagnosis of a covered condition, regardless of whether you're able to keep working. Many financial planners recommend carrying both, since they cover different gaps \u2014 critical illness insurance handles immediate costs, while disability insurance covers extended income loss."}}, {"@type": "Question", "name": "Is critical illness insurance worth it if I already have health insurance?", "acceptedAnswer": {"@type": "Answer", "text": "It can be, especially with a high-deductible health plan. Health insurance pays medical providers directly and still leaves you responsible for deductibles, coinsurance, and out-of-pocket maximums \u2014 plus indirect costs health insurance doesn't touch at all, like a mortgage payment during a leave of absence or travel costs for specialized treatment. Critical illness insurance is designed to fill that specific gap."}}, {"@type": "Question", "name": "Does critical illness insurance cover pre-existing conditions?", "acceptedAnswer": {"@type": "Answer", "text": "Generally no, at least not immediately. Most policies exclude conditions you were diagnosed with or treated for before the policy's effective date, and many apply a waiting or exclusion period (often 30 to 90 days) after purchase before any diagnosis is eligible for a payout, to discourage buying coverage only after learning of a problem."}}, {"@type": "Question", "name": "Why does critical illness insurance cost so much more at older ages?", "acceptedAnswer": {"@type": "Answer", "text": "Because the probability of a covered diagnosis rises sharply with age \u2014 heart attack, stroke, and cancer incidence all increase substantially after age 50. Since critical illness insurance is priced on the likelihood of a claim rather than life expectancy, premiums climb faster with age than typical term life insurance rates do."}}]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/tools/">Calculators</a> &rsaquo; Critical Illness Insurance</p>
+        <h1>Critical Illness Insurance Calculator</h1>
+        <p>Estimate your annual premium for a lump-sum critical illness policy based on your age, coverage amount, and tobacco use.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Your Information</h2>
+
+            <div class="form-group">
+              <label for="ci-age">Age</label>
+              <input type="number" id="ci-age" placeholder="e.g. 42" min="18" max="80" value="42" />
+            </div>
+
+            <div class="form-group">
+              <label for="ci-tobacco">Tobacco Use</label>
+              <select id="ci-tobacco">
+                <option value="no" selected>Non-tobacco</option>
+                <option value="yes">Tobacco user</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ci-coverage">Coverage Amount (Lump Sum)</label>
+              <select id="ci-coverage">
+                <option value="10000">$10,000</option>
+                <option value="15000">$15,000</option>
+                <option value="20000" selected>$20,000</option>
+                <option value="30000">$30,000</option>
+                <option value="50000">$50,000</option>
+                <option value="75000">$75,000</option>
+                <option value="100000">$100,000</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcCI()">Calculate Now</button>
+
+            <div class="result-box" id="ci-result">
+              <h3>ESTIMATED ANNUAL PREMIUM</h3>
+              <div class="result-amount" id="ci-amount"></div>
+              <div id="ci-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimates based on published group voluntary critical illness rate schedules. Individual (non-group) policy pricing may differ.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What Critical Illness Insurance Actually Pays For</h2>
+            <p>Critical illness insurance pays a lump-sum cash benefit directly to you — not to a hospital or provider — if you're diagnosed with a condition the policy covers. The most common triggering conditions are cancer (usually invasive cancer, sometimes with a reduced benefit for early-stage or carcinoma in situ), heart attack, stroke, coronary artery bypass surgery, kidney failure, and major organ transplant, though the exact list varies by insurer and plan. Because the payout isn't restricted to medical bills, people commonly use it for health plan deductibles and coinsurance, mortgage or rent payments during a leave of absence, travel and lodging for out-of-network specialists, childcare, or simply replacing income a disability policy doesn't fully cover.</p>
+
+            <h2>Critical Illness vs. Disability Insurance: What's the Difference?</h2>
+            <p>These two coverage types are frequently confused, but they solve different problems and are worth understanding side by side:</p>
+            <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+              <thead>
+                <tr style="background:#1e293b;color:#fff;">
+                  <th style="padding:10px 14px;text-align:left;">&nbsp;</th>
+                  <th style="padding:10px 14px;text-align:left;">Critical Illness Insurance</th>
+                  <th style="padding:10px 14px;text-align:left;">Disability Insurance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:#f8fafc;"><td style="padding:9px 14px;"><strong>Payout structure</strong></td><td style="padding:9px 14px;">One-time lump sum</td><td style="padding:9px 14px;">Ongoing monthly payments</td></tr>
+                <tr><td style="padding:9px 14px;"><strong>Trigger</strong></td><td style="padding:9px 14px;">Diagnosis of a listed condition</td><td style="padding:9px 14px;">Inability to perform your job duties</td></tr>
+                <tr style="background:#f8fafc;"><td style="padding:9px 14px;"><strong>Still working?</strong></td><td style="padding:9px 14px;">Pays out regardless — even if you keep working through treatment</td><td style="padding:9px 14px;">Only pays if you can't work</td></tr>
+                <tr><td style="padding:9px 14px;"><strong>Best for</strong></td><td style="padding:9px 14px;">Immediate lump costs: deductibles, travel, mortgage</td><td style="padding:9px 14px;">Ongoing, extended income replacement</td></tr>
+                <tr style="background:#f8fafc;"><td style="padding:9px 14px;"><strong>Covers non-illness disability?</strong></td><td style="padding:9px 14px;">No — illness-specific only</td><td style="padding:9px 14px;">Yes — injuries too, not just illness</td></tr>
+              </tbody>
+            </table>
+            <p>Because they cover different gaps, many financial planners recommend the two together rather than as substitutes for one another. If you're diagnosed with cancer and can't work for eight months, disability insurance replaces your monthly income while the critical illness lump sum handles treatment-related costs your health plan doesn't cover. You can estimate income-replacement coverage separately with our <a href="/tools/disability.html">Disability Insurance Calculator</a>.</p>
+
+            <h2>Why Cost Rises Sharply With Age</h2>
+            <p>Critical illness insurance is priced almost entirely on diagnosis probability, and that probability climbs steeply after age 45 — heart attack, stroke, and cancer incidence all increase substantially in that range. This is different from term life insurance, where mortality risk (while also age-related) rises more gradually across most working-age years. That's why a $20,000 policy that costs well under $50 a month in your early 30s can cost several hundred dollars a month by your late 50s and 60s for identical coverage.</p>
+
+            <h2>Do You Have a Condition That Affects Coverage or Cost?</h2>
+            <p>If you've already been diagnosed with diabetes, heart disease, high blood pressure, sleep apnea, or another condition, critical illness insurance underwriting works differently than the healthy-applicant rate table above — pre-existing conditions related to a covered illness category are typically excluded or require simplified/guaranteed-issue underwriting at a higher rate. For how these specific conditions affect insurance more broadly, see our related guides on <a href="/blog/life-insurance-with-diabetes.html">life insurance with diabetes</a>, <a href="/blog/life-insurance-after-heart-disease.html">life insurance after heart disease</a>, and <a href="/blog/life-insurance-with-high-blood-pressure.html">life insurance with high blood pressure</a>.</p>
+
+            <h2>What to Check Before You Buy</h2>
+            <ul>
+              <li><strong>Exact condition list and severity requirements.</strong> "Cancer" coverage often excludes early-stage or non-invasive diagnoses, or pays a reduced benefit for them — read the definitions, not just the condition names.</li>
+              <li><strong>Waiting/exclusion period.</strong> Most policies exclude diagnoses in the first 30–90 days after the policy starts, specifically to prevent buying coverage after symptoms already appear.</li>
+              <li><strong>Survival period.</strong> Many policies require you to survive a set number of days (commonly 14–30) after diagnosis before the benefit pays out.</li>
+              <li><strong>Recurrence benefit.</strong> Some policies pay out only once per condition category ever; others offer a recurrence rider that pays again if the same condition returns after a set period.</li>
+              <li><strong>Guaranteed renewable vs. term.</strong> Confirm whether your rate is locked for a term or can increase at renewal — group workplace plans often reprice at each open enrollment.</li>
+            </ul>
+
+            <p class="article-disclaimer">This calculator provides a simplified estimate based on published group voluntary critical illness insurance rate schedules for employee-tier coverage. Individual (non-group) policy pricing, available conditions, riders, and underwriting requirements vary significantly by insurer, state, and health history. This is not a quote and does not constitute insurance or financial advice. Consult a licensed insurance professional for an accurate quote.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/disability.html">Disability Insurance Calculator</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/health-insurance-self-employed.html">Health Insurance (Self-Employed)</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Guides</h3>
+            <ul>
+              <li><a href="/blog/life-insurance-with-diabetes.html">Life Insurance With Diabetes</a></li>
+              <li><a href="/blog/life-insurance-after-heart-disease.html">Life Insurance After Heart Disease</a></li>
+              <li><a href="/blog/how-much-life-insurance-do-i-need.html">How Much Life Insurance Do I Need?</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Reference</h3>
+            <ul>
+              <li>Age 30, $20K: roughly <strong>$29/mo</strong></li>
+              <li>Age 50, $20K: roughly <strong>$100/mo</strong></li>
+              <li>Tobacco use: <strong>+40–90%</strong> surcharge</li>
+              <li>Common waiting period: <strong>30–90 days</strong></li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+// Annual rate per $1,000 of coverage, by age band — derived from published
+// group voluntary critical illness insurance rate schedules (employee tier).
+const nonTobaccoRates = {
+  "18-29": 11.04, "30-34": 17.40, "35-39": 21.72, "40-44": 30.00,
+  "45-49": 42.72, "50-54": 60.00, "55-59": 79.08, "60-64": 103.08,
+  "65-69": 143.76, "70+": 168.00
+};
+const tobaccoRates = {
+  "18-29": 15.60, "30-34": 27.60, "35-39": 35.88, "40-44": 52.32,
+  "45-49": 77.40, "50-54": 112.08, "55-59": 149.88, "60-64": 197.76,
+  "65-69": 276.60, "70+": 319.80
+};
+
+function ageBand(age) {
+  if (age < 30) return "18-29";
+  if (age < 35) return "30-34";
+  if (age < 40) return "35-39";
+  if (age < 45) return "40-44";
+  if (age < 50) return "45-49";
+  if (age < 55) return "50-54";
+  if (age < 60) return "55-59";
+  if (age < 65) return "60-64";
+  if (age < 70) return "65-69";
+  return "70+";
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calcCI() {
+  const age = parseInt(document.getElementById('ci-age').value);
+  const tobacco = document.getElementById('ci-tobacco').value === 'yes';
+  const coverage = parseFloat(document.getElementById('ci-coverage').value);
+
+  if (!age || age < 18 || age > 85) { alert('Please enter a valid age between 18 and 85.'); return; }
+
+  const band = ageBand(age);
+  const table = tobacco ? tobaccoRates : nonTobaccoRates;
+  const rate = table[band];
+  const annual = (coverage / 1000) * rate;
+  const monthly = annual / 12;
+
+  document.getElementById('ci-amount').textContent = fmt(annual) + '/yr';
+
+  document.getElementById('ci-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Age band</td><td style="text-align:right;font-weight:500;">${band}</td></tr>
+      <tr><td>Rate per $1,000 coverage</td><td style="text-align:right;font-weight:500;">$${rate.toFixed(2)}</td></tr>
+      <tr><td>Coverage amount</td><td style="text-align:right;font-weight:500;">${fmt(coverage)}</td></tr>
+      <tr style="border-top:1px solid var(--border);font-weight:600;"><td>Annual premium</td><td style="text-align:right;">${fmt(annual)}</td></tr>
+      <tr><td>Monthly</td><td style="text-align:right;font-weight:500;">${fmt(monthly)}/mo</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:0.82rem;">💡 See how this compares to income-replacement coverage with the <a href="/tools/disability.html" style="color:var(--primary);">Disability Insurance Calculator →</a></p>
+  `;
+
+  document.getElementById('ci-result').classList.add('visible');
+}
+</script>
+</body>
+</html>

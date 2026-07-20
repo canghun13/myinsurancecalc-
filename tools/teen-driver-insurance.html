@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teen Driver Insurance Calculator – How Much Will Adding Your Teen Cost? | My Insurance Calc</title>
+  <meta name="description" content="Estimate how much adding a teen driver to your car insurance policy will actually cost, based on age, gender, good student discount, driver's ed, and away-at-school status." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/teen-driver-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Teen Driver Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/teen-driver-insurance.html",
+    "description": "Estimate how much adding a teen driver to a family car insurance policy will cost, based on age, gender, and available discounts.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it cheaper to add a teen to my policy or buy them a separate policy?", "acceptedAnswer": {"@type": "Answer", "text": "Adding a teen to a family policy is almost always cheaper than a standalone policy \u2014 often by well over $1,000 a year. A standalone policy for an 18-year-old can run $7,000+ a year, while adding that same teen to a family policy typically costs a few thousand dollars less because the family policy spreads risk and often qualifies for multi-driver and multi-vehicle discounts a standalone teen policy can't access."}}, {"@type": "Question", "name": "Does adding a teen driver double my car insurance?", "acceptedAnswer": {"@type": "Answer", "text": "It can come close for a 16-year-old on a full-coverage policy \u2014 increases of 100% to 130% over the base policy premium are common at that age. The increase shrinks substantially as the teen gets older; by 19 or 20, the added cost is typically well under half of what it was at 16."}}, {"@type": "Question", "name": "What's the away-at-school discount and how much does it save?", "acceptedAnswer": {"@type": "Answer", "text": "Most insurers offer a discount \u2014 sometimes called a distant student discount \u2014 for a college student who attends school roughly 100 miles or more from home and doesn't keep a car there. Because the teen isn't regularly driving, insurers treat them as much lower risk; this discount is often the single largest cost reducer available, frequently cutting the added cost by half or more."}}, {"@type": "Question", "name": "Does a good student discount actually make a meaningful difference?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, though it's more modest than the away-at-school discount. Most insurers require roughly a B average (3.0 GPA) or being on the honor roll, and the discount typically runs in the 10% to 15% range off the teen-related portion of the premium. It's one of the easiest discounts to qualify for since it doesn't require any behavior change beyond schoolwork the teen is likely already doing."}}, {"@type": "Question", "name": "Do all states charge teen boys more than teen girls for car insurance?", "acceptedAnswer": {"@type": "Answer", "text": "No. Seven states \u2014 California, Hawaii, Massachusetts, Michigan, Montana, North Carolina, and Pennsylvania \u2014 prohibit or restrict using gender as a rating factor for auto insurance, so male and female teens are charged the same in those states. In states that do allow gender-based rating, teen boys typically pay somewhat more than teen girls of the same age, though the gap narrows as drivers get older."}}]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/tools/">Calculators</a> &rsaquo; Teen Driver Insurance</p>
+        <h1>Teen Driver Insurance Calculator</h1>
+        <p>Estimate how much adding your teen to your car insurance policy will actually cost — and how much discounts can bring that number down.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Your Situation</h2>
+
+            <div class="form-group">
+              <label for="td-base">Your Current Annual Premium ($)</label>
+              <input type="number" id="td-base" placeholder="e.g. 2671" min="0" value="2671" />
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">National average for a 2-parent full-coverage policy is roughly $2,671/yr. Use your actual renewal premium for a more accurate estimate.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="td-age">Teen's Age</label>
+              <select id="td-age">
+                <option value="16" selected>16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="td-gender">Gender (for rating estimate)</label>
+              <select id="td-gender">
+                <option value="unspecified" selected>Prefer not to say / doesn't apply in my state</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">7 states (CA, HI, MA, MI, MT, NC, PA) don't allow gender-based auto rating.</p>
+            </div>
+
+            <div class="form-group">
+              <label><input type="checkbox" id="td-goodstudent" /> Good student discount (B average / 3.0 GPA+)</label>
+            </div>
+            <div class="form-group">
+              <label><input type="checkbox" id="td-driversed" /> Completed a driver's education course</label>
+            </div>
+            <div class="form-group">
+              <label><input type="checkbox" id="td-away" /> Away at school 100+ miles, no car there</label>
+            </div>
+
+            <button class="btn-calc" onclick="calcTeen()">Calculate Now</button>
+
+            <div class="result-box" id="td-result">
+              <h3>ESTIMATED ADDED COST</h3>
+              <div class="result-amount" id="td-amount"></div>
+              <div id="td-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimates based on national average rate patterns. Actual increases vary significantly by insurer, state, and vehicle.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Why Teen Drivers Cost So Much to Insure</h2>
+            <p>Teen drivers have the highest crash rate of any age group — the fatal crash rate per mile driven for 16-to-19-year-olds runs roughly three times higher than for drivers over 20, largely due to inexperience rather than recklessness alone. Insurers price almost entirely on statistical risk, and that risk is genuinely highest in the first year or two behind the wheel, then drops steadily as driving experience accumulates. This is why the added cost of a 16-year-old is dramatically higher than an otherwise-identical 19-year-old on the same policy — it's not really about age itself, it's about accumulated driving experience, which happens to track closely with age.</p>
+
+            <h2>Adding to Your Policy vs. a Standalone Policy</h2>
+            <p>Almost every family comes out ahead by adding a teen to an existing family policy rather than buying the teen a separate standalone policy. A standalone full-coverage policy for an 18-year-old can run well over $7,000 a year on its own, while the same teen added to a family policy typically costs several thousand dollars less overall — family policies benefit from multi-driver and multi-vehicle discounts a standalone teen policy simply can't access, and insurers give some credit for the fact that a shared household vehicle isn't being driven by the teen at all times.</p>
+
+            <h2>The Discounts That Actually Move the Needle</h2>
+            <ul>
+              <li><strong>Away-at-school / distant student discount.</strong> By far the largest lever available. If your teen attends school roughly 100+ miles from home and doesn't keep a car there, most insurers treat them as dramatically lower risk since they're not regularly driving your vehicles.</li>
+              <li><strong>Good student discount.</strong> Typically requires a B average (3.0 GPA) or honor roll status. The discount itself is modest (roughly 10–15% off the teen-related cost) but it's essentially free money for a teen who's already meeting the bar academically.</li>
+              <li><strong>Driver's education / defensive driving course.</strong> A smaller discount, but often stackable with the good student discount, and many states require a completed course before a teen can even get a license anyway.</li>
+              <li><strong>Usage-based / telematics programs.</strong> Apps that track actual driving behavior (hard braking, speeding, phone use) can qualify safe teen drivers for ongoing discounts beyond the standard rate structure — worth asking your insurer whether teens are eligible.</li>
+              <li><strong>Choosing the right car for the teen to drive.</strong> Assigning the teen as primary driver on your oldest, lowest-value, safest-rated vehicle (rather than a sports car or the newest SUV) meaningfully lowers the added premium, since comprehensive and collision costs scale with the vehicle's value and repair cost.</li>
+            </ul>
+
+            <h2>How the Cost Curve Changes With Age</h2>
+            <p>The added cost of a teen driver doesn't decline in a straight line — it drops fastest in the first couple of years of licensed driving, then continues declining more gradually through the early twenties. A 16-year-old typically adds the largest increase of any age; by 18 or 19, the added cost is commonly less than half of what it was at 16, reflecting two to three years of accumulated driving record with (ideally) no claims. This is also why maintaining a clean record during the teen years pays off doubly — it keeps current costs from climbing further and sets up a much better starting point once the teen ages into their own policy.</p>
+
+            <p class="article-disclaimer">This calculator provides a simplified estimate based on national average rate patterns for adding a teen driver to an existing family policy. Actual premium increases vary significantly by insurer, state, vehicle, driving record, and specific discount eligibility. This is not a quote and does not constitute insurance or financial advice. Compare actual quotes from multiple insurers for accurate pricing.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/car-insurance.html">Car Insurance Calculator</a></li>
+              <li><a href="/tools/sr22-insurance.html">SR-22 Insurance Calculator</a></li>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Guides</h3>
+            <ul>
+              <li><a href="/blog/how-to-lower-car-insurance.html">How to Lower Your Car Insurance</a></li>
+              <li><a href="/blog/insurance-for-college-students.html">Insurance for College Students</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Reference</h3>
+            <ul>
+              <li>Added cost at 16: <strong>100–130%</strong> increase</li>
+              <li>Added cost at 19: <strong>&lt;50%</strong> of the age-16 increase</li>
+              <li>Away-at-school discount: often <strong>50%+</strong> off</li>
+              <li>Good student discount: <strong>10–15%</strong> off</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+const ageIncreasePct = {16:1.25, 17:1.05, 18:0.85, 19:0.60, 20:0.40, 21:0.25};
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calcTeen() {
+  const base = parseFloat(document.getElementById('td-base').value) || 0;
+  const age = parseInt(document.getElementById('td-age').value);
+  const gender = document.getElementById('td-gender').value;
+  const goodStudent = document.getElementById('td-goodstudent').checked;
+  const driversEd = document.getElementById('td-driversed').checked;
+  const away = document.getElementById('td-away').checked;
+
+  if (base <= 0) { alert('Please enter your current annual premium.'); return; }
+
+  let pct = ageIncreasePct[age] ?? 0.20;
+  let genderMult = gender === 'male' ? 1.05 : gender === 'female' ? 0.96 : 1.0;
+  let increase = base * pct * genderMult;
+
+  let discountNote = [];
+  if (goodStudent) { increase *= 0.88; discountNote.push('Good student: -12%'); }
+  if (driversEd) { increase *= 0.93; discountNote.push("Driver's ed: -7%"); }
+  if (away) { increase *= 0.35; discountNote.push('Away at school: -65%'); }
+
+  const newTotal = base + increase;
+
+  document.getElementById('td-amount').textContent = '+' + fmt(increase) + '/yr';
+
+  document.getElementById('td-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Current premium</td><td style="text-align:right;font-weight:500;">${fmt(base)}</td></tr>
+      <tr><td>Estimated increase</td><td style="text-align:right;font-weight:500;">+${fmt(increase)}</td></tr>
+      <tr style="border-top:1px solid var(--border);font-weight:600;"><td>New estimated total</td><td style="text-align:right;">${fmt(newTotal)}</td></tr>
+    </table>
+    ${discountNote.length ? `<p style="margin-top:10px;padding:10px;background:#dcfce7;border-radius:6px;color:#166534;">✓ Discounts applied: ${discountNote.join(', ')}</p>` : ''}
+    <p style="margin-top:12px;font-size:0.82rem;">💡 Compare this to a standalone policy with the <a href="/tools/car-insurance.html" style="color:var(--primary);">Car Insurance Calculator →</a></p>
+  `;
+
+  document.getElementById('td-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
