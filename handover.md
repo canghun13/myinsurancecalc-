@@ -1,3 +1,18 @@
+# MyInsuranceCalc.com 인수인계 (2026-07-20 업데이트, 3회차 — 버그수정)
+
+## ✅ 이번 세션(7/20 3회차) — 모바일 반응형 버그 발견 및 사이트 전체 수정
+사용자가 신규 페이지 3개(critical-illness-insurance, teen-driver-insurance, non-owner-sr22-insurance)를 모바일 뷰(396px)로 스크린샷 확인 → 2가지 버그 발견해서 지적:
+1. **체크박스 렌더링 버그**: 전역 CSS `.form-group input { width:100%; padding:10px 14px; }`가 `<input type="checkbox">`에도 그대로 적용되면서 체크박스가 거대한 파란 박스로 렌더링됨. `tools/teen-driver-insurance.html` 체크박스 3개에 인라인 스타일(18x18px 고정, flex 정렬)로 수정.
+2. **비교표 모바일 미대응**: 신규 비교표 2개(critical-illness vs disability, SR-22/SR-22A/FR-44)가 좁은 화면에서 텍스트가 셀 안에서 세로로 짓눌려 보임. 사이트에 `.table-scroll`이라는 반응형 래퍼 클래스가 CSS에 이미 정의돼 있었으나(overflow-x:auto + min-width:560px) **실제로는 사이트 어디에도 적용된 적이 없었던** 것 발견.
+
+**사용자 지시로 즉시 사이트 전체 일괄 수정 진행**:
+- 전체 440개 파일 스캔 → 정적 콘텐츠 테이블(states city-rate 비교표, life-insurance 요율표 등) 405개 중 402개(301개 파일)가 미적용 상태였음 확인.
+- Python 스크립트로 `<script>` 태그 경계 기준 split → non-script 영역의 `<table>...</table>`만 정규식 매칭해 `<div class="table-scroll">...</div>`로 일괄 래핑. JS로 동적 생성되는 계산기 결과 테이블(script 내부, 이미 2컬럼 단순구조라 문제없음)은 대상에서 정확히 제외됨.
+- **검증**: 래핑 후 정적 테이블 405/405 전부 확인, 사이트 전체 440파일 ld+json 575블록 파싱 0건 실패, div 밸런스 0건 불일치.
+- 커밋 `2df0ec7`(신규 페이지 3개 개별 수정) + `c490376`(사이트 전체 301개 파일 일괄 수정).
+
+**교훈/향후 규칙**: 앞으로 표를 넣을 때는 반드시 `<div class="table-scroll">` 래핑을 기본으로 할 것. 체크박스류 폼 요소를 새로 쓸 때는 전역 `.form-group input` 스타일이 checkbox/radio에도 적용된다는 점을 감안해 인라인 스타일로 명시적으로 재정의할 것.
+
 # MyInsuranceCalc.com 인수인계 (2026-07-20 업데이트, 2회차)
 
 ## ✅ 이번 세션(7/20 2회차) 핵심 요약 — "공격적으로 확장" 지시, 신규 콘텐츠 3건
