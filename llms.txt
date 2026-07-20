@@ -80,6 +80,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Valuables & Jewelry Insurance Calculator](https://myinsurancecalc.com/tools/valuables-insurance.html)
   Estimates jewelry, fine art, electronics, and collectibles insurance premium based on appraised value, item type, storage method (safe vs. worn/home), and coverage type (scheduled vs. blanket).
 
+- [EMR Calculator](https://myinsurancecalc.com/tools/emr-calculator.html)
+  Estimates a workers' compensation Experience Modification Rate (EMR / X-Mod) from 3-year total payroll, incurred losses, and industry classification. Includes explanation of the real NCCI primary/excess/ballast formula and tips to lower EMR over time.
+
 ---
 
 ## Guides

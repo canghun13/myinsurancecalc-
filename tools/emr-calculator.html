@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMR Calculator – Estimate Your Workers' Comp Experience Modification Rate | My Insurance Calc</title>
+  <meta name="description" content="Estimate your workers' compensation Experience Modification Rate (EMR / X-Mod) from your payroll and claims history. Free calculator with industry benchmarks and tips to lower your mod." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/emr-calculator.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EMR Calculator",
+    "url": "https://myinsurancecalc.com/tools/emr-calculator.html",
+    "description": "Estimate your workers' compensation Experience Modification Rate (EMR / X-Mod) from your payroll and claims history, with industry benchmarks.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good Experience Modification Rate (EMR)?", "acceptedAnswer": {"@type": "Answer", "text": "An EMR of 1.00 is considered exactly average for your industry and size. Anything below 1.00 — such as 0.85 or 0.90 — is considered good, meaning your claims history is better than the industry average and you likely qualify for a premium credit. Anything above 1.00 means worse-than-average claims history and a premium surcharge."}}, {"@type": "Question", "name": "Who actually calculates my official EMR?", "acceptedAnswer": {"@type": "Answer", "text": "Your official EMR is calculated by your state's rating bureau — the National Council on Compensation Insurance (NCCI) in most states, or an independent state bureau in states like California, New York, Pennsylvania, Delaware, New Jersey, and a few others. Insurers don't set your EMR themselves; they apply the number the rating bureau publishes. This calculator gives an estimate only — for your official number, request your Experience Rating Worksheet from your carrier or rating bureau."}}, {"@type": "Question", "name": "How many years of claims does EMR use?", "acceptedAnswer": {"@type": "Answer", "text": "EMR is typically based on the three policy years prior to the most recent expired policy — not including the current or most recently expired year, since those claims haven't fully developed (final costs aren't yet known). For example, an EMR effective in 2026 would typically be based on claims from 2022, 2023, and 2024."}}, {"@type": "Question", "name": "Can a new business have an EMR?", "acceptedAnswer": {"@type": "Answer", "text": "No. New businesses without enough claims history receive a default EMR of 1.00 until they accumulate sufficient experience data — typically two to three years of payroll and claims. Experience rating only applies once a business has enough size and history to be considered statistically credible by the rating bureau."}}, {"@type": "Question", "name": "How much does a bad EMR actually cost?", "acceptedAnswer": {"@type": "Answer", "text": "The EMR multiplies your entire base premium, so the dollar impact scales with your payroll and classification rate. On a $100,000 base premium, the difference between a 0.80 mod and a 1.30 mod is $50,000 per year — and that gap repeats every year until claims experience improves, since EMR reflects a rolling three-year window."}}]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/tools/">Calculators</a> &rsaquo; EMR Calculator</p>
+        <h1>EMR Calculator</h1>
+        <p>Estimate your workers' compensation Experience Modification Rate (EMR / X-Mod) from your payroll and incurred losses.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Your Experience Period</h2>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-top:-8px;margin-bottom:16px;">Enter combined totals for your three-year experience period (typically the three policy years before your most recently expired one).</p>
+
+            <div class="form-group">
+              <label for="emr-industry">Industry / Job Classification</label>
+              <select id="emr-industry">
+                <option value="clerical">Clerical / Office Work</option>
+                <option value="retail">Retail Sales</option>
+                <option value="restaurant">Restaurant / Food Service</option>
+                <option value="tech">Technology / Software</option>
+                <option value="healthcare">Healthcare (non-clinical)</option>
+                <option value="medical">Medical / Healthcare (clinical)</option>
+                <option value="light_mfg">Light Manufacturing / Assembly</option>
+                <option value="heavy_mfg">Heavy Manufacturing / Industrial</option>
+                <option value="warehousing">Warehousing / Distribution</option>
+                <option value="construction">Construction (General Contractor)</option>
+                <option value="roofing">Construction (Roofing)</option>
+                <option value="electrical">Construction (Electrical / Plumbing)</option>
+                <option value="trucking">Trucking / Transportation</option>
+                <option value="landscaping">Landscaping / Tree Service</option>
+                <option value="janitorial">Janitorial / Cleaning</option>
+                <option value="agriculture">Agriculture / Farming</option>
+                <option value="logging">Logging / Forestry</option>
+                <option value="oil_gas">Oil &amp; Gas / Mining</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="emr-payroll">Total Payroll — 3-Year Period ($)</label>
+              <input type="number" id="emr-payroll" placeholder="e.g. 1500000" min="0" value="1500000" />
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Sum of your annual payroll across all three years of the experience period.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="emr-losses">Total Incurred Losses — 3-Year Period ($)</label>
+              <input type="number" id="emr-losses" placeholder="e.g. 45000" min="0" value="45000" />
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Paid losses plus reserves for all claims across the same three years.</p>
+            </div>
+
+            <button class="btn-calc" onclick="calcEMR()">Calculate Now</button>
+
+            <div class="result-box" id="emr-result">
+              <h3>ESTIMATED EMR</h3>
+              <div class="result-amount" id="emr-amount"></div>
+              <div id="emr-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">This is a simplified directional estimate, not your official experience mod.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What Is an Experience Modification Rate (EMR)?</h2>
+            <p>Your Experience Modification Rate — also called EMR, e-mod, or X-Mod — is a multiplier applied to your workers' compensation base premium. It compares your business's actual claims experience to the expected losses for a business of similar size and industry classification. A mod of exactly <strong>1.00</strong> means your claims history is right at the industry average. Below 1.00 means better-than-average — you receive a premium credit. Above 1.00 means worse-than-average — you pay a surcharge.</p>
+            <p>The formula this calculator uses is deliberately simplified: <strong>EMR estimate = Total Incurred Losses ÷ Expected Losses</strong>, where expected losses are your payroll divided by 100 and multiplied by an industry-average expected loss rate. Real EMR calculations performed by rating bureaus are considerably more complex — they split each claim into a "primary" portion (the first several thousand dollars, weighted more heavily since frequent small claims are the strongest predictor of future losses) and an "excess" portion, apply a credibility weighting factor based on your payroll size, and use bureau-specific expected loss rates by state and class code rather than a single national average. This tool is meant to give you a directional sense of where you likely stand — not a substitute for your official Experience Rating Worksheet.</p>
+
+            <h2>How the Real EMR Formula Works</h2>
+            <p>Rating bureaus like the National Council on Compensation Insurance (NCCI) — which operates in most states — or an independent state bureau (used by California, New York, Pennsylvania, Delaware, New Jersey, Michigan, and a handful of others) calculate your official EMR using a formula structured roughly as:</p>
+            <p style="text-align:center;font-weight:600;margin:20px 0;">EMR = (Actual Primary Losses + Weighted Actual Excess Losses + Ballast) ÷ (Expected Primary Losses + Weighted Expected Excess Losses + Ballast)</p>
+            <p>The "primary" vs. "excess" split exists because claim frequency is a stronger predictor of future losses than claim severity — a business with five $2,000 claims is statistically riskier going forward than a business with one $10,000 claim, even though the total dollar amount is similar. The "ballast" value stabilizes the formula for smaller employers so that a single catastrophic claim doesn't produce an unreasonably extreme mod. Because these adjustments depend on bureau-published tables that vary by state and update annually, this calculator cannot replicate them exactly — only your rating bureau or carrier can provide your real number.</p>
+
+            <h2>What Counts as an Incurred Loss?</h2>
+            <p>Incurred losses include both money already paid out on a claim and money still reserved (set aside) for expected future payments on open claims — medical treatment, indemnity (lost wage) benefits, and case reserves. A claim doesn't need to be closed to count; open claims with active reserves are included at their current reserved value, which is one reason EMR calculations use claims data from one to three years in the past — reserves need time to stabilize before the rating bureau finalizes the calculation.</p>
+
+            <h2>Industry Expected Loss Rates Used in This Calculator</h2>
+            <p>The rates below approximate national-average expected losses per $100 of payroll by classification. Actual bureau expected loss rates vary by state and update periodically — use these for a general estimate only:</p>
+            <ul>
+              <li><strong>Clerical / Office:</strong> ~$0.28/100 — the lowest-risk classification, office work with no field exposure.</li>
+              <li><strong>Retail / Sales:</strong> ~$1.05/100 — slip-and-fall and lifting injuries are the primary claim types.</li>
+              <li><strong>Restaurant / Food Service:</strong> ~$1.85/100 — burns, cuts, and repetitive motion injuries are common.</li>
+              <li><strong>Light Manufacturing / Assembly:</strong> ~$2.40/100 — machine operation and material handling injuries.</li>
+              <li><strong>Warehousing / Distribution:</strong> ~$3.20/100 — forklift accidents and lifting-related claims.</li>
+              <li><strong>Heavy Manufacturing / Industrial:</strong> ~$4.80/100 — higher-severity machinery and chemical exposure claims.</li>
+              <li><strong>Electrical / Plumbing:</strong> ~$5.80/100 — electrocution risk, falls, and tool injuries.</li>
+              <li><strong>Agriculture / Farming:</strong> ~$5.50/100 — equipment, animal handling, and repetitive strain injuries.</li>
+              <li><strong>General Construction:</strong> ~$6.50/100 — falls, struck-by incidents, and tool-related injuries.</li>
+              <li><strong>Trucking / Transportation:</strong> ~$7.20/100 — highway accidents and loading/unloading injuries.</li>
+              <li><strong>Landscaping / Tree Service:</strong> ~$8.40/100 — equipment injuries and falls from height.</li>
+              <li><strong>Oil &amp; Gas / Mining:</strong> ~$9.60/100 — among the highest-risk industries by claim severity.</li>
+              <li><strong>Logging / Forestry:</strong> ~$12.80/100 — one of the most hazardous occupations by injury rate.</li>
+              <li><strong>Roofing:</strong> ~$18.50/100 — the highest classification on this list, driven by fall risk.</li>
+            </ul>
+
+            <h2>How to Lower Your EMR Over Time</h2>
+            <p>Because EMR is a rolling three-year comparison of actual vs. expected losses, there's no way to change it overnight — but consistent effort compounds over time:</p>
+            <ul>
+              <li><strong>Reduce claim frequency, not just severity.</strong> Because primary losses (the first portion of each claim) are weighted more heavily in the real formula, preventing several small claims often helps your mod more than avoiding one large one.</li>
+              <li><strong>Build a return-to-work program.</strong> Getting injured employees back on modified duty shortens the disability period and reduces the incurred value of open claims — including reserves, which count toward your EMR even before a claim closes.</li>
+              <li><strong>Report injuries immediately.</strong> Faster reporting generally produces lower total claim costs, since it enables faster medical treatment and reduces the chance of a minor injury becoming a prolonged one.</li>
+              <li><strong>Audit open claim reserves with your adjuster periodically.</strong> Reserves that are set too high inflate your EMR even if the claim eventually settles for less — ask your adjuster to review and adjust reserves as claims develop.</li>
+              <li><strong>Invest in a documented safety program.</strong> Fewer claims today directly lowers the EMR that applies to your premium for the following three policy years.</li>
+            </ul>
+
+            <p class="article-disclaimer">This calculator provides a simplified, directional estimate only and does not replicate the official experience rating formula used by NCCI or state rating bureaus, which include primary/excess loss splits, credibility weighting, and bureau-specific expected loss rates that vary by state and update periodically. It is not a substitute for your official Experience Rating Worksheet. For your actual EMR, request it from your workers' compensation carrier or your state's rating bureau. This tool does not constitute insurance, financial, or legal advice.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/workers-comp.html">Workers Comp Premium Calculator</a></li>
+              <li><a href="/tools/business-insurance.html">Business Insurance Calculator</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Workers Comp by State</h3>
+            <ul>
+              <li><a href="/states/workers-comp/texas.html">Texas Workers Comp</a></li>
+              <li><a href="/states/workers-comp/california.html">California Workers Comp</a></li>
+              <li><a href="/states/workers-comp/south-carolina.html">South Carolina Workers Comp</a></li>
+              <li><a href="/states/workers-comp/">All 50 States &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Reference</h3>
+            <ul>
+              <li>EMR of 1.00 = <strong>average</strong></li>
+              <li>Below 1.00 = <strong>premium credit</strong></li>
+              <li>Above 1.00 = <strong>premium surcharge</strong></li>
+              <li>Based on <strong>3-year</strong> rolling claims history</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+const industryRates = {
+  clerical:0.28, retail:1.05, restaurant:1.85, tech:0.32,
+  healthcare:1.45, medical:2.20, light_mfg:2.40, heavy_mfg:4.80,
+  warehousing:3.20, construction:6.50, roofing:18.50, electrical:5.80,
+  trucking:7.20, landscaping:8.40, janitorial:3.10, agriculture:5.50,
+  logging:12.80, oil_gas:9.60
+};
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calcEMR() {
+  const industry = document.getElementById('emr-industry').value;
+  const payroll = parseFloat(document.getElementById('emr-payroll').value) || 0;
+  const losses = parseFloat(document.getElementById('emr-losses').value) || 0;
+
+  if (payroll <= 0) { alert('Please enter your 3-year total payroll.'); return; }
+
+  const rate = industryRates[industry];
+  const expected = (payroll / 100) * rate;
+  const emr = expected > 0 ? (losses / expected) : 0;
+  const emrDisplay = emr.toFixed(2);
+
+  let category, color, bg;
+  if (emr < 0.90) { category = 'Better than average — likely a premium credit'; color = '#166534'; bg = '#dcfce7'; }
+  else if (emr <= 1.10) { category = 'Near average'; color = '#92400e'; bg = '#fef3c7'; }
+  else { category = 'Worse than average — likely a premium surcharge'; color = '#991b1b'; bg = '#fee2e2'; }
+
+  document.getElementById('emr-amount').textContent = emrDisplay;
+
+  document.getElementById('emr-breakdown').innerHTML = `
+    <p style="margin:0 0 12px;padding:10px;background:${bg};border-radius:6px;color:${color};font-weight:500;">${category}</p>
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Expected loss rate</td><td style="text-align:right;font-weight:500;">$${rate.toFixed(2)} per $100 payroll</td></tr>
+      <tr><td>3-yr total payroll</td><td style="text-align:right;font-weight:500;">${fmt(payroll)}</td></tr>
+      <tr><td>Expected losses</td><td style="text-align:right;font-weight:500;">${fmt(expected)}</td></tr>
+      <tr><td>Your incurred losses</td><td style="text-align:right;font-weight:500;">${fmt(losses)}</td></tr>
+      <tr style="border-top:1px solid var(--border);font-weight:600;"><td>Estimated EMR</td><td style="text-align:right;">${emrDisplay}</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:0.82rem;">💡 See how this mod affects your premium with the <a href="/tools/workers-comp.html" style="color:var(--primary);">Workers Comp Premium Calculator →</a></p>
+  `;
+
+  document.getElementById('emr-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
