@@ -1,3 +1,10 @@
+# MyInsuranceCalc.com 인수인계 (2026-07-24 업데이트, 7회차 — 신규 클러스터)
+
+## ✅ 신규 클러스터 추가(7/24) — 단기임대(Airbnb/VRBO) 보험
+경쟁강도 조사(dog-bite liability는 로펌 SEO 고경쟁+소스간 사실관계 상충으로 위험 판단, e-bike보험도 예상보다 붐벼서 보류) 후 **단기임대 보험**으로 결정 — 경쟁자가 Forbes/NerdWallet급 대형미디어가 아니라 Steadily/Obie 같은 전문중개사·부동산블로그라 non-owner-SR22 때와 비슷한 경쟁강도, 기존 `tools/landlord-insurance.html` 인프라와 바로 클러스터 형성 가능.
+
+신규 3건(계산기1+블로그2) + landlord-insurance 상호링크 + 체크리스트 전부 반영, 커밋 `9e08445`. 상세는 커밋 메시지 참고.
+
 # MyInsuranceCalc.com 인수인계 (2026-07-24 업데이트, 6회차 — 사용자 지시사항/제약조건)
 
 ## ⚠️ 매우 중요 — 다음 세션 필독, 최우선 확인 사항
