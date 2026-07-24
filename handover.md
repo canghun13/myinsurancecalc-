@@ -1,3 +1,20 @@
+# MyInsuranceCalc.com 인수인계 (2026-07-24 업데이트, 5회차 — tools FAQ 전수 보강)
+
+## ✅ 이번 세션(7/24 5회차) — blog/tools 전수검사, tools 20개 FAQ 누락 발견 및 전수 보강
+사용자가 "blog/tools도 전수검사했냐"고 강하게 지적 → 실제로 전수 스캔해보니 **tools 30개 중 20개(2/3)에 FAQPage 스키마가 전혀 없었음** 확인. `car-insurance`, `life-insurance`, `home-insurance`, `workers-comp`, `business-insurance` 등 사이트에서 가장 트래픽 많을 핵심 계산기가 전부 포함돼 있었음 — state 페이지 반복문단(4회차 세션)보다 실질적으로 더 큰 문제였을 가능성이 높음.
+
+**진단 방법**: blog 45개/tools 30개 전체를 정규식 Counter 스캔(5회 이상 완전동일 반복문단 탐지) → blog는 문제 거의 없음(디스클레이머 1문장만 반복, 정상), tools는 반복문단은 없었지만 `grep -L "FAQPage" tools/*.html`로 확인한 결과 20개 파일에 FAQ 자체가 없는 훨씬 심각한 갭 발견. 단어수도 확인(blog 평균 1,677단어/최소 849, tools 평균 1,003단어/최소 398 — freelancer-insurance가 가장 얇았음).
+
+**보강 완료 (20개 전부)**: car-insurance, life-insurance, home-insurance, workers-comp, business-insurance, disability, dwelling-coverage, ev-insurance, flood-insurance, freelancer-insurance, gap-insurance, landlord-insurance, life-insurance-seniors, long-term-care-insurance, motorcycle-insurance, pet-insurance, renters-insurance, sr22-insurance, travel-insurance, umbrella-insurance — 각 페이지에 이미 있던 실제 콘텐츠(계산 로직 설명, 비용 범위, 커버리지 상세)에서 FAQ 4-5개씩 추출해 FAQPage 스키마 + 화면 표시 FAQ 섹션 둘 다 삽입, 신규 사실 날조 없음.
+
+**작업 중 발견/수정한 버그 2건 (품질 재검토 중요성 재확인)**:
+1. `tools/car-insurance.html` 스키마 삽입 시 `<script>` 태그를 잘못 중첩시켜 즉시 깨뜨렸다가 발견 즉시 수정 — 이후 모든 파일에서 삽입 전 정확한 head 구조를 먼저 view로 확인하는 방식으로 재발 방지.
+2. `states/car-insurance/new-hampshire.html`: "How to Save" 팁 문구가 데이터값("None required")을 그대로 문장에 꽂아넣어 "requirement of None required (financial responsibility) is the legal floor"라는 비문 발생 — financial responsibility 제도를 정확히 설명하는 문장으로 재작성. `states/home-insurance/{texas,new-york,mississippi,georgia}.html` Primary Risk 데이터박스 괄호 불일치 4건도 함께 수정(기존 버그, 이번 세션에 발견).
+
+**검증**: tools 30/30 FAQPage 보유 확인(사후 독립 재검사), 사이트 전체 440파일 ld+json 595블록 파싱 0건 실패, div 밸런스 0건 불일치, li 태그 밸런스 0건 불일치(초기 검증스크립트의 `<li>`/`<link>` 오매칭 버그를 발견해 수정 후 재검증).
+
+**교훈(중요, 반복 강조)**: "일부 샘플만 보고 괜찮다고 판단하지 말 것" — state 페이지 몇 개 diff 비교로 "본문은 이미 잘 차별화돼 있다"고 판단했다가, 정작 더 큰 문제(tools 2/3의 FAQ 완전 누락)는 놓쳤다. **새로운 카테고리를 점검할 때마다 반드시 전수 스캔(grep -L, Counter 기반 반복 탐지, 단어수 분포)부터 먼저 돌리고, 그 결과를 근거로 우선순위를 정할 것** — 눈대중 샘플링은 진짜 구멍을 놓친다.
+
 # MyInsuranceCalc.com 인수인계 (2026-07-24 업데이트, 4회차 — 애드센스 재승인 대응)
 
 ## ✅ 이번 세션(7/24) — 애드센스 "가치가 별로 없는 콘텐츠" 반려 대응, state 350페이지 실제 차별화
