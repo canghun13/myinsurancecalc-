@@ -1,5 +1,14 @@
 # MyInsuranceCalc.com 인수인계 (2026-07-24 업데이트, 7회차 — 신규 클러스터)
 
+## 📌 프로세스 규칙(7/24 추가): 작업 후 "확인 필요 링크"를 handover.md에 남길 것
+채팅으로 링크 말해주는 것 말고, **작업 끝날 때마다 이 handover.md에 "사용자가 꼭 확인해야 할 페이지" 링크를 남겨둘 것.** 아래 각 세션 기록 바로 밑에 체크리스트 형태로 추가.
+
+### 🔗 확인 필요 (7/24, 단기임대 클러스터)
+- [ ] https://myinsurancecalc.com/tools/short-term-rental-insurance.html (신규 계산기 — 계산 버튼 동작 확인)
+- [ ] https://myinsurancecalc.com/blog/does-homeowners-insurance-cover-airbnb.html (신규 블로그)
+- [ ] https://myinsurancecalc.com/blog/aircover-vs-real-insurance.html (신규 블로그 — 비교표 반응형 확인)
+- [ ] https://myinsurancecalc.com/tools/landlord-insurance.html (상호링크 추가된 기존 페이지)
+
 ## ✅ 신규 클러스터 추가(7/24) — 단기임대(Airbnb/VRBO) 보험
 경쟁강도 조사(dog-bite liability는 로펌 SEO 고경쟁+소스간 사실관계 상충으로 위험 판단, e-bike보험도 예상보다 붐벼서 보류) 후 **단기임대 보험**으로 결정 — 경쟁자가 Forbes/NerdWallet급 대형미디어가 아니라 Steadily/Obie 같은 전문중개사·부동산블로그라 non-owner-SR22 때와 비슷한 경쟁강도, 기존 `tools/landlord-insurance.html` 인프라와 바로 클러스터 형성 가능.
 
