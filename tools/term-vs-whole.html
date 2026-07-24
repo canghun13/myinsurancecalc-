@@ -25,7 +25,7 @@
   </script>
   <style>
     .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
-    .compare-card { background: var(--bg-alt); border: 2px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .compare-card { background: var(--bg-alt); border: 2px solid var(--border); border-radius: var(--radius); padding: 24px; min-width: 0; }
     .compare-card.highlight { border-color: var(--primary); background: var(--primary-light); }
     .compare-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
     .compare-card .price { font-family: var(--font-display); font-size: 2rem; color: var(--primary-dark); margin: 12px 0; }
@@ -124,16 +124,12 @@
                 <div class="compare-card highlight" id="term-card">
                   <h3>🕐 Term Life</h3>
                   <div class="price" id="term-monthly"></div>
-                  <div class="table-scroll">
 <table id="term-table"></table>
-</div>
                 </div>
                 <div class="compare-card" id="whole-card">
                   <h3>♾️ Whole Life</h3>
                   <div class="price" id="whole-monthly"></div>
-                  <div class="table-scroll">
 <table id="whole-table"></table>
-</div>
                 </div>
               </div>
               <p class="result-note" style="margin-top:16px;">Estimates based on average market rates. Actual premiums vary by insurer and individual health assessment.</p>
