@@ -89,6 +89,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Teen Driver Insurance Calculator](https://myinsurancecalc.com/tools/teen-driver-insurance.html)
   Estimates the added cost of putting a teen driver (age 16-21) on a family car insurance policy, factoring in gender, good student discount, driver's ed, and away-at-school/distant student discount.
 
+- [Short-Term Rental Insurance Calculator](https://myinsurancecalc.com/tools/short-term-rental-insurance.html)
+  Estimates Airbnb/VRBO host insurance cost based on property value, hosting frequency (occasional/frequent/full-time), property type (room vs. entire home), location risk, and liability limit. Explains why standard homeowners insurance excludes paid guest hosting.
+
 ---
 
 ## Guides
@@ -172,6 +175,12 @@ All calculators run entirely in the browser. No personal data is collected, stor
 
 - [Non-Owner SR-22 Insurance](https://myinsurancecalc.com/blog/non-owner-sr22-insurance.html)
   What non-owner SR-22 insurance covers and doesn't cover, state-by-state cost ($262-$1,487/yr, national avg $631), the difference between SR-22, SR-22A, and FR-44 certificates, and how to switch to owner coverage without a lapse when buying a car.
+
+- [Does Homeowners Insurance Cover Airbnb Hosting?](https://myinsurancecalc.com/blog/does-homeowners-insurance-cover-airbnb.html)
+  Explains why standard homeowners insurance excludes short-term rental hosting as business activity, what happens when claims get denied or policies get canceled, what AirCover does and doesn't cover, and what coverage (endorsement vs. dedicated STR policy) hosts actually need.
+
+- [AirCover vs. Real Insurance](https://myinsurancecalc.com/blog/aircover-vs-real-insurance.html)
+  Side-by-side comparison of Airbnb's AirCover host protection program against a licensed short-term rental insurance policy: payout guarantees, coverage during vacant periods, off-platform bookings, and what changes for hosts with 6+ listings.
 
 ### Freelancer and Gig Worker Insurance
 

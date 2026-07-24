@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Short-Term Rental (Airbnb/VRBO) Insurance Calculator | My Insurance Calc</title>
+  <meta name="description" content="Estimate Airbnb and VRBO host insurance costs based on property value, hosting frequency, property type, and liability limit. Free calculator, no signup." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/short-term-rental-insurance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Short-Term Rental Insurance Calculator",
+    "url": "https://myinsurancecalc.com/tools/short-term-rental-insurance.html",
+    "description": "Estimate Airbnb and VRBO host insurance costs based on property value, hosting frequency, property type, location risk, and liability limit.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does my homeowners insurance cover Airbnb hosting?", "acceptedAnswer": {"@type": "Answer", "text": "No. Standard homeowners insurance excludes business activity, and renting your property to paying guests — even occasionally — is considered a business use. If a guest is injured or causes damage during a stay, a standard homeowners claim can be denied, and insurers can cancel your policy entirely once they discover undisclosed short-term rental activity."}}, {"@type": "Question", "name": "Is Airbnb's AirCover enough on its own?", "acceptedAnswer": {"@type": "Answer", "text": "No. AirCover is not an insurance policy — it's a discretionary host protection program, and Airbnb decides what it covers on a claim-by-claim basis. It does not cover normal wear and tear, and hosts with six or more active listings may find AirCover applies only as excess coverage on top of a primary policy they're expected to already have."}}, {"@type": "Question", "name": "Does it matter if I only host occasionally?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but it doesn't eliminate the exposure. Even hosting a handful of nights a year is enough to void standard homeowners coverage if a claim arises during a guest stay. Occasional hosts typically pay less for a short-term rental endorsement than full-time hosts, but going without any dedicated coverage at all is still a real financial risk."}}, {"@type": "Question", "name": "Do cities require specific insurance for short-term rentals?", "acceptedAnswer": {"@type": "Answer", "text": "Increasingly, yes. A growing number of cities require STR permits and proof of liability insurance before you can legally list a property — Austin, San Antonio, and Houston are among the cities with registration and coverage requirements. Check your specific city and county rules before listing, since operating without a required permit can result in fines independent of any insurance issue."}}, {"@type": "Question", "name": "How much should I budget for short-term rental insurance?", "acceptedAnswer": {"@type": "Answer", "text": "A common rule of thumb is 2-4% of your gross rental income, or roughly $1,000-$6,000 per year depending on property value, hosting frequency, and location. Full-time dedicated STR properties in higher-risk areas run toward the higher end; a room occasionally rented in your own home runs toward the lower end."}}]}
+  </script>
+</head>
+<body>
+<main>
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> &rsaquo; <a href="/tools/">Calculators</a> &rsaquo; Short-Term Rental Insurance</p>
+        <h1>Short-Term Rental Insurance Calculator</h1>
+        <p>Estimate what Airbnb or VRBO host insurance actually costs — standard homeowners coverage doesn't apply once you take paying guests.</p>
+      </div>
+
+      <div class="tool-layout">
+        <div>
+          <div class="calc-box">
+            <h2>Calculate Your Coverage</h2>
+
+            <div class="form-group">
+              <label for="str-value">Property Replacement Cost ($)</label>
+              <input type="number" id="str-value" placeholder="e.g. 400000" min="0" value="400000" />
+            </div>
+
+            <div class="form-group">
+              <label for="str-freq">Hosting Frequency</label>
+              <select id="str-freq">
+                <option value="occasional">Occasional (under 60 nights/year)</option>
+                <option value="frequent" selected>Frequent (60–180 nights/year)</option>
+                <option value="fulltime">Full-time STR business (180+ nights/year)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="str-type">What Are You Renting?</label>
+              <select id="str-type">
+                <option value="room">A room in your primary residence</option>
+                <option value="entire" selected>Entire home/unit (dedicated rental)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="str-location">Location Risk</label>
+              <select id="str-location">
+                <option value="low">Low (inland, low crime/weather risk)</option>
+                <option value="medium" selected>Medium (typical suburban/urban)</option>
+                <option value="high">High (coastal, wildfire zone, high-crime, dense urban)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="str-liability">Liability Coverage</label>
+              <select id="str-liability">
+                <option value="500000">$500,000</option>
+                <option value="1000000" selected>$1,000,000</option>
+                <option value="2000000">$2,000,000</option>
+              </select>
+            </div>
+
+            <button class="btn-calc" onclick="calcSTR()">Calculate Now</button>
+
+            <div class="result-box" id="str-result">
+              <h3>ESTIMATED ANNUAL PREMIUM</h3>
+              <div class="result-amount" id="str-amount"></div>
+              <div id="str-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">Estimate only — get actual quotes from carriers like Steadily, Obie, or Proper before listing.</p>
+            </div>
+          </div>
+
+          <div class="article-body" style="margin-top:48px;">
+            <h2>Why Your Homeowners Policy Doesn't Cover This</h2>
+            <p>Standard homeowners insurance is priced and underwritten for owner-occupied residential use — it explicitly excludes business activity. Renting your property to paying guests, even occasionally, is legally treated as a business use, so a standard homeowners claim can be denied outright if a guest is injured or causes damage during a paid stay. Worse, once an insurer discovers undisclosed short-term rental activity — often during a claim investigation — they can non-renew or cancel your entire policy, not just deny the one claim.</p>
+
+            <h2>What Airbnb's AirCover Actually Covers (and Doesn't)</h2>
+            <p>Airbnb's AirCover for Hosts markets up to $3 million in damage protection and $1 million in liability coverage at no cost — but it is not an insurance policy. It's a discretionary host protection program, meaning Airbnb decides what qualifies on a claim-by-claim basis, and there's no regulatory guarantee of payout the way there is with a licensed insurance policy. AirCover doesn't cover normal wear and tear, and hosts with six or more active listings may find AirCover applies only as excess coverage — sitting on top of a primary short-term rental policy they're expected to already carry, not replacing it.</p>
+
+            <h2>What a Real STR Policy Actually Adds</h2>
+            <ul>
+              <li><strong>Property damage from guest activity</strong> — Fire, water damage, vandalism, and accidental damage caused during a paid stay, which a standard homeowners policy may deny once it identifies the activity as commercial.</li>
+              <li><strong>Guest liability coverage</strong> — Legal defense and damages if a guest is injured on the property or a guest's own visitor is hurt, typically $500,000 to $1,000,000+ per occurrence.</li>
+              <li><strong>Loss of rental income</strong> — Reimbursement for lost booking revenue if the property becomes uninhabitable due to a covered loss, such as a fire or storm.</li>
+              <li><strong>Theft and content protection</strong> — Coverage for furnishings and appliances specific to a rental setup, which often exceed what a standard homeowners policy assumes for a single household.</li>
+            </ul>
+
+            <h2>City and County Permit Requirements Are a Separate Issue</h2>
+            <p>Insurance and legal permitting are two different requirements, and cities increasingly require both. Austin, San Antonio, and Houston, for example, require STR registration, and some cities specifically mandate proof of liability insurance as part of that permitting process. Operating without a required local permit can result in fines independent of any insurance question — check your specific city and county rules before you list a property, not after.</p>
+
+            <h2>How to Keep Costs Down</h2>
+            <ul>
+              <li><strong>Ask whether your current landlord policy can be endorsed</strong> for short-term rental use rather than replaced entirely — some carriers offer an STR endorsement that's cheaper than a fully separate policy.</li>
+              <li><strong>Match your liability limit to your actual exposure</strong> — an occasional single-room host has meaningfully less exposure than a full-time whole-home operator, and shouldn't necessarily buy the same limit.</li>
+              <li><strong>Bundle with other policies where possible.</strong> Carriers specializing in STR coverage, such as Steadily, Obie, and Proper, sometimes offer multi-property discounts if you operate more than one listing.</li>
+              <li><strong>Screen guests and maintain a clean claims history</strong> — like most insurance, a track record of few or no claims meaningfully lowers renewal pricing over time.</li>
+              <li><strong>Compare specialized STR carriers against your current landlord insurer</strong> before assuming you need to switch entirely — sometimes an endorsement is enough.</li>
+            </ul>
+
+            <p class="article-disclaimer">This calculator provides a simplified estimate based on general industry pricing patterns for short-term rental insurance and is for informational purposes only. Actual premiums vary significantly by carrier, exact location, property condition, claims history, and specific coverage selections. This is not a quote and does not constitute insurance or legal advice. Confirm local permit and insurance requirements with your city/county and a licensed insurance professional before hosting.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/landlord-insurance.html">Landlord Insurance Calculator</a></li>
+              <li><a href="/tools/home-insurance.html">Home Insurance Calculator</a></li>
+              <li><a href="/tools/umbrella-insurance.html">Umbrella Insurance Calculator</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Related Guides</h3>
+            <ul>
+              <li><a href="/blog/does-homeowners-insurance-cover-airbnb.html">Does Homeowners Insurance Cover Airbnb?</a></li>
+              <li><a href="/blog/aircover-vs-real-insurance.html">AirCover vs. Real Insurance</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Quick Reference</h3>
+            <ul>
+              <li>Typical range: <strong>$1,000–$6,000/yr</strong></li>
+              <li>Budget rule: <strong>2–4%</strong> of gross rental income</li>
+              <li>AirCover: <strong>not insurance</strong></li>
+              <li>Homeowners policy: <strong>excludes</strong> paid hosting</li>
+            </ul>
+          </div>
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calcSTR() {
+  const value = parseFloat(document.getElementById('str-value').value) || 0;
+  const freq = document.getElementById('str-freq').value;
+  const type = document.getElementById('str-type').value;
+  const location = document.getElementById('str-location').value;
+  const liability = parseFloat(document.getElementById('str-liability').value);
+
+  if (value <= 0) { alert('Please enter your property replacement cost.'); return; }
+
+  const freqMult = { occasional: 0.6, frequent: 1.0, fulltime: 1.5 };
+  const typeMult = { room: 0.5, entire: 1.0 };
+  const locMult = { low: 0.8, medium: 1.0, high: 1.4 };
+  const liabAdd = { 500000: 0, 1000000: 150, 2000000: 350 };
+
+  const base = value * 0.007;
+  const annual = Math.max(base * freqMult[freq] * typeMult[type] * locMult[location] + liabAdd[liability], 500);
+  const monthly = annual / 12;
+  const pctOfValue = (annual / value * 100).toFixed(2);
+
+  document.getElementById('str-amount').textContent = fmt(annual) + '/yr';
+
+  document.getElementById('str-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Property replacement cost</td><td style="text-align:right;font-weight:500;">${fmt(value)}</td></tr>
+      <tr><td>Liability coverage</td><td style="text-align:right;font-weight:500;">${fmt(liability)}</td></tr>
+      <tr><td>Est. monthly premium</td><td style="text-align:right;font-weight:500;">${fmt(monthly)}</td></tr>
+      <tr style="border-top:1px solid var(--border);font-weight:600;"><td>Est. annual premium</td><td style="text-align:right;">${fmt(annual)}</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:0.82rem;">💡 Compare this against a standard landlord policy with the <a href="/tools/landlord-insurance.html" style="color:var(--primary);">Landlord Insurance Calculator →</a></p>
+  `;
+
+  document.getElementById('str-result').classList.add('visible');
+}
+</script>
+</body>
+</html>
