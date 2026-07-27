@@ -182,6 +182,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [AirCover vs. Real Insurance](https://myinsurancecalc.com/blog/aircover-vs-real-insurance.html)
   Side-by-side comparison of Airbnb's AirCover host protection program against a licensed short-term rental insurance policy: payout guarantees, coverage during vacant periods, off-platform bookings, and what changes for hosts with 6+ listings.
 
+- [Workers' Comp Audit Guide](https://myinsurancecalc.com/blog/workers-comp-audit-guide.html)
+  What a workers' comp premium audit compares, the overtime-pay mistake (only straight-time counts toward payroll in most states), the subcontractor certificate-of-insurance gap that causes the largest retroactive bills, owner/officer exemption certificates, and what to have ready before an audit.
+
 ### Freelancer and Gig Worker Insurance
 
 - [The Complete Insurance Guide for Freelancers](https://myinsurancecalc.com/blog/freelancer-insurance-guide.html)
