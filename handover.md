@@ -1,4 +1,26 @@
-# MyInsuranceCalc.com 인수인계 (2026-07-24 업데이트, 7회차 — 신규 클러스터)
+# MyInsuranceCalc.com 인수인계 (2026-07-27 업데이트, 8회차 — 주간 정기작업)
+
+## 📌 확인 필요 (7/27)
+- [ ] https://myinsurancecalc.com/blog/workers-comp-audit-guide.html (신규 블로그 — 화면 깨짐 확인)
+- [ ] https://myinsurancecalc.com/tools/emr-calculator.html (본문/사이드바에 감사가이드 링크 추가됨 — 정상 렌더링 확인)
+- [ ] https://myinsurancecalc.com/tools/workers-comp.html (사이드바에 감사가이드 링크 추가됨)
+- [ ] https://myinsurancecalc.com/states/renters-insurance/idaho.html (신규 FAQ 21개 주 중 최고노출 샘플)
+- [ ] https://myinsurancecalc.com/states/business-insurance/texas.html (opt-in 특수케이스 FAQ 반영 샘플)
+
+## ✅ 이번 세션(7/27) 요약
+**GSC 분석**: 전체 노출 23,974→27,578(+15%), workers-comp/tools/business-insurance/car-insurance 카테고리 26~36% 증가 — 전반적으로 좋은 성장 흐름 지속. **EMR 콘텐츠가 실제 성과 확인**: "experience modification factor south carolina workers comp" 쿼리 노출 16→30(거의 2배), 순위 13.19→12.53 개선 — 지난 세션 EMR 계산기+SC 페이지 투자가 결실 보는 중. GA(신규 export)는 direct 트래픽 비중 여전히 크고 홈페이지 이탈률 계속 77%대(허브페이지는 0~8%로 양호) — 구조적 이슈 지속 확인만 하고 이번엔 콘텐츠 작업 우선.
+
+**FAQ 보강**: renters-insurance 노출 상위 21개 주 신규(idaho/south-dakota/mississippi 등) + business-insurance 잔여 14개 주 신규 → **business-insurance 카테고리 51/51 완료**(텍사스 opt-in, 플로리다 건설업예외 특수처리). renters-insurance는 아직 9개 주 잔여(노출 매우 낮은 것들, texas/new-mexico/west-virginia/new-hampshire/kansas/connecticut/wyoming/new-york/montana) — 보류. workers-comp 잔여 20개 주도 노출 총 32로 미미해 보류.
+
+**경쟁강도 조사 4건 (전부 보류)**: dog-bite liability(로펌SEO 고경쟁+사실관계 상충, 지난주 확인), e-bike보험(예상보다 붐빔), home warranty vs homeowners insurance(Bankrate/NerdWallet/Progressive 등 초포화), classic/collector car insurance(CalcBee가 이미 유사 계산기 보유, MoneyGeek 등도 커버).
+
+**신규 채택**: `blog/workers-comp-audit-guide.html` — 워커스컴프 프리미엄 감사 대비 가이드. 경쟁자가 급여대행업체(Paycor/BlueWave HR)·소형 에이전시 블로그라 경쟁강도 낮음, 이미 성과 내는 EMR 콘텐츠와 자연스러운 클러스터(EMR계산기↔감사가이드↔workers-comp계산기 상호링크). Overtime straight-time 규칙, 하도급업체 COI 미비시 리스크, 오너/임원 exemption certificate 등 실용적 팩트 기반, 문제해결형 콘텐츠.
+
+**검증**: 사이트 전체 444파일 ld+json 638블록 파싱 0건 실패, div 밸런스 0건 불일치, 내부링크 스캔 실제 깨짐 0건. 커밋 `d098eab`.
+
+**다음 세션 참고**: renters-insurance 잔여 9개(노출 매우 낮음), workers-comp 잔여 20개(노출 32) 완결 여부는 다음 export에서 노출 변화 보고 재판단. workers-comp-audit-guide.html 색인/노출 여부 다음 GSC export에서 필수 확인.
+
+
 
 ## 📌 프로세스 규칙(7/24 추가): 작업 후 "확인 필요 링크"를 handover.md에 남길 것
 채팅으로 링크 말해주는 것 말고, **작업 끝날 때마다 이 handover.md에 "사용자가 꼭 확인해야 할 페이지" 링크를 남겨둘 것.** 아래 각 세션 기록 바로 밑에 체크리스트 형태로 추가.
