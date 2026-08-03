@@ -143,7 +143,13 @@ All calculators run entirely in the browser. No personal data is collected, stor
   BMI and carrier build chart thresholds by rate class, GLP-1/Ozempic/Wegovy underwriting treatment, table rating expectations by BMI range, guaranteed/simplified issue alternatives.
 
 - [Life Insurance for Pilots](https://myinsurancecalc.com/blog/life-insurance-for-pilots.html)
-  Aviation exclusions vs flat extra premiums, commercial vs private vs student pilot differences, approved vs non-approved aircraft, factors affecting pilot premiums, disability insurance for pilots.
+  Airline pilot hub: FAR 121/ATP underwriting, FAA medical certificate classes and duration, Age 65 mandatory retirement and career-long coverage planning, loss-of-license coverage, links to dedicated private and helicopter pilot guides.
+
+- [Life Insurance for Private Pilots](https://myinsurancecalc.com/blog/life-insurance-for-private-pilots.html)
+  General aviation pilot life insurance: flight hour thresholds, instrument rating effect, aircraft type flat extra ranges, experimental/aerobatic/bush flying underwriting, student pilots, AOPA group coverage.
+
+- [Life Insurance for Helicopter Pilots](https://myinsurancecalc.com/blog/life-insurance-for-helicopter-pilots.html)
+  Rotorcraft life insurance: mission-specific underwriting (EMS, offshore, ENG, tour, utility, firefighting), aircraft type and hours-in-type, military-to-civilian transition.
 
 - [Life Insurance for Truck Drivers](https://myinsurancecalc.com/blog/life-insurance-for-truck-drivers.html)
   OTR vs regional vs local driver distinctions, sleep apnea and life insurance, owner-operator vs employee considerations, how insurers rate trucking occupations, group coverage through employer.
