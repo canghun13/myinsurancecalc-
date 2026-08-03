@@ -640,13 +640,37 @@ img { max-width: 100%; display: block; }
 /* ── Responsive Tables (article content tables) ── */
 .table-scroll {
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   margin: 20px 0;
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 .table-scroll table {
   margin: 0;
   min-width: 560px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.table-scroll th,
+.table-scroll td {
+  padding: 11px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.table-scroll th {
+  background: var(--bg-alt);
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+.table-scroll tbody tr:last-child th,
+.table-scroll tbody tr:last-child td {
+  border-bottom: none;
+}
+.table-scroll tbody tr:nth-child(even) {
+  background: var(--bg-alt);
 }
 @media (max-width: 480px) {
   .table-scroll table {
