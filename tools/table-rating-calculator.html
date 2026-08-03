@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Insurance Table Rating Calculator: What Table 1-16 Actually Costs | My Insurance Calc</title>
+  <meta name="description" content="Free life insurance table rating calculator. See exactly what Table 1 through Table 16 (A-P) adds to your premium, plus flat extra costs, based on your age, coverage, and term." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://myinsurancecalc.com/tools/table-rating-calculator.html" />
+  <meta property="og:title" content="Life Insurance Table Rating Calculator | My Insurance Calc" />
+  <meta property="og:description" content="See what a Table 1-16 (or A-P) rating actually adds to your life insurance premium. Free, instant, no signup." />
+  <meta property="og:url" content="https://myinsurancecalc.com/tools/table-rating-calculator.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Life Insurance Table Rating Calculator",
+    "url": "https://myinsurancecalc.com/tools/table-rating-calculator.html",
+    "description": "Free calculator to estimate how much a life insurance table rating (Table 1-16 or A-P) or flat extra adds to your premium.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a life insurance table rating?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A table rating is a premium surcharge insurers apply when an applicant's health, build, or lifestyle puts them above the Standard risk class but not so high that the carrier declines coverage. Instead of turning you down, the insurer approves the policy at a higher price. Table ratings are usually labeled Table 1 through Table 16, or the letter equivalents A through P." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does each table rating add to my premium?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most carriers add approximately 25% to the Standard premium per table level: Table 1 (A) is about 25% above Standard, Table 2 (B) about 50% above, Table 4 (D) about 100% above (double Standard), and so on up to roughly 400% above Standard at Table 16 (P). Not every insurer uses the same increment, but 25% per level is the industry norm cited most often." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between table rating letters and numbers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "They're two labels for the same 16-level scale used by different carriers: Table 1 = Table A, Table 2 = Table B, Table 3 = Table C, and so on through Table 16 = Table P. The cost impact is identical either way — only the label differs by carrier." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a flat extra and how is it different from a table rating?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A flat extra is a fixed dollar surcharge per $1,000 of coverage added on top of your regular premium, rather than a percentage increase like a table rating. It's commonly used for temporary or recent risks — recent surgery, a recent cancer diagnosis, a high-risk hobby — and is usually removed after a set number of years (often 2-5) once the elevated risk period has passed. Some applications carry a table rating, a flat extra, or both at the same time." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a table rating be lowered after the policy is issued?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Often, yes, through a process called reconsideration. Many carriers will re-evaluate your rating after roughly 1-2 years if you can show documented health improvement — better lab results, a stable or resolved condition, weight loss, or more time since a diagnosis or event. Reconsideration isn't guaranteed, and requirements vary by carrier, but it's a standard and commonly used option." }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<main>
+  <section class="tool-page">
+    <div class="container">
+
+      <div class="tool-page-header">
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;"><a href="/">Home</a> › <a href="/#tools">Calculators</a> › Table Rating</p>
+        <h1>Life Insurance Table Rating Calculator</h1>
+        <p>See exactly what a Table 1-16 (or A-P) rating — or a flat extra — actually adds to your life insurance premium, based on your age, coverage, and term.</p>
+      </div>
+
+      <div class="tool-layout">
+
+        <!-- Calculator -->
+        <div>
+          <div class="calc-box">
+            <h2>Estimate Your Table-Rated Premium</h2>
+
+            <div class="form-group">
+              <label for="tr-age">Age</label>
+              <input type="number" id="tr-age" placeholder="e.g. 40" value="40" min="18" max="70" />
+            </div>
+
+            <div class="form-group">
+              <label for="tr-gender">Gender</label>
+              <select id="tr-gender">
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tr-smoker">Tobacco / Nicotine Use</label>
+              <select id="tr-smoker">
+                <option value="no" selected>Non-smoker</option>
+                <option value="yes">Smoker</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tr-coverage">Coverage Amount ($)</label>
+              <input type="number" id="tr-coverage" placeholder="e.g. 500000" value="500000" min="10000" step="10000" />
+            </div>
+
+            <div class="form-group">
+              <label for="tr-term">Term Length</label>
+              <select id="tr-term">
+                <option value="10">10 years</option>
+                <option value="15">15 years</option>
+                <option value="20" selected>20 years</option>
+                <option value="30">30 years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tr-table">Expected Table Rating</label>
+              <select id="tr-table">
+                <option value="0" selected>Standard (no table rating)</option>
+                <option value="1">Table 1 (A) — +25%</option>
+                <option value="2">Table 2 (B) — +50%</option>
+                <option value="3">Table 3 (C) — +75%</option>
+                <option value="4">Table 4 (D) — +100%</option>
+                <option value="5">Table 5 (E) — +125%</option>
+                <option value="6">Table 6 (F) — +150%</option>
+                <option value="7">Table 7 (G) — +175%</option>
+                <option value="8">Table 8 (H) — +200%</option>
+                <option value="9">Table 9 (I) — +225%</option>
+                <option value="10">Table 10 (J) — +250%</option>
+                <option value="11">Table 11 (K) — +275%</option>
+                <option value="12">Table 12 (L) — +300%</option>
+                <option value="13">Table 13 (M) — +325%</option>
+                <option value="14">Table 14 (N) — +350%</option>
+                <option value="15">Table 15 (O) — +375%</option>
+                <option value="16">Table 16 (P) — +400%</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tr-flatextra">Flat Extra, if known ($ per $1,000 of coverage / year)</label>
+              <input type="number" id="tr-flatextra" placeholder="e.g. 3 — leave blank if not applicable" min="0" step="0.5" value="0" />
+            </div>
+
+            <button class="btn-calc" onclick="calcTableRating()">Calculate My Estimate</button>
+
+            <div class="result-box" id="tr-result">
+              <h3>ESTIMATED MONTHLY PREMIUM</h3>
+              <div class="result-amount" id="tr-amount"></div>
+              <div id="tr-breakdown" style="margin-top:16px;font-size:0.88rem;color:var(--text-muted);"></div>
+              <p class="result-note">This is a simplified estimate for education only — not a quote. Your actual table rating and premium are set by the specific carrier that underwrites your application.</p>
+            </div>
+          </div>
+
+          <div class="calc-box" id="tr-compare-box" style="display:none;margin-top:24px;">
+            <h2>Every Table Rating, Compared</h2>
+            <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:12px;">Same age, gender, smoking status, coverage, and term as above — flat extra (if entered) is held constant across every row so you can isolate the table rating's effect.</p>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th>Rating</th><th>Letter</th><th>vs. Standard</th><th>Monthly</th><th>Annual</th><th>Monthly Increase</th></tr>
+                </thead>
+                <tbody id="tr-compare-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Article content for SEO -->
+          <div class="article-body" style="margin-top:48px;">
+            <h2>What Is a Life Insurance Table Rating?</h2>
+            <p>When you apply for fully underwritten life insurance, the insurer sorts you into a risk class based on your health, build, family history, and lifestyle. The best classes — Preferred Plus, Preferred, Standard Plus — get the lowest rates. Standard is the baseline "average risk" class most healthy applicants land in. But if your risk profile is meaningfully above average — a health condition, an elevated BMI, a risky occupation or hobby — many insurers don't simply decline you. Instead, they approve the policy at a higher price using a <strong>table rating</strong>: a set surcharge on top of the Standard premium that reflects the additional mortality risk.</p>
+            <p>Table ratings are a middle ground between "approved at standard rates" and "declined." If you're reading a table-rated offer, that offer is, by definition, an approval — the insurer has decided your risk is acceptable, just at a higher price than the healthiest applicants pay.</p>
+
+            <h2>How Table Ratings Are Calculated</h2>
+            <p>Most U.S. carriers use a 16-level scale, labeled either with numbers (Table 1 through Table 16) or letters (Table A through Table P) — the two systems refer to the exact same thing, just with different labels depending on the insurer. The industry-standard convention, cited consistently across underwriting guides, is that <strong>each level adds approximately 25% to the Standard premium</strong>:</p>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th>Number</th><th>Letter</th><th>Adjustment vs. Standard</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Table 1</td><td>A</td><td>+25%</td></tr>
+                  <tr><td>Table 2</td><td>B</td><td>+50%</td></tr>
+                  <tr><td>Table 4</td><td>D</td><td>+100% (double Standard)</td></tr>
+                  <tr><td>Table 8</td><td>H</td><td>+200%</td></tr>
+                  <tr><td>Table 16</td><td>P</td><td>+400%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Tables 1 through 8 are the ones most commonly assigned in practice; higher tables generally reflect more severe or multiple compounding risk factors. Not every carrier goes all the way to 16 — some cap their scale at 8 or 10 and decline anyone who would otherwise need a higher rating. And importantly, the 25%-per-level convention is common but not universal — a small number of carriers use a different increment, so the numbers in this calculator are a well-supported industry approximation, not a guarantee from any specific insurer.</p>
+
+            <h2>What Conditions Commonly Result in a Table Rating?</h2>
+            <p>Underwriters assign table ratings based on documented mortality risk, and the same condition can be rated very differently from one carrier to the next — this is exactly why shopping multiple carriers (or working with an independent broker) matters so much for anyone expecting a rating. That said, some general patterns show up consistently across underwriting guides:</p>
+            <ul>
+              <li><strong>Cancer history</strong> — varies enormously by type, stage, and years since treatment; some cancers (like early-stage thyroid cancer) often reach Standard or a low table within a few years, while others carry ratings much longer.</li>
+              <li><strong>Diabetes</strong> — well-controlled Type 2 diabetes often lands in a low-to-mid table range; Type 1 or poorly controlled cases typically see higher ratings.</li>
+              <li><strong>Heart disease or a cardiac event history</strong> — rating depends heavily on the specific diagnosis, treatment, and time since the event.</li>
+              <li><strong>Elevated BMI</strong> — build charts vary by carrier, but higher BMI brackets commonly move an applicant into table-rated territory even with no other health issues.</li>
+              <li><strong>High blood pressure or high cholesterol</strong> — usually only rated if poorly controlled; well-managed cases often stay at Standard or close to it.</li>
+              <li><strong>Sleep apnea</strong> — table ratings are relatively uncommon here unless there's documented non-compliance with CPAP treatment.</li>
+              <li><strong>Mental health conditions</strong> — highly variable; commonly-diagnosed, well-managed anxiety or depression frequently doesn't trigger a rating, while conditions like bipolar disorder more often do.</li>
+              <li><strong>Epilepsy and certain neurological or gastrointestinal conditions</strong> — most cases receive some table rating, with the severity of the condition driving how high.</li>
+              <li><strong>Hazardous occupations or hobbies</strong> — commercial diving, aviation outside standard commercial flying, and similar activities are frequently priced with a table rating, a flat extra, or both.</li>
+            </ul>
+            <p>If you're researching a specific diagnosis or occupation, our condition-specific guides below go into far more depth than a general list can.</p>
+
+            <h2>Flat Extra: The Other Kind of Rating Surcharge</h2>
+            <p>A flat extra works differently from a table rating. Instead of a percentage added to your premium, it's a <strong>fixed dollar amount per $1,000 of coverage</strong>, charged annually, on top of whatever your base premium is. For example, a flat extra of $3 per $1,000 on a $500,000 policy adds $1,500 per year to the premium.</p>
+            <p>Flat extras are common for risks that are elevated but expected to be temporary — recovery from a recent surgery, a recent cancer diagnosis still within its higher-risk window, or a high-risk hobby practiced for a defined period. Unlike a table rating (which can also improve over time but isn't automatically time-limited), a flat extra is frequently assigned for a specific number of years — often 2 to 5 — and is removed once that window passes, dropping your premium back down without requiring a new application.</p>
+            <p>Some applications carry a table rating and a flat extra at the same time, if the underwriter identifies both a longer-term elevated risk and a separate, temporary one. Use the flat extra field in the calculator above if a broker or carrier has already given you a specific per-$1,000 figure to model.</p>
+
+            <h2>Can You Lower Your Table Rating Later?</h2>
+            <p>Yes, often — through a process called <strong>reconsideration</strong>. Most carriers will review your rating again after a defined period, commonly 1 to 2 years, if you can show documented improvement: better lab results, a resolved or well-controlled condition, meaningful weight loss, or simply enough additional time passed since a diagnosis or event. Reconsideration typically requires updated medical records or lab work showing the improvement, submitted through your agent or broker rather than a brand-new application.</p>
+            <p>Reconsideration isn't automatic and isn't guaranteed to succeed, and exact requirements vary by carrier. But it's a standard, commonly-used part of the industry — a table rating you receive today is not necessarily the rating you'll be locked into for the life of a term policy that allows for review.</p>
+
+            <h2>Explore Table Ratings by Condition or Occupation</h2>
+            <p>Table ratings look very different depending on why you're getting one. These guides cover the specifics for common situations:</p>
+            <ul>
+              <li><strong>Cancer:</strong> <a href="/blog/life-insurance-after-cancer.html">Life Insurance After Cancer</a> (hub covering 14+ cancer types), including <a href="/blog/life-insurance-after-thyroid-cancer.html">thyroid cancer</a>, <a href="/blog/life-insurance-after-prostate-cancer.html">prostate cancer</a>, and <a href="/blog/life-insurance-after-breast-cancer.html">breast cancer</a></li>
+              <li><strong>Chronic conditions:</strong> <a href="/blog/life-insurance-with-diabetes.html">diabetes</a> and <a href="/blog/life-insurance-after-heart-disease.html">heart disease</a></li>
+              <li><strong>Driving record:</strong> <a href="/blog/life-insurance-after-dui.html">life insurance after a DUI</a></li>
+              <li><strong>Occupation:</strong> <a href="/blog/life-insurance-for-pilots.html">life insurance for pilots</a></li>
+            </ul>
+
+            <h2>Important Limitations of This Estimate</h2>
+            <p>This calculator is a simplified educational tool, not a quoting engine. A few things it can't account for: it uses one set of industry-average base rates rather than any specific carrier's actual pricing, which can vary by 50% or more between insurers for the exact same applicant. It assumes the common 25%-per-table convention, which most but not all carriers follow. And it can't predict which table rating you'll actually receive — that depends on your full medical file and each carrier's specific underwriting guidelines for your condition, which is precisely why working with an independent broker who shops multiple carriers tends to produce meaningfully better outcomes than applying to a single company. Use this tool to understand the shape of the cost, not as a substitute for real quotes.</p>
+
+            <h2>Frequently Asked Questions</h2>
+            <h3>What is a life insurance table rating?</h3>
+            <p>A table rating is a premium surcharge insurers apply when an applicant's health, build, or lifestyle puts them above the Standard risk class but not so high that the carrier declines coverage. Instead of turning you down, the insurer approves the policy at a higher price. Table ratings are usually labeled Table 1 through Table 16, or the letter equivalents A through P.</p>
+            <h3>How much does each table rating add to my premium?</h3>
+            <p>Most carriers add approximately 25% to the Standard premium per table level: Table 1 (A) is about 25% above Standard, Table 2 (B) about 50% above, Table 4 (D) about 100% above (double Standard), and so on up to roughly 400% above Standard at Table 16 (P). Not every insurer uses the same increment, but 25% per level is the industry norm cited most often.</p>
+            <h3>What's the difference between table rating letters and numbers?</h3>
+            <p>They're two labels for the same 16-level scale used by different carriers: Table 1 = Table A, Table 2 = Table B, Table 3 = Table C, and so on through Table 16 = Table P. The cost impact is identical either way — only the label differs by carrier.</p>
+            <h3>What is a flat extra and how is it different from a table rating?</h3>
+            <p>A flat extra is a fixed dollar surcharge per $1,000 of coverage added on top of your regular premium, rather than a percentage increase like a table rating. It's commonly used for temporary or recent risks — recent surgery, a recent cancer diagnosis, a high-risk hobby — and is usually removed after a set number of years (often 2-5) once the elevated risk period has passed. Some applications carry a table rating, a flat extra, or both at the same time.</p>
+            <h3>Can a table rating be lowered after the policy is issued?</h3>
+            <p>Often, yes, through a process called reconsideration. Many carriers will re-evaluate your rating after roughly 1-2 years if you can show documented health improvement — better lab results, a stable or resolved condition, weight loss, or more time since a diagnosis or event. Reconsideration isn't guaranteed, and requirements vary by carrier, but it's a standard and commonly used option.</p>
+
+            <p class="article-disclaimer">This calculator is a simplified educational estimate only and does not constitute insurance or financial advice, nor a quote from any insurer. Table rating conventions and base premiums vary significantly by carrier; actual pricing requires a formal application. Consult a licensed insurance professional, ideally one experienced with impaired-risk or high-risk underwriting, for personalized guidance.</p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="adslot"><!-- AdSense --></div>
+
+          <div class="sidebar-box">
+            <h3>Other Calculators</h3>
+            <ul>
+              <li><a href="/tools/life-insurance.html">Life Insurance Calculator</a></li>
+              <li><a href="/tools/term-vs-whole.html">Term vs Whole Life Comparison</a></li>
+              <li><a href="/tools/disability.html">Disability Insurance Calculator</a></li>
+              <li><a href="/tools/life-insurance-seniors.html">Life Insurance for Seniors Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>Typical increment: <strong>+25% per table</strong></li>
+              <li>Common scale: <strong>Table 1-16 / A-P</strong></li>
+              <li>Most assigned: <strong>Tables 1-8</strong></li>
+              <li>Reconsideration window: <strong>~1-2 years</strong></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Condition Guides</h3>
+            <ul>
+              <li><a href="/blog/life-insurance-after-cancer.html">Life Insurance After Cancer</a></li>
+              <li><a href="/blog/life-insurance-with-diabetes.html">Life Insurance With Diabetes</a></li>
+              <li><a href="/blog/life-insurance-after-heart-disease.html">Life Insurance After Heart Disease</a></li>
+              <li><a href="/blog/life-insurance-after-dui.html">Life Insurance After a DUI</a></li>
+            </ul>
+          </div>
+
+          <div class="adslot"><!-- AdSense --></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+const TR_TABLE_LETTERS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'];
+const TR_TERM_MULT = { 10: 0.61, 15: 0.80, 20: 1.00, 30: 1.75 };
+const TR_BASE_PER_1000 = 0.1082; // per $1,000 of coverage, monthly — Standard, male, non-smoker, age 40, 20-yr term
+
+function trAgeMultiplier(age) {
+  const pts = [[18,0.39],[30,0.65],[40,1.00],[50,2.46],[60,7.11],[70,19.94]];
+  if (age <= pts[0][0]) return pts[0][1];
+  if (age >= pts[pts.length - 1][0]) return pts[pts.length - 1][1];
+  for (let i = 0; i < pts.length - 1; i++) {
+    const a0 = pts[i][0], m0 = pts[i][1], a1 = pts[i+1][0], m1 = pts[i+1][1];
+    if (age >= a0 && age <= a1) {
+      const t = (age - a0) / (a1 - a0);
+      const l0 = Math.log(m0), l1 = Math.log(m1);
+      return Math.exp(l0 + t * (l1 - l0));
+    }
+  }
+  return 1;
+}
+
+function trStandardMonthly(age, gender, smoker, coverage, term) {
+  const am = trAgeMultiplier(age);
+  const gm = gender === 'female' ? 0.82 : 1.00;
+  const sm = smoker === 'yes' ? 3.00 : 1.00;
+  const tm = TR_TERM_MULT[term] || 1.00;
+  return (coverage / 1000) * TR_BASE_PER_1000 * am * gm * sm * tm;
+}
+
+function calcTableRating() {
+  const age = Math.min(70, Math.max(18, parseInt(document.getElementById('tr-age').value) || 40));
+  const gender = document.getElementById('tr-gender').value;
+  const smoker = document.getElementById('tr-smoker').value;
+  const coverage = Math.max(10000, parseFloat(document.getElementById('tr-coverage').value) || 500000);
+  const term = parseInt(document.getElementById('tr-term').value) || 20;
+  const tableN = Math.min(16, Math.max(0, parseInt(document.getElementById('tr-table').value) || 0));
+  const flatExtra = Math.max(0, parseFloat(document.getElementById('tr-flatextra').value) || 0);
+
+  const standardMonthly = trStandardMonthly(age, gender, smoker, coverage, term);
+  const tableMult = 1 + 0.25 * tableN;
+  const tableMonthly = standardMonthly * tableMult;
+  const flatExtraMonthly = (coverage / 1000) * flatExtra / 12;
+  const totalMonthly = tableMonthly + flatExtraMonthly;
+  const totalAnnual = totalMonthly * 12;
+  const standardAnnual = standardMonthly * 12;
+  const increaseMonthly = totalMonthly - standardMonthly;
+  const increasePct = standardMonthly > 0 ? ((totalMonthly / standardMonthly) - 1) * 100 : 0;
+
+  const fmt = v => '$' + v.toFixed(2);
+  const fmtWhole = v => '$' + Math.round(v).toLocaleString();
+
+  document.getElementById('tr-amount').innerHTML = `${fmt(totalMonthly)} <span style="font-size:1rem;color:var(--text-muted);">/month</span>`;
+
+  const ratingLabel = tableN === 0 ? 'Standard (no table rating)' : `Table ${tableN} (${TR_TABLE_LETTERS[tableN - 1]})`;
+
+  document.getElementById('tr-breakdown').innerHTML = `
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td>Estimated Standard premium</td><td style="text-align:right">${fmt(standardMonthly)}/mo</td></tr>
+      <tr><td>Your rating: ${ratingLabel}</td><td style="text-align:right">${fmt(tableMonthly)}/mo</td></tr>
+      <tr><td>Flat extra (if entered)</td><td style="text-align:right">${fmt(flatExtraMonthly)}/mo</td></tr>
+      <tr style="font-weight:600;border-top:1px solid var(--border);"><td>Total estimated premium</td><td style="text-align:right">${fmt(totalMonthly)}/mo</td></tr>
+      <tr><td>Total annual</td><td style="text-align:right">${fmtWhole(totalAnnual)}</td></tr>
+      <tr><td>Increase over Standard</td><td style="text-align:right">+${fmt(increaseMonthly)}/mo (${increasePct.toFixed(0)}%)</td></tr>
+    </table>
+  `;
+
+  // Full comparison table, Standard through Table 16, flat extra held constant
+  let rows = '';
+  for (let n = 0; n <= 16; n++) {
+    const mult = 1 + 0.25 * n;
+    const monthly = standardMonthly * mult + flatExtraMonthly;
+    const annual = monthly * 12;
+    const inc = monthly - (standardMonthly + flatExtraMonthly);
+    const label = n === 0 ? 'Standard' : `Table ${n}`;
+    const letter = n === 0 ? '—' : TR_TABLE_LETTERS[n - 1];
+    const pctLabel = n === 0 ? '—' : `+${n * 25}%`;
+    const highlight = n === tableN ? ' style="background:var(--primary-light);font-weight:600;"' : '';
+    rows += `<tr${highlight}><td>${label}</td><td>${letter}</td><td>${pctLabel}</td><td>${fmt(monthly)}</td><td>${fmtWhole(annual)}</td><td>${n === 0 ? '—' : '+' + fmt(inc)}</td></tr>`;
+  }
+  document.getElementById('tr-compare-body').innerHTML = rows;
+  document.getElementById('tr-compare-box').style.display = 'block';
+
+  const box = document.getElementById('tr-result');
+  box.classList.add('visible');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+</body>
+</html>

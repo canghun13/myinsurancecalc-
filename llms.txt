@@ -19,6 +19,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Term vs Whole Life Comparison Tool](https://myinsurancecalc.com/tools/term-vs-whole.html)
   Side-by-side cost comparison of term and whole life insurance. Includes total cost projection, cash value growth estimate, and break-even analysis.
 
+- [Table Rating Calculator](https://myinsurancecalc.com/tools/table-rating-calculator.html)
+  Estimates how much a life insurance Table 1-16 (A-P) rating or flat extra adds to a premium, by age, gender, smoker status, coverage, and term. Full Standard-through-Table-16 comparison table. Covers table rating mechanics, common conditions that trigger a rating, and the reconsideration process.
+
 ### Disability Insurance
 - [Disability Insurance Calculator](https://myinsurancecalc.com/tools/disability.html)
   Estimates monthly benefit need and approximate premium for short-term and long-term disability coverage based on income and occupation.
