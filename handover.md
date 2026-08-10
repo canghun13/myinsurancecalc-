@@ -1,3 +1,94 @@
+# MyInsuranceCalc.com 인수인계 (2026-08-10 업데이트, 10회차 — 주간 정기작업)
+
+## 🔗 확인 필요 (8/10)
+- [ ] https://myinsurancecalc.com/states/business-insurance/maine.html (GL 비용 비교표 신규 — 표 렌더링/반응형 확인)
+- [ ] https://myinsurancecalc.com/states/business-insurance/vermont.html (동일 비교표)
+- [ ] https://myinsurancecalc.com/blog/life-insurance-after-dui.html (DUI 비용 추정표 신규 — 8행 표 모바일 확인)
+- [ ] https://myinsurancecalc.com/states/health-insurance/virginia.html (전 state 350페이지에 들어간 "All Virginia Insurance Guides" 블록 샘플)
+- [ ] https://myinsurancecalc.com/blog/life-insurance-for-nurses.html (텍스트 추가만, 낮은 우선순위)
+
+## ✅ 이번 세션(8/10) GSC/GA 분석 요약
+
+**P0(noindex↔sitemap 충돌) 완료 확인**: privacy/contact의 noindex 메타 제거됨(레포 전체 noindex 0건). 8/3 지시사항 해소 완료.
+
+**트래픽**: 3개월 노출 29,665 → **31,946**(+7.7%), 클릭 12 → **13**. 기기별 데스크톱 7 / 모바일 6 / 태블릿 0.
+- **주간 노출 추세(중요, 8/3 플래그 후속)**: 5,824(7/13주, 피크) → 3,448 → 2,208 → **2,023(8/3~8/9)**. 하락은 멈추고 **주 2,000선에서 안정화**. 다만 6월 베이스라인(주 1,200~2,200)과 같은 수준으로 되돌아온 것 — 즉 7월 초의 급등은 신생 사이트 디스커버리 부스트였고 소멸이 확정됐다고 봐야 한다. 평균 순위도 60→68~72로 악화 상태 유지. **"회복"은 오지 않았다. 다음 export에서도 2,000선이면 이게 새 기준선이니 그렇게 놓고 판단할 것.**
+
+**색인(⚠️ 퇴행)**: 8/3에 0건이던 "발견됨-현재 색인 생성되지 않음"이 **21건으로 재발**. 21건은 7/25경부터 21로 고정(차트 평탄) — 신규 발생이 아니라 한 배치가 계속 대기 중인 상태.
+- **원인 규명(이번 세션 핵심 발견)**: 21개 URL의 공통점은 콘텐츠 품질이 아니라 **내부 인바운드 링크 수가 사이트 최저군(2~4개)**이라는 것. 특히 `tools/long-term-care-insurance.html`은 인바운드 **1개**(tools/index뿐)로 사실상 고아 페이지였다. 사이트 전체 링크그래프를 만들어 확인한 결과 미색인 21건이 정확히 하위군에 몰려 있었음.
+- **조치**: states 350페이지 전체에 "All {State} Insurance Guides"(동일 주의 나머지 6개 카테고리 링크) 블록 삽입 → 미색인 state 20곳 인바운드 **2~4 → 7**. long-term-care는 사이드바 링크 3건 추가.
+- **다음 export 필수 확인**: 21건이 실제로 줄었는지. 줄었다면 "미색인 = 내부링크 부족" 가설이 검증되는 것이고, 앞으로 신규 페이지는 만들 때부터 인바운드 5개 이상을 기본으로 깔아야 한다는 규칙이 확정된다.
+
+**GA4(7/13~8/9, 28일)**: 활성사용자 **123**(전기간 116), 신규 123, 이벤트 891, 참여시간 37.5초(50초→37.5초로 악화). 홈페이지 이탈률 **79.2%**(81%→79%, 여전히 구조적 이탈 지점 — 4세션 연속 확인).
+- **유입 구조 변화(주목)**: direct 85명(비중 69%로 하락, 이전 85~87%) / **bing 13 + yahoo 7 + duckduckgo 3 + google 3 + search.google.com referral 12 = 실질 검색 38세션**. 즉 **오가닉 비중이 실제로 오르고 있다.** 그리고 **Bing+Yahoo(20)가 Google(15)보다 많다** — 우리 순위대(60~70위)에서는 빙 계열이 더 관대하다는 뜻. 콘텐츠 기획 시 참고.
+- **AI 어시스턴트 경유 8세션**(copilot 6, perplexity 2) — 전체의 약 6%. llms.txt 유지할 가치 있음.
+
+**카테고리별 효율(노출/페이지)**:
+| 카테고리 | 노출 | 페이지 | 페이지당 | 클릭 |
+|---|---|---|---|---|
+| blog | 14,455 | 50 | 289 | 4 |
+| **tools** | **6,638** | 31 | **214** | **7** |
+| states/workers-comp | 4,511 | 44 | 103 | 1 |
+| states/business-insurance | 3,725 | 49 | 76 | 1 |
+| states/renters-insurance | 1,676 | 51 | 33 | 0 |
+| states/car·health·home | 1,138 | 85 | 13 | 0 |
+| states/life-insurance | 58 | 22 | 3 | 0 |
+→ **tools가 노출 +32%로 최고 성장, 그리고 클릭 전환율이 blog의 약 4배**(tools CTR 0.105% vs blog 0.028%). **계산기 포맷이 실제로 클릭을 만든다**는 게 이번 데이터로 확인됨. 신규 콘텐츠 판단 시 "블로그 vs 계산기" 갈림길에서는 계산기 쪽에 가중치를 둘 것.
+
+**8/3 신규분 색인/성과 확인**:
+- `tools/table-rating-calculator.html` → 노출 13, 순위 **38.9**. 7일 만에 색인+노출, 정상 출발.
+- `blog/life-insurance-for-helicopter-pilots.html` → 노출 6, 순위 **22.2**. 신규 페이지치고 순위 매우 양호.
+- `blog/life-insurance-for-private-pilots.html` → **노출 0, 미색인 21건에 포함**. 파일럿 분화 3분의 1이 아직 안 잡힘. 다음 export에서 재확인.
+- `blog/life-insurance-after-thyroid-cancer.html`(8/3 확장) → 페이지 노출 486, 순위 **27.1**. 단 쿼리별 수치는 8/3과 거의 동일(3개월 평균이라 7일치가 희석됨) — **확장 효과 판정은 다음 export로 미룰 것. 이번 데이터로 성공/실패 결론 내리지 말 것.**
+
+## 🎯 이번 세션 실행 내역 (커밋 `0dffc93`)
+1. **내부링크 구조 개선** — states 350페이지 동일주 상호링크 블록 + long-term-care 고아 해소. (위 색인 항목 참고)
+2. **`blog/life-insurance-after-dui.html` 확장** — 235노출@24.8로 **사이트 최대 striking distance 클러스터**. 경쟁자 재확인(PinnacleQuote/DiversifiedQuotes/BestLifeQuote/TermInsuranceBrokers + 로펌블로그 — NerdWallet·Forbes급 없음, thyroid와 동일한 저~중경쟁 구조). 경쟁자에게 없는 것 = **실제 달러 금액**. 우리는 8/3에 만든 table-rating-calculator가 있으므로 그 공식과 수치를 일치시킨 월납 추정표(경과연수별 Table등급 + flat extra)를 넣었다. + "어느 보험사가 관대한가"(구매처 인텐트) 섹션. FAQ 5→7.
+3. **`blog/life-insurance-for-nurses.html` 확장**(1,106→2,053단어) — 86노출@27. 웹서치로 확보한 차별화 소재: 트래블너스 에이전시 단체보험($10~50K, 계약종료 시 실효), CRNA/AANA 협회플랜, 플라이트너스 항공노출 언더라이팅, 니들스틱은 사실상 무영향, 퇴사 시 conversion/portability 31일 창구.
+4. **`states/business-insurance/{maine,vermont}.html` 확장**(467노출@25~31, 각 881→1,497/1,249단어) — GL 실제 비용 비교표(ME $112 / VT $122 / NH $135 / MA $169 / 전국 $123, 2026 기준), 계약상 요구한도·추가피보험자 설명, Maine 2026 워커스컴프 -9.6% 인하 vs 겨울폭풍·연안홍수發 재물보험 경화, Vermont 시즈널 사업중단 특약.
+5. **검증**: 447파일 / ld+json 644블록 파싱 실패 0, div 밸런스 0, 깨진 내부링크 0, sitemap 446 URL 유효.
+
+## 📊 이번 세션 키워드 리서치 결과 (다음 세션에서 재활용할 것)
+
+**striking distance(8~32위) 전체 풀 = 31쿼리 / 1,031노출.** 이게 현재 우리가 현실적으로 클릭으로 바꿀 수 있는 전부다. 규모가 작다는 걸 직시할 것.
+| 클러스터 | 노출 | 순위 | 이번 세션 처리 |
+|---|---|---|---|
+| DUI 생명보험 | 235 | 24.8 | ✅ 확장 |
+| Maine 소상공인보험 | 237 | 25.4 | ✅ 확장 |
+| Vermont 소상공인보험 | 230 | 30.6 | ✅ 확장 |
+| 파일럿(term/airline) | 89 | 31.2 | 8/3 분화 완료, 대기 |
+| 간호사 생명보험 | 86 | 27.6 | ✅ 확장 |
+| 갑상선암 | 773 | 27~45 | 8/3 확장, 판정 대기 |
+| EMR/사우스캐롤라이나 | 38 | **14.2** | 사이트 최고 순위 — 무보강 |
+| term vs whole 계산기 | 44 | 17.8~21.8 | 미착수(다음 후보) |
+| 방광암/신장암 생명보험 | 41 | 20~24 | 미착수 |
+
+**❌ 이번에 경쟁강도 조사 후 기각한 것**:
+- **General Liability 계산기 신규 제작 → 기각.** 우리 GSC에 GL 계산기 인텐트 쿼리가 166노출(순위 85~92) 있어서 후보로 검토했으나, 웹서치 결과 **MoneyGeek(전국+50개주 각각 별도 계산기 페이지 보유), NEXT Insurance(보험사 직영), TechInsurance, Insureon, ConstructionCoverage, blakeinsurancegroup**까지 전부 계산기를 이미 갖고 있음. 우리가 본 계산기 니치 중 **가장 포화된 시장**. 다시 검토하지 말 것.
+- 자체 계산기가 있는 head 계산기 키워드(dwelling coverage 265노출@68.8, homeowners how-much 231@88.9, motorcycle 클러스터 ~673@55~93, flood ~384@57~93, condo 118@68, umbrella 117@75.7)는 전부 노출은 크나 순위 60~90. **콘텐츠 부재가 아니라 도메인 권위 문제**이므로 신규 페이지로 대응할 수 없음. 착각하지 말 것.
+
+**🔍 다음 세션 신규 후보(미조사 — 경쟁강도 확인부터 할 것)**:
+- **"general liability insurance [state]" 클러스터** — 12개 주에서 총 ~330노출(vermont 53@71, maine 39@57, delaware 37@79, montana 26@88.5, mississippi 23@60, kansas 22@85, rhode-island 20@66, alaska 17@82, indiana 12@61, north-dakota 10@77 등) + "kentucky minimum general liability" 단일 쿼리 **101노출@75.7**. 이번에 Maine/Vermont에만 GL 섹션을 넣었으니, **효과 확인 후 나머지 주로 확대할지 결정**. 확대한다면 신규 페이지가 아니라 기존 business-insurance state 페이지 보강 방식(이번과 동일).
+- **미용실 업종 니치** — "kentucky hair salon insurance" 17@39.1, "south dakota hair salon insurance" 9@42.3. 볼륨 26으로 여전히 전용 페이지 정당화 안 됨. 계속 모니터링만.
+- **STD/LTD 분화** — "short term disability premium calculator" 15@58.7, "long term disability insurance cost calculator" 20@56.2 등. tools/disability.html 단일 페이지가 250노출을 얇게 받고 있음(순위 50대). 파일럿 분화와 같은 패턴 적용 가능성 있으나 볼륨이 작아 우선순위 낮음.
+
+## 💰 수익화 판단 (8/10 갱신)
+8/3의 결론(**제휴 > 애드센스**)은 그대로 유효. 추가된 근거와 수정사항:
+- **tools가 blog 대비 클릭 전환 4배**라는 게 이번에 확인됐다. 제휴 CTA를 붙일 때 **블로그 본문보다 계산기 결과 카드 하단**이 우선이라는 8/3 원칙이 데이터로 뒷받침됨.
+- 다만 **클릭 13회/3개월**이라는 절대량은 여전히 병목. 제휴 가입(Hiscox/CJ, Lemonade/Impact)은 지금 넣어도 손해는 없지만 수익은 0에 수렴한다. **P1~P3(순위 밀어올리기)이 여전히 선행조건**이라는 판단 유지.
+- **트래픽 성장이 멈췄다는 점은 솔직히 인지할 것.** 주간 노출이 6월 수준으로 회귀했고 신규 페이지 투입이 총량을 밀어올리지 못하고 있다. 1년 수익화 데드라인 관점에서, **다음 2~3세션 안에 클릭이 13→30 수준으로 못 올라가면 "콘텐츠를 더 만든다" 전략 자체를 재검토해야 한다**(도메인 권위가 병목이면 콘텐츠 추가는 한계수익 체감).
+
+## 🎯 다음 작업 우선순위 (8/10 확정)
+**P0. 다음 Coverage export에서 "발견됨-미색인 21건"이 줄었는지 확인.** 이게 이번 세션 최대 가설의 검증 지점. 줄었으면 → 신규 페이지 제작 시 인바운드 링크 5개 이상 확보를 표준 절차로 확정. 안 줄었으면 → 색인 문제는 내부링크가 아니라 도메인 크롤 예산 문제이므로 다른 접근 필요.
+
+**P1. 이번 확장 4페이지(DUI/nurses/maine/vermont) 순위 변화 확인.** 특히 DUI(24.8)와 Maine(25.4)이 20위 안쪽으로 들어오는지. thyroid(8/3 확장분) 판정도 이때 함께.
+
+**P2. GL 섹션 나머지 주 확대 여부 결정** — 위 "다음 세션 신규 후보" 참고. Maine/Vermont 효과 확인 후.
+
+**P3. 신규 계산기 1건** — tools 카테고리가 클릭 전환 4배라는 근거로 신규는 계산기 쪽에 배분. 단 **니치 선정 기준 2개(①실제 검색 수요 있음 ②웹서치로 계산기 보유 경쟁자 3곳 이하)를 반드시 둘 다 통과**시킬 것. GL 계산기는 ②에서 탈락했다.
+
+**❌ 하지 말 것(유지)**: state FAQ 잔여분 완결(renters 9, workers-comp 20), states/life-insurance 보강(3개월 노출 58, 페이지당 3), 검색 수요 미확인 니치 툴, **GL 계산기 신규 제작**, Ezoic 재검토.
+
 # MyInsuranceCalc.com 인수인계 (2026-08-03 업데이트, 9회차 — 주간 정기작업 / Opus 분석세션)
 
 ## 🔴 수익화 정책 (사용자 지시, 2026-08-03 — 이후 모든 세션에 항구 적용)
