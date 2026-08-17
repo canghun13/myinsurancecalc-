@@ -17,7 +17,7 @@ All calculators run entirely in the browser. No personal data is collected, stor
   Estimates how much life insurance coverage a family needs based on income, debts, and dependents. Uses DIME method and income replacement approach.
 
 - [Term vs Whole Life Comparison Tool](https://myinsurancecalc.com/tools/term-vs-whole.html)
-  Side-by-side cost comparison of term and whole life insurance. Includes total cost projection, cash value growth estimate, and break-even analysis.
+  Side-by-side cost comparison of term and whole life insurance. Models buy-term-invest-the-difference year by year: whole life cash value against an invested portfolio, the year cash value breaks even with premiums paid, and the investment return below which whole life wins.
 
 - [Table Rating Calculator](https://myinsurancecalc.com/tools/table-rating-calculator.html)
   Estimates how much a life insurance Table 1-16 (A-P) rating or flat extra adds to a premium, by age, gender, smoker status, coverage, and term. Full Standard-through-Table-16 comparison table. Covers table rating mechanics, common conditions that trigger a rating, and the reconsideration process.
@@ -84,7 +84,7 @@ All calculators run entirely in the browser. No personal data is collected, stor
   Estimates jewelry, fine art, electronics, and collectibles insurance premium based on appraised value, item type, storage method (safe vs. worn/home), and coverage type (scheduled vs. blanket).
 
 - [EMR Calculator](https://myinsurancecalc.com/tools/emr-calculator.html)
-  Estimates a workers' compensation Experience Modification Rate (EMR / X-Mod) from 3-year total payroll, incurred losses, and industry classification. Includes explanation of the real NCCI primary/excess/ballast formula and tips to lower EMR over time.
+  Estimates a workers' compensation Experience Modification Rate (EMR / X-Mod) from 3-year total payroll, incurred losses, claim count, and industry classification. Implements the NCCI formula structure with a $17,500 per-claim primary/excess split point, credibility weighting, and ballast, so claim frequency affects the result more than claim severity. Also reports the minimum mod achievable with zero claims and whether the result clears the 1.00 contractor prequalification threshold.
 
 - [Critical Illness Insurance Calculator](https://myinsurancecalc.com/tools/critical-illness-insurance.html)
   Estimates critical illness insurance premium from age, coverage amount ($10K-$100K), and tobacco use, using published group voluntary rate schedules. Includes comparison table of critical illness vs. disability insurance.

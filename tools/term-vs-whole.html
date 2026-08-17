@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Term vs Whole Life Insurance Calculator | My Insurance Calc</title>
-  <meta name="description" content="Compare term life vs whole life insurance side by side. See total costs, cash value growth, and break-even analysis instantly." />
+  <meta name="description" content="Free term vs whole life insurance calculator with buy-term-invest-the-difference analysis. See cash value break-even year, year-by-year comparison, and the return rate where whole life wins." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://myinsurancecalc.com/tools/term-vs-whole.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,37 +38,84 @@
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is term or whole life insurance better?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Term life is better for most people — it provides the same death benefit as whole life at a fraction of the cost, so you can buy adequate coverage and invest the difference yourself. Whole life mainly makes sense for estate planning or lifelong dependents." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much more expensive is whole life insurance than term?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Whole life premiums typically run 5 to 15 times higher than term life for the same death benefit, since part of the premium funds a cash value savings component in addition to pure insurance protection." }
-      },
-      {
-        "@type": "Question",
-        "name": "Does term life insurance have any cash value?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Term life insurance is pure protection with no savings or investment component — if the term ends and you're still alive, the policy simply expires with no payout. Whole life is the policy type that builds cash value." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you convert term life insurance to whole life?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Many term policies include a conversion rider that lets you convert some or all of the coverage to a whole life policy without a new medical exam, usually within a specified window such as before a certain age or before the term ends. Check your specific policy's conversion terms." }
-      },
-      {
-        "@type": "Question",
-        "name": "What term length should I choose?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Match the term to your financial obligations — 20 or 30 years is common for covering a mortgage or years until children are financially independent. A 10-year term suits shorter-term needs like a specific loan payoff period." }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is term or whole life insurance better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Term life is better for most people — it provides the same death benefit as whole life at a fraction of the cost, so you can buy adequate coverage and invest the difference yourself. Whole life mainly makes sense for estate planning or lifelong dependents."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How much more expensive is whole life insurance than term?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whole life premiums typically run 5 to 15 times higher than term life for the same death benefit, since part of the premium funds a cash value savings component in addition to pure insurance protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does term life insurance have any cash value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Term life insurance is pure protection with no savings or investment component — if the term ends and you're still alive, the policy simply expires with no payout. Whole life is the policy type that builds cash value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you convert term life insurance to whole life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many term policies include a conversion rider that lets you convert some or all of the coverage to a whole life policy without a new medical exam, usually within a specified window such as before a certain age or before the term ends. Check your specific policy's conversion terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What term length should I choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Match the term to your financial obligations — 20 or 30 years is common for covering a mortgage or years until children are financially independent. A 10-year term suits shorter-term needs like a specific loan payoff period."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does whole life insurance break even?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a traditional whole life design, guaranteed cash value typically exceeds the total premiums you have paid somewhere between years 12 and 17, and sometimes as early as years 7 to 10 for a well-structured policy. Before that point, surrendering returns less than you put in. Policies designed with paid-up additions can reach break-even considerably sooner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is buy term and invest the difference actually better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the return you earn. The calculator solves for the indifference return - the annual return below which whole life would have produced more money. That figure usually lands around 3% to 4%, which is close to whole life's guaranteed crediting range of roughly 2% to 4%. Investing wins on expected value at typical long-run market returns, but whole life's return is contractually guaranteed while the market's is not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my whole life cash value zero in the first year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Early premiums go mostly toward the insurer's acquisition costs and the cost of providing the death benefit, so little is left to credit to the cash account. On top of that, surrender charges in the first year can equal or exceed the accumulated value, meaning a first-year cancellation may return nothing at all. Surrender charges typically decline annually and disappear after roughly 10 to 15 years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Modified Endowment Contract and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A MEC is a permanent policy that received too much premium too quickly, failing the IRS seven-pay test. Once a policy becomes a MEC it stays one permanently, and loans and withdrawals lose their tax-free treatment - they come out gains-first and are taxed as ordinary income. If you are shown an aggressively funded design, ask specifically whether it stays inside the seven-pay limit."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -117,6 +164,20 @@
               </select>
             </div>
 
+            <div class="form-group">
+              <label for="horizon">Comparison Horizon (years to model)</label>
+              <select id="horizon">
+                <option value="20">20 years</option>
+                <option value="30" selected>30 years</option>
+                <option value="40">40 years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="invest-return">Expected Investment Return (%/yr, for buy-term-invest-the-difference)</label>
+              <input type="number" id="invest-return" value="7" min="0" max="15" step="0.5" />
+            </div>
+
             <button class="btn-calc" onclick="calcCompare()">Compare Now</button>
 
             <div class="result-box" id="compare-result" style="background:transparent;border:none;padding:0;">
@@ -133,6 +194,26 @@
                 </div>
               </div>
               <p class="result-note" style="margin-top:16px;">Estimates based on average market rates. Actual premiums vary by insurer and individual health assessment.</p>
+
+              <div id="btid-block" style="display:none;margin-top:28px;">
+                <h3 style="font-size:1.05rem;margin:0 0 6px;">Buy Term &amp; Invest the Difference</h3>
+                <p style="font-size:0.88rem;color:var(--text-muted);margin:0 0 14px;">What happens if you buy the term policy and invest the premium difference each year instead.</p>
+                <div class="table-scroll">
+                  <table>
+                    <tbody id="btid-summary"></tbody>
+                  </table>
+                </div>
+
+                <h3 style="font-size:1.05rem;margin:26px 0 6px;">Year by Year</h3>
+                <p style="font-size:0.88rem;color:var(--text-muted);margin:0 0 14px;">Whole life cash value against the investment portfolio, both net of what you paid in.</p>
+                <div class="table-scroll">
+                  <table>
+                    <thead><tr><th>Year</th><th>Whole life paid in</th><th>Whole life cash value</th><th>Term paid in</th><th>Invested portfolio</th></tr></thead>
+                    <tbody id="btid-rows"></tbody>
+                  </table>
+                </div>
+                <p class="result-note" style="margin-top:14px;">Cash value is modelled on a traditional whole life design (no paid-up additions) crediting 4.5% a year, with acquisition costs front-loaded so year one builds little or no value. Investment returns are assumed constant and before tax; real markets are neither. This is an educational model, not an illustration from any carrier.</p>
+              </div>
             </div>
           </div>
 
@@ -148,6 +229,33 @@
 
             <h3>Which One Should You Choose?</h3>
             <p>For the vast majority of people, <strong>term life is the better choice</strong>. You get the protection you need at a fraction of the cost — and you can invest the difference yourself for potentially better returns. Whole life makes sense in specific situations: high-net-worth individuals using it for estate planning, or those with lifelong dependents who will always need coverage.</p>
+
+            <h2>How to Read the Buy-Term-Invest-the-Difference Result</h2>
+            <p>The comparison most calculators show you &mdash; monthly premium versus monthly premium &mdash; isn't the decision you're actually making. Whole life costs more <em>because</em> part of the premium goes into cash value. The real question is whether that cash value beats what the same money would have done in an ordinary investment account. That's what the three numbers under the year-by-year table are for.</p>
+
+            <h3>The break-even year</h3>
+            <p>This is the year your whole life cash value first equals the total premiums you have paid into the policy. In this model it lands around year 14, which is consistent with how traditional whole life is generally described: guaranteed cash value tends to exceed cumulative premiums somewhere in the <strong>years 12 to 17</strong> window for a standard design, and sometimes as early as years 7 to 10 for a well-structured one. Before that year, surrendering the policy returns less than you put in. This is the single most misunderstood fact about whole life, and it is the reason early lapse is so costly.</p>
+
+            <h3>The indifference return</h3>
+            <p>This is the annual investment return below which whole life would have produced more money than investing the difference. It typically comes out somewhere around <strong>3% to 4%</strong>. That number is doing a lot of work: whole life's guaranteed crediting rate is generally in the <strong>2% to 4%</strong> range, so the calculation is essentially asking whether you expect to beat a conservative bond-like return over decades. It also frames the honest trade-off &mdash; whole life's return is contractually guaranteed and the market's is not, so a lower guaranteed number is not automatically the worse deal for someone who values certainty.</p>
+
+            <h3>The self-insurance year</h3>
+            <p>This is the year your invested portfolio alone would exceed the death benefit you were buying. Past that point the insurance arguably isn't needed, because the money it was meant to replace already exists. For most people running a 30-year horizon this lands late or not at all, which is a useful reality check against the common assumption that term coverage becomes unnecessary the moment the mortgage is paid off.</p>
+
+            <h2>Why Whole Life Cash Value Starts at Zero</h2>
+            <p>The year-by-year table shows almost nothing in the cash value column for the first year, and that is not a modelling quirk. Early premiums go predominantly toward the insurer's acquisition costs and the cost of the death benefit itself, leaving little to credit to the cash account. Growth accelerates between roughly years 10 and 20 as those front-loaded costs level off.</p>
+            <p>Three mechanics compound this in the early years and are worth knowing before you sign anything:</p>
+            <ul>
+              <li><strong>Surrender charges.</strong> Cash value and <em>cash surrender</em> value are not the same number. Many policies apply surrender charges during roughly the first 10 to 15 years, and in the first year the charge can equal or exceed the entire accumulated value &mdash; meaning you could receive nothing at all if you cancel. The charges step down annually and typically disappear after that window.</li>
+              <li><strong>Policy design changes everything.</strong> A traditional whole life policy built for maximum death benefit builds cash value slowly. One structured with <strong>paid-up additions</strong> can build value far faster and pull the break-even year forward substantially. Two policies with identical premiums and identical carriers can behave completely differently, so the design ratio matters more than the brand name on the contract. The model on this page assumes a traditional design with no paid-up additions, which is the more conservative assumption.</li>
+              <li><strong>The seven-pay test and MEC status.</strong> Overfunding a policy too quickly can trip the IRS seven-pay test and turn it into a Modified Endowment Contract. Once that happens, loans and withdrawals lose their tax-free treatment and come out gains-first as ordinary income &mdash; permanently, even if you stop overfunding. If an agent is proposing an aggressively funded design, ask directly whether it stays inside the seven-pay limit.</li>
+            </ul>
+            <p>Taxes also sit outside this model. Cash value grows tax-deferred inside the policy, while a taxable brokerage account is drag-adjusted by capital gains along the way and on withdrawal. If you would be investing the difference inside a 401(k) or IRA rather than a taxable account, the tax comparison shifts again in investing's favour.</p>
+
+            <h2>The Conversion Rider Most People Never Use</h2>
+            <p>The term-versus-whole framing implies a permanent, one-time decision. In practice most level term policies include a <strong>conversion rider</strong> that lets you convert some or all of the coverage into a permanent policy with no new medical exam, within a defined window. That rider is the reason the choice is less binding than it looks: buying term now does not foreclose permanent coverage later, and it preserves your current insurability in case your health changes.</p>
+            <p>Conversion windows vary widely &mdash; some run the full term, others expire at a set age or after a set number of years, and some carriers restrict which permanent products you may convert into. Because it costs nothing extra on most policies, it is worth confirming the exact terms before you buy rather than after. If you are weighing whole life primarily as insurance against future uninsurability, a convertible term policy often addresses that concern at a fraction of the cost.</p>
+            <p>If a health condition has already produced a rated offer, our <a href="/tools/table-rating-calculator.html">table rating calculator</a> shows what that rating adds to either policy type. For a fuller discussion of the specific situations where permanent coverage genuinely wins &mdash; estate liquidity, business buy-sell funding, lifelong dependents &mdash; see our companion guide on <a href="/blog/term-vs-whole-life-insurance.html">term vs whole life insurance</a>.</p>
 
             <h2>Frequently Asked Questions</h2>
 
@@ -165,6 +273,14 @@
 
             <h3>What term length should I choose?</h3>
             <p>Match the term to your financial obligations — 20 or 30 years is common for covering a mortgage or years until children are financially independent. A 10-year term suits shorter-term needs like a specific loan payoff period.</p>
+            <h3>When does whole life insurance break even?</h3>
+            <p>For a traditional whole life design, guaranteed cash value typically exceeds the total premiums you have paid somewhere between years 12 and 17, and sometimes as early as years 7 to 10 for a well-structured policy. Before that point, surrendering returns less than you put in. Policies designed with paid-up additions can reach break-even considerably sooner.</p>
+            <h3>Is buy term and invest the difference actually better?</h3>
+            <p>It depends on the return you earn. The calculator solves for the indifference return - the annual return below which whole life would have produced more money. That figure usually lands around 3% to 4%, which is close to whole life's guaranteed crediting range of roughly 2% to 4%. Investing wins on expected value at typical long-run market returns, but whole life's return is contractually guaranteed while the market's is not.</p>
+            <h3>Why is my whole life cash value zero in the first year?</h3>
+            <p>Early premiums go mostly toward the insurer's acquisition costs and the cost of providing the death benefit, so little is left to credit to the cash account. On top of that, surrender charges in the first year can equal or exceed the accumulated value, meaning a first-year cancellation may return nothing at all. Surrender charges typically decline annually and disappear after roughly 10 to 15 years.</p>
+            <h3>What is a Modified Endowment Contract and why does it matter?</h3>
+            <p>A MEC is a permanent policy that received too much premium too quickly, failing the IRS seven-pay test. Once a policy becomes a MEC it stays one permanently, and loans and withdrawals lose their tax-free treatment - they come out gains-first and are taxed as ordinary income. If you are shown an aggressively funded design, ask specifically whether it stays inside the seven-pay limit.</p>
 
             <p class="article-disclaimer">This calculator is for informational purposes only and does not constitute insurance or financial advice. Estimates are based on average market rates and simplified assumptions; actual premiums vary by insurer and individual health assessment. Consult a licensed insurance professional for personalized guidance.</p>
           </div>
@@ -249,6 +365,60 @@ function calcCompare() {
     <tr><td>Coverage period</td><td>Lifetime</td></tr>
     <tr><td>Death benefit</td><td>${fmt(coverage)}</td></tr>
   `;
+
+  // ---- Buy term & invest the difference ----
+  const horizon = parseInt(document.getElementById('horizon').value) || 30;
+  let ret = parseFloat(document.getElementById('invest-return').value);
+  if (isNaN(ret) || ret < 0) ret = 7;
+  ret = Math.min(ret, 15) / 100;
+
+  const sim = (r) => {
+    const wholeAnnual = wholeMonthly * 12, termAnnual = termMonthly * 12;
+    const alloc = t => t === 1 ? 0 : t === 2 ? 0.32 : t === 3 ? 0.58 : t === 4 ? 0.78 : 0.93;
+    let cv = 0, paidWhole = 0, paidTerm = 0, port = 0, breakEven = null, selfInsured = null;
+    const rows = [];
+    for (let t = 1; t <= horizon; t++) {
+      cv = cv * 1.045 + wholeAnnual * alloc(t);
+      paidWhole += wholeAnnual;
+      const termCost = t <= term ? termAnnual : 0;
+      paidTerm += termCost;
+      port = port * (1 + r) + (wholeAnnual - termCost) * (1 + r / 2);
+      if (breakEven === null && cv >= paidWhole) breakEven = t;
+      if (selfInsured === null && port >= coverage) selfInsured = t;
+      rows.push({ t: t, paidWhole: paidWhole, cv: cv, paidTerm: paidTerm, port: port });
+    }
+    return { cv: cv, port: port, breakEven: breakEven, selfInsured: selfInsured, rows: rows };
+  };
+
+  const s = sim(ret);
+
+  // Return rate at which the two strategies end up equal
+  let lo = 0, hi = 0.25;
+  for (let i = 0; i < 50; i++) {
+    const mid = (lo + hi) / 2;
+    if (sim(mid).port > s.cv) hi = mid; else lo = mid;
+  }
+  const indifference = lo * 100;
+
+  const gap = s.port - s.cv;
+  document.getElementById('btid-summary').innerHTML = `
+    <tr><td>Whole life cash value at year ${horizon}</td><td>${fmt(s.cv)}</td></tr>
+    <tr><td>Invested portfolio at year ${horizon}</td><td>${fmt(s.port)}</td></tr>
+    <tr><td><strong>${gap >= 0 ? 'Investing ahead by' : 'Whole life ahead by'}</strong></td><td><strong>${fmt(Math.abs(gap))}</strong></td></tr>
+    <tr><td>Whole life cash value breaks even with premiums paid</td><td>${s.breakEven ? 'Year ' + s.breakEven : 'Not within ' + horizon + ' years'}</td></tr>
+    <tr><td>Portfolio alone covers the ${fmt(coverage)} death benefit</td><td>${s.selfInsured ? 'Year ' + s.selfInsured : 'Not within ' + horizon + ' years'}</td></tr>
+    <tr><td>Return you would need to <em>fall below</em> for whole life to win</td><td>${indifference.toFixed(1)}%</td></tr>
+  `;
+
+  const marks = [];
+  for (let t = 5; t <= horizon; t += 5) marks.push(t);
+  if (marks[0] !== 1) marks.unshift(1);
+  document.getElementById('btid-rows').innerHTML = s.rows
+    .filter(r => marks.indexOf(r.t) !== -1)
+    .map(r => `<tr><td>${r.t}</td><td>${fmt(r.paidWhole)}</td><td>${fmt(r.cv)}</td><td>${fmt(r.paidTerm)}</td><td>${fmt(r.port)}</td></tr>`)
+    .join('');
+
+  document.getElementById('btid-block').style.display = 'block';
 
   const box = document.getElementById('compare-result');
   box.classList.add('visible');
