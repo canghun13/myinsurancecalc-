@@ -1,3 +1,198 @@
+# MyInsuranceCalc.com 인수인계 (2026-08-17 업데이트, 11회차 — 주간 정기작업)
+
+## 🔗 화면 확인 필요 (8/17)
+- [ ] https://myinsurancecalc.com/tools/term-vs-whole.html — **BTID 결과 블록 신규**. "Compare Now" 누른 뒤 나타나는 5열 연도별 표(Year/Whole paid/Cash value/Term paid/Portfolio)가 모바일에서 가로스크롤 되는지 확인. 여기가 이번 세션 최대 리스크 지점.
+- [ ] https://myinsurancecalc.com/tools/emr-calculator.html — 결과 표에 primary/excess 들여쓰기 행(└) 추가됨. 정렬 깨짐 확인 + 빈도vs심도 비교표 렌더링.
+
+## ⚠️ 미완: IndexNow 워크플로 (토큰 권한 문제 — 사용자 조치 필요)
+키 파일 `71ef233f3022cae13700a4a2348237e0.txt`는 루트에 커밋 완료. **GitHub Actions 워크플로는 이번 토큰에 `workflow` 스코프가 없어 push가 거부됐다.** 아래 내용을 `.github/workflows/indexnow.yml`로 직접 추가하면 된다(웹 UI에서 붙여넣기해도 됨). 안 해도 사이트는 정상 동작하며, 다음 세션 토큰에 workflow 스코프를 주면 그때 대신 넣을 수 있다.
+
+<details>
+<summary>.github/workflows/indexnow.yml (펼쳐서 복사)</summary>
+
+```yaml
+name: IndexNow submit
+
+# Bing/Yandex/Seznam accept URL submissions via IndexNow for near-immediate crawling.
+# Bing is currently this site's largest organic source, so changed pages are pushed here on every deploy.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed HTML files
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            FILES=$(git ls-files '*.html')
+          else
+            FILES=$(git diff --name-only --diff-filter=ACM ${{ github.event.before }} ${{ github.sha }} -- '*.html' || git ls-files '*.html')
+          fi
+          echo "$FILES" | grep -v '^$' > changed.txt || true
+          echo "count=$(wc -l < changed.txt)" >> $GITHUB_OUTPUT
+          cat changed.txt
+
+      - name: Submit to IndexNow
+        if: steps.changed.outputs.count != '0'
+        env:
+          INDEXNOW_KEY: 71ef233f3022cae13700a4a2348237e0
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          key = os.environ['INDEXNOW_KEY']
+          host = 'myinsurancecalc.com'
+          urls = []
+          for line in open('changed.txt'):
+              p = line.strip()
+              if not p:
+                  continue
+              p = p[:-len('index.html')] if p.endswith('index.html') else p
+              urls.append('https://%s/%s' % (host, p))
+          urls = sorted(set(urls))[:10000]
+          if not urls:
+              raise SystemExit(0)
+          body = json.dumps({
+              'host': host,
+              'key': key,
+              'keyLocation': 'https://%s/%s.txt' % (host, key),
+              'urlList': urls,
+          }).encode()
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=body,
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+          )
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print('IndexNow HTTP', r.status, '-', len(urls), 'URLs submitted')
+          PY
+```
+</details>
+
+## ✅ 이번 세션(8/17) 분석 요약
+
+### 🔴 이번 주 최대 발견: Bing이 실질 1번 채널이다
+처음 붙인 Bing 웹마스터 데이터가 지금까지의 전제를 뒤집는다.
+
+| | 노출 | 클릭 | CTR | 평균순위 |
+|---|---|---|---|---|
+| Google (3개월) | 33,975 | 16 | 0.05% | 65.4 |
+| **Bing** | **44** | **12** | **27%** | **1~9위** |
+
+- Bing에서 우리는 **1페이지에 있다.** `states/life-insurance/texas` 1위, `blog/life-insurance-after-leukemia` 1위, `blog/life-insurance-with-obesity` 3위, `states/home-insurance/connecticut` 3.5위, `states/business-insurance/new-york` 4.8위, `states/workers-comp/illinois` 2.3위.
+- GA4 세션 소스도 같은 방향: **bing 18 + yahoo 15 + duckduckgo 11 = 44** vs **google 7 + search.google.com referral 14 = 21**. Bing 계열이 Google의 2배 이상이고, 야후·덕덕고는 Bing 인덱스를 쓰므로 전부 같은 채널로 봐야 한다.
+- **해석**: 우리 콘텐츠 품질이 문제가 아니다. Google에서만 65위인 것이고, 이는 도메인 권위/신뢰도 축적 문제다. Bing은 신생 도메인에 훨씬 관대하다.
+- **전략적 함의**: Google 순위를 밀어올리는 데만 자원을 쓰면 회수가 느리다. **Bing 노출 자체를 늘리는 게 단기 수익화에 훨씬 빠른 길**이다. 그래서 이번에 IndexNow를 넣었다(Bing/Yandex/Seznam 즉시 색인 제출 프로토콜, Google은 미지원이라 손해 없음).
+- **다음 세션 필수**: Bing 데이터 기간이 짧고 노출 44로 표본이 작다. **다음 export에서 Bing 노출이 세 자리로 늘었는지 확인할 것.** 늘었다면 Bing 우선 전략을 공식화하고, 안 늘면 Bing Webmaster에 사이트맵이 제대로 제출됐는지부터 점검.
+
+### Bing 쿼리가 알려주는 것 (Google 데이터엔 안 보이던 패턴)
+Bing 상위 쿼리는 전부 **극단적 롱테일 + 구체적 수식어**다: "workers comp maryland rates for employers"(6위), "tennessee workers compensation construction payroll requirements"(3위), "connecticut homeowners insurance rates by county"(3위), "kansas homeowners insurance rates by county"(4위), "small business insurance ny cost factors"(3위), "california self employed health insurance cost calculator"(9위), "can you get life insurance if you had a stem cell transplant for leukemia"(1위).
+- **"rates by county"가 서로 다른 두 주(CT/KS)에서 각각 클릭됨.** 우리 home-insurance 페이지엔 "Rates by City" 표만 있다. 카운티 단위 요청이 반복된다는 신호 — 다만 50개 주 카운티 데이터를 지어낼 수는 없으니, 다음 세션에 **기존 city 표에 해당 city의 county명을 병기**하는 저비용 대응을 검토할 것(사실 매핑이라 안전).
+- 롱테일 전략이 Bing에서는 이미 작동 중이라는 증거다. 전략 유지.
+
+### Google 트래픽
+3개월 노출 31,946 → **33,975**(+6.4%), 클릭 13 → **16**. 주간 노출 2,023 → 2,301 → **2,213** — 3주 연속 2,000선. **주 2,200이 새 기준선으로 확정됐다고 보면 된다.**
+- 클릭 16개 중 **tools 9개**. tools CTR 0.111% vs blog 0.028%로 **4배 격차 유지**(3주 연속). tools 노출도 6,638→8,113(+22%)로 계속 최고 성장. 이번 세션에 tools 2건을 고른 근거.
+- `tools/ev-insurance.html`이 클릭 3개(CTR 5.77%, 순위 24.5)로 단일 최다. 노출 52뿐인데 클릭 3 — **순위 20위권 tools는 실제로 클릭이 나온다**는 직접 증거.
+- `blog/life-insurance-after-colon-cancer.html` 클릭 2 (CTR 7.69%, 순위 19.7). 20위 안쪽 진입 시 CTR이 급등하는 패턴 확인.
+
+### 🔴 색인: 21건 그대로 (8/10 가설 기각)
+"발견됨-현재 색인이 생성되지 않음" **21건 전혀 안 줄었다. URL 목록도 8/10과 완전히 동일**, 차트도 7/25부터 21에서 평탄. 최종 크롤링 날짜가 전부 `1970-01-01`(=크롤링된 적 없음).
+- **8/10의 "내부링크 부족 때문" 가설은 기각한다.** states 350페이지에 상호링크를 넣어 인바운드를 2~4 → 7로 올렸는데 2주간 변화 0.
+- **새 해석**: 인바운드 링크 수 문제가 아니라 **Google의 이 도메인에 대한 크롤 예산 자체가 고갈**된 상태다. 21개는 "발견은 했으나 크롤 순위가 밀려 영원히 대기 중"인 것. 사이트 전체 평균순위 65위라는 것도 같은 원인(도메인 신뢰도)이다.
+- **함의**: 내부링크 추가로는 못 푼다. 외부 신호(백링크)나 시간이 필요하다. **다음 세션에 이 21건을 또 건드리지 말 것.** 대신 Bing 쪽에서 이 URL들이 색인돼 있는지 확인하는 게 실용적이다(IndexNow가 그 역할).
+
+### GA4 (7/20~8/16, 28일)
+활성사용자 **151**(123→151, +23%), 이벤트 945, 참여시간 39.3초(37.5→39.3, 소폭 개선). 홈 이탈률 **76.9%**(79.2→76.9, 3세션 연속 개선 중이나 여전히 높음).
+- direct 103세션(비중 68%). **AI 어시스턴트 경유 13세션**(copilot 10, perplexity 2, chatgpt 1) — 8세션→13세션으로 증가. llms.txt 유지 근거 강화.
+- 지역: Singapore 19 / Istanbul 8 — 미국 외 비중이 높다. **US 트래픽이 아니면 보험 제휴 수익으로 전환되지 않는다.** 클릭 16개의 실질 가치를 판단할 때 이 점을 감안할 것.
+
+### 카테고리 효율
+| 카테고리 | 노출 | 페이지 | 페이지당 | 클릭 | CTR |
+|---|---|---|---|---|---|
+| blog | 14,153 | 50 | 283 | 4 | 0.028% |
+| **tools** | **8,113** | 31 | **262** | **9** | **0.111%** |
+| states/workers-comp | 4,676 | 44 | 106 | 2 | 0.043% |
+| states/business-insurance | 3,885 | 49 | 79 | 1 | 0.026% |
+| states/renters-insurance | 1,766 | 51 | 35 | 0 | 0 |
+| states/car·health·home | 1,214 | 89 | 14 | 0 | 0 |
+| states/life-insurance | 69 | 25 | 3 | 0 | 0 |
+
+### 8/10 작업분 성과 (2주차 — 아직 판정 이르다)
+- `blog/life-insurance-after-dui.html`: 303노출@24.74 → **261@26.36**. 노출·순위 모두 소폭 악화. 단 3개월 평균이라 7일치가 희석된다.
+- `blog/life-insurance-for-nurses.html`: 순위 **27.6 → 23.01로 개선**, 노출 86→129(+50%). 4건 중 가장 뚜렷한 반응.
+- `states/business-insurance/maine.html`: 327@30.71 → 328@30.77. 변화 없음.
+- `states/business-insurance/vermont.html`: 271@58.22 → 274@57.66. 변화 없음.
+- `blog/life-insurance-after-thyroid-cancer.html`(8/3분): 486@27.14 → 507@27.14. 노출만 소폭.
+- **판정**: nurses만 확실히 반응, 나머지는 무반응. **"기존 페이지 확장"의 효과가 생각보다 약하다.** 3주 연속 이 패턴이면 확장 전략 자체의 비중을 낮추고 신규 계산기 쪽으로 더 옮겨야 한다.
+- `blog/life-insurance-for-private-pilots.html`, `tools/long-term-care-insurance.html`: **여전히 노출 0, 미색인 21건에 포함.** 위 크롤예산 결론과 일치.
+
+## 🎯 이번 세션 실행 내역 (커밋 `15dabd2`)
+1. **IndexNow 키 파일 커밋** + 워크플로는 토큰 권한 부족으로 미반영(위 미완 항목 참조).
+2. **`tools/term-vs-whole.html` 고도화** (646→2,101단어). 순위 20.4로 tools 중 1페이지에 가장 근접했는데 본문이 646단어로 사이트 최하위권이었다. 기존 계산기는 meta description에 "break-even analysis"를 약속해놓고 실제로는 월 보험료 비교만 했다 — 약속 불일치부터 해소.
+   - BTID(buy term & invest the difference) 엔진 신규: 입력 2개 추가(비교기간, 기대수익률), 종신 해약환급금 연도별 시뮬(1년차 0원, 취득비용 선반영, 4.5% 부리) vs 차액투자 포트폴리오.
+   - 산출 3종: **환급금 손익분기 연차(≈14년)**, **무차별수익률(≈3.1~4.0%)**, **자가보험 도달 연차**.
+   - 무차별수익률이 종신 보증이율(2~4%)과 겹친다는 걸 수치로 보여주는 게 핵심 차별점. 경쟁사(InsuranceGeek·Policygenius·CostSignals·NextInsurance)는 전부 보험료 비교까지만 하고 이 계산을 안 한다.
+   - 본문 신규: 환급금 0원 시작 이유(취득비용·해약공제 10~15년), PUA 설계 차이, MEC 7-pay 테스트, 컨버전 특약. FAQ 5→9.
+3. **`tools/emr-calculator.html` 고도화** (1,229→2,724단어). workers-comp 클러스터(4,676노출) 허브인데 계산 로직이 단순 손해율이었다.
+   - **실제 NCCI 구조로 교체**: claim 건수 입력 신규 → 클레임당 **$17,500 split point**로 primary/excess 분리, 규모기반 credibility 가중(W), ballast 적용. 결과에 primary/excess 내역·무사고 시 최소 mod·**1.00 prequalification 통과 여부** 표시.
+   - 이로써 **"소액 다건이 대형 1건보다 불리"가 실제로 계산된다** (동일 15만달러 손해: 6건→1.32 vs 1건→1.01). 단순 비율 계산기는 이 역전을 못 잡는다. 경쟁사(everycalculators·metricgate·occupros·smartqhse)는 공식을 *설명*만 하고 구현은 안 했다 — 여기가 우리 우위.
+   - 신규 섹션: 빈도vs심도, 계약 수주 걸림돌로서의 1.00 기준선·open reserve 조정(단기에 mod를 움직일 유일한 레버), 독립요율국/독점기금 주(ND·OH·WA·WY) 구분.
+   - **버그성 이슈 함께 해소**: FAQPage 스키마 5개가 본문에 대응 h3 없이 존재했다(구조화데이터 정책 위반 소지). 가시 FAQ 섹션 신설 + 4개 추가(총 9).
+4. llms.txt 두 계산기 설명 갱신.
+5. 검증: 447파일 / ld+json 파싱 실패 0, div·table 밸런스 0, 깨진 내부링크 0, sitemap 446 URL 유효, 신규 JS 2건 `node --check` 통과 + 케이스별 런타임 출력 확인(로직 검증까지 완료).
+
+## 📊 키워드 리서치 (다음 세션 재활용)
+**striking distance(8~32위) = 27쿼리 / 935노출**(전주 31/1,031에서 축소). 풀 자체가 줄고 있다는 점 주의.
+
+| 클러스터 | 노출 | 순위 | 상태 |
+|---|---|---|---|
+| DUI 생명보험 | 204 | 25.7 | 8/10 확장, 무반응 |
+| Maine 소상공인 | 237 | 25.4 | 8/10 확장, 무반응 |
+| 파일럿(airline term) | 89 | 31.2 | 8/3 분화, 대기 |
+| 간호사 | 84 | 26.6 | 8/10 확장, **개선** |
+| 갑상선암 | 59 | 29.8 | 8/3 확장, 미미 |
+| 방광암/신장암/기저세포암 | 54 | 20~27 | **미착수 — 다음 최우선 후보** |
+| EMR/사우스캐롤라이나 | 45 | 14.2~32 | ✅ 이번 세션 계산기 고도화 |
+| **term vs whole 계산기** | 28 | 20.4 | ✅ 이번 세션 고도화 |
+| Montana state fund | 28 | 25.9 | 미착수 |
+
+**❌ 조사 후 기각 유지**: GL 계산기 신규(MoneyGeek이 50개주 각각 보유 — 최포화). 재검토 금지.
+
+**🔍 다음 세션 후보**:
+- **암 클러스터 분화** — 방광암 38@23.6(상승 중), 신장암 9@20.2, 기저세포암 7@27.1. 갑상선/대장암 페이지가 이미 있고 대장암이 클릭 2개를 냈다. 20위권 진입 시 CTR 급등 패턴을 감안하면 여기가 가장 현실적.
+- **home-insurance city 표에 county명 병기** — Bing "rates by county" 신호 대응. 사실 매핑이라 안전하고 저비용.
+- **Montana state fund** 28@25.9 — 독점/경쟁 주 구분 콘텐츠는 EMR 계산기에서 이미 다뤘으니 state 페이지와 연결 가능.
+
+## 💰 수익화 판단 (8/17)
+- **tools 우위는 이제 확정 사실**(3주 연속 CTR 4배, 클릭 16 중 9). 신규 자원은 계산기에 배분.
+- **"기존 블로그 확장"의 ROI가 약하다는 증거가 쌓였다.** 8/10 확장 4건 중 1건만 반응. 다음 세션부터 확장:신규 비중을 조정할 것.
+- **Bing 우선이 단기 수익화 최단 경로.** Google 65위를 20위로 올리는 것보다, 이미 1~9위인 Bing에서 노출을 늘리는 게 훨씬 빠르다. IndexNow 워크플로를 꼭 넣어라.
+- **다만 냉정하게**: 클릭 16개 중 상당수가 비US 트래픽(싱가포르 19명, 이스탄불 8명)이다. 제휴 수익으로 전환 가능한 US 클릭은 그보다 적다. 제휴 가입(Hiscox/CJ, Lemonade/Impact)은 여전히 시기상조 판단 유지 — 넣어도 0에 수렴한다.
+- **1년 데드라인 관점**: 8/10에 "다음 2~3세션 안에 클릭 13→30 못 가면 전략 재검토"라고 적었다. 현재 16. **아직 미달이지만 방향은 맞다(+23%)**. 단 그 성장의 실체는 Google이 아니라 Bing 쪽이라는 게 이번에 드러났으므로, 재검토의 내용은 "콘텐츠를 만드느냐 마느냐"가 아니라 **"어느 검색엔진을 타깃하느냐"**로 바뀌어야 한다.
+
+## 🎯 다음 작업 우선순위 (8/17 확정)
+**P0. Bing 노출이 세 자리로 늘었는지 확인.** IndexNow 워크플로가 반영됐다는 전제. 늘었으면 Bing 우선 전략 공식화.
+**P1. 이번 고도화 2건(term-vs-whole 20.4 / emr 45)의 순위 변화 확인.** 특히 term-vs-whole이 20 → 10위권 진입하는지. tools는 20위권에서 실제 클릭이 나온다는 게 ev-insurance로 입증됐다.
+**P2. 암 클러스터 분화** (방광암/신장암/기저세포암 54노출@20~27).
+**P3. home-insurance county명 병기** (Bing 신호 대응, 저비용).
+
+**❌ 하지 말 것**:
+- **미색인 21건 추가 대응** — 내부링크로는 안 풀린다는 게 2주 실험으로 확인됨. 크롤 예산 문제.
+- state FAQ 잔여분 완결, states/life-insurance 보강(노출 69, 페이지당 3).
+- GL 계산기 신규 제작, Ezoic 재검토.
+- 검색 수요 미확인 니치 툴.
+
 # MyInsuranceCalc.com 인수인계 (2026-08-10 업데이트, 10회차 — 주간 정기작업)
 
 ## 🔗 확인 필요 (8/10)
