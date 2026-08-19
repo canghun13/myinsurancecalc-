@@ -1,3 +1,150 @@
+# MyInsuranceCalc.com 인수인계 (2026-08-19 업데이트, 12회차 — 신규 클러스터)
+
+## 🔗 화면 확인 필요 (8/19)
+- [ ] https://myinsurancecalc.com/blog/life-insurance-for-dangerous-hobbies.html — **표 2개**(4열 수단비교표 + 4열 요금표). 4열 표가 모바일 가로스크롤 되는지 확인. 이번 신규분 중 최대 리스크.
+- [ ] https://myinsurancecalc.com/blog/life-insurance-for-scuba-divers.html — 표 2개(2열 수심밴드 + 3열 요금표).
+- [ ] 나머지 2건(skydivers / does-life-insurance-cover-extreme-sports)은 표 1개씩이라 위 2건만 보면 된다.
+
+## ⚠️ IndexNow 워크플로 — 2주 연속 실패, 사용자 조치 필요
+**이번 토큰(8/19)에도 `workflow` 스코프가 없어 push가 또 거부됐다.** 키파일 `71ef233f3022cae13700a4a2348237e0.txt`는 8/17에 이미 루트 커밋됨. 아래 YAML을 `.github/workflows/indexnow.yml`로 직접 넣어야 한다(GitHub 웹 UI에서 Add file → Create new file로 붙여넣기가 제일 빠름).
+
+**Bing이 우리 최대 유입원인데 이게 계속 안 들어가고 있다는 걸 인지할 것.** 다음 세션 토큰 발급 시 `workflow` 스코프 체크박스를 반드시 포함하거나, 아니면 사용자가 직접 넣고 handover에서 이 항목을 지워라.
+
+<details>
+<summary>.github/workflows/indexnow.yml (펼쳐서 복사)</summary>
+
+```yaml
+name: IndexNow submit
+
+# Bing/Yandex/Seznam accept URL submissions via IndexNow for near-immediate crawling.
+# Bing is currently this site's largest organic source, so changed pages are pushed here on every deploy.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed HTML files
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            FILES=$(git ls-files '*.html')
+          else
+            FILES=$(git diff --name-only --diff-filter=ACM ${{ github.event.before }} ${{ github.sha }} -- '*.html' || git ls-files '*.html')
+          fi
+          echo "$FILES" | grep -v '^$' > changed.txt || true
+          echo "count=$(wc -l < changed.txt)" >> $GITHUB_OUTPUT
+          cat changed.txt
+
+      - name: Submit to IndexNow
+        if: steps.changed.outputs.count != '0'
+        env:
+          INDEXNOW_KEY: 71ef233f3022cae13700a4a2348237e0
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          key = os.environ['INDEXNOW_KEY']
+          host = 'myinsurancecalc.com'
+          urls = []
+          for line in open('changed.txt'):
+              p = line.strip()
+              if not p:
+                  continue
+              p = p[:-len('index.html')] if p.endswith('index.html') else p
+              urls.append('https://%s/%s' % (host, p))
+          urls = sorted(set(urls))[:10000]
+          if not urls:
+              raise SystemExit(0)
+          body = json.dumps({
+              'host': host,
+              'key': key,
+              'keyLocation': 'https://%s/%s.txt' % (host, key),
+              'urlList': urls,
+          }).encode()
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=body,
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+          )
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print('IndexNow HTTP', r.status, '-', len(urls), 'URLs submitted')
+          PY
+```
+</details>
+
+## ✅ 이번 세션(8/19) 작업: 신규 클러스터 발굴
+
+이번엔 GSC 데이터를 보지 않고 **외부에서 새 클러스터를 찾는 세션**이었다(사용자 지시). 결과: **위험취미(avocation) 생명보험 클러스터 4페이지 신규**.
+
+### 왜 이 클러스터인가 (선정 과정)
+후보를 여러 개 놓고 경쟁강도를 실제로 조사한 뒤 골랐다.
+
+| 후보 클러스터 | 조사 결과 | 판정 |
+|---|---|---|
+| **위험취미(스쿠버/스카이다이빙/등반/레이싱)** | 대형 지배자 없음. 활동별 롱테일은 전부 소형 브로커 블로그 | ✅ **채택** |
+| 비시민권자/H1B·영주권자 생명보험 | Policygenius·Guardian이 이미 상위 점유. 다만 H1B/F-1/DACA 세부는 브로커 블로그뿐 | 🔶 차순위 후보로 보류 |
+| 이혼 판결 생명보험(court-ordered) | NY Life·Progressive·MoneyGeek·Guardian·Aflac 전부 진입. 州별 revocation-on-divorce 법령 각도만 열려 있음 | 🔶 보류(법률 민감) |
+
+**위험취미를 고른 결정적 이유 3가지**:
+1. **우리에게만 있는 장치** — `tools/table-rating-calculator.html`(8/3 제작)이 flat extra를 계산한다. 아보케이션 요율의 기본 수단이 바로 flat extra다. **계산기×콘텐츠 결합은 경쟁사 누구도 못 가진 자산.** 4페이지 전부 계산기 공식과 수치를 일치시켰다(40세 남 비흡연 50만달러 20년 기준).
+2. **검증된 패턴 재사용** — 8/3 파일럿 클러스터 분화(pilots→private→helicopter)에서 신규 페이지가 20~22위로 빠르게 안착했다. 아보케이션은 항공과 같은 언더라이팅 카테고리라 구조가 동일하다.
+3. **경쟁 구조가 DUI·갑상선암과 같다** — 우리가 이미 성과를 낸 두 클러스터와 판박이(대형 미디어 부재, 브로커 블로그 난립).
+
+### 신규 4건
+1. **`blog/life-insurance-for-dangerous-hobbies.html` (허브, 1,957단어)**
+   flat extra / table rating / exclusion rider **3개 수단 비교표**(시간에 따른 거동 차이가 핵심 — flat extra는 소멸 가능, exclusion은 영구), 실제 달러 환산표, 요율 결정 4변수(빈도·강도·자격증·안전맥락), MIB 7년 기록 경고.
+   - **차별점**: 경쟁사는 "비싸진다"까지만 쓴다. 우리는 **50만달러 기준 flat extra $2.50이면 아보케이션 charge만으로 보험료의 2배**라는 걸 숫자로 보여주고, **Table 2가 최소 flat extra보다 훨씬 싸다**는 역전 현상을 짚는다.
+2. **`blog/life-insurance-for-scuba-divers.html` (1,791단어)**
+   수심 밴드 60/100/130ft, 연간 다이브 횟수 밴드, **자격증 레벨 초과 다이빙이 수심 문제가 아니라 판단력 문제로 읽힌다**는 점, 케이브·난파선 침투·아이스는 별개 활동, DAN 사고보험≠생명보험.
+3. **`blog/life-insurance-for-skydivers.html` (1,811단어)**
+   USPA 회원+규제 드롭존이면 **Preferred Plus 가능**(캐리어 선택이 최대 변수). USPA 2023년 3.65M 점프/10명 사망=10만 점프당 0.27. **총 점프수는 유리하고 연간 점프수는 불리한 비대칭** — 스쿠버와 반대 구조라 이 점을 명시.
+4. **`blog/does-life-insurance-cover-extreme-sports.html` (1,862단어)**
+   클레임 측면. 부지급 3사유(면책특약 / contestability 내 미고지 / 불법행위 중 사망).
+   - **이번 세션 최대 차별점: "보험 가입 후에 취미를 시작한 경우"**. 경쟁사가 한 문장으로 넘기는 지점을 질문 시제(현재형 vs 미래의향형)·부활·전환까지 나눠 정면으로 다뤘다. 실제 소송 사례 패턴(휴가 중 스쿠버 시도 후 무관한 사망 → 초기 부지급 → 이의신청에서 뒤집힘)까지 반영. **롱테일 검색 의도로는 이게 가장 명확한 빈틈이었다.**
+   - AD&D가 극한스포츠를 면책하는 경우가 많다는 경고 포함(사람들이 안전망으로 착각하는 지점).
+
+### 중복 검증 (사용자 지시사항)
+shingle(8-gram) 중복 검사 실행:
+- 기존 페이지 대비 최대 **2.6%**(hobbies vs after-dui, flat extra 설명 부분)
+- 신규 4개 상호간 최대 **5.0%**(사이드바·면책조항 보일러플레이트)
+→ 카니발라이제이션 위험 없음.
+
+### 내부링크 (8/17 크롤예산 결론 반영)
+8/17에 "신규 페이지는 인바운드 5개 이상을 기본으로" 규칙을 세웠으므로 처음부터 그렇게 깔았다.
+**hobbies 9 / skydivers 6 / scuba 5 / extreme-sports 5.**
+경로: blog/index 카드 4장, table-rating-calculator 3곳(조건별 가이드 목록·위험취미 항목·flat extra 본문), pilots·private-pilots·helicopter-pilots·after-dui 사이드바. sitemap 446→450, llms.txt 4건 추가.
+
+## 🎯 다음 작업 우선순위 (8/19 확정)
+**P0. IndexNow 워크플로 반영 확인.** 2주째 미완. Bing이 최대 유입원인데 방치 중.
+**P1. 이번 신규 클러스터 4건의 색인·순위 확인.** 파일럿 클러스터는 7일 만에 색인+20위권이었다. 같은 속도가 나오는지가 "새 클러스터 발굴" 전략의 검증 지점. **특히 4건이 미색인 21건 목록에 새로 들어가는지 반드시 볼 것** — 들어간다면 인바운드 5개 규칙도 무력하다는 뜻이고, 크롤예산 고갈이 확정되어 신규 콘텐츠 생산 자체를 재검토해야 한다.
+**P2. 8/17 고도화 2건(term-vs-whole 20.4 / emr 45) 순위 변화 확인.**
+**P3. 암 클러스터 분화**(방광암 38@23.6 / 신장암 9@20.2 / 기저세포암 7@27.1) — 8/17부터 이월.
+**P4. 위험취미 클러스터 2차 확장** — P1이 잘 나오면 등반/모터스포츠/BASE 추가. **먼저 성과 확인하고 판단할 것, 선제 확장 금지.**
+
+**🔶 차순위 신규 클러스터 후보(이번에 조사만 하고 보류)**:
+- **비시민권자·비자소지자 생명보험** — H1B/F-1/DACA/ITIN 세부는 브로커 블로그만 있다. 다만 상위 헤드는 Policygenius·Guardian이 잡고 있어 롱테일로만 진입 가능. GA4에 싱가포르·이스탄불 등 비US 트래픽이 많다는 점과 연결해볼 가치 있음(단 제휴 수익 전환은 여전히 US 한정).
+- **이혼 판결 생명보험** — 州별 revocation-on-divorce 법령 차이가 우리 50개주 구조와 맞물린다. 다만 법률 민감 영역이라 신중.
+
+**❌ 하지 말 것(유지)**:
+- **미색인 21건 추가 대응** — 내부링크로는 안 풀린다는 게 2주 실험으로 확인됨.
+- state FAQ 잔여분 완결, states/life-insurance 보강(노출 69, 페이지당 3).
+- **GL 계산기 신규 제작**(MoneyGeek 50개주 보유, 최포화), Ezoic 재검토.
+- 검색 수요 미확인 니치 툴.
+
+## 💰 수익화 판단 (8/19 — 변경 없음, 근거만 추가)
+- tools CTR 4배 우위 유지. 다만 이번 세션은 사용자 지시로 신규 클러스터(블로그)를 만들었다. **블로그는 CTR이 낮지만 클러스터 진입 자체가 목적**이므로 이건 tools 우선 원칙과 충돌하지 않는다 — 위험취미 클러스터의 수익 경로는 블로그 자체가 아니라 **table-rating-calculator로 트래픽을 넘기는 것**이고, 4페이지 전부 계산기로 링크를 걸어놨다.
+- 아보케이션은 **고소득·고관여 응답자**(파일럿·다이버·점퍼)라 제휴 단가 관점에서 일반 생명보험 트래픽보다 유리하다. 다만 클릭 절대량이 여전히 병목이라는 판단은 그대로.
+
 # MyInsuranceCalc.com 인수인계 (2026-08-17 업데이트, 11회차 — 주간 정기작업)
 
 ## 🔗 화면 확인 필요 (8/17)
