@@ -1,0 +1,65 @@
+name: IndexNow submit
+
+# Bing/Yandex/Seznam accept URL submissions via IndexNow for near-immediate crawling.
+# Bing is currently this site's largest organic source, so changed pages are pushed here on every deploy.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed HTML files
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            FILES=$(git ls-files '*.html')
+          else
+            FILES=$(git diff --name-only --diff-filter=ACM ${{ github.event.before }} ${{ github.sha }} -- '*.html' || git ls-files '*.html')
+          fi
+          echo "$FILES" | grep -v '^$' > changed.txt || true
+          echo "count=$(wc -l < changed.txt)" >> $GITHUB_OUTPUT
+          cat changed.txt
+
+      - name: Submit to IndexNow
+        if: steps.changed.outputs.count != '0'
+        env:
+          INDEXNOW_KEY: 71ef233f3022cae13700a4a2348237e0
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          key = os.environ['INDEXNOW_KEY']
+          host = 'myinsurancecalc.com'
+          urls = []
+          for line in open('changed.txt'):
+              p = line.strip()
+              if not p:
+                  continue
+              p = p[:-len('index.html')] if p.endswith('index.html') else p
+              urls.append('https://%s/%s' % (host, p))
+          urls = sorted(set(urls))[:10000]
+          if not urls:
+              raise SystemExit(0)
+          body = json.dumps({
+              'host': host,
+              'key': key,
+              'keyLocation': 'https://%s/%s.txt' % (host, key),
+              'urlList': urls,
+          }).encode()
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=body,
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+          )
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print('IndexNow HTTP', r.status, '-', len(urls), 'URLs submitted')
+          PY
