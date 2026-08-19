@@ -154,6 +154,18 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Life Insurance for Helicopter Pilots](https://myinsurancecalc.com/blog/life-insurance-for-helicopter-pilots.html)
   Rotorcraft life insurance: mission-specific underwriting (EMS, offshore, ENG, tour, utility, firefighting), aircraft type and hours-in-type, military-to-civilian transition.
 
+- [Life Insurance for Dangerous Hobbies](https://myinsurancecalc.com/blog/life-insurance-for-dangerous-hobbies.html)
+  Hub for avocation underwriting. Explains the three pricing instruments (flat extra, table rating, exclusion rider), how they differ over the life of a policy, dollar comparisons at typical flat extra levels, and the four variables (frequency, intensity, certification, safety context) that determine an avocation rating.
+
+- [Life Insurance for Scuba Divers](https://myinsurancecalc.com/blog/life-insurance-for-scuba-divers.html)
+  Depth bands (60/100/130 feet), dives-per-year frequency thresholds, certification level requirements, and why cave diving, wreck penetration, ice, and technical diving are underwritten as separate activities. Also covers why dive accident coverage is not a substitute for life insurance.
+
+- [Life Insurance for Skydivers](https://myinsurancecalc.com/blog/life-insurance-for-skydivers.html)
+  How jump count, USPA membership, licence level, and drop zone regulation affect skydiving underwriting, including why some carriers write experienced jumpers at Preferred Plus with no surcharge while others decline the same profile.
+
+- [Does Life Insurance Cover Extreme Sports?](https://myinsurancecalc.com/blog/does-life-insurance-cover-extreme-sports.html)
+  The claims-side question: the three situations where a claim is denied (exclusion rider, non-disclosure within the contestability period, death during an illegal act), and what happens when someone takes up a hazardous hobby after the policy is already in force.
+
 - [Life Insurance for Truck Drivers](https://myinsurancecalc.com/blog/life-insurance-for-truck-drivers.html)
   OTR vs regional vs local driver distinctions, sleep apnea and life insurance, owner-operator vs employee considerations, how insurers rate trucking occupations, group coverage through employer.
 
