@@ -5,82 +5,10 @@
 - [ ] https://myinsurancecalc.com/blog/life-insurance-for-scuba-divers.html — 표 2개(2열 수심밴드 + 3열 요금표).
 - [ ] 나머지 2건(skydivers / does-life-insurance-cover-extreme-sports)은 표 1개씩이라 위 2건만 보면 된다.
 
-## ⚠️ IndexNow 워크플로 — 2주 연속 실패, 사용자 조치 필요
-**이번 토큰(8/19)에도 `workflow` 스코프가 없어 push가 또 거부됐다.** 키파일 `71ef233f3022cae13700a4a2348237e0.txt`는 8/17에 이미 루트 커밋됨. 아래 YAML을 `.github/workflows/indexnow.yml`로 직접 넣어야 한다(GitHub 웹 UI에서 Add file → Create new file로 붙여넣기가 제일 빠름).
+## ✅ IndexNow 반영 완료 (8/19)
+`.github/workflows/indexnow.yml` + 루트 키파일 `71ef233f3022cae13700a4a2348237e0.txt` 모두 반영됨(커밋 `d3b860d`). html 변경이 포함된 push마다 변경분만 자동 제출된다. 전체 재제출이 필요하면 Actions 탭에서 "IndexNow submit" → Run workflow.
 
-**Bing이 우리 최대 유입원인데 이게 계속 안 들어가고 있다는 걸 인지할 것.** 다음 세션 토큰 발급 시 `workflow` 스코프 체크박스를 반드시 포함하거나, 아니면 사용자가 직접 넣고 handover에서 이 항목을 지워라.
-
-<details>
-<summary>.github/workflows/indexnow.yml (펼쳐서 복사)</summary>
-
-```yaml
-name: IndexNow submit
-
-# Bing/Yandex/Seznam accept URL submissions via IndexNow for near-immediate crawling.
-# Bing is currently this site's largest organic source, so changed pages are pushed here on every deploy.
-
-on:
-  push:
-    branches: [main]
-    paths:
-      - '**.html'
-  workflow_dispatch:
-
-jobs:
-  submit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Collect changed HTML files
-        id: changed
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            FILES=$(git ls-files '*.html')
-          else
-            FILES=$(git diff --name-only --diff-filter=ACM ${{ github.event.before }} ${{ github.sha }} -- '*.html' || git ls-files '*.html')
-          fi
-          echo "$FILES" | grep -v '^$' > changed.txt || true
-          echo "count=$(wc -l < changed.txt)" >> $GITHUB_OUTPUT
-          cat changed.txt
-
-      - name: Submit to IndexNow
-        if: steps.changed.outputs.count != '0'
-        env:
-          INDEXNOW_KEY: 71ef233f3022cae13700a4a2348237e0
-        run: |
-          python3 - <<'PY'
-          import json, os, urllib.request
-          key = os.environ['INDEXNOW_KEY']
-          host = 'myinsurancecalc.com'
-          urls = []
-          for line in open('changed.txt'):
-              p = line.strip()
-              if not p:
-                  continue
-              p = p[:-len('index.html')] if p.endswith('index.html') else p
-              urls.append('https://%s/%s' % (host, p))
-          urls = sorted(set(urls))[:10000]
-          if not urls:
-              raise SystemExit(0)
-          body = json.dumps({
-              'host': host,
-              'key': key,
-              'keyLocation': 'https://%s/%s.txt' % (host, key),
-              'urlList': urls,
-          }).encode()
-          req = urllib.request.Request(
-              'https://api.indexnow.org/indexnow',
-              data=body,
-              headers={'Content-Type': 'application/json; charset=utf-8'},
-          )
-          with urllib.request.urlopen(req, timeout=30) as r:
-              print('IndexNow HTTP', r.status, '-', len(urls), 'URLs submitted')
-          PY
-```
-</details>
+색인 관리의 주채널은 사이트맵 재제출이고 IndexNow는 보조다. **다음 세션에서 이 항목 다시 꺼내지 말 것.**
 
 ## ✅ 이번 세션(8/19) 작업: 신규 클러스터 발굴
 
@@ -125,7 +53,6 @@ shingle(8-gram) 중복 검사 실행:
 경로: blog/index 카드 4장, table-rating-calculator 3곳(조건별 가이드 목록·위험취미 항목·flat extra 본문), pilots·private-pilots·helicopter-pilots·after-dui 사이드바. sitemap 446→450, llms.txt 4건 추가.
 
 ## 🎯 다음 작업 우선순위 (8/19 확정)
-**P0. IndexNow 워크플로 반영 확인.** 2주째 미완. Bing이 최대 유입원인데 방치 중.
 **P1. 이번 신규 클러스터 4건의 색인·순위 확인.** 파일럿 클러스터는 7일 만에 색인+20위권이었다. 같은 속도가 나오는지가 "새 클러스터 발굴" 전략의 검증 지점. **특히 4건이 미색인 21건 목록에 새로 들어가는지 반드시 볼 것** — 들어간다면 인바운드 5개 규칙도 무력하다는 뜻이고, 크롤예산 고갈이 확정되어 신규 콘텐츠 생산 자체를 재검토해야 한다.
 **P2. 8/17 고도화 2건(term-vs-whole 20.4 / emr 45) 순위 변화 확인.**
 **P3. 암 클러스터 분화**(방광암 38@23.6 / 신장암 9@20.2 / 기저세포암 7@27.1) — 8/17부터 이월.
@@ -150,81 +77,6 @@ shingle(8-gram) 중복 검사 실행:
 ## 🔗 화면 확인 필요 (8/17)
 - [ ] https://myinsurancecalc.com/tools/term-vs-whole.html — **BTID 결과 블록 신규**. "Compare Now" 누른 뒤 나타나는 5열 연도별 표(Year/Whole paid/Cash value/Term paid/Portfolio)가 모바일에서 가로스크롤 되는지 확인. 여기가 이번 세션 최대 리스크 지점.
 - [ ] https://myinsurancecalc.com/tools/emr-calculator.html — 결과 표에 primary/excess 들여쓰기 행(└) 추가됨. 정렬 깨짐 확인 + 빈도vs심도 비교표 렌더링.
-
-## ⚠️ 미완: IndexNow 워크플로 (토큰 권한 문제 — 사용자 조치 필요)
-키 파일 `71ef233f3022cae13700a4a2348237e0.txt`는 루트에 커밋 완료. **GitHub Actions 워크플로는 이번 토큰에 `workflow` 스코프가 없어 push가 거부됐다.** 아래 내용을 `.github/workflows/indexnow.yml`로 직접 추가하면 된다(웹 UI에서 붙여넣기해도 됨). 안 해도 사이트는 정상 동작하며, 다음 세션 토큰에 workflow 스코프를 주면 그때 대신 넣을 수 있다.
-
-<details>
-<summary>.github/workflows/indexnow.yml (펼쳐서 복사)</summary>
-
-```yaml
-name: IndexNow submit
-
-# Bing/Yandex/Seznam accept URL submissions via IndexNow for near-immediate crawling.
-# Bing is currently this site's largest organic source, so changed pages are pushed here on every deploy.
-
-on:
-  push:
-    branches: [main]
-    paths:
-      - '**.html'
-  workflow_dispatch:
-
-jobs:
-  submit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Collect changed HTML files
-        id: changed
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            FILES=$(git ls-files '*.html')
-          else
-            FILES=$(git diff --name-only --diff-filter=ACM ${{ github.event.before }} ${{ github.sha }} -- '*.html' || git ls-files '*.html')
-          fi
-          echo "$FILES" | grep -v '^$' > changed.txt || true
-          echo "count=$(wc -l < changed.txt)" >> $GITHUB_OUTPUT
-          cat changed.txt
-
-      - name: Submit to IndexNow
-        if: steps.changed.outputs.count != '0'
-        env:
-          INDEXNOW_KEY: 71ef233f3022cae13700a4a2348237e0
-        run: |
-          python3 - <<'PY'
-          import json, os, urllib.request
-          key = os.environ['INDEXNOW_KEY']
-          host = 'myinsurancecalc.com'
-          urls = []
-          for line in open('changed.txt'):
-              p = line.strip()
-              if not p:
-                  continue
-              p = p[:-len('index.html')] if p.endswith('index.html') else p
-              urls.append('https://%s/%s' % (host, p))
-          urls = sorted(set(urls))[:10000]
-          if not urls:
-              raise SystemExit(0)
-          body = json.dumps({
-              'host': host,
-              'key': key,
-              'keyLocation': 'https://%s/%s.txt' % (host, key),
-              'urlList': urls,
-          }).encode()
-          req = urllib.request.Request(
-              'https://api.indexnow.org/indexnow',
-              data=body,
-              headers={'Content-Type': 'application/json; charset=utf-8'},
-          )
-          with urllib.request.urlopen(req, timeout=30) as r:
-              print('IndexNow HTTP', r.status, '-', len(urls), 'URLs submitted')
-          PY
-```
-</details>
 
 ## ✅ 이번 세션(8/17) 분석 요약
 
