@@ -185,6 +185,9 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Does Car Insurance Cover EV Battery Damage?](https://myinsurancecalc.com/blog/does-car-insurance-cover-ev-battery.html)
   When collision and comprehensive cover EV batteries (accidents, fire, flood, theft, vandalism), when they don't (wear and tear, mechanical failure, gradual degradation), manufacturer warranty as primary protection, total loss dynamics for EVs, optional add-ons (MBI, gap insurance).
 
+- [Why EV Battery Damage Totals Your Car](https://myinsurancecalc.com/blog/ev-battery-total-loss.html)
+  Why electric vehicles are written off after minor collisions: the battery pack is 30-40% of vehicle value and often cannot be assessed without manufacturer diagnostic data. Covers pack replacement costs for hybrids and EVs, how state total loss thresholds from 60% to 100% of ACV (and total loss formula states) change the outcome on identical damage, why gap insurance matters more on a financed EV, and how to challenge an ACV settlement offer.
+
 - [Why Electric Vehicles Cost More to Insure](https://myinsurancecalc.com/blog/ev-insurance-cost.html)
   Battery replacement costs, repair complexity, limited certified shops, which EVs cost most/least to insure, how to lower EV insurance premium, whether full coverage is worth it.
 
