@@ -209,6 +209,18 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Workers' Comp Audit Guide](https://myinsurancecalc.com/blog/workers-comp-audit-guide.html)
   What a workers' comp premium audit compares, the overtime-pay mistake (only straight-time counts toward payroll in most states), the subcontractor certificate-of-insurance gap that causes the largest retroactive bills, owner/officer exemption certificates, and what to have ready before an audit.
 
+- [Insurance Requirements in Contracts](https://myinsurancecalc.com/blog/insurance-requirements-in-contracts.html)
+  Hub for contract insurance clauses. Prices each line item a client contract typically demands: additional insured endorsement (~$100-500/yr), waiver of subrogation (usually under $300), primary and non-contributory, hired and non-owned auto ($150-600/yr), umbrella. Explains that limits rather than endorsements are the expensive and negotiable part, why the standard 30-day notice-of-cancellation clause generally cannot be honoured by insurers, and how indemnification clauses can exceed what the policy covers.
+
+- [Certificate of Insurance Explained](https://myinsurancecalc.com/blog/certificate-of-insurance-explained.html)
+  What the ACORD 25 form proves and what its own disclaimer says it does not: a certificate is information only, confers no rights on the holder, and cannot grant coverage the policy lacks. Field-by-field reading guide, why the general aggregate shown may already be eroded, how to request endorsement pages, and the clerical reasons certificates get rejected.
+
+- [Additional Insured vs Certificate Holder](https://myinsurancecalc.com/blog/additional-insured-vs-certificate-holder.html)
+  The distinction that decides whether a party is actually covered. Certificate holder receives a copy and gets no coverage; additional insured is added by endorsement and can claim directly. Covers CG 20 10 (ongoing operations) vs CG 20 37 (completed operations) and why construction defect claims fall in that gap, the hidden cost that additional insureds share the named insured's limits, and blanket vs scheduled endorsements.
+
+- [Hired and Non-Owned Auto Insurance](https://myinsurancecalc.com/blog/hired-non-owned-auto-insurance.html)
+  The gap where general liability excludes auto claims, personal auto excludes business liability, and commercial auto covers only owned vehicles. Covers respondeat superior exposure, why HNOA is liability-only (not the employee's car or injuries), typical cost of $150-600/yr as a GL or BOP endorsement, rental physical damage as a separate coverage, and independent contractor misclassification risk.
+
 ### Freelancer and Gig Worker Insurance
 
 - [The Complete Insurance Guide for Freelancers](https://myinsurancecalc.com/blog/freelancer-insurance-guide.html)
