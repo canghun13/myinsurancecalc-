@@ -221,6 +221,15 @@ All calculators run entirely in the browser. No personal data is collected, stor
 - [Hired and Non-Owned Auto Insurance](https://myinsurancecalc.com/blog/hired-non-owned-auto-insurance.html)
   The gap where general liability excludes auto claims, personal auto excludes business liability, and commercial auto covers only owned vehicles. Covers respondeat superior exposure, why HNOA is liability-only (not the employee's car or injuries), typical cost of $150-600/yr as a GL or BOP endorsement, rental physical damage as a separate coverage, and independent contractor misclassification risk.
 
+- [Workers' Comp Ghost Policy](https://myinsurancecalc.com/blog/workers-comp-ghost-policy.html)
+  What a $0-payroll "if any" workers' compensation policy is: it issues a real ACORD certificate but excludes the owner, so it pays nothing if the solo contractor is injured. Covers minimum premium ranges ($500-$1,500, higher for hazardous classes), the year-end audit premium return most solo operators never claim, why general contractors are increasingly wary of ghost policies, and a comparison table of state exemption certificate vs ghost policy.
+
+- [California Contractor Workers' Comp: SB 216 Timeline](https://myinsurancecalc.com/blog/california-contractor-workers-comp-2026.html)
+  Resolves the widespread 2026-vs-2028 confusion. SB 216 (2022) set a universal CSLB workers' comp mandate for January 1, 2026; SB 1455 (2024) moved it to January 1, 2028. Five classifications (C-8, C-20, C-22, D-49, plus C-39 Roofing) already require coverage regardless of employees. Covers the exemption verification process expected from January 1, 2027, SB 291 minimum penalties of $10,000 per violation for sole owner licensees, and $0-payroll policy costs.
+
+- [Verifying Subcontractor Insurance](https://myinsurancecalc.com/blog/hiring-subcontractors-insurance-verification.html)
+  Why hiring contractors are charged premium on an uninsured subcontractor's payroll at audit, grounded in statutory employer rules (Florida Statute 440.10, N.C. Gen. Stat. 97-19, Michigan liability transfer). Covers what a certificate must show (both coverages, limits equal or greater, dates matching the work), the mid-term cancellation trap, and the industry practice of withholding payment until the certificate arrives.
+
 ### Freelancer and Gig Worker Insurance
 
 - [The Complete Insurance Guide for Freelancers](https://myinsurancecalc.com/blog/freelancer-insurance-guide.html)
