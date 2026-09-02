@@ -1,3 +1,71 @@
+# MyInsuranceCalc.com 인수인계 (2026-09-02 업데이트, 16회차 — 신규 클러스터)
+
+## 🔗 화면 확인 필요 (9/2)
+- [ ] https://myinsurancecalc.com/blog/workers-comp-ghost-policy.html — 표 2개(2열 가격표 + **3열 비교표에 빈 헤더 셀**). 이번 신규분 최대 리스크.
+- [ ] https://myinsurancecalc.com/blog/california-contractor-workers-comp-2026.html — 3열 법령 타임라인 표(7행). 모바일 가로스크롤 확인.
+- 세 번째(hiring-subcontractors-insurance-verification)는 표가 없어 확인 불필요.
+
+## ✅ 이번 세션(9/2): 신규 클러스터 — 무직원 계약자 workers-comp 3페이지
+
+### 스팸 업데이트 피격 상태에서 신규를 만든 근거
+8/31에 진단한 대로 사이트는 Google August 2026 spam update(scaled content abuse)로 8/18부터 노출 99% 붕괴 상태다. 그 상태에서 신규를 만든 판단 기준은 handover에 적어둔 **"차별화된 소량 클러스터는 괜찮지만 대량 생산은 금지"**다. 이번 3페이지는:
+- 기존 페이지 대비 중복 **0.62~0.71%**, 신규 3개 상호 중복 4.5~5.0%(사이드바 보일러플레이트뿐)
+- 대조군: states 350페이지는 본문 중복 42~62%
+→ 스팸 정책이 겨냥하는 프로필의 정반대다.
+
+**수익 채널 정조준**: Bing 클릭 56개 중 workers-comp 20 + business-insurance 7 = **27개(48%)**. Google이 죽은 지금 이 클러스터의 독자가 실제로 돈이 되는 유일한 트래픽이다.
+
+### 클러스터 선정 과정
+단서는 **8/31 Montana 작업에서 ghost policy가 자연 발생한 것**이었다 — 면제된 하도급자가 결국 정책을 사는 이유(면제증으로는 waiver of subrogation을 못 준다)를 쓰다가, 이게 독립 클러스터라는 걸 알았다.
+
+경쟁강도 조사 결과: 헤드 키워드("ghost policy")는 Insureon·TechInsurance·SimplyBusiness가 잡고 있다. 하지만 **각 페이지가 겨냥한 롱테일 지점은 브로커·로펌 블로그만 존재하고 대형 퍼블리셔가 없다.**
+
+### 신규 3건
+1. **`blog/workers-comp-ghost-policy.html`** (허브, 1,645단어)
+   $0 payroll "if any" 정책의 실체 — 진짜 ACORD 증서가 나오지만 소유자는 제외돼 **본인이 다치면 한 푼도 안 나온다**는 역설. 최저보험료 $500~1,500(위험등급은 수천), 그리고 **가격을 움직이는 건 주가 아니라 class code**.
+   - **경쟁사가 안 쓰는 2가지**: (a) 연말 감사에서 무직원 입증 시 **보험료 부분 환급** 가능한데 대부분 감사에 무응답해 포기한다 (b) **GC들이 ghost policy를 점점 거부**하는 이유 — 다음 주 채용한 직원이 다치면 구조가 붕괴하기 때문.
+   - 면제증 vs ghost policy 6행 비교표.
+2. **`blog/california-contractor-workers-comp-2026.html`** (1,558단어)
+   **이 페이지의 존재 이유는 모순 해소다.** 검색하면 2026과 2028 답이 정면충돌한다 — SB 216은 2026이었고 SB 1455(2024)가 2028로 미뤘는데 구 기사들이 그대로 상위에 남아 있다.
+   - 법령 타임라인 7행 표, 이미 적용 중인 5개 등급(C-8 콘크리트/C-20 HVAC/C-22 석면/D-49 수목 + 기존 C-39 지붕), 2027 면제 검증 절차, SB 291 위반당 최소 $10,000(sole owner), **CSLB 조회로 컴플라이언스가 공개돼 법보다 시장이 먼저 강제한다**는 점.
+   - ⚠️ **법령 변동 주의**: 이미 두 번 바뀐 영역이다. 다음에 이 페이지를 손댈 때는 SB 1455 이후 추가 개정이 있었는지 먼저 확인할 것. 페이지 본문에도 CSLB 직접 확인 안내를 넣어뒀다.
+3. **`blog/hiring-subcontractors-insurance-verification.html`** (1,726단어)
+   발주자(GC) 관점 — 앞의 두 개와 독자가 다르다. statutory employer 근거를 실제 조문으로 제시(FL Statute 440.10 / NC Gen. Stat. §97-19 / MI 책임이전).
+   - 주거용 목공 $19.51/$100 기준 **$60,000 하도급이 감사에서 약 $11,700 추가보험료**로 돌아온다는 계산.
+   - 증서가 있어도 청구되는 5가지(기간 불일치·중도해지·단일담보만 표시·한도 미달·추가피보험자 누락), 업계 관행인 지급 유보(유보율 = 요율 그대로).
+
+### 연결
+인바운드: ghost **9** / 하도급자검증 **9** / California **6** — 전부 5개 기준 충족.
+경로: blog/index 카드 3장, 8/26 B2B 클러스터 3건 사이드바, workers-comp-audit-guide 본문+사이드바, emr-calculator·tools/workers-comp·freelancer 사이드바, **states/workers-comp/california 본문에 SB 216 문단 신규**, montana 본문 ghost 링크. sitemap 455→458, llms.txt 3건.
+
+**부수 효과**: california 주 페이지에 다른 주에 없는 SB 216 문단이 들어가면서 그 페이지의 템플릿 중복도 소폭 낮아졌다. 8/31 P1(주 페이지 차별화)과 같은 방향이다.
+
+### 검증
+459파일 / ld+json 파싱 실패 0, div·table 밸런스 0, 깨진 내부링크 0, sitemap 458 XML 유효, FAQPage 17개 전부 본문 h3 1:1 대응.
+
+---
+
+## 🎯 다음 작업 우선순위 (9/2)
+
+**P0. 8/31 P0 미확인 — GSC "수동 조치"·"보안 문제" 탭 확인 요청이 아직 답을 못 받았다.** 알고리즘 강등이면 경고가 없지만 수동 조치가 있으면 재심사 경로가 생겨 대응이 완전히 달라진다. 내가 볼 수 없는 데이터다.
+
+**P1. states 페이지 차별화 계속.** 8/31에 NJ·MT 2건으로 본문 중복 48%→23% 반감을 실증했다. Bing 클릭 순서로 계속: maine(25노출/3클릭), maryland(6/3), tennessee(11/2), arizona(9/2), texas(5/2), north-dakota(11/1), indiana(7/1).
+- **제도가 실제로 특이한 주부터** 할 것(독점기금 ND·OH·WA·WY, 독립요율국 주, 주 기금 보유 주) — 차별화 재료가 실재해야 한다. NJ(CRIB 요율 산정)·MT(guaranteed market)가 잘 된 이유가 그거다.
+- 주당 2~3개. 조사 없이 문장만 바꾸면 의미 없다.
+
+**P2. business-insurance(62%)·renters-insurance(59%) 카테고리가 중복 최악.** workers-comp(43%)보다 심하다. business-insurance는 Bing 클릭 7개로 가치가 있으니 P1 다음.
+
+**P3. 제휴(Hiscox/CJ) 검토.** Bing 클릭 56개 중 B2B 27개. 이번 클러스터로 랜딩 대상이 더 늘었다. 8/24부터 3주째 이월 중이니 다음엔 실제로 결정할 것.
+
+**❌ 하지 말 것**:
+- **states 페이지 noindex / 대량 삭제** — Bing 클릭 84%가 거기서 나온다. 자해다.
+- **대량 신규 페이지 생산** — 이번처럼 심층 리서치 기반 3~4개 클러스터는 괜찮지만, 템플릿 확장은 제재 원인을 키운다.
+- **Google 지표로 단기 성패 판정** — 알고리즘 강등 회복은 수개월 단위다. 판정 기준은 당분간 Bing.
+- workers comp 클래스코드 격자, 신체부위별 보상액(법률 리스크), GL 계산기 신규, Ezoic, IndexNow 재론.
+
+## 💰 수익화 (9/2)
+Google 실질 클릭 0 / Bing 56. 사업은 Bing 단일 채널이다. 다행히 Bing은 성장 중이고(38→56) 롱테일 state 전략이 거기서는 계속 작동한다(가중평균 순위 5.4). 이번 클러스터도 Bing에서 먼저 반응이 올 것으로 보는 게 맞고, **다음 주 판정도 Bing 데이터로 할 것.**
+
 # MyInsuranceCalc.com 인수인계 (2026-08-31 업데이트, 15회차 — 긴급)
 
 ## 🔗 화면 확인 필요 (8/31)
