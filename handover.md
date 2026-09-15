@@ -1,3 +1,95 @@
+# MyInsuranceCalc.com 인수인계 (2026-09-15 업데이트, 18회차 — 주간 정기작업)
+
+## 🔗 화면 확인 필요 (9/15)
+- [ ] https://myinsurancecalc.com/states/workers-comp/arizona.html — **표 3개 신규 + FAQ 섹션이 이 페이지에 처음 생겼다**. 이번 주 최대 리스크.
+- [ ] https://myinsurancecalc.com/states/workers-comp/maine.html — h3 소제목 다수 신규(표는 없음).
+
+---
+
+## ✅ 9/8 '심화 전환' 판단이 2주 연속 데이터로 확인됐다
+
+### 심화한 페이지는 계속 오른다
+| 페이지 | 보강 시점 | 이후 Bing 추이 |
+|---|---|---|
+| states/workers-comp/**new-jersey** | 8/31 | 노출 44 → 75 → **116** / 클릭 3 → 4 → **5** / 순위 6.27 → **5.52** |
+| states/workers-comp/**north-dakota** | 9/8 | 11노출 1클릭 → **15노출 2클릭** (1주 만에 클릭 2배) |
+| states/workers-comp/montana | 8/31 | 15노출 1클릭 유지, 순위 4.20 |
+| states/workers-comp/texas | 9/8 | 5노출 2클릭 유지 (1주차) |
+
+**New Jersey는 2주 만에 노출 +164%.** 단일 페이지 보강이 이만큼 움직인 사례는 프로젝트 전체에서 이게 처음이다.
+
+### 신규 발행은 4주째 회수 0
+8/19 이후 발행 12페이지:
+- **Google**: 미색인 19건 중 **12건이 신규분**, 최종 크롤링 전부 `1970-01-01` — **4주째 한 번도 크롤되지 않았다.** 미색인 건수는 8/29부터 19에서 완전 평탄.
+- **Bing**: 노출이 잡힌 건 `ev-battery-total-loss`(7노출) / `life-insurance-for-dangerous-hobbies`(5노출) **2개뿐, 둘 다 클릭 0.**
+
+→ **심화 우선 기조를 유지한다.** 신규를 금지하는 게 아니라, 같은 시간에 회수가 나오는 쪽이 2주 연속 명확했다는 뜻이다.
+
+## 📉 Google (변화 없음)
+주간 노출 421 → 18 → 11 → **17**. 3개월 클릭 12. 8/18 스팸 업데이트 피격 후 4주째 바닥이고 반등 신호 없다. 미색인 19건도 평탄.
+
+## 🟢 Bing (4주 연속 성장)
+| | 8/24 | 8/31 | 9/8 | 9/15 |
+|---|---|---|---|---|
+| 노출 | 970 | 1,178 | 1,399 | **1,677** |
+| 클릭 | 38 | 56 | 69 | **92** |
+
+- how-to-lower-car-insurance 제외 시 노출 938 / 클릭 91 / **평균순위 5.30**.
+- 카테고리별 클릭: **workers-comp 28** / business-insurance 15 / tools 13 / health 8 / home 8 / blog 7 / car 6 / life 4 / renters 3.
+- **B2B(workers-comp + business-insurance) = 43클릭 / 전체 92의 47%.** 4주 연속 절반 수준 유지.
+- ⚠️ `how-to-lower-car-insurance`는 여전히 **739노출 0클릭**. 8/24 CTR 작업 후 3주간 변화 없음. **재시도 금지 유지.**
+- ⚠️ `states/workers-comp/new-mexico`가 **53노출 0클릭**(순위 6.1) — 노출 2위인데 클릭 0. 심화 후보로는 나쁘지 않으나 CTR 문제일 수도 있으니 다음에 심화 대상으로 넣고 결과를 보면 판별된다.
+
+## 📊 GA4 (8/18~9/14)
+활성 사용자 220 → **?**(이번 export 기준 확인), bing 45+ / yahoo / ddg 계열이 google organic 6을 계속 압도. 구조는 전주와 동일하므로 별도 조치 없음.
+
+## ✅ 이번 세션(9/15) 작업 — states 심화 2건
+
+**선정 기준을 한 단계 정교화했다**: Bing 클릭 상위 × **Bing 쿼리가 실제로 묻는 내용이 있는 주**. 지난주까지는 '제도가 특이한 주'였는데, 이번엔 검색자가 쓸 내용을 지정해준 주를 골랐다.
+- **maine**: Bing에서 4개 쿼리가 각각 클릭됨 — `maine wcc comp rate`, `maine workers compensation surcharge`, `maine workers compensation law that determines payroll on a policy will be separated for each class or the governing class will be charged`, `when hiring an employee... fair rates if annual salary is ~$22k`
+- **arizona**: 2건 — `what workers comp % of salary should business pay in arizona 2026`, `workers compensation arizona rates`
+
+1. **`states/workers-comp/maine.html`** (977→2,279단어, Bing 35노출 4클릭)
+   - **NJ와 정반대 구조**: NCCI가 loss cost만 내고 캐리어가 LCM을 따로 올리므로 **메인에서는 쇼핑이 실제로 요율을 움직인다**(NJ는 승인요율 고정). 단 상위 10개 그룹이 90% 이상 점유라 선택지가 무한하지 않다는 한계도 같이 적었다.
+   - MEMIC = 1993년 주의회 설립, 자율시장 경쟁자이자 **동시에 assigned risk 제공자**. 배당 존재.
+   - **핵심(Bing 쿼리 직답)**: governing class vs 개별요율. 건설업은 공종별 개별요율이 가능하지만 **클래스별 급여 기록이 있어야 한다** — 없으면 최고요율 클래스로 몰린다. 사무직 $0.10~0.40 vs 루핑 $5~20+니까 배수 차이다. standard exception(사무·외판·운전)은 업체가 아니라 '개인'을 분류하므로 루핑회사 경리는 사무직 요율을 주장할 수 있다.
+   - 요율에 안 들어가는 항목(expense constant·테러·대재해·2차손해기금 부과금) — `surcharge` 쿼리 직답. FAQ 4→9.
+2. **`states/workers-comp/arizona.html`** (857→2,171단어, Bing 15노출 3클릭)
+   - **사실 정정: 애리조나에는 이제 주기금이 없다.** CopperPoint는 SCF Arizona였고 2013년 민영화됐는데 다수 자료가 아직 '주기금'으로 서술 중이다. 완전경쟁시장이라 선접촉 의무도 최후보장도 없다.
+   - 2024년까지 **10년 연속 요율 인하**(2024.1.1 −10.3%). 요율표(사무 $0.50~1.80 / GC $3.25~7.80 / 건설 $4~15+ / 루핑 $16~38) — Bing 쿼리 직답.
+   - **미가입은 Class 6 중범죄**(벌금 최대 $10,000 + 징역 1년, ICA 영업중지 가처분). 대부분 주가 민사 과태료인데 애리조나는 형사다.
+   - 소유자 포함 기본값이 **엔티티별로 반대 방향**: 개인사업자·파트너는 자동 제외(§23-961(G)), 법인임원·LLC 멤버는 **자동 포함**이라 서면 거부 미제출이면 보험료가 발생한다. 50% 미만 비임원 주주는 직원 취급이라 제외 불가. 급여 상하한(개인사업자 최소 $31,200 / 임원 최소 $65,000·최대 $260,000).
+   - OCIP·공공공사는 소유자 포함을 요구하므로 제외 전 계약문구 확인 경고. **FAQ 6개 + FAQPage 스키마 신규**(원래 FAQ 없던 페이지).
+
+**효과**: 타 주 대비 본문 중복 미수정 **44.4% → ME 20.3% / AZ 19.5%**. 누적 **7개 주**(NJ·MT·CA·TX·ND·ME·AZ) 차별화 완료.
+
+**검증**: 459파일 / ld+json 파싱 실패 0, div·table 밸런스 0, 깨진 내부링크 0, sitemap 458 유효, 문서 순서(FAQ→Related Tools→xstate-links) 사이트 관행 일치.
+
+---
+
+## 🎯 다음 작업 우선순위 (9/15)
+
+**P0. 5주째 미확인 — GSC "수동 조치"·"보안 문제" 탭.** 8/31부터 매주 요청하고 있다. 알고리즘 강등이면 경고가 없지만 수동 조치면 재심사 경로가 생겨 대응이 완전히 달라진다. **이거 하나만 확인해주면 Google 쪽 전략 판단이 끝난다.** 계속 미확인이면 다음 세션부터는 알고리즘 강등으로 확정 간주하고 Google은 논의에서 빼겠다.
+
+**P1. states 심화 계속 — 주당 2~3개.** 유일하게 회수가 확인된 작업이고 2주 연속 입증됐다.
+- **다음 순번**: maryland(8노출 3클릭), tennessee(13/2), **new-mexico(53노출 0클릭 — 노출 2위인데 클릭 0, 심화하면 CTR 문제인지 콘텐츠 문제인지 판별된다)**, mississippi(7/1), indiana(7/1), hawaii(13/0), massachusetts(9/0).
+- **효율 묶음**: 독점기금 나머지 3주(**Ohio·Washington·Wyoming**). ND에서 쓴 stop-gap(주기금에 employer's liability 없음) 논리가 그대로 적용되고 각 주 고유 요소만 조사하면 된다. ND가 템플릿 역할.
+- 선정 기준 업그레이드: **Bing 쿼리가 그 주에 대해 실제로 묻는 게 있는지** 먼저 확인하면 쓸 내용이 정해진다. 이번 maine이 그 방식이었고 가장 쉬웠다.
+
+**P2. business-insurance 카테고리 심화.** Bing 클릭 15개로 2위 채널이고 본문 중복 62%로 최악이다. workers-comp가 7개 주 끝나면 여기로.
+
+**P3. 제휴(Hiscox/CJ) — 5주째 이월.** Bing 클릭 92개, B2B 43개(47%). 트래픽은 4주 연속 늘고 있는데 수익화 장치가 여전히 0이다. **지금 가장 아까운 항목이고, 다음 세션엔 결정하든 목록에서 빼든 해야 한다.**
+
+**❌ 하지 말 것**:
+- **how-to-lower-car-insurance CTR 재시도** — 3주간 0클릭 고정. 두 번 실패.
+- **states noindex / 대량 삭제** — Bing 클릭 92개 중 72개가 states다.
+- **신규 페이지 대량 발행** — 4주간 12개 발행해 회수 0 실측.
+- **Google 지표로 단기 성패 판정** — 판정 기준은 Bing.
+- workers comp 클래스코드 격자, 신체부위별 보상액(법률 리스크), GL 계산기 신규, Ezoic, IndexNow 재론.
+
+## 💰 수익화 (9/15)
+Google 클릭 0 / Bing 클릭 92. Bing 단일 채널이 4주 연속 성장(38→56→69→92, 누적 +142%). B2B 비중 47% 고정. **트래픽 측면은 해결되고 있고 병목은 이제 수익화 장치의 부재다.** P3을 계속 미루면 성장분이 그대로 새는 구조다.
+
 # MyInsuranceCalc.com 인수인계 (2026-09-08 업데이트, 17회차 — 주간 정기작업)
 
 ## 🔗 화면 확인 필요 (9/8)
