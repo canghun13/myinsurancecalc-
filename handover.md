@@ -45,7 +45,9 @@
 
 **P2. business-insurance 심화 착수 시점이 됐다.** Bing 클릭 19개로 2위 채널, 본문 중복 62%로 최악 카테고리. 클릭 상위: new-jersey(4노출 3클릭), georgia(1/3), florida(3/2 — Google 미색인 목록 포함), alabama(1/2). **workers-comp 10개 주 달성했으니 다음 세션은 workers-comp 2 + business 1~2 비율을 권장.**
 
-**P3. 제휴(Hiscox/CJ) — 6주째 이월.** Bing 클릭 110, B2B 54(49%). 트래픽은 5주 연속 늘었는데 수익화 장치 0. 매주 가장 아까운 항목이다.
+**P3. 수익화 — 제휴는 불가로 확정(9/22 사용자 확인). 목록에서 제외. 다시 꺼내지 말 것.**
+**AdSense 재신청은 보류(9/22 판단).** 근거: (1) 사이트가 8/18 스팸 업데이트(scaled content abuse)에 걸린 상태이고, AdSense 거절 사유 '가치가 낮은 콘텐츠'가 같은 신호를 본다 — states 350페이지 본문 중복 42~62%가 그대로면 거절 가능성이 높다. (2) 승인돼도 현재 트래픽(월 활성 ~200, 비US 비중 큼)으로는 월 수 달러 수준. 거절 자체가 사이트에 불이익을 주진 않지만 얻는 정보도 없다.
+**재신청 조건(제안)**: 트래픽 상위 카테고리(workers-comp·business-insurance)의 Bing 유입 페이지 대부분이 심화 완료되어 본문 중복이 20%대로 내려온 뒤. 신청 전 About/Contact/Privacy 페이지 존재 확인(이미 있음)과 ads.txt 확인(이미 있음). 페이지에 AdSense 스크립트·adslot 자리는 이미 들어가 있어 승인 시 추가 작업 거의 없음.
 
 **❌ 하지 말 것**: how-to-lower-car-insurance CTR 재시도 / states noindex·대량삭제 / 신규 대량 발행(5주 회수 0) / Google 지표로 판정 / 클래스코드 격자·신체부위 보상액 / GL 계산기 / Ezoic / IndexNow 재론.
 
