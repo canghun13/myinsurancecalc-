@@ -1,3 +1,54 @@
+# MyInsuranceCalc.com 인수인계 (2026-09-22 업데이트, 19회차 — 주간 정기작업)
+
+## 🔗 화면 확인 필요 (9/22)
+- [ ] https://myinsurancecalc.com/states/workers-comp/tennessee.html — 요율표 신규(3행). h3 다수.
+- 나머지 2건(maryland / indiana)은 표 없이 문단·목록만 추가. 확인 불필요.
+
+## ✅ 심화 전략 3주 연속 검증 — 심화한 페이지는 전부 오른다
+
+| 페이지 | 보강 | 9/15 → 9/22 (Bing) |
+|---|---|---|
+| new-jersey | 8/31 | 116 → **157노출**, 5클릭, 순위 5.42 |
+| maine | 9/15 | 35 → **49노출**, 4 → **5클릭** |
+| arizona | 9/15 | 15 → **32노출** (1주 만에 2배), 3클릭, 순위 4.09 |
+| texas | 9/8 | 5 → **21노출**, 2 → **3클릭** |
+| north-dakota | 9/8 | 15 → **28노출**, 2클릭 |
+| montana | 8/31 | 15 → **32노출**, 1클릭 |
+
+**6개 전부 성장, 예외 없음.** 신규 12페이지는 5주째 Google 미크롤(`1970-01-01`), 미색인 19건 8/29부터 평탄. **심화 우선 기조 유지.**
+
+## 📊 채널 현황
+- **Google**: 주간 노출 19 → **4**. 3개월 클릭 12. 스팸 업데이트 피격 5주째, 반등 없음.
+- **Bing**: 노출 1,677 → **2,004**, 클릭 92 → **110** (5주 연속 성장, 8/24 대비 +189%).
+  - 카테고리 클릭: **workers-comp 35** / business-insurance 19 / tools 15 / health 10 / home 9 / blog 8.
+  - **B2B(workers-comp+business) = 54클릭 / 110의 49%.**
+- **GA4 세션**: bing 62 + yahoo 22 + ddg 13 = **97** / copilot 16 / google organic 미미.
+
+## ✅ 이번 세션(9/22) 작업 — workers-comp 심화 3건 (주 3건으로 상향)
+미심화 workers-comp 중 Bing 클릭 상위 3개, 각 주 Bing 쿼리에 직답하는 내용으로 작성.
+1. **tennessee** (1,013→1,679단어) — **임계값이 둘**: 일반 5인 이상 vs 건설업 1인부터(§50-6-901). 파트타임·계절·가족 카운트, 면제한 임원도 카운트. 건설 면제 레지스트리는 소유자만 면제(직원 1명이어도 가입). 요율표(평균 ~$0.98 / 사무 ~$0.15 / 건설 $7.50~14) — `clerical worker rate tennessee` 쿼리 직답.
+2. **maryland** (983→1,581단어) — Chesapeake Employers(구 IWIF)의 이중역할 + **자체 분류코드가 NCCI와 다를 수 있음**. 위반당 $25,000 + 2회차 $25,000, 법인 임원 개인책임. 보고 10일/지급·이의 30일, 미준수 시 20~40% 가산.
+3. **indiana** (995→1,586단어) — **NCCI가 아니라 독자 요율국(ICRB)**. 독립계약자 면제증은 국세청 WCE-1 경유 $20, 세금 체납 없어야 발급, Board 날인 전 무효, 매년 갱신. 위반당 $10,000 + 직원당 일 $50, 20일 시정기간.
+
+**효과**: 타 주 대비 본문 중복 46.7% → TN 24.1% / MD 25.9% / IN 26.1%. **누적 10개 주**(NJ·MT·CA·TX·ND·ME·AZ·TN·MD·IN).
+
+**작업 도구**: `/home/claude/deepen.py` 형태의 헬퍼(앵커=`Workers Comp Benefits in {State}` h2 앞 삽입, FAQ 유무 자동 판별, 스키마 병합)를 이번에 만들었다. 다음 세션에서 같은 구조로 재작성하면 주당 3~4개도 가능하다.
+
+---
+
+## 🎯 다음 작업 우선순위 (9/22)
+
+**P0. GSC 수동 조치 탭 — 6주째 미확인.** 9/15에 예고한 대로 **이번 세션부터 알고리즘 강등으로 확정 간주**한다. Google은 더 이상 작업 판단에 쓰지 않는다. 혹시 수동 조치가 떠 있는 게 확인되면 그때 다시 연다.
+
+**P1. workers-comp 심화 계속 — 주 3건.** 다음 순번(Bing): **new-mexico(노출 53, 클릭 0 — 9/15에 이월, 이번엔 IN/MD/TN 클릭이 더 확실해서 밀렸다)**, idaho(8/1), mississippi(7/1, Google 미색인 목록에도 있음), alabama(5/1), arkansas(5/1), hawaii(13/0), massachusetts(9/0).
+- **독점기금 묶음 Ohio·Washington·Wyoming**은 ND 템플릿(stop-gap)이 그대로 적용된다. wyoming 7노출.
+
+**P2. business-insurance 심화 착수 시점이 됐다.** Bing 클릭 19개로 2위 채널, 본문 중복 62%로 최악 카테고리. 클릭 상위: new-jersey(4노출 3클릭), georgia(1/3), florida(3/2 — Google 미색인 목록 포함), alabama(1/2). **workers-comp 10개 주 달성했으니 다음 세션은 workers-comp 2 + business 1~2 비율을 권장.**
+
+**P3. 제휴(Hiscox/CJ) — 6주째 이월.** Bing 클릭 110, B2B 54(49%). 트래픽은 5주 연속 늘었는데 수익화 장치 0. 매주 가장 아까운 항목이다.
+
+**❌ 하지 말 것**: how-to-lower-car-insurance CTR 재시도 / states noindex·대량삭제 / 신규 대량 발행(5주 회수 0) / Google 지표로 판정 / 클래스코드 격자·신체부위 보상액 / GL 계산기 / Ezoic / IndexNow 재론.
+
 # MyInsuranceCalc.com 인수인계 (2026-09-15 업데이트, 18회차 — 주간 정기작업)
 
 ## 🔗 화면 확인 필요 (9/15)
