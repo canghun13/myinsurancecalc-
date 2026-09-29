@@ -1,3 +1,49 @@
+# MyInsuranceCalc.com 인수인계 (2026-09-29 업데이트, 20회차 — 주간 정기작업)
+
+## 🔗 화면 확인 필요 (9/29)
+- [ ] https://myinsurancecalc.com/states/workers-comp/hawaii.html — **4열 비교표**(WC/TDI/PHC) 신규 + 2열 표. 모바일에서 표 내부 가로 스크롤 정상인지.
+- [ ] https://myinsurancecalc.com/states/business-insurance/new-york.html — **business-insurance 카테고리 첫 심화**. 4열 표(WC/DBL/PFL) + 벌칙표.
+- new-mexico(표 1개) / new-jersey business(표 1개)는 기존 표와 같은 구조. 로컬 390px 렌더 확인에서 페이지 가로 넘침 0 — 확인 불필요.
+
+## 📊 데이터 (9/29)
+- **Bing 심화 페이지 전부 클릭 발생**: NJ 171노출/5클릭, TX 75/3, ND 50/2, ME 49/5, MT 42/2, AZ 41/4, TN 35/2, IN 23/3, **MD 17/4(CTR 23.5%)**. emr-calculator 27→86노출 5클릭, table-rating-calculator 50/4.
+- **미심화 WC 노출 1위 new-mexico 93노출 0클릭** (9/15 53 → 9/22 → 93). 이번에 심화 → 다음 주 클릭 발생 여부로 'CTR 문제 vs 콘텐츠 문제' 판정.
+- `how-to-lower-car-insurance` 743노출 **1클릭**(첫 클릭). 재시도 금지는 유지 — 우연 1건.
+- **Business-insurance Bing**: 페이지당 노출 1~7이지만 **순위 1~5, CTR 25~300%**. 쿼리 패턴이 `cost range / cost factors / average rate / requirements / laws`로 명확. → 노출을 늘릴 내용이 없던 것이지 순위 문제가 아니다.
+- **GA4(9/1~9/28)**: 활성 241(↑), bing 71 / yahoo 22 / copilot 21 / ddg 14 / google organic 1.
+- **Google**: 3개월 클릭 0, 일 노출 0~4. 미색인 19건 8/29부터 평탄, 전부 `1970-01-01`(신규 12 + states 6 + tool 1). **알고리즘 강등 확정 기조 유지.** 참고만: `maine business insurance` 게재순위 25.5가 사이트 전체 최고 — business-insurance/maine은 Google 쪽 유일한 근접 후보.
+
+## ✅ 이번 세션(9/29) 작업 — WC 2 + business 2 (9/22 권장 비율대로)
+| 페이지 | 본문 단어(main) | 카테고리 내 본문 중복 |
+|---|---|---|
+| workers-comp/**new-mexico** | 1,010 → ~3,970 | 54.5% → **13.6%** |
+| workers-comp/**hawaii** | ~1,030 → ~2,560 | 51.9% → **19.8%** |
+| business-insurance/**new-york** | ~970 → ~2,620 | 66.6% → **22.8%** |
+| business-insurance/**new-jersey** | ~960 → ~2,125 | 69.0% → **28.4%** |
+
+1. **new-mexico** — 3인 임계값(건설은 1인, 농업은 2016 판결로 포함, 유급 가족 포함) / **WCA 분기 부담금 $4.80/인(고용주 $2.55·근로자 $2.25), RPD-41108로 세무국에 별도 신고 — 보험료와 별개** / 고용주가 첫 60일 의사 선택 / 8일차 지급·72시간 보고 / **PPD 공식 = (수정점수×RPC)+장해율 → 12%가 30%로** / **원임금 이상 복직 시 장해율만 적용(12% vs 30%) — Bing `nm workers comp salary continuation plan` 직답** / §52-1-10 안전장치 ±10% 양방향 / **연 보험료 $15,000 이상 시 연례 안전점검 의무(최대 $5,000)** / 무보험 일 $1,000·영업금지·징벌적 손해·UEF 15~50% 가산 / NCCI loss cost+LCM(−10.7% 2023, −11.7% 2025) / New Mexico Mutual(1991 입법 설립, 1/3 점유, 주기금 아님) / 클래스 요율표 / 갱신 시 물어볼 것(`things to ask for` 직답). FAQ 4→16.
+2. **hawaii** — **"Hawaii workers comp division" = DLIR의 DCD가 WC·TDI·PHC 세 가지를 모두 관장**(Bing 쿼리 직답). 4열 비교표(2026: WC 최대 $1,240/주, TDI $871/주·근로자 0.5% 최대 $7.50/주, PHC 주20시간×4주·근로자 1.5% 상한). 면제 대상(가사 $225/분기 미만 등) / **보상 추정(presumption) — 고용주가 반증 책임** / 근로자가 의사 선택(NM과 반대) / WC-1 7영업일 / 무보험 **max($500, 직원당 일 $100)** / HEMIC(1996, 25%+, 주기금 아님). FAQ 4→13.
+3. **business-insurance/new-york** (카테고리 첫 심화) — **WC+DBL+PFL 3종 의무표**(2026 PFL 0.432%·연 최대 $411.91·주 최대 $1,228.53, DBL $170/주·$0.60/주) / **NYCIRB(NCCI 아님) loss cost −13.2%(2025.10.1) → −21.9%(2026.10.1, DFS 승인) — 이틀 뒤 발효라 시의성 최고** / NYSIF 최후보장·최대 / **Labor Law §240(Scaffold Law) — Chubb: BI 청구 빈도 전국 대비 12배, $25만+ 30배 / 하도급 보험의 Labor Law 제외 조항은 COI에 안 보인다** → 신규 블로그 2개(certificate-of-insurance-explained, hiring-subcontractors-insurance-verification)로 내부링크 / 비용 요인 목록(`cost factors` 직답) / 벌칙표(10일당 $2,000, 5인 이하 경범·초과 E급 중범·재범 D급) / CE-200은 정부 인허가 전용·건별. FAQ 4→11.
+4. **business-insurance/new-jersey** — WC+TDI+FLI 비교표(2026 근로자 TDI 0.19%·FLI 0.23%, 고용주 TDI 0.10~0.75%, 최대 $1,119) / **CRIB 관리요율이라 쇼핑 효과가 제한적** — 기존 템플릿 문구 "shop annually ... rates vary significantly"가 NJ WC 페이지 내용과 모순이라 **정정** / **주택개량업자(HIC)는 CGL $50만/사고 법정 의무, $500 초과 계약마다 COI+대리점 전화번호 첨부, 등록비 $110, 매년 3/31 전 갱신** / NY와 달리 Scaffold Law 없음 → NJ 건설업 GL이 싼 이유, NY 작업 시 고지 필요(NY business로 상호링크) / NJ WC 페이지로 링크. FAQ 4→9.
+
+**검증**: 459파일 / ld+json 파싱 실패 0 / div·table 밸런스 0 / 깨진 내부링크 0(tools/workers-comp.html의 JS 템플릿 `${stateSlug}`는 기존 오탐) / sitemap 458 유효 / 수정 4페이지 FAQ 스키마↔가시 h3 **텍스트·순서 1:1 일치** / 390px·1280px 페이지 가로 넘침 0.
+**도구**: `/home/claude/deepen.py`(세션 샌드박스, 레포 아님) — `deepen(path, 앵커h2텍스트, html, faqs)`, `table(headers, rows)`(table-scroll 래퍼 포함). 앵커 h2 텍스트만 바꾸면 business-insurance에도 그대로 쓴다(`How to Lower Your Business Insurance Costs in {State}`). FAQ h3 스타일은 페이지에서 자동 감지. 다음 세션에서 재작성 필요(컨테이너 초기화).
+
+---
+
+## 🎯 다음 작업 우선순위 (9/29)
+
+**P1. 판정: new-mexico.** 다음 주 Bing에서 클릭이 나오면 '미심화=콘텐츠 문제' 확정 → 노출 있는 미심화 페이지는 전부 같은 처방. 여전히 0클릭이면 title/description(CTR) 쪽 문제로 보고 NM만 스니펫 조정.
+
+**P2. business-insurance 심화 계속 — 이번 주 NY/NJ 결과 보고 확대.** 다음 후보(Bing 클릭+쿼리 존재): **florida**(3/2, `florida small business insurance cost calculator`, Google 미색인 목록에도 있음), **georgia**(1/3, `requirements`·`cost calculator`), **texas**(5/0 — WC 페이지의 opt-out 내용과 연결), kansas(4/1), kentucky(4/0, `kentucky small business insurance requirements workers compensation general liability` 4노출), connecticut(2/1). Google 쪽 참고: maine(순위 25.5).
+- 차별화 축: 각 주의 **법정 의무 보험 스택**(예: 주별 TDI 유무, 면허·등록에 딸린 GL 의무, 무과실 자동차) + 주 고유 법(NY Labor Law 같은 것) + 요율 결정 구조(관리요율 vs loss cost).
+
+**P3. workers-comp 심화 계속**: massachusetts(9/0, `mass workers comp rates`·`ma work comp mod`·`multiplier` — MA는 독자 요율국 WCRIBMA), idaho(11/1, `fees`·`employer rate`), nevada(10/0, `cheatsheet`·`funding`), mississippi(7/1, `minimum payroll`), wisconsin(7/0, 독자 요율국 WCRB), wyoming(7/0 — 독점기금, ND 템플릿).
+
+**P4. 수익화** — 제휴 제외 확정. AdSense는 states 상위 카테고리 본문 중복 20%대 도달 후(현재 심화 14개 주 평균 약 20%, 미심화 50~69%).
+
+**❌ 하지 말 것**: how-to-lower-car-insurance CTR 재시도(1클릭은 우연) / states noindex·대량삭제 / 신규 대량 발행 / Google 지표로 판정 / 클래스코드 격자·신체부위 보상액 / GL 계산기 / Ezoic / IndexNow 재론 / 제휴 재론.
+
 # MyInsuranceCalc.com 인수인계 (2026-09-22 업데이트, 19회차 — 주간 정기작업)
 
 ## 🔗 화면 확인 필요 (9/22)
