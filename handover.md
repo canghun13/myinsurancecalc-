@@ -1,3 +1,31 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-01 추가 — AdSense 승인 대비 작업, 20회차 보충)
+
+**배경**: 사용자가 AdSense 신청 중. 승인 준비 상태 점검 + 보강 요청.
+
+## 점검 결과 (이미 충족 — 다시 확인할 필요 없음)
+- ads.txt 라이브 정상: `google.com, pub-5592663499707350, DIRECT, f08c47fec0942fa0`
+- AdSense 스크립트 458/458 페이지 `<head>`에 있음, pub ID 단일. robots.txt 전체 허용.
+- privacy.html: AdSense·제3자 쿠키·Ads Settings·aboutads·partner-sites 링크 모두 있음. About/Contact/Privacy는 nav.js 푸터로 전 페이지 연결.
+- **남은 승인 리스크 = 콘텐츠(템플릿 중복)**. noindex/삭제는 금지 목록이므로 심화로만 해결.
+- EEA/UK 동의 메시지(CMP)는 코드가 아니라 AdSense 콘솔 '개인정보 보호 및 메시지'에서 켜야 함 — 승인 후 사용자에게 안내.
+
+## 작업 (10/1)
+1. **contact.html** 28→약 330단어: 문의 범위, 비면허 고지, 정정 처리 절차, 유료 게재 없음.
+2. **about.html**: 'State-by-State Guides'(1차 출처 기반 재작성 방침, NCCI/NYCIRB/CRIB 등) + 'How Figures Are Kept Current' 섹션 추가.
+3. **states/index.html** 145단어 허브 → 주별 규정 차이 설명 섹션 + 심화 페이지 내부링크 8개.
+4. **빈 광고 자리 제거**: `.adslot:empty {min-height:0;margin:0}` — 광고 유닛 없는 placeholder(약 930개)가 페이지마다 90px+ 빈칸을 만들고 있었다. 주석만 있으면 :empty로 접힘, 나중에 `<ins>` 넣으면 자동으로 다시 펼쳐짐. index.html의 줄바꿈 들어간 placeholder 2개는 한 줄로 정규화.
+5. **business-insurance 심화 4건** (카테고리 내 본문 중복):
+   - florida 65.9%→24.9%: 업종별 3단 임계값(건설 1/비건설 4/농업 6·12, 임원·LLC 멤버 포함), 건설 면제(10% 지분·최대 3명·$50·2년) vs 비건설, stop-work·$1,000/일·2배 보험료, OIR −6.9%(2026.1.1, 9년 연속), 면허 GL 하한(61G4-15.003: GC $300k/$50k, 전문업 $100k/$25k), 허리케인 % 공제·Citizens·홍수 제외, PIP.
+   - georgia 69.1%→29.7%: 3인 임계값, **Panel of Physicians(6명·정형외과 1·산업클리닉 최대 2, 무효 시 근로자 자유선택)**, 7일 대기·21일 소급, NCCI 제안 −8.8%(2026.3.1 — 조지아는 3월 갱신), 면허 GL(Residential Basic $300k, 나머지 $500k), 없는 의무(TDI·no-fault).
+   - texas 62.0%→27.7%: 가입/비가입 비교표, **§406.096 공공건설 계약은 WC 필수**, occupational injury plan ≠ WC, TWIA(1차 해안 14개 카운티+해리스 일부)·우박 % 공제, 자동차 30/60/25. TX WC 페이지와 중복 피하고 링크.
+   - kentucky 56.8%→26.2%: 요건 요약표(Google `kentucky minimum general liability` 145노출 대응), 1인부터·파트타임/가족 예외 없음, Form 4 임원 거부, **$100~1,000/직원/일**, **2026 부과금 5.53%**, **오하이오 BWC로는 KY 불충분**, 주 GC 면허 없음·전기/HVAC $500k·시 단위 면허, 자동차 25/50/25+PIP $10k.
+- 검증: 459파일, ld+json 0, div/table 0, 깨진 링크 0, sitemap 458, FAQ 스키마↔가시 1:1(FL10/GA10/TX9/KY12), 390/1280px 가로 넘침 0.
+- **누적 심화: workers-comp 12 + business-insurance 6 = 18페이지.**
+
+## 다음
+- AdSense 결과 대기. 거절 시 사유 확인 → '가치 낮은 콘텐츠'면 심화 계속(우선 business-insurance 나머지: kansas, connecticut, north-carolina, ohio, alabama, maine).
+- 승인 시: 콘솔에서 EEA/UK CMP 메시지 켜기, Auto ads 사용(현재 placeholder엔 `<ins>` 없음 — 수동 유닛 넣으면 :empty 해제되어 자동으로 자리 잡힘).
+
 # MyInsuranceCalc.com 인수인계 (2026-09-29 업데이트, 20회차 — 주간 정기작업)
 
 ## 🔗 화면 확인 필요 (9/29)

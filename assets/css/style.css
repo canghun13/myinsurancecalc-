@@ -548,6 +548,8 @@ img { max-width: 100%; display: block; }
 }
 
 .adslot { margin: 32px 0; text-align: center; min-height: 90px; }
+/* collapse placeholders that hold no ad unit yet (comments count as empty) */
+.adslot:empty { min-height: 0; margin: 0; }
 
 /* ===========================
    Responsive
