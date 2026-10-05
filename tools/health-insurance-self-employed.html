@@ -131,7 +131,7 @@
             <p>Open enrollment runs November 1 through January 15 each year. Special enrollment periods are triggered by qualifying life events: losing other coverage, marriage, divorce, having a child, or a significant income change. Self-employed income changes mid-year can qualify you for special enrollment.</p>
 
             <h3>Premium Tax Credits: Who Qualifies</h3>
-            <p>Premium tax credits (PTCs) significantly reduce ACA marketplace premiums for eligible individuals. For 2024–2025, credits are available to individuals and families with incomes between 100% and 400% of the federal poverty level — and the American Rescue Plan expanded credits above 400% FPL through 2025, ensuring no one pays more than 8.5% of their income on benchmark plan premiums.</p>
+            <p>Premium tax credits (PTCs) significantly reduce ACA marketplace premiums for eligible individuals. For 2026 coverage, credits are available to households with incomes between 100% and 400% of the federal poverty level. The temporary expansion from the American Rescue Plan &mdash; which capped benchmark premiums at 8.5% of income and removed the 400% limit &mdash; expired at the end of 2025. Under the original rules now in effect, the expected contribution rises from 2.10% of income at the lowest incomes to 9.96% between 300% and 400% FPL, and households above 400% FPL receive no credit at all. A House-passed extension (January 2026) has not become law, so the same rules are expected for 2027 plans unless Congress acts.</p>
             <p>As a self-employed person, your income for subsidy purposes is your net self-employment income after business deductions. This means actual income, not gross revenue. If your net income varies significantly year to year, you may need to estimate carefully — over-claiming credits creates a tax bill at filing; under-claiming means leaving money on the table.</p>
 
             <h3>Self-Employed Health Insurance Deduction</h3>
@@ -205,8 +205,8 @@ function calcHealth() {
   const plan = document.getElementById('health-plan').value;
   const state = document.getElementById('health-state').value;
 
-  // FPL 2026 estimates
-  const fpl = { 1: 15060, 2: 20440, 3: 25820, 4: 31200, 5: 36580 };
+  // 2025 HHS poverty guidelines (used for 2026 coverage), 48 states + DC
+  const fpl = { 1: 15650, 2: 21150, 3: 26650, 4: 32150, 5: 37650 };
   const fplIncome = fpl[Math.min(household, 5)];
   const incomeRatio = income / fplIncome;
 
@@ -222,14 +222,17 @@ function calcHealth() {
   let subsidy = 0;
   let subsidyNote = '';
   if (incomeRatio <= 4.0 && incomeRatio >= 1.0) {
-    const capPct = Math.min(0.085, 0.02 + (incomeRatio - 1) * 0.021);
+    // 2026 applicable percentage table (Rev. Proc. 2025-25); enhanced credits expired after 2025
+    const bands = [[1.00,1.33,0.0210,0.0210],[1.33,1.50,0.0314,0.0419],[1.50,2.00,0.0419,0.0660],[2.00,2.50,0.0660,0.0844],[2.50,3.00,0.0844,0.0996],[3.00,4.00,0.0996,0.0996]];
+    let capPct = 0.0996;
+    for (const [lo, hi, a, b] of bands) { if (incomeRatio >= lo && incomeRatio < hi) { capPct = a + (b - a) * (incomeRatio - lo) / (hi - lo); break; } }
     const cap = income * capPct / 12;
     subsidy = Math.max(0, fullPremium - cap);
     subsidyNote = `You may qualify for ~$${Math.round(subsidy)}/mo in ACA subsidies.`;
   } else if (incomeRatio < 1.0) {
     subsidyNote = "You may qualify for Medicaid. Check your state's eligibility.";
   } else {
-    subsidyNote = 'Your income exceeds subsidy eligibility — full premium applies.';
+    subsidyNote = 'Your income is above 400% of the federal poverty level — no premium tax credit for 2026 (the enhanced credits that removed this limit expired after 2025).';
   }
 
   const afterSubsidy = Math.max(fullPremium - subsidy, 0);

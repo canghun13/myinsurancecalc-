@@ -1,3 +1,38 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-05 업데이트, 21회차 — 주간 정기작업)
+
+## 🔗 화면 확인 필요 (10/5)
+- [ ] https://myinsurancecalc.com/blog/life-insurance-for-pilots.html — 상단에 '사설 조종사 요약' 박스 신규 + 제목/설명 교체.
+- [ ] https://myinsurancecalc.com/states/health-insurance/texas.html — FAQ 섹션이 이 페이지에 처음 생김 + 4열 보조금 표.
+- (NY life / MA WC는 기존 표 구조와 동일, 390px 넘침 0)
+
+## 📊 데이터 (10/5)
+- **최대 발견 — Bing `life insurance private pilot` 1,190노출 + 변형 2개 275 = 1,465노출 / 0클릭, 순위 ~4.** Bing이 이 검색에 `blog/life-insurance-for-pilots.html`(허브, 1,501노출 2클릭)을 띄우는데, 설명문이 "FAR 121 airline underwriting, ATP…"로 시작해 사설 조종사 검색자와 어긋나 있었다. 전용 페이지 `life-insurance-for-private-pilots`는 Bing에 안 보이고 Google 미색인(1970-01-01). 순위 4에서 정상 CTR(5%+)이면 월 70클릭 이상 — 사이트 최대 단일 기회이자 생명보험(고단가) 트래픽.
+- 심화 페이지 Bing: NJ 203/5, **emr-calculator 188/9**(86→188), TX 92/4, ND 61/2, ME 56/5, IN 29/3, MD 20/4, table-rating 79/5.
+- new-mexico 96/0, hawaii 19/0 — **9/29 심화 후 6일. Bing 리포트가 기간 누적이라 아직 판정 불가(montana·arizona·tennessee 수치가 지난주와 동일 = 갱신 지연분 섞임).** 10/12에 재판정.
+- health/life 주별 페이지가 Bing에서 올라오기 시작: health-texas 75/3, life-new-york 72/1(`life insurance policies in new york` 47노출).
+- GA4(9/7~10/4): 활성 235, bing 79세션 / yahoo 22 / copilot 20 / ddg 15 / google organic 1.
+- Google: 변화 없음(3개월 클릭 0, 미색인 19 평탄). Coverage zip 2개는 동일 내용.
+
+## ✅ 작업 (10/5)
+1. **🚨 사이트 전체 사실 오류 정정 — ACA 보조금.** health 주별 50페이지 전부에 "For 2026, the enhanced subsidies … have been extended"라고 써 있었다. **실제로는 2025년 말 만료**(하원 3년 연장안 2026.1.8 통과, 상원 계류). 50페이지 문장 교체: 만료, 400% FPL 절벽 부활, 2026 기준 소득의 최대 9.96%, 2027도 같은 규칙. `tools/health-insurance-self-employed.html`도 본문 정정 + **계산 로직 수정**(8.5% 상한 → IRS Rev. Proc. 2025-25 구간표 2.10~9.96%, FPL을 2025 지침 $15,650/+$5,500으로). 11월 1일 오픈 등록 직전이라 시의성·신뢰도 둘 다 걸린 문제였다.
+2. **pilots 허브 CTR 수정**: title → "Life Insurance for Private Pilots & All Pilots: Rates & Flat Extras", description → "Private pilot? You can almost always get life insurance — usually with a flat extra or an aviation exclusion…", H1 → "Private, Commercial & Airline". 상단에 사설 조종사 요약 박스(승인 여부·시간/IFR·대략 비용·항공 제외특약 경고) + 전용 페이지 링크. **다음 주 판정 기준: 이 3개 검색어 클릭 발생 여부.** 0이면 Bing이 snippet을 아직 안 갱신했거나 title 문제 — 2주 보고 판단.
+3. **health-insurance/texas** 55.5%→29.1%: 2026 순보험료 예시표(소득·나이별, IRS 구간표로 계산), 400% 절벽($62,600/$128,600)과 MAGI 낮추는 방법, 텍사스 커버리지 갭, **2027 오픈등록 2026.11.1~2027.1.15(12/15까지 가입해야 1/1 개시, CMS 확인)**. FAQ 5 신규.
+4. **life-insurance/new-york** 45.5%→20.8%: 뉴욕 전용 자회사 상품(예: Banner→William Penn of NY), Reg 187 최선이익, Reg 194 수수료 공개, **Reg 60 교체 60일**(기존 헤더 '30일'은 오류라 정정), 보증기금 $50만, **주 상속세 2026 $7.35M·절벽 $7,717,500**(기존 $6.58M은 구버전이라 정정) + ILIT 표. FAQ 5 신규.
+5. **workers-comp/massachusetts** 51.1%→23.5%: WCRIBMA(NCCI 아님), 위원장 −14.6% vs 요율국 −7.6%, **2026.7.13 SJC 환송 판결**, 경험요율($11,000/2년 또는 연 $5,500) vs Merit Rating($500 이상) — Bing `ma work comp mod`·`multiplier` 직답, Form 153(25% 임원), 작업중지 $100/일·이의 시 $250/일, Form 101. FAQ 4→10.
+- 도구: `deepen.py`에 FAQ 섹션 없는 페이지용 생성 분기 추가(health/life 주별 페이지는 FAQ가 없다).
+- 검증: 459파일, ld+json 0, div/table 0, 깨진 링크 0, sitemap 458, FAQ 1:1(TX5/NY5/MA10), 390/1280 넘침 0, 계산기 3케이스 수치 확인($287·$97·400% 초과 $0).
+- **누적 심화: WC 13 + business 6 + health 1 + life 1 = 21페이지.**
+
+## 🎯 다음 (10/5)
+- **P0. pilots 3개 검색어 클릭 확인.** 
+- **P1. 심화 판정**: new-mexico/hawaii(9/29), FL·GA·TX·KY business(10/1) — 10/12 데이터로.
+- **P2. health 주별 페이지 — 11/1 오픈등록 시즌 대비.** Bing에서 노출 붙는 순: new-york(19), indiana(16), illinois(14), washington·massachusetts·tennessee(12), ohio·nevada(11). 차별화 축: 주 거래소 vs HealthCare.gov, Medicaid 확장 여부, 주 자체 보조금(NJ·NM·CA·MA·WA·CO·MD 등), 개인 의무가입 주(MA·NJ·CA·RI·DC) 벌금. **ACA 수치는 반드시 2026 규칙(9.96%, 400% 절벽)으로.**
+- **P3. life 주별**: `life insurance "pennsylvania"`, `life insurance "maryland"`, `minnesota life insurance plan` 등 쿼리 존재. pennsylvania(16노출), texas(16/2).
+- **P4. WC/business 계속**: idaho(`fees` ×2, `employer rate` 1클릭), wyoming(`rate` ×2), washington(`rates`), business kansas/connecticut/north-carolina.
+- AdSense 결과 대기(10/1 보강 반영됨).
+
+**❌ 하지 말 것**: how-to-lower-car-insurance CTR 재시도 / states noindex·대량삭제 / 신규 대량 발행 / Google 지표로 판정 / 클래스코드 격자·신체부위 보상액(Bing `body part values … delaware` 쿼리 있어도 금지 유지) / GL 계산기 / Ezoic / IndexNow 재론 / 제휴 재론.
+
 # MyInsuranceCalc.com 인수인계 (2026-10-01 추가 — AdSense 승인 대비 작업, 20회차 보충)
 
 **배경**: 사용자가 AdSense 신청 중. 승인 준비 상태 점검 + 보강 요청.
