@@ -1,3 +1,28 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-06 추가 — AdSense 대비 보강, 21회차 보충)
+
+**배경**: 사용자 요청 — AdSense 심사 중, 할 수 있는 보강은 미리 해 두기. Bing 노출이 붙은 health/life 주별 페이지 위주(11/1 오픈등록 시즌 대비).
+
+## 작업 (10/6) — 8페이지 + 오래된 사실 정정
+| 페이지 | 중복 | 핵심 |
+|---|---|---|
+| health/new-york | 51.0→30.5% | **Essential Plan 2026.7.1 변경**(200~250% FPL 제외, BHP 복귀, DACA >138% 제외), **NY 연령 요율 금지**(나이 무관 동일 보험료), Medicaid 2026.7 연속보장 종료·2027.1 근로요건 80시간·6개월 재심사 |
+| health/massachusetts | 52.3→33.2% | **2027 오픈등록 2026.10.23 시작, 12/23까지 가입·납부 시 1/1 개시**(기존 'Nov 1–Jan 23' 정정), ConnectorCare($0~$235, 500% 파일럿은 연방 400% 절벽 때문에 사실상 미적용), 주 개인의무가입 벌금(1099-HC/Schedule HC) |
+| health/washington | 56.5→36.1% | Cascade Care/Select/Savings 구분표(Savings ≤250% FPL, 약 $55/인/월), **premium alignment → Gold가 Silver보다 쌀 수 있음**, 2026 +21%·12개사. 2027 마감일은 법원 판결로 유동적이라 '11/1 시작, 마감은 Healthplanfinder 확인'으로 표기 |
+| health/illinois | 58.1→40.7% | **2025.11.1부터 HealthCare.gov 이탈 → Get Covered Illinois 독자 플랫폼**(기존 '연방 플랫폼' 문구 3곳 정정), **Cigna·Molina 2026말 철수**, 2027 제안 +14.1%, 2026 순보험료 평균 $142 |
+| health/nevada | 58.9→44.3% | **Battle Born State Plans(공공옵션) 2026 출시**(기존 '입법만 됨/시행되면' 문구 3곳 정정), 재보험, 2026 +22.3%, 2027 9개사 |
+| health/indiana | 62.7→40.5% | **CareSource·Cigna 철수, AmeriHealth Caritas 진입**, 2027 제안 +19.3%, **2026 과세연도부터 초과 APTC 상환 한도 폐지**, HIP·연방 근로요건(2026.12.31)·6개월 재심사(2027.1.1) |
+| life/texas | 53.6→29.1% | 부부공동재산과 수익자 지정(fraud on the community, 이혼 시 전 배우자 지정 무효), Ins. Code 1108 채권자 보호, 보증기금 $300k/$100k, term vs whole 비용 비교 |
+| life/pennsylvania | 52.2→34.3% | 상속세율표, **생명보험 전액 비과세** → $500k 기준 자녀 $22,500 / 기타 $75,000 차이, 3개월 내 납부 5% 할인, 퇴직계좌 59½ 규칙 |
+
+- health 페이지 중복이 30~44%로 WC/business(20%대)보다 높다 — 템플릿 본문(평균보험료·도시표·CHIP 문단)이 그대로 남아 있어서. 다음에 health를 더 할 때는 템플릿 문단 자체를 주별 내용으로 교체하는 게 효율적.
+- 검증: 459파일, ld+json 0, div/table 0, 깨진 링크 0, sitemap 458, FAQ 1:1, 390/1280 넘침 0.
+- **누적 심화: WC 13 + business 6 + health 7 + life 3 = 29페이지.**
+
+## 다음
+- 10/12 정기: pilots 클릭, new-mexico/hawaii, FL·GA·TX·KY business 판정.
+- health 나머지 Bing 노출 페이지: tennessee(12), ohio(11), florida, georgia, california, michigan. 11/1 전에 할수록 좋다.
+- **ACA 관련 수치는 반드시 2026 규칙**(9.96%, 400% 절벽, 상환 한도 폐지) **+ 2027 주별 오픈등록 날짜는 각 거래소에서 확인**(WA처럼 출처끼리 다른 경우 있음).
+
 # MyInsuranceCalc.com 인수인계 (2026-10-05 업데이트, 21회차 — 주간 정기작업)
 
 ## 🔗 화면 확인 필요 (10/5)
