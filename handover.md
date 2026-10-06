@@ -1,3 +1,18 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-06 2차 — 보강 계속 + 사이트맵 최신화)
+
+## 작업
+1. **health 6개 추가 심화**: tennessee(61.8→44.7%), ohio(63.5→48.0%), florida(56.7→42.9%), georgia(60.2→39.1%), california(51.9→38.6%), michigan(59.3→47.9%) — 2027 보험사 철수/진입, 2027 제안 인상률 표, 2026 순보험료, 주별 제도(Georgia Access·Pathways, CA 주 보조금, TN 커버리지 갭).
+2. **사실 오류 정정(거래소 이름/상태)**: georgia(Georgia Access 2025~), **maine(CoverME.gov — 기존 'Federal' 오류)**, **virginia(주 거래소 2023~ — 기존 'Federal' 오류, 2027 OE 11/1~12/31)**, hawaii(Hawaii Health Connector는 2015년 폐쇄 → HealthCare.gov), **oregon(ExploreHealthOR.gov 2026.11.1 개시)**, california(Medi-Cal 미등록 이민자 신규가입 동결, 주 보조금 400~600% FPL → 2026 ≤165%·2027 ≤200%), florida(가입자 300만+ → 454만).
+3. **WC 2개**: idaho(32.5%: 면제 목록, $2/인/일 또는 $25/일, 10% 급여 가산, 보험료 2% premium tax — Bing `idaho workers compensation fees` 직답, 2026 −2.5%·9년 연속), washington(28.9%: **시간당 요율·근로자 25% 부담**, 2026 +4.9%, stop-gap, 타주 작업). **WA 템플릿의 '(Payroll/100)×요율' 공식은 오류라 시간 기준으로 정정.**
+4. **사이트맵 최신화**: 458개 URL 전부에 `<lastmod>` 추가(각 파일의 git 마지막 커밋일). 누락·유령 URL 0 확인. 이후 페이지를 수정하면 lastmod도 갱신할 것 — 아래 스크립트 방식: `git log -1 --format=%cs -- <path>`로 재생성.
+- 검증: 459파일, ld+json 0, div/table 0, 깨진 링크 0, FAQ 1:1, 390/1280 넘침 0.
+- **누적 심화: WC 15 + business 6 + health 13 + life 3 = 37페이지.** 거래소 정보 정정은 health 50개 중 11개 주.
+
+## 남은 것 / 메모
+- health 심화 페이지 중복이 39~48%로 높다 — 템플릿 문단(평균비용 도입문, 도시표 설명, CSR 문단, 팁 목록)이 50개 주에 동일. 다음 단계는 **템플릿 문단 자체를 주별 문장으로 교체**.
+- wyoming WC: 공식 자료에서 검증된 사실이 부족해 이번엔 보류(독점기금이라는 점만 확인).
+- 나머지 health 주(노출 적음)와 car/home/renters 카테고리는 아직 전부 템플릿.
+
 # MyInsuranceCalc.com 인수인계 (2026-10-06 추가 — AdSense 대비 보강, 21회차 보충)
 
 **배경**: 사용자 요청 — AdSense 심사 중, 할 수 있는 보강은 미리 해 두기. Bing 노출이 붙은 health/life 주별 페이지 위주(11/1 오픈등록 시즌 대비).
