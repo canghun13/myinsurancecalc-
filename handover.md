@@ -1,3 +1,29 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-12 — 22회차)
+
+## 데이터 (Bing 10/12, GSC, GA4)
+- Bing이 주 채널. `life insurance private pilot` 노출 13,787·클릭 0(pilots 페이지 14,403/2) → 비인간 노출로 판단, 추가 조치 없음.
+- **EMR 클러스터 성장**: tools/emr-calculator 301/11, workers-comp/new-jersey 215/5, indiana 46/3. 쿼리에 `list the experience modifications rate (emr) for your firm for the last three years` (사전심사 양식 문구), `how much does an accident effect … emr` 등장 → 신규 글로 대응.
+- business 주별 페이지가 처음으로 1~10 노출·클릭 발생(NY/FL/KS/NJ/IN/DE/CT/NV 등) — 10/6 보강 효과 초기 신호.
+- Google: 크롤링됨-색인안됨 3, 발견됨-색인안됨 19. 여전히 알고리즘 강등 상태(GSC 3일 지연). GA4 활성 사용자 275.
+
+## 작업 (10/12)
+1. **신규: blog/emr-on-prequalification-forms.html** — "How to Report Your EMR on a Prequalification Form (Last 3 Years, No EMR, New Owners)". 기존 emr-calculator/ghost-policy/contracts 글과 중복 확인 후 '양식 작성' 의도로 분리(롱테일). 3년 기준 표(요율 발효일), EMR 레터·워크시트, EMR 없음→1.00+에이전트 레터, 다주(독립 요율국·독점기금) 복수 mod, ERM-14 소유권 변경 90일, 0.80/1.00/1.20/1.57 의미 표, TRIR/DART 공식, FAQ 5. 연결: blog/index 카드, emr-calculator 본문, insurance-requirements-in-contracts(본문+사이드바), hiring-subcontractors(사이드바), sitemap.
+2. **WC 근로자 관점 섹션**: new-jersey(70% 임금, 최대 $1,199/최소 $320, 7일 대기·7일 초과 시 소급, 400주), indiana(TTD→TPD 전환 시 수령액 감소, MMI→PPI degree, 500/300주, 첫 7일 21일 규칙, 2026.7.1 최대 $878). 각 FAQ.
+3. **business 6개 수작업 섹션**(FAQ 앞, FAQ 1개씩): alabama(5인+, 임원·LLC 멤버 포함), utah(1인+, 30/65/25+PIP $3k, DOPL 2026 봄 $1M per occurrence — **aggregate 수치 불확실, 페이지엔 DOPL 확인 권고로 표기**), nevada(주기금 없음 1999 민영화, NSCB WC 증빙), connecticut(벌금 $500/인 또는 $5,000 중 작은 값→일 $100 최대 $50k, 건설 일 $300 작업중지, 중죄, 최대 $1,716), south-carolina(4인+ & $3,000 급여 기준, statutory employer), kansas(급여 $20,000 초과, 가입 확인 검색, PIP).
+4. 문법 정정: "What a A/E/I/O/U…" → "an" 12건, "a Alabama/Idaho/Indiana/Oregon…" → "an" 14건(business·WC).
+- 검증: 460파일, ld+json 0, div/table 0, 깨진 링크 0, FAQ 1:1, sitemap 459, 390/1280 넘침 0. sitemap lastmod git 기준 재생성.
+
+## 다음 우선순위
+1. **renters·business 수작업 재작성**(최근접 중복 54%/50% — 가장 높음). business는 노출이 붙기 시작한 주(NY/FL/KS/NJ/IN/CT/NV/DE/TN/NC) 먼저.
+2. EMR 신규 글 + 9/29~10/6 심화 페이지 Bing 반응 판정(10/19 데이터).
+3. Utah DOPL 보험 한도(aggregate) 재확인.
+4. 11/1 ACA 오픈등록 시즌: health 주별 페이지 노출 변화 추적.
+
+## 하지 말 것
+- 생성 모듈 import 금지(재실행되어 섹션 중복 삽입).
+- IndexNow 재논의·제휴 제안 반복·대시보드/시각화 금지. 공격적 확장 전략 유지.
+- 토큰 없이도 세션 GitHub 프록시로 push 가능(add_repo push 후 remote를 plain URL로).
+
 # MyInsuranceCalc.com 인수인계 (2026-10-06 3차 — AdSense 대비 전체 states 보강 완료)
 
 **요청**: 템플릿 states 페이지 전부 보강(신규 페이지 없음) + 사이트맵 최신화.
