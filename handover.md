@@ -1,3 +1,39 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-14 — 23회차, 신규 키워드 발굴·클러스터 확장)
+
+**요청**: GSC/보유 데이터 밖(구글 자동완성·레딧/포럼·네이버/워킹유에스·SERP)에서 문서는 적고 관심 있는 키워드 발굴 → 경쟁 강도 체크 → 롱테일·클러스터 단위 신규.
+
+## 발굴 방법 (다음에도 그대로)
+- 구글 자동완성: WebFetch `https://suggestqueries.google.com/complete/search?client=firefox&q=...` 작동함(시드: "can i get life insurance if i", "does homeowners insurance cover", "workers comp for", "insurance for mobile", "certificate of insurance for", "how old can a roof be for insurance", "health insurance for h1b", "medicare advantage plan discontinued" 등).
+- reddit.com WebFetch는 차단, `site:reddit.com` 검색도 레딧 결과가 거의 안 나옴 → 자동완성의 "~ reddit" 접미사로 관심도 판단. 네이버 자동완성(ac.search.naver.com)은 권한 요청 필요 → WebSearch 한국어 쿼리(workingus 등)로 대체.
+- 경쟁 판정: 상위 10개가 정부 PDF·옹호단체·업계지·업체 영업페이지·포럼뿐이면 '약', NerdWallet/Policygenius/SelectQuote/MoneyGeek급 전용 글이 다수면 '강'.
+
+## 신규 9페이지 (모두 sitemap·blog/index·llms.txt·관련 페이지 링크 연결)
+| 클러스터 | 페이지 | 타깃 키워드 | 경쟁 |
+|---|---|---|---|
+| **신규: 이민자·비자 건강보험** | blog/aca-subsidies-for-immigrants-2027 (허브) | aca subsidies immigrants 2027, green card / refugee / TPS subsidy | 약 (KFF·주 거래소 PDF뿐) |
+| 〃 | blog/health-insurance-h1b-e2-visa-holders-2027 | health insurance for h1b visa holders (+reddit), can e2 visa holders get health insurance | 약 |
+| 〃 | blog/health-coverage-refugees-asylees-tps-2027 | refugee/asylee medicaid oct 2026, TPS medicare 2027 | 약 |
+| **신규: Medicare** | blog/medicare-advantage-plan-discontinued-2027 | my medicare advantage plan is being discontinued, guaranteed issue after advantage plan discontinued | 약~중 (뉴스 위주) |
+| 확장: 계약자 B2B | blog/isnetworld-avetta-insurance-requirements | isnetworld insurance requirements, is isnetworld worth it, avetta | 약 |
+| 확장: COI | blog/certificate-of-insurance-for-movers | certificate of insurance for moving company | 약 (이사업체 영업페이지뿐) |
+| 확장: 주택 | blog/how-old-can-a-roof-be-for-insurance | how old can a roof be for insurance (+florida), will insurance cover a 20 year old roof | 약~중 |
+| 〃 | blog/unknown-roof-age-insurance | unknown roof age insurance, how to prove roof age | 약 |
+| 신규: 전기자전거 | blog/new-jersey-e-bike-insurance-requirement | e-bike insurance nj | 중 |
+
+- 핵심 사실(1차 자료 확인): H.R.1 §71301 — 2027.1.1부터 PTC/CSR은 LPR·쿠바/아이티 입국자·COFA만. §71302 — 2026부터 100% FPL 미만 체류자격 Medicaid 불가자 PTC 없음. §71109 — 2026.10.1 Medicaid/CHIP 연방재원 동일 3그룹 한정(CHIPRA 214·응급 Medicaid 유지). §71201 — Medicare 2027 초 종료(CMA 팩트시트: 2027.2.1, 1월 혼재; CMS 규칙 2026.7.16 제안 단계). 2027 OE: HealthCare.gov 11/1~1/15(12/15까지 1/1 개시). HSA 한도 2027 $4,500/$9,000. Part D 2027 OOP 상한 $2,400·공제 최대 $700. Medigap GI 플랜 A,B,D,G,K,L(+C,F 2020 이전 자격). FL 627.7011(5)(b)(c) 15년·잔여수명 5년. NJ e-bike: 2026.7.19 준수, 저속 페달보조는 등록만·20mph+는 15/30/5+PIP(Insurance Journal).
+- **보류(이번에 안 한 것)**: catastrophic plan over 30(2027 자격이 7월 법원 stay로 유동적 — 확정 후 작성), Medigap birthday rule 주별(SelectQuote·US News·MedicareFAQ 장악), 외국 면허 자동차보험(MoneyGeek·Insurify 장악), 주별 Medicaid 근로요건(정부·뉴스 장악, CPC 낮음), GLP-1 생명보험 단독 페이지(기존 obesity 글과 잠식 → 대신 obesity 글 GLP-1 섹션 정정·보강: 절반 인정 규칙, Standard 상한 경향, Rx DB, 중단 시 2/3 재증가).
+
+## 기타 정비
+- tools 18개 + life-after-dui: FAQ 스키마 질문문구를 화면 h3와 일치시키고, 스키마에만 있던 Q 8개는 화면에 추가(FAQ 1:1 위반 0).
+- states/health-insurance/index: 2027 OE·이민자 변경 안내 문단 + 카드 문구 정정(CA Medi-Cal 동결, FL 450만+, CO Colorado Option).
+- 검증: 469파일, ld+json 0, div/table/ul/ol 0, 깨진 링크 0, FAQ 1:1 0, sitemap 468(중복 0), 390/1280 넘침 0. 기사 생성기: /home/claude/gen/article.py(import 안전한 순수 함수) + p_*.py.
+
+## 다음
+1. 10/19 Bing 데이터로 신규 9개 노출 확인. 이민자 클러스터가 붙으면 확장 후보: "health insurance for green card holders 5 year bar", "H-4 EAD health insurance", "OPT health insurance gap", 주별 lawfully present 주정부 프로그램(CA/NY/IL/WA/MA).
+2. Medicare 클러스터 확장 후보(경쟁 덜한 롱테일): Medigap trial right, Part D 2027 $2,400 cap 계산기형, IRMAA 2027.
+3. B2B: Avetta 단독·Highwire/Veriforce, "COI for events/vendors/farmers market"(자동완성 확인됨).
+4. 지난 회차 이월: renters·business 수작업 재작성(중복 50%대), Utah DOPL aggregate 재확인.
+
 # MyInsuranceCalc.com 인수인계 (2026-10-12 — 22회차)
 
 ## 데이터 (Bing 10/12, GSC, GA4)
