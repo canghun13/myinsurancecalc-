@@ -1,3 +1,33 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-20 — 24회차)
+
+## 데이터 (Bing 10/20, GSC ~10/17, GA4 9/22~10/19)
+- Bing 페이지 합계 노출 17,585→28,469, 클릭 160→181. 증가분 대부분은 pilots(14,403→24,749, 클릭 2 그대로 = 비인간 노출, 조치 없음).
+- 실질 성장: emr-calculator 301→445(클릭 12), health TX 92→144·FL 62→111·WA 26→66(오픈등록 시즌), home TX 26→82, table-rating 93→121, WC MN 18→40·ME 56→71(클릭 6).
+- **키워드 신호: 근로자 쪽 질문이 WC 주별 페이지로 대거 유입** — "how much does nj workers comp pay", "in indiana why did my workman comp pay drop in half", "maximum work comp pay in mn", "va what percentage does workers comp pay", "what do they base your work comp check on in il", "minimum compensation rate in south carolina", "maximum worker's comp rate maryland 2026" 등 12개 주 이상.
+- how-to-lower-car-insurance: 노출 777·순위 7.1·클릭 1 → pilots와 같은 비인간 패턴 의심, 조치 보류(다음 주 재확인).
+- 10/14 신규 9개: Bing 보고서엔 아직 없음(GA4엔 이민자 허브·ISN 각 1뷰). 다음 주 판정.
+- Google: 크롤링됨-미색인 3, 발견됨-미색인 19 그대로. 평균 순위 50~90 → 여전히 강등. GA4 활성 314(bing 94, ddg 27, yahoo 16, copilot 10).
+
+## 작업 (10/20)
+1. **WC 48개 주에 "How Much Workers' Comp Pays in [State] (2026)" 섹션 + FAQ** (NJ·IN은 10/12 수작업 섹션 유지). 표: 급여율, 최대(발효일), 최소(TX·TN·VA·WA), 대기기간, 소급 지급 기준. 기존 템플릿 문단과 "Maximum Weekly Benefit" 섹션·FAQ는 제거·대체.
+   - 최대치 출처: SSA POMS DI 52150.045(2026.10.06 갱신, AL~NY) / TX TDI(FY2027 $1,314·최소 $197) / TN BWC($1,488.30·$202.95) / VA WCC($1,507.01·$376.75) / WA L&I(월 $9,981·최소 월 $1,247.63) / OK 2026 요율표($1,128.66) / OH·PA·SC는 기존 주 발표값.
+   - **최대치 미기재(기관명만): NC, ND, OR, RI, SD, UT, VT, WV, WI, WY** — 1차 자료로 2026 값을 못 찾음. 다음에 기관 자료 확인되면 추가.
+   - 소급 기준 미기재(확신 없음): HI, MT, NV(문장으로 대체), ND, OK, RI, VT, WY.
+   - **템플릿 오류 정정**: CA "70%"→66⅔%, WY "세후 80%"→월소득 66⅔%, WV "70%"→66⅔%.
+   - 갱신: CT $1,776(10/1/26), IL $2,045.63(7/15/26), LA $903(9/1/26), MN $1,594.08(10/1/26), MA $2,007.20(10/1/26) — business 페이지 4곳(CT·IL·LA·MN) 수치도 갱신.
+   - 섹션 생성기: /home/claude/gen/wc_pay.py (main 가드 있음, 재실행 시 이미 있는 주는 skip).
+2. **신규: blog/workers-comp-schedule-rating** — "xmod/schedule modification" 쿼리 대응. SERP가 규제기관 PDF뿐(경쟁 약). NCRB·PCRB 플랜 표(±25%, 카테고리별 한도, NC $2,500 최소), 계산 순서(manual×EMR×schedule→할인·expense constant), 예시. EMR 계산기·WC 계산기·EMR/ISN/ghost 글 연결.
+3. **prostate 글에 "Is Gleason 6 Considered Cancer by Insurance Companies?" 섹션 + FAQ 2** (Bing 쿼리 9회·순위 3.4 대응). CI 부분지급 예: Sun Life 캐나다 T1a/T1b 15%·$50,000 한도.
+4. health 50개 주 페이지 "ACA Subsidies" 섹션에 2027 이민자 보조금 변경 안내 + 이민자 허브 링크(신규 클러스터로 내부링크 공급).
+5. **CSS: 2열(라벨/값) 표는 모바일에서 가로 스크롤 없이 화면에 맞게** (`.table-scroll table:not(:has(tr > :nth-child(3))) {min-width:0}`) — 사이트 전체 2열 표 적용.
+- 검증: 470파일, ld+json 0, 태그 균형 0, 깨진 링크 0, FAQ 1:1 0, sitemap 469, WC 전 주+블로그 전체 390/1280 넘침 0.
+
+## 다음
+1. 10/27 데이터: 신규 10개(10/14 9개 + schedule rating) Bing 반응, WC 근로자 섹션 CTR 변화.
+2. WC 최대치 미기재 10개 주 1차 자료 확인 후 채우기. NY는 POMS가 2025.7.1 값이라 2026.7.1 값 확인 필요.
+3. 후보(쿼리 확인됨): "workers comp minimum/maximum payroll for owners/officers by state"(TN·CO·MS 쿼리) — NCCI 주별 임원 최소·최대 급여 표가 필요(자료 확보가 관건). "body part values / scheduled loss by state"는 로펌·ProPublica가 강해서 보류.
+4. 이월: renters·business 수작업 재작성, Utah DOPL aggregate.
+
 # MyInsuranceCalc.com 인수인계 (2026-10-14 — 23회차, 신규 키워드 발굴·클러스터 확장)
 
 **요청**: GSC/보유 데이터 밖(구글 자동완성·레딧/포럼·네이버/워킹유에스·SERP)에서 문서는 적고 관심 있는 키워드 발굴 → 경쟁 강도 체크 → 롱테일·클러스터 단위 신규.
