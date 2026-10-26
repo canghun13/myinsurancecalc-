@@ -1,3 +1,26 @@
+# MyInsuranceCalc.com 인수인계 (2026-10-26 — 25회차)
+
+## 데이터 (Bing 10/26, GSC ~10/24, GA4 9/28~10/25)
+- Bing 노출 28,469→34,825, 클릭 181→206. 증가분 대부분 pilots(비인간, 클릭 2 고정). how-to-lower-car-insurance 777/1 그대로(보고서 수치 고정 — 비인간/정체로 판단, 조치 없음).
+- 실질 성장: emr-calculator 445→555(클릭 14), health WA 66→141·FL 111→166·MI 5→37·TX 144→168(오픈등록 11/1 직전), home TX 82→139, WC CO 3→47(쿼리 "colorado workers compensation requirements" 37회, 순위 8.8, 클릭 0), WC MD 20→47(클릭 6), TN 49→75.
+- **반복 신호: 사장/임원 급여 기준 쿼리** — 지난주 TN·CO·MS, 이번 주 NE("salary caps for employer contributions")·UT("annual premium cap") → 이번에 대응.
+- 10/14 신규 9개 + 10/20 schedule rating: Bing 페이지 보고서엔 아직 없음(GA4엔 각 1뷰). Google은 신규 9개 전부 '발견됨-미색인'으로 들어감(19→29), 크롤링됨-미색인 3→7(NY·PA 주택, NH·GA 생명, 간호사·전립선·난소암 블로그 — 오래된 크롤링). 강등 상태 지속.
+- GA4 활성 362(bing 105, ddg 36, yahoo 25).
+
+## 작업 (10/26)
+1. **신규: blog/workers-comp-owner-officer-payroll-limits** — 46개 주+DC 임원 최소·최대 급여, 개인사업자·파트너 정액/상한, 적용일 표 + 예시. 출처: ICW Group 2026 청구 표, LUBA(2026.5.5; AR·TX 2026.7.1 값). 독점기금 4개 주(OH·ND·WA·WY) 제외. 경쟁: 전용 표는 workercompexemption.help 정도.
+2. **WC 46개 주 페이지에 "Owner and Officer Payroll Limits in [State]" 섹션 + FAQ** (예시 계산, FL·TN 건설업, CO·MO 정액, TX·NV 특이사항). 생성기: /home/claude/gen/officer_pay.py (`python3 officer_pay.py states`, 이미 있으면 skip).
+3. **Colorado WC: "Who Must Carry Workers' Comp in Colorado (and Who Is Exempt)" 섹션 + FAQ 2** — 1인 이상 의무, 10% 이상 임원·LLC 멤버 거부 가능, 면제 범주(가사·$2,000 미만 임시·부동산 커미션 등), 독립계약자 기준, 벌금 C.R.S. 8-43-409(초회 일 $250 이하, 이후 일 $250~$500).
+4. Utah WC 최대 $1,376(2026.7.1, Labor Commission) + 최소 $45(+부양가족 $20) 채움. → **최대치 미기재 남은 주: NC, ND, OR, RI, SD, VT, WV, WI, WY** (WebFetch가 검색결과 URL만 허용하도록 바뀌어 기관 PDF 직접 열기 실패 — 다음에 검색 결과 링크로 재시도).
+5. 감사 가이드에 사장 급여 섹션 추가, WC 계산기·ghost/schedule rating/EMR/freelancer 글에서 신규 허브 링크.
+- 검증: 471파일, ld+json 0, 태그 균형 0, 깨진 링크 0, FAQ 1:1 0, sitemap 470, 390/1280 넘침 0.
+
+## 다음
+1. 11/2 데이터: 신규 11개 Bing 반응, CO WC CTR, 사장 급여 쿼리 유입 여부.
+2. WC 최대치 9개 주 채우기, NY 2026.7.1 최대치 확인.
+3. 오픈등록(11/1~) 기간 health 주별 페이지 노출 추적 — WA·MI 급상승. 필요 시 WA·MI에 2027 가입 일정/플랜 변화 보강.
+4. 이월: renters·business 수작업 재작성, Utah DOPL aggregate.
+
 # MyInsuranceCalc.com 인수인계 (2026-10-20 — 24회차)
 
 ## 데이터 (Bing 10/20, GSC ~10/17, GA4 9/22~10/19)
