@@ -3,412 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Insurance Calc – Free Insurance Calculators</title>
-  <meta name="description" content="Free insurance calculators for life, disability, pet, freelancer, EV, and more. Get instant results with no signup required." />
+  <title>My Insurance Calc – Insurance Calculators and State-by-State Guides</title>
+  <meta name="description" content="Insurance calculators and state-by-state guides for U.S. households and small businesses: car, home, health, life, renters, workers' comp and business insurance in all 50 states. Free, no sign-up." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://myinsurancecalc.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="My Insurance Calc – Free Insurance Calculators" />
-  <meta property="og:description" content="Free insurance calculators. Instant results, no signup." />
+  <meta property="og:title" content="My Insurance Calc – Insurance Calculators and State-by-State Guides" />
+  <meta property="og:description" content="Pick what you're insuring, then your state. Free calculators and plain-language guides." />
   <meta property="og:url" content="https://myinsurancecalc.com/" />
   <meta property="og:type" content="website" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&family=Public+Sans:wght@400;500;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "My Insurance Calc",
-    "url": "https://myinsurancecalc.com",
-    "description": "Free insurance calculators and plain-language guides for U.S. consumers. Estimate costs for life, auto, home, health, disability, and specialty insurance. No signup required.",
-    "publisher": { "@type": "Organization", "name": "My Insurance Calc", "url": "https://myinsurancecalc.com" },
-    "potentialAction": { "@type": "SearchAction", "target": "https://myinsurancecalc.com/blog/?q={search_term_string}", "query-input": "required name=search_term_string" }
-  }
+  {"@context": "https://schema.org", "@type": "WebSite", "name": "My Insurance Calc", "url": "https://myinsurancecalc.com", "description": "Insurance calculators and state-by-state guides for U.S. households and small businesses: car, home, health, life, renters, workers' comp and business insurance in all 50 states. Free, no sign-up.", "publisher": {"@type": "Organization", "name": "My Insurance Calc", "url": "https://myinsurancecalc.com"}}
   </script>
+  <style>
+    .home { --ink:#14213d; --ink-2:#4a5873; --blue:#1a4fba; --mist:#eef2f8; --rule:#d5deeb; --mark:#f4c95d;
+      font-family:'Public Sans', 'DM Sans', system-ui, sans-serif; color:var(--ink); }
+    .home a { text-decoration:none; }
+    .home .wrap { max-width:1100px; margin:0 auto; padding:0 20px; }
+
+    /* hero: statement, coverage switch, map */
+    .atlas { padding:56px 0 40px; border-bottom:1px solid var(--rule); }
+    .atlas h1 { font-family:inherit; font-weight:800; font-size:clamp(2.1rem, 5.4vw, 4.1rem); line-height:1.02; letter-spacing:-0.035em; max-width:15ch; margin:0 0 18px; }
+    .atlas .lede { font-size:1.1rem; line-height:1.6; color:var(--ink-2); max-width:58ch; margin:0 0 30px; }
+    .covs { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 6px; }
+    .covs-label { font-size:.92rem; color:var(--ink-2); margin:0 0 10px; }
+    .cov { font:inherit; font-size:.95rem; font-weight:600; color:var(--ink); background:#fff; border:1.5px solid var(--rule); border-radius:999px; padding:8px 16px; cursor:pointer; }
+    .cov:hover { border-color:var(--ink); }
+    .cov.is-on { background:var(--ink); border-color:var(--ink); color:#fff; }
+    .cov:focus-visible, .tile:focus-visible, .pick select:focus-visible, .pick button:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
+
+    .map { position:relative; display:grid; grid-template-columns:repeat(11, minmax(0, 1fr)); gap:6px; max-width:960px; margin-top:28px; }
+    .tile { grid-column:var(--c); grid-row:var(--r); aspect-ratio:1.2; display:flex; align-items:center; justify-content:center;
+      background:var(--mist); color:var(--ink); border-radius:6px; font-weight:600; font-size:clamp(.6rem, 1.3vw, .95rem); letter-spacing:.02em;
+      transition:background-color .15s, color .15s; }
+    .tile.is-marked { background:var(--mark); }
+    .tile:hover, .tile:focus-visible { background:var(--blue); color:#fff; }
+    @media (prefers-reduced-motion:no-preference) {
+      .map.is-loading .tile { opacity:0; transform:translateY(6px); }
+      .map .tile { transition:background-color .15s, color .15s, opacity .5s ease, transform .5s ease; transition-delay:0s, 0s, calc((var(--c) + var(--r)) * 22ms), calc((var(--c) + var(--r)) * 22ms); }
+    }
+    /* the empty space above the northern states holds the readout */
+    .readout { grid-column:2 / 9; grid-row:1 / 3; align-self:start; padding:4px 0 0 12px; }
+    .r-state { font-size:clamp(1.3rem, 2.4vw, 1.9rem); font-weight:800; letter-spacing:-0.02em; line-height:1.1; margin:0 0 4px; }
+    .r-cov { font-weight:600; margin:0 0 4px; }
+    .r-blurb { color:var(--ink-2); font-size:.97rem; line-height:1.5; margin:0; max-width:46ch; }
+    .board-foot { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 32px; max-width:960px; margin-top:20px; }
+    .legend { display:flex; gap:10px; align-items:center; font-size:.92rem; color:var(--ink-2); margin:0; }
+    .legend i { flex:none; width:16px; height:16px; border-radius:4px; background:var(--mark); }
+    .legend[hidden] { display:none; }
+    .pick { display:flex; gap:6px; margin-left:auto; }
+    .pick select { min-width:0; width:200px; font:inherit; font-size:.95rem; padding:9px 10px; border:1.5px solid var(--rule); border-radius:8px; background:#fff; color:var(--ink); }
+    .pick button { font:inherit; font-weight:600; font-size:.95rem; padding:9px 16px; border:0; border-radius:8px; background:var(--blue); color:#fff; cursor:pointer; }
+
+    /* calculators index */
+    .calcs { padding:56px 0 24px; }
+    .home h2 { font-family:inherit; font-weight:800; font-size:clamp(1.6rem, 3vw, 2.2rem); letter-spacing:-0.025em; line-height:1.1; margin:0 0 8px; }
+    .sub { color:var(--ink-2); margin:0 0 28px; max-width:60ch; }
+    .calc-cols { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:0 48px; }
+    @media (max-width:900px) { .calc-cols { grid-template-columns:1fr; } .calc-stack { display:contents; } }
+    .calc-group { break-inside:avoid; margin:0 0 30px; }
+    .calc-group h3 { font-family:inherit; font-size:1rem; font-weight:800; padding-bottom:8px; border-bottom:2px solid var(--ink); margin:0; }
+    .calc-group ul { list-style:none; margin:0; padding:0; }
+    .calc-group li { padding:10px 0; border-bottom:1px solid var(--rule); }
+    .calc-group li a { display:block; font-weight:600; color:var(--blue); }
+    .calc-group li a:hover { text-decoration:underline; }
+    .calc-group li span { display:block; font-size:.9rem; color:var(--ink-2); line-height:1.45; }
+
+    /* guides */
+    .guides { padding:40px 0 64px; background:var(--mist); }
+    .g-list { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0 48px; }
+    .g-list li { border-top:1px solid var(--rule); }
+    .g-list a { display:block; padding:16px 0 18px; color:var(--ink); }
+    .g-list a:hover .g-title { text-decoration:underline; }
+    .g-tag { display:block; font-size:.85rem; color:var(--ink-2); margin-bottom:2px; }
+    .g-title { display:block; font-weight:700; font-size:1.08rem; line-height:1.35; }
+    .g-sum { display:block; color:var(--ink-2); font-size:.93rem; line-height:1.5; margin-top:4px; }
+    .more { display:inline-block; margin-top:22px; font-weight:600; color:var(--blue); }
+    .listed { display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:22px 0; }
+    .listed img { height:30px; width:auto; }
+    .home .adslot { margin:0 auto; }
+
+    @media (max-width:700px) {
+      .map { gap:3px; }
+      .tile { aspect-ratio:1; border-radius:4px; }
+      .readout { grid-column:1 / -1; grid-row:9; padding:14px 0 0; }
+      .pick { margin-left:0; width:100%; }
+      .pick select { flex:1; width:auto; }
+      .g-list { grid-template-columns:1fr; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- nav.js injects header & footer -->
 
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-badges">
-        <span class="badge">Free Forever</span>
-        <span class="badge">No Signup</span>
-        <span class="badge">Instant Results</span>
-      </div>
-      <h1>Insurance, <em>finally</em> made simple.</h1>
-      <p>Free calculators to help you understand exactly how much coverage you need — and what it costs.</p>
-      <a href="#tools" class="btn-calc" style="display:inline-block;width:auto;padding:13px 32px;border-radius:8px;font-size:1rem;">Explore Calculators ↓</a>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">21+</span>
-          <span class="stat-label">Free Tools</span>
+<main class="home">
+  <section class="atlas">
+    <div class="wrap">
+      <h1>Insurance changes at the state line.</h1>
+      <p class="lede">Minimum limits, prices and who has to carry what are set state by state. Pick what you&rsquo;re insuring, then your state &mdash; or jump to one of 32 calculators below.</p>
+      <p class="covs-label" id="covs-label">What are you insuring?</p>
+      <div class="covs" role="group" aria-labelledby="covs-label"><button type="button" class="cov is-on" data-cov="health-insurance" aria-pressed="true">Health</button><button type="button" class="cov" data-cov="car-insurance" aria-pressed="false">Car</button><button type="button" class="cov" data-cov="home-insurance" aria-pressed="false">Home</button><button type="button" class="cov" data-cov="renters-insurance" aria-pressed="false">Renters</button><button type="button" class="cov" data-cov="life-insurance" aria-pressed="false">Life</button><button type="button" class="cov" data-cov="workers-comp" aria-pressed="false">Workers&rsquo; comp</button><button type="button" class="cov" data-cov="business-insurance" aria-pressed="false">Small business</button></div>
+      <nav class="map" id="map" aria-label="Choose your state">
+        <div class="readout" aria-live="polite">
+          <p class="r-state" id="r-state">Choose a state</p>
+          <p class="r-cov" id="r-cov">Health insurance guide</p>
+          <p class="r-blurb" id="r-blurb">Marketplace prices, Medicaid rules and 2027 open enrollment dates.</p>
         </div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">No Signup</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">$0</span>
-          <span class="stat-label">Hidden Fees</span>
-        </div>
+        <a class="tile" href="/states/health-insurance/alaska.html" data-s="alaska" data-n="Alaska" style="--c:1;--r:1" aria-label="Alaska health insurance guide">AK</a><a class="tile is-marked" href="/states/health-insurance/maine.html" data-s="maine" data-n="Maine" style="--c:11;--r:1" aria-label="Maine health insurance guide">ME</a><a class="tile is-marked" href="/states/health-insurance/vermont.html" data-s="vermont" data-n="Vermont" style="--c:10;--r:2" aria-label="Vermont health insurance guide">VT</a><a class="tile" href="/states/health-insurance/new-hampshire.html" data-s="new-hampshire" data-n="New Hampshire" style="--c:11;--r:2" aria-label="New Hampshire health insurance guide">NH</a><a class="tile is-marked" href="/states/health-insurance/washington.html" data-s="washington" data-n="Washington" style="--c:1;--r:3" aria-label="Washington health insurance guide">WA</a><a class="tile is-marked" href="/states/health-insurance/idaho.html" data-s="idaho" data-n="Idaho" style="--c:2;--r:3" aria-label="Idaho health insurance guide">ID</a><a class="tile" href="/states/health-insurance/montana.html" data-s="montana" data-n="Montana" style="--c:3;--r:3" aria-label="Montana health insurance guide">MT</a><a class="tile" href="/states/health-insurance/north-dakota.html" data-s="north-dakota" data-n="North Dakota" style="--c:4;--r:3" aria-label="North Dakota health insurance guide">ND</a><a class="tile is-marked" href="/states/health-insurance/minnesota.html" data-s="minnesota" data-n="Minnesota" style="--c:5;--r:3" aria-label="Minnesota health insurance guide">MN</a><a class="tile is-marked" href="/states/health-insurance/illinois.html" data-s="illinois" data-n="Illinois" style="--c:6;--r:3" aria-label="Illinois health insurance guide">IL</a><a class="tile" href="/states/health-insurance/wisconsin.html" data-s="wisconsin" data-n="Wisconsin" style="--c:7;--r:3" aria-label="Wisconsin health insurance guide">WI</a><a class="tile" href="/states/health-insurance/michigan.html" data-s="michigan" data-n="Michigan" style="--c:8;--r:3" aria-label="Michigan health insurance guide">MI</a><a class="tile is-marked" href="/states/health-insurance/new-york.html" data-s="new-york" data-n="New York" style="--c:9;--r:3" aria-label="New York health insurance guide">NY</a><a class="tile is-marked" href="/states/health-insurance/rhode-island.html" data-s="rhode-island" data-n="Rhode Island" style="--c:10;--r:3" aria-label="Rhode Island health insurance guide">RI</a><a class="tile is-marked" href="/states/health-insurance/massachusetts.html" data-s="massachusetts" data-n="Massachusetts" style="--c:11;--r:3" aria-label="Massachusetts health insurance guide">MA</a><a class="tile is-marked" href="/states/health-insurance/oregon.html" data-s="oregon" data-n="Oregon" style="--c:1;--r:4" aria-label="Oregon health insurance guide">OR</a><a class="tile is-marked" href="/states/health-insurance/nevada.html" data-s="nevada" data-n="Nevada" style="--c:2;--r:4" aria-label="Nevada health insurance guide">NV</a><a class="tile" href="/states/health-insurance/wyoming.html" data-s="wyoming" data-n="Wyoming" style="--c:3;--r:4" aria-label="Wyoming health insurance guide">WY</a><a class="tile" href="/states/health-insurance/south-dakota.html" data-s="south-dakota" data-n="South Dakota" style="--c:4;--r:4" aria-label="South Dakota health insurance guide">SD</a><a class="tile" href="/states/health-insurance/iowa.html" data-s="iowa" data-n="Iowa" style="--c:5;--r:4" aria-label="Iowa health insurance guide">IA</a><a class="tile" href="/states/health-insurance/indiana.html" data-s="indiana" data-n="Indiana" style="--c:6;--r:4" aria-label="Indiana health insurance guide">IN</a><a class="tile" href="/states/health-insurance/ohio.html" data-s="ohio" data-n="Ohio" style="--c:7;--r:4" aria-label="Ohio health insurance guide">OH</a><a class="tile is-marked" href="/states/health-insurance/pennsylvania.html" data-s="pennsylvania" data-n="Pennsylvania" style="--c:8;--r:4" aria-label="Pennsylvania health insurance guide">PA</a><a class="tile is-marked" href="/states/health-insurance/new-jersey.html" data-s="new-jersey" data-n="New Jersey" style="--c:9;--r:4" aria-label="New Jersey health insurance guide">NJ</a><a class="tile is-marked" href="/states/health-insurance/connecticut.html" data-s="connecticut" data-n="Connecticut" style="--c:10;--r:4" aria-label="Connecticut health insurance guide">CT</a><a class="tile is-marked" href="/states/health-insurance/california.html" data-s="california" data-n="California" style="--c:1;--r:5" aria-label="California health insurance guide">CA</a><a class="tile" href="/states/health-insurance/utah.html" data-s="utah" data-n="Utah" style="--c:2;--r:5" aria-label="Utah health insurance guide">UT</a><a class="tile is-marked" href="/states/health-insurance/colorado.html" data-s="colorado" data-n="Colorado" style="--c:3;--r:5" aria-label="Colorado health insurance guide">CO</a><a class="tile" href="/states/health-insurance/nebraska.html" data-s="nebraska" data-n="Nebraska" style="--c:4;--r:5" aria-label="Nebraska health insurance guide">NE</a><a class="tile" href="/states/health-insurance/missouri.html" data-s="missouri" data-n="Missouri" style="--c:5;--r:5" aria-label="Missouri health insurance guide">MO</a><a class="tile is-marked" href="/states/health-insurance/kentucky.html" data-s="kentucky" data-n="Kentucky" style="--c:6;--r:5" aria-label="Kentucky health insurance guide">KY</a><a class="tile" href="/states/health-insurance/west-virginia.html" data-s="west-virginia" data-n="West Virginia" style="--c:7;--r:5" aria-label="West Virginia health insurance guide">WV</a><a class="tile is-marked" href="/states/health-insurance/virginia.html" data-s="virginia" data-n="Virginia" style="--c:8;--r:5" aria-label="Virginia health insurance guide">VA</a><a class="tile is-marked" href="/states/health-insurance/maryland.html" data-s="maryland" data-n="Maryland" style="--c:9;--r:5" aria-label="Maryland health insurance guide">MD</a><a class="tile" href="/states/health-insurance/delaware.html" data-s="delaware" data-n="Delaware" style="--c:10;--r:5" aria-label="Delaware health insurance guide">DE</a><a class="tile" href="/states/health-insurance/arizona.html" data-s="arizona" data-n="Arizona" style="--c:2;--r:6" aria-label="Arizona health insurance guide">AZ</a><a class="tile is-marked" href="/states/health-insurance/new-mexico.html" data-s="new-mexico" data-n="New Mexico" style="--c:3;--r:6" aria-label="New Mexico health insurance guide">NM</a><a class="tile" href="/states/health-insurance/kansas.html" data-s="kansas" data-n="Kansas" style="--c:4;--r:6" aria-label="Kansas health insurance guide">KS</a><a class="tile" href="/states/health-insurance/arkansas.html" data-s="arkansas" data-n="Arkansas" style="--c:5;--r:6" aria-label="Arkansas health insurance guide">AR</a><a class="tile" href="/states/health-insurance/tennessee.html" data-s="tennessee" data-n="Tennessee" style="--c:6;--r:6" aria-label="Tennessee health insurance guide">TN</a><a class="tile" href="/states/health-insurance/north-carolina.html" data-s="north-carolina" data-n="North Carolina" style="--c:7;--r:6" aria-label="North Carolina health insurance guide">NC</a><a class="tile" href="/states/health-insurance/south-carolina.html" data-s="south-carolina" data-n="South Carolina" style="--c:8;--r:6" aria-label="South Carolina health insurance guide">SC</a><a class="tile" href="/states/health-insurance/oklahoma.html" data-s="oklahoma" data-n="Oklahoma" style="--c:4;--r:7" aria-label="Oklahoma health insurance guide">OK</a><a class="tile" href="/states/health-insurance/louisiana.html" data-s="louisiana" data-n="Louisiana" style="--c:5;--r:7" aria-label="Louisiana health insurance guide">LA</a><a class="tile" href="/states/health-insurance/mississippi.html" data-s="mississippi" data-n="Mississippi" style="--c:6;--r:7" aria-label="Mississippi health insurance guide">MS</a><a class="tile" href="/states/health-insurance/alabama.html" data-s="alabama" data-n="Alabama" style="--c:7;--r:7" aria-label="Alabama health insurance guide">AL</a><a class="tile is-marked" href="/states/health-insurance/georgia.html" data-s="georgia" data-n="Georgia" style="--c:8;--r:7" aria-label="Georgia health insurance guide">GA</a><a class="tile" href="/states/health-insurance/hawaii.html" data-s="hawaii" data-n="Hawaii" style="--c:1;--r:8" aria-label="Hawaii health insurance guide">HI</a><a class="tile" href="/states/health-insurance/texas.html" data-s="texas" data-n="Texas" style="--c:4;--r:8" aria-label="Texas health insurance guide">TX</a><a class="tile" href="/states/health-insurance/florida.html" data-s="florida" data-n="Florida" style="--c:9;--r:8" aria-label="Florida health insurance guide">FL</a>
+      </nav>
+      <script>document.getElementById('map').classList.add('is-loading');</script>
+      <div class="board-foot">
+        <p class="legend" id="legend"><i aria-hidden="true"></i><span id="legend-text">Runs its own marketplace instead of HealthCare.gov</span></p>
+        <form class="pick" id="pick">
+          <label for="pick-state" style="position:absolute;left:-9999px;">State</label>
+          <select id="pick-state" required><option value="" disabled selected>Your state</option><option value="alabama">Alabama</option><option value="alaska">Alaska</option><option value="arizona">Arizona</option><option value="arkansas">Arkansas</option><option value="california">California</option><option value="colorado">Colorado</option><option value="connecticut">Connecticut</option><option value="delaware">Delaware</option><option value="florida">Florida</option><option value="georgia">Georgia</option><option value="hawaii">Hawaii</option><option value="idaho">Idaho</option><option value="illinois">Illinois</option><option value="indiana">Indiana</option><option value="iowa">Iowa</option><option value="kansas">Kansas</option><option value="kentucky">Kentucky</option><option value="louisiana">Louisiana</option><option value="maine">Maine</option><option value="maryland">Maryland</option><option value="massachusetts">Massachusetts</option><option value="michigan">Michigan</option><option value="minnesota">Minnesota</option><option value="mississippi">Mississippi</option><option value="missouri">Missouri</option><option value="montana">Montana</option><option value="nebraska">Nebraska</option><option value="nevada">Nevada</option><option value="new-hampshire">New Hampshire</option><option value="new-jersey">New Jersey</option><option value="new-mexico">New Mexico</option><option value="new-york">New York</option><option value="north-carolina">North Carolina</option><option value="north-dakota">North Dakota</option><option value="ohio">Ohio</option><option value="oklahoma">Oklahoma</option><option value="oregon">Oregon</option><option value="pennsylvania">Pennsylvania</option><option value="rhode-island">Rhode Island</option><option value="south-carolina">South Carolina</option><option value="south-dakota">South Dakota</option><option value="tennessee">Tennessee</option><option value="texas">Texas</option><option value="utah">Utah</option><option value="vermont">Vermont</option><option value="virginia">Virginia</option><option value="washington">Washington</option><option value="west-virginia">West Virginia</option><option value="wisconsin">Wisconsin</option><option value="wyoming">Wyoming</option></select>
+          <button type="submit">Open guide</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- AdSense slot -->
-  <div class="container">
-    <div class="adslot"><!-- AdSense --></div>
+  <div class="wrap"><div class="adslot"><!-- AdSense --></div></div>
+
+  <section class="calcs" id="calculators">
+    <div class="wrap">
+      <h2>Run the numbers</h2>
+      <p class="sub">Each calculator shows the formula it uses and what the result means. No sign-up.</p>
+      <div class="calc-cols">
+<div class="calc-stack"><section class="calc-group" style="order:0"><h3>Life</h3><ul><li><a href="/tools/life-insurance.html">Life insurance</a><span>How much coverage your family needs</span></li><li><a href="/tools/term-vs-whole.html">Term vs. whole life</a><span>What each costs over 20 or 30 years</span></li><li><a href="/tools/life-insurance-seniors.html">Life insurance after 60</a><span>Final expense and term options by age</span></li><li><a href="/tools/table-rating-calculator.html">Table ratings</a><span>What Table 1 to 16 adds to a premium</span></li></ul></section><section class="calc-group" style="order:1"><h3>Health and income</h3><ul><li><a href="/tools/health-insurance-self-employed.html">Self-employed health</a><span>Premium after the subsidy and tax deduction</span></li><li><a href="/tools/disability.html">Disability</a><span>How much of your income to protect</span></li><li><a href="/tools/critical-illness-insurance.html">Critical illness</a><span>Lump-sum cover and what it costs</span></li><li><a href="/tools/long-term-care-insurance.html">Long-term care</a><span>Care costs versus a policy</span></li></ul></section><section class="calc-group" style="order:5"><h3>Trips, pets and events</h3><ul><li><a href="/tools/travel-insurance.html">Travel</a><span>Trip cost, cancellation and medical cover</span></li><li><a href="/tools/pet-insurance.html">Pet</a><span>Whether a policy beats saving</span></li><li><a href="/tools/wedding-insurance.html">Wedding</a><span>Cancellation and liability for the day</span></li></ul></section></div>
+<div class="calc-stack"><section class="calc-group" style="order:2"><h3>Home and belongings</h3><ul><li><a href="/tools/home-insurance.html">Homeowners</a><span>Coverage and premium for your house</span></li><li><a href="/tools/dwelling-coverage.html">Dwelling coverage</a><span>What it would cost to rebuild</span></li><li><a href="/tools/renters-insurance.html">Renters</a><span>How much contents cover you need</span></li><li><a href="/tools/condo-insurance.html">Condo</a><span>Walls-in coverage and loss assessment</span></li><li><a href="/tools/landlord-insurance.html">Landlord</a><span>DP-1, DP-2 or DP-3 for a rental</span></li><li><a href="/tools/flood-insurance.html">Flood</a><span>NFIP and private flood premiums</span></li><li><a href="/tools/mobile-home-insurance.html">Mobile home</a><span>Premium by age, wind zone and anchoring</span></li><li><a href="/tools/valuables-insurance.html">Jewelry and valuables</a><span>Scheduling items worth more than limits</span></li><li><a href="/tools/short-term-rental-insurance.html">Short-term rental</a><span>Coverage for Airbnb and VRBO hosts</span></li><li><a href="/tools/umbrella-insurance.html">Umbrella</a><span>How much extra liability to carry</span></li></ul></section></div>
+<div class="calc-stack"><section class="calc-group" style="order:3"><h3>Vehicles</h3><ul><li><a href="/tools/car-insurance.html">Car</a><span>Estimate a premium by driver and coverage</span></li><li><a href="/tools/teen-driver-insurance.html">Adding a teen driver</a><span>What a new driver adds to the bill</span></li><li><a href="/tools/sr22-insurance.html">SR-22</a><span>Cost after a DUI or suspension</span></li><li><a href="/tools/ev-insurance.html">Electric vehicle</a><span>Why EVs cost more to insure</span></li><li><a href="/tools/gap-insurance.html">Gap insurance</a><span>Whether your loan is underwater</span></li><li><a href="/tools/motorcycle-insurance.html">Motorcycle</a><span>Premium by bike, rider and coverage</span></li><li><a href="/tools/boat-insurance.html">Boat</a><span>Premium by hull value, length and use</span></li></ul></section><section class="calc-group" style="order:4"><h3>Business</h3><ul><li><a href="/tools/workers-comp.html">Workers&rsquo; comp premium</a><span>Premium from payroll and class code</span></li><li><a href="/tools/emr-calculator.html">Experience mod (EMR)</a><span>How claims move your workers&rsquo; comp rate</span></li><li><a href="/tools/business-insurance.html">Small business</a><span>BOP, liability and what you&rsquo;re required to carry</span></li><li><a href="/tools/freelancer-insurance.html">Freelancer</a><span>Coverage for one-person businesses</span></li></ul></section></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guides">
+    <div class="wrap">
+      <h2>New guides</h2>
+      <p class="sub">Plain-language answers to the questions people search for, with sources.</p>
+      <ul class="g-list"><li><a href="/blog/workers-comp-owner-officer-payroll-limits.html"><span class="g-tag">Business Insurance</span><span class="g-title">Workers&rsquo; Comp Payroll Limits for Owners &amp; Officers (2026)</span><span class="g-sum">The minimum and maximum payroll used for covered officers, sole proprietors and partners in every state.</span></a></li><li><a href="/blog/workers-comp-schedule-rating.html"><span class="g-tag">Business Insurance</span><span class="g-title">Workers&rsquo; Comp Schedule Rating</span><span class="g-sum">The up-to-25% credit or debit applied after your EMR: categories, a worked example, and how to ask for a credit.</span></a></li><li><a href="/blog/aca-subsidies-for-immigrants-2027.html"><span class="g-tag">Health Insurance</span><span class="g-title">ACA Subsidies for Immigrants in 2027</span><span class="g-sum">From January 1, 2027, only green card holders, Cuban/Haitian entrants and COFA migrants keep marketplace subsidies. Status-by-status table.</span></a></li><li><a href="/blog/health-insurance-h1b-e2-visa-holders-2027.html"><span class="g-tag">Health Insurance</span><span class="g-title">Health Insurance for H-1B, E-2 and Work Visa Holders (2027)</span><span class="g-sum">No more marketplace subsidy: employer plans, bronze + HSA, ICHRAs and the self-employed deduction for E-2 owners, and J-1 minimums.</span></a></li><li><a href="/blog/health-coverage-refugees-asylees-tps-2027.html"><span class="g-tag">Health Insurance</span><span class="g-title">Refugees, Asylees and TPS: 2026&ndash;27 Coverage Changes</span><span class="g-sum">Medicaid narrowed October 1, 2026, subsidies end January 1, 2027, Medicare terminations follow. Timeline and what still covers you.</span></a></li><li><a href="/blog/medicare-advantage-plan-discontinued-2027.html"><span class="g-tag">Health Insurance</span><span class="g-title">Medicare Advantage Plan Ending in 2027?</span><span class="g-sum">The three enrollment windows, the Medigap guaranteed-issue right that runs to early March, and what happens if you do nothing.</span></a></li></ul>
+      <a class="more" href="/blog/">All guides</a>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="listed"><a href="https://newtool.site/item/myinsurancecalccom" target="_blank" rel="noopener noreferrer"> <img src="https://newtool.site/badges/newtool-light.svg" alt="Featured on NewTool.site" height="36px" width="auto" /> </a><a href="https://www.foundrlist.com/product/myinsurancecalc?utm_source=badge&amp;utm_medium=embed" target="_blank" rel="noopener"> <img src="https://www.foundrlist.com/api/badge/myinsurancecalc" alt="Featured on FoundrList" height="36px" /> </a><a href="https://fazier.com/launches/myinsurancecalc.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" height="36px" alt="Fazier badge" /></a><a href="https://findly.tools/myinsurancecalc?utm_source=myinsurancecalc" target="_blank" rel="noopener noreferrer"> <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" height="36px" /> </a><a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" height="36px"></a><a href="https://pitchwall.co/product/myinsurancecalc?utm_source=badge" target="_blank"> <img src="https://pitchwall.co/images/listed/pitchwall-light.png" height="36px" alt="Listed on PitchWall" /> </a><a href="https://kittylaunch.com/p/my-insurance-calc" target="_blank" rel="noopener"> <img src="https://kittylaunch.com/api/public/badges/launch_badge.svg?theme=light&name=My%20Insurance%20Calc" height="36px" alt="My Insurance Calc on KittyLaunch" data-kittylaunch-badge="1" /> </a><a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer"> <img src="https://sellwithboost.com/badge/listing.svg" alt="Listed on Sell With boost" style="height: 36px; width: auto;" /> </a><a href="https://boostdomainrating.com/item/myinsurancecalc.com?utm_source=badge" target="_blank" rel="noopener noreferrer"> <img src="https://boostdomainrating.com/api/badge/myinsurancecalc.com" alt="My Insurance Calc – Free Insurance Calculators - Domain Rating" style="height: 36px; width: auto;"/> </a></div>
   </div>
-
-  <!-- Tools Grid -->
-  <section class="tools-section" id="tools">
-    <div class="container">
-      <h2 class="section-title">Insurance Calculators</h2>
-      <p class="section-sub">Pick a calculator and get your personalized result in seconds.</p>
-
-      <div class="tools-grid">
-
-        <a href="/tools/life-insurance.html" class="tool-card">
-          <span class="tool-card-badge">Most Popular</span>
-          <div class="tool-icon">🛡️</div>
-          <h3>Life Insurance Calculator</h3>
-          <p>Find out how much life insurance coverage your family actually needs based on your income, debts, and dependents.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/term-vs-whole.html" class="tool-card">
-          <div class="tool-icon">⚖️</div>
-          <h3>Term vs Whole Life Comparison</h3>
-          <p>Compare total costs, cash value, and break-even points between term and whole life insurance side by side.</p>
-          <span class="tool-link">Compare now →</span>
-        </a>
-
-        <a href="/tools/disability.html" class="tool-card">
-          <div class="tool-icon">🏥</div>
-          <h3>Disability Insurance Calculator</h3>
-          <p>Calculate how much disability coverage you need to protect your income if you're unable to work.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/pet-insurance.html" class="tool-card">
-          <div class="tool-icon">🐾</div>
-          <h3>Pet Insurance Calculator</h3>
-          <p>Estimate monthly pet insurance costs and find out if a policy makes financial sense for your pet.</p>
-          <span class="tool-link">Estimate now →</span>
-        </a>
-
-        <a href="/tools/freelancer-insurance.html" class="tool-card">
-          <div class="tool-icon">💼</div>
-          <h3>Freelancer Insurance Calculator</h3>
-          <p>Self-employed? Find out what insurance you need and estimate your total annual coverage costs.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/ev-insurance.html" class="tool-card">
-          <div class="tool-icon">⚡</div>
-          <h3>EV Insurance Calculator</h3>
-          <p>Electric vehicles cost more to insure. See how your EV model, battery size, and location affect your premium.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/home-insurance.html" class="tool-card">
-          <div class="tool-icon">🏠</div>
-          <h3>Home Insurance Calculator</h3>
-          <p>Find out how much homeowners insurance you need — and how to avoid the most common coverage mistake.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/renters-insurance.html" class="tool-card">
-          <div class="tool-icon">🔑</div>
-          <h3>Renters Insurance Calculator</h3>
-          <p>Renters insurance costs less than most people think. Find out exactly how much coverage you need.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/umbrella-insurance.html" class="tool-card">
-          <div class="tool-icon">☂️</div>
-          <h3>Umbrella Insurance Calculator</h3>
-          <p>Find out how much extra liability coverage you need to protect your assets and future earnings.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/health-insurance-self-employed.html" class="tool-card">
-          <div class="tool-icon">🩺</div>
-          <h3>Health Insurance (Self-Employed)</h3>
-          <p>Estimate your health insurance premium as a freelancer and find out if you qualify for ACA subsidies.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/car-insurance.html" class="tool-card">
-          <div class="tool-icon">🚗</div>
-          <h3>Car Insurance Calculator</h3>
-          <p>Estimate your monthly car insurance premium based on your vehicle, age, driving record, and coverage level.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/dwelling-coverage.html" class="tool-card">
-          <div class="tool-icon">🏗️</div>
-          <h3>Dwelling Coverage Calculator</h3>
-          <p>Find out how much dwelling coverage your home insurance policy should include based on your home's size, construction, and location.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/sr22-insurance.html" class="tool-card">
-          <div class="tool-icon">🚦</div>
-          <h3>SR-22 Insurance Calculator</h3>
-          <p>Estimate your monthly insurance cost after an SR-22 requirement from a DUI, reckless driving, or license suspension.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/motorcycle-insurance.html" class="tool-card">
-          <div class="tool-icon">🏍️</div>
-          <h3>Motorcycle Insurance Calculator</h3>
-          <p>Estimate your monthly motorcycle premium by bike type, engine size, rider age, experience, and coverage level.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/travel-insurance.html" class="tool-card">
-          <div class="tool-icon">✈️</div>
-          <h3>Travel Insurance Calculator</h3>
-          <p>Estimate travel insurance cost by destination, trip length, traveler age, and coverage level. Includes CFAR and cruise options.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/boat-insurance.html" class="tool-card">
-          <div class="tool-icon">⚓</div>
-          <h3>Boat Insurance Calculator</h3>
-          <p>Estimate annual boat insurance cost by vessel type, value, horsepower, usage, and storage. Covers agreed value vs ACV.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/business-insurance.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">🏢</div>
-          <h3>Business Insurance Calculator</h3>
-          <p>Find out what coverage your business needs and estimate your total annual cost across general liability, E&O, workers' comp, and more.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/life-insurance-seniors.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">👴</div>
-          <h3>Life Insurance for Seniors Calculator</h3>
-          <p>Estimate how much coverage you need at age 55–80. Based on final expenses, debts, spousal income needs, and legacy goals — not a generic rule of thumb.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/workers-comp.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">🦺</div>
-          <h3>Workers Compensation Calculator</h3>
-          <p>Estimate your annual workers comp premium by industry, payroll, state, and experience modification factor. Covers all 50 states.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/emr-calculator.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">📊</div>
-          <h3>EMR Calculator</h3>
-          <p>Estimate your workers' comp Experience Modification Rate (EMR / X-Mod) from your payroll and claims history.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/table-rating-calculator.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">📋</div>
-          <h3>Table Rating Calculator</h3>
-          <p>See exactly what a life insurance Table 1-16 (A-P) rating or flat extra adds to your premium.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/critical-illness-insurance.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">🏥</div>
-          <h3>Critical Illness Insurance Calculator</h3>
-          <p>Estimate your premium by age, coverage amount, and tobacco use — and compare it to disability insurance.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/teen-driver-insurance.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">🚸</div>
-          <h3>Teen Driver Insurance Calculator</h3>
-          <p>Estimate how much adding your teen to your policy will cost, and how much discounts can save.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/short-term-rental-insurance.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">🏝️</div>
-          <h3>Short-Term Rental Insurance Calculator</h3>
-          <p>Estimate Airbnb/VRBO host insurance costs — standard homeowners coverage doesn't apply to paying guests.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/flood-insurance.html" class="tool-card">
-          <div class="tool-icon">🌊</div>
-          <h3>Flood Insurance Calculator</h3>
-          <p>Estimate your annual flood insurance cost by FEMA flood zone, home value, and coverage level. Compare NFIP vs private flood options.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/landlord-insurance.html" class="tool-card">
-          <div class="tool-icon">🏘️</div>
-          <h3>Landlord Insurance Calculator</h3>
-          <p>Estimate landlord insurance premiums based on property value, type, rental style, and location risk.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/gap-insurance.html" class="tool-card">
-          <div class="tool-icon">🚗</div>
-          <h3>GAP Insurance Calculator</h3>
-          <p>See if you have a gap between your loan or lease payoff and your car's actual value.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/condo-insurance.html" class="tool-card">
-          <div class="tool-icon">🏢</div>
-          <h3>Condo Insurance (HO-6) Calculator</h3>
-          <p>Estimate your HO-6 premium based on interior improvements, personal property, and your HOA's master policy type.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/mobile-home-insurance.html" class="tool-card">
-          <div class="tool-icon">🏠</div>
-          <h3>Mobile & Manufactured Home Insurance Calculator</h3>
-          <p>Estimate your premium based on home age, HUD wind zone, anchoring system, and land ownership.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/wedding-insurance.html" class="tool-card">
-          <div class="tool-icon">💍</div>
-          <h3>Wedding Insurance Calculator</h3>
-          <p>Estimate your premium based on guest count, venue type, alcohol service, and coverage choices.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-        <a href="/tools/valuables-insurance.html" class="tool-card">
-          <span class="tool-card-badge" style="background:#10b981;">New</span>
-          <div class="tool-icon">💎</div>
-          <h3>Valuables & Jewelry Insurance Calculator</h3>
-          <p>Estimate your premium based on appraised value, item type, storage, and coverage type.</p>
-          <span class="tool-link">Calculate now →</span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Section -->
-  <section class="why-section">
-    <div class="container">
-      <h2 class="section-title">Simple tools for smarter insurance decisions</h2>
-      <p class="section-sub">We built My Insurance Calc because insurance math shouldn't require a degree.</p>
-      <div class="why-grid">
-        <div class="why-item">
-          <span class="why-icon">🔬</span>
-          <h4>Formula-based estimates</h4>
-          <p>All calculators use established industry formulas and real actuarial data.</p>
-        </div>
-        <div class="why-item">
-          <span class="why-icon">🔒</span>
-          <h4>No account needed</h4>
-          <p>No email, no signup, no credit card. Just answers.</p>
-        </div>
-        <div class="why-item">
-          <span class="why-icon">📱</span>
-          <h4>Works on any device</h4>
-          <p>Desktop, tablet, or phone — all tools work everywhere.</p>
-        </div>
-        <div class="why-item">
-          <span class="why-icon">🆓</span>
-          <h4>Free forever</h4>
-          <p>All calculators are completely free with no hidden fees.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AdSense slot -->
-  <div class="container">
-    <div class="adslot"><!-- AdSense --></div>
-  </div>
-
-  <!-- Blog Preview -->
-  <section class="blog-section">
-    <div class="container">
-      <h2 class="section-title">From the blog</h2>
-      <p class="section-sub">Practical insurance guides to help you make better decisions.</p>
-      <div class="blog-grid">
-
-        <a href="/blog/workers-comp-audit-guide.html" class="blog-card">
-          <span class="blog-tag">Business Insurance</span>
-          <h3>Workers' Comp Audit: How to Prepare and Avoid Overpaying</h3>
-          <p>What a premium audit checks, the overtime and subcontractor mistakes that cause the biggest retroactive bills, and how to prepare.</p>
-          <span class="blog-meta">8 min read</span>
-        </a>
-
-        <a href="/blog/life-insurance-for-private-pilots.html" class="blog-card">
-          <span class="blog-tag">Life Insurance</span>
-          <h3>Life Insurance for Private Pilots</h3>
-          <p>Flight hour thresholds, IFR rating effect, aircraft type flat extras, and how experimental and bush flying are priced.</p>
-          <span class="blog-meta">11 min read</span>
-        </a>
-
-        <a href="/blog/life-insurance-for-helicopter-pilots.html" class="blog-card">
-          <span class="blog-tag">Life Insurance</span>
-          <h3>Life Insurance for Helicopter Pilots</h3>
-          <p>How EMS, offshore, tour, and private rotorcraft missions get underwritten — and how to get the best rate.</p>
-          <span class="blog-meta">10 min read</span>
-        </a>
-
-      </div>
-      <a href="/blog/" class="view-all">View all articles →</a>
-    </div>
-  </section>
 </main>
 
-<div class="container" style="display:flex;justify-content:flex-end;padding-top:12px;padding-bottom:12px;gap: 10px;">
-  <a href="https://newtool.site/item/myinsurancecalccom" target="_blank" rel="noopener noreferrer">
-    <img src="https://newtool.site/badges/newtool-light.svg" alt="Featured on NewTool.site" height="36px" width="auto" />
-  </a>
-  <a href="https://www.foundrlist.com/product/myinsurancecalc?utm_source=badge&amp;utm_medium=embed" target="_blank" rel="noopener">
-    <img src="https://www.foundrlist.com/api/badge/myinsurancecalc" alt="Featured on FoundrList" height="36px" />
-  </a>
-  <a href="https://fazier.com/launches/myinsurancecalc.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" height="36px" alt="Fazier badge" /></a>
-  <a href="https://findly.tools/myinsurancecalc?utm_source=myinsurancecalc" target="_blank" rel="noopener noreferrer">
-    <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" height="36px" />
-  </a>
-  <a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" height="36px"></a>
-  <a href="https://pitchwall.co/product/myinsurancecalc?utm_source=badge" target="_blank">
-    <img
-      src="https://pitchwall.co/images/listed/pitchwall-light.png"
-      height="36px"
-      alt="Listed on PitchWall"
-    />
-  </a>
-  <a href="https://kittylaunch.com/p/my-insurance-calc" target="_blank" rel="noopener">
-    <img src="https://kittylaunch.com/api/public/badges/launch_badge.svg?theme=light&name=My%20Insurance%20Calc" height="36px" alt="My Insurance Calc on KittyLaunch" data-kittylaunch-badge="1" />
-  </a>
-  <a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer">
-    <img src="https://sellwithboost.com/badge/listing.svg" alt="Listed on Sell With boost" style="height: 36px; width: auto;" />
-  </a>
-  <a href="https://boostdomainrating.com/item/myinsurancecalc.com?utm_source=badge" target="_blank" rel="noopener noreferrer">
-  	<img src="https://boostdomainrating.com/api/badge/myinsurancecalc.com" alt="My Insurance Calc – Free Insurance Calculators - Domain Rating" style="height: 36px; width: auto;"/>
-  </a>
-</div>
-
+<script>
+(function () {
+  var COV = {"health-insurance": {"label": "Health", "blurb": "Marketplace prices, Medicaid rules and 2027 open enrollment dates.", "legend": "Runs its own marketplace instead of HealthCare.gov", "marked": ["CA", "CO", "CT", "GA", "ID", "IL", "KY", "ME", "MD", "MA", "MN", "NV", "NJ", "NM", "NY", "OR", "PA", "RI", "VT", "VA", "WA"]}, "car-insurance": {"label": "Car", "blurb": "Minimum liability limits, average premiums and no-fault rules.", "legend": "No-fault state (PIP pays your own injuries first)", "marked": ["FL", "HI", "KS", "KY", "MA", "MI", "MN", "NJ", "NY", "ND", "PA", "UT"]}, "home-insurance": {"label": "Home", "blurb": "Average premiums, last-resort plans and hurricane deductibles.", "legend": "Allows percentage hurricane deductibles", "marked": ["AL", "CT", "DE", "FL", "GA", "HI", "LA", "ME", "MD", "MA", "MS", "NJ", "NY", "NC", "PA", "RI", "SC", "TX", "VA"]}, "renters-insurance": {"label": "Renters", "blurb": "What renters pay and which risks are worth covering.", "legend": null, "marked": []}, "life-insurance": {"label": "Life", "blurb": "Coverage by income, guaranty limits and state death taxes.", "legend": "Has a state estate or inheritance tax", "marked": ["CT", "HI", "IL", "ME", "MD", "MA", "MN", "NY", "OR", "RI", "VT", "WA", "KY", "NE", "NJ", "PA"]}, "workers-comp": {"label": "Workers’ comp", "blurb": "Who must carry it, what it costs and what injured workers are paid.", "legend": "Coverage only from the state fund", "marked": ["OH", "ND", "WA", "WY"]}, "business-insurance": {"label": "Small business", "blurb": "What a small business is legally required to carry.", "legend": null, "marked": []}};
+  var map = document.getElementById('map');
+  var tiles = map.querySelectorAll('.tile');
+  var cur = 'health-insurance';
+  var el = function (id) { return document.getElementById(id); };
+  function setCov(k) {
+    cur = k; var c = COV[k];
+    document.querySelectorAll('.cov').forEach(function (b) { var on = b.dataset.cov === k; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on); });
+    tiles.forEach(function (t) {
+      t.href = '/states/' + k + '/' + t.dataset.s + '.html';
+      t.setAttribute('aria-label', t.dataset.n + ' ' + c.label.toLowerCase() + ' insurance guide');
+      t.classList.toggle('is-marked', c.marked.indexOf(t.textContent) !== -1);
+    });
+    el('r-cov').textContent = c.label + ' insurance guide';
+    el('r-blurb').textContent = c.blurb;
+    if (c.legend) { el('legend').hidden = false; el('legend-text').textContent = c.legend; } else { el('legend').hidden = true; }
+    try { localStorage.setItem('mic-cov', k); } catch (e) {}
+  }
+  document.querySelectorAll('.cov').forEach(function (b) { b.addEventListener('click', function () { setCov(b.dataset.cov); }); });
+  function show(t) { el('r-state').textContent = t ? t.dataset.n : 'Choose a state'; }
+  tiles.forEach(function (t) {
+    t.addEventListener('mouseenter', function () { show(t); });
+    t.addEventListener('focus', function () { show(t); });
+  });
+  map.addEventListener('mouseleave', function () { show(null); });
+  el('pick').addEventListener('submit', function (e) { e.preventDefault(); if (!el('pick-state').value) { el('pick-state').focus(); return; } location.href = '/states/' + cur + '/' + el('pick-state').value + '.html'; });
+  try { var saved = localStorage.getItem('mic-cov'); if (saved && COV[saved]) setCov(saved); } catch (e) {}
+  requestAnimationFrame(function () { requestAnimationFrame(function () { map.classList.remove('is-loading'); }); });
+})();
+</script>
 <script src="/assets/js/nav.js"></script>
 </body>
 </html>

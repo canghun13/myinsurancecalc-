@@ -159,47 +159,34 @@ img { max-width: 100%; display: block; }
    Footer
 =========================== */
 .site-footer {
-  background: var(--text);
-  color: #cbd5e1;
-  padding: 56px 0 24px;
+  background: #f6f8fb;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding: 36px 0 28px;
   margin-top: 80px;
 }
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.site-footer .logo { color: #fff; font-size: 1.2rem; margin-bottom: 12px; display: block; }
-.footer-brand p { font-size: 0.9rem; line-height: 1.7; color: #94a3b8; }
-
-.footer-links h4 {
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
-}
-
-.footer-links ul { list-style: none; }
-.footer-links ul li { margin-bottom: 8px; }
-.footer-links ul li a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
-.footer-links ul li a:hover { color: #fff; text-decoration: none; }
-
-.footer-bottom {
-  border-top: 1px solid #334155;
-  padding-top: 24px;
+.site-footer .logo { font-size: 1.15rem; color: var(--text); }
+.ft-top {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px 40px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
 }
-
-.footer-bottom p { font-size: 0.85rem; color: #64748b; }
-.footer-bottom a { color: #94a3b8; }
-.footer-bottom a:hover { color: #fff; }
+.ft-nav { display: flex; flex-wrap: wrap; gap: 8px 26px; }
+.ft-nav a { color: var(--text); font-size: 0.95rem; font-weight: 500; }
+.ft-nav a:hover { color: var(--primary); }
+.ft-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 40px;
+  padding-top: 18px;
+}
+.ft-note { font-size: 0.85rem; line-height: 1.55; color: var(--text-muted); max-width: 68ch; }
+.ft-copy { font-size: 0.85rem; color: var(--text-muted); white-space: nowrap; }
 .disclaimer { font-size: 0.78rem !important; font-style: italic; }
 
 /* ===========================
@@ -592,7 +579,6 @@ img { max-width: 100%; display: block; }
     background: transparent;
   }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .tool-layout { grid-template-columns: 1fr; }
   .article-layout { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
