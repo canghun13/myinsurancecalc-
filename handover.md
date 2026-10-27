@@ -1,3 +1,9 @@
+# 메인 리뉴얼 (2026-10-27)
+- index.html을 주 타일맵 중심으로 교체: 보장 종류 7개(health 기본·car·home·renters·life·WC·business) 선택 → 50개 주 타일이 /states/{type}/{state}.html로 링크. 선택에 따라 실제 규칙으로 노란 표시(health=자체 거래소 21개 주, car=no-fault 12개, home=허리케인 % 공제 19개, life=상속·유산세 16개, WC=독점기금 4개; renters·business는 표시 없음). 선택은 localStorage 기억(try/catch). 아래: 계산기 32개 그룹 목록, 최신 가이드 6개(blog/index 순서 자동), 등록 배지.
+- 폰트: 홈만 Public Sans(Google Fonts). 생성기: /home/claude/gen/home_build.py (배지는 커밋 c407f48의 옛 index에서 추출).
+- 푸터(nav.js, 사이트 전체): 도구 목록 제거 → Calculators/State guides/Guides/About/Privacy policy/Contact + 면책 문구 + ©. 밝은 배경.
+- **노란 표시 주 목록을 바꾸면 home_build.py의 COV 리스트도 같이 고칠 것.**
+
 # MyInsuranceCalc.com 인수인계 (2026-10-26 — 25회차)
 
 ## 데이터 (Bing 10/26, GSC ~10/24, GA4 9/28~10/25)
