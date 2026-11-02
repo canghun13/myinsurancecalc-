@@ -1,3 +1,28 @@
+# MyInsuranceCalc.com 인수인계 (2026-11-02 — 26회차)
+
+## 데이터 (Bing 11/2, GSC ~10/31, GA4 10/5~11/1)
+- Bing 노출 34,825→36,682, 클릭 206→228. pilots는 여전히 비인간(31,655/2).
+- **10/26 신규 사장·임원 급여 글: 첫 주 노출 45·클릭 3·순위 4.3** — "executive officer workers comp payroll limits", "owner minimum salary for workers comp in illinois", "work payroll for llc owner in kansas"로 클릭. WC IL 24→81(클릭 5), OH 15→44, TN 75→98, NV 27→42. EMR 계산기 555→639(클릭 15). H-1B/E-2 글 첫 클릭("health insurance for e2 visa holder 2027").
+- 새 신호: **직원 1인당 산재 비용** — "il work comp ins cost per employee", "wi work comp ins cost per employee"(둘 다 클릭), "how much does workmans comp cost an employer in arizona", "how do employers calculate workers comp for employees in oregon", "what percentage of pay is w/c in nm" → 이번에 대응.
+- 오픈등록: health TX 214·FL 185·WA 161·MI 52·NJ 6→24·MA 32. home TX 139→200(쿼리: 텍사스 평균, 2027 전망, 카운티).
+- Google: 발견됨-미색인 30, 크롤링됨-미색인 7 — 변화 없음(강등 지속). GA4 활성 417(bing 125, ddg 45, yahoo 24, chatgpt 2 첫 유입).
+
+## 작업 (11/2)
+1. **신규: blog/workers-comp-cost-per-employee-by-state** — 오리건 DCBS 2024 보험료율 순위(2024.1.1 요율, 중앙값 $1.09/$100) 51개 표 + $50,000 직원 연·월 비용, 계산식 예시(EMR·schedule 적용), 내 숫자가 다른 이유, 주 그룹별 대략 범위. 다음 오리건 연구(2026년판)가 나오면 표 갱신.
+2. **WC 50개 주 페이지에 "What Workers' Comp Costs per Employee in [State]" 섹션 + FAQ** — 오리건 지수, 순위, 중앙값 대비 %, $35k/$50k/$75k 직원 연·월 비용. 페이지 상단 템플릿 '평균 요율'과 숫자가 다른 점은 본문에 설명(업종 구성이 달라서). 생성기: /home/claude/gen/wc_cost.py (`python3 wc_cost.py states`, 있으면 skip).
+3. **WC 최대치 추가: NC $1,446(2026, 최소 $30), OR $1,943.41(2026.7.1 = SAWW $1,461.21×133%), RI $1,622(2025.10.1), SD $1,152(최소 $576, 2026.7.1), VT $1,914(최소 $638, 2026.7.1).** 남은 미기재: ND, WV, WI, WY (기관 표가 텍스트로 안 열림).
+4. **Texas 주택: "What Texas Homeowners Actually Pay: TDI Data, 2021–2025" 섹션 + FAQ 2** — 평균 보험료 $3,489(2025)·보장액 $432,800, 연도별 인상률, 2026.10.8 TDI 발표(7/1 이후 신고 평균 −4.3%, 약 70만 계약; ASI −6%, Farm Bureau −5.2%), 상위 10개 그룹 점유율, TWIA 14개 해안 카운티.
+5. 홈 '새 가이드' 목록 갱신.
+
+## 주의 (컨테이너 교체 후)
+- 저장소 위치: /home/claude/myinsurancecalc- (/home/claude/site 심볼릭 링크). **얕은 클론이라 `git log` 날짜로 sitemap lastmod 전체 재생성 금지** — 이번 커밋에서 바뀐 파일만 갱신.
+- **gen/home_build_OLD_do_not_run.py는 첨부로 복원된 옛 버전(현재 홈 디자인 이전)** — 실행하면 홈이 되돌아감. 홈 가이드 목록만 바꿀 땐 gen/home_guides.py 사용.
+
+## 다음
+1. 11/9 데이터: 비용 허브·주별 비용 섹션 유입, TX 주택 섹션 반응.
+2. WC 최대치 ND·WV·WI·WY, NY 2026.7.1 값.
+3. 이월: renters·business 수작업 재작성, Utah DOPL aggregate.
+
 # 메인 리뉴얼 (2026-10-27)
 - index.html을 주 타일맵 중심으로 교체: 보장 종류 7개(health 기본·car·home·renters·life·WC·business) 선택 → 50개 주 타일이 /states/{type}/{state}.html로 링크. 선택에 따라 실제 규칙으로 노란 표시(health=자체 거래소 21개 주, car=no-fault 12개, home=허리케인 % 공제 19개, life=상속·유산세 16개, WC=독점기금 4개; renters·business는 표시 없음). 선택은 localStorage 기억(try/catch). 아래: 계산기 32개를 카테고리별 "보장 내역표" 형태로(남색 머리줄 + 줄무늬 행, 데스크톱 2열·모바일 1열; 사용자 확정 2026-10-27 — 다른 프로젝트의 색 패널+카드형과 겹치지 않게 유지), 최신 가이드 6개(blog/index 순서 자동), 등록 배지.
 - 폰트: 홈만 Public Sans(Google Fonts). 생성기: /home/claude/gen/home_build.py (배지는 커밋 c407f48의 옛 index에서 추출).
