@@ -1,3 +1,38 @@
+# MyInsuranceCalc.com 인수인계 (2026-11-03 — 27회차, 신규 키워드 회차)
+
+## 키워드 조사 (구글 자동완성 차단 → WebSearch SERP 구성으로 경쟁 판정)
+| 후보 | SERP | 판정 |
+|---|---|---|
+| amazon seller insurance requirements 2026 / enhanced safety categories | 셀러 블로그·벤더(Assureful) — 11/2 시행 신규 | 낮음~중간 → **작성** |
+| walmart marketplace insurance requirements | 월마트 공식·벤더 | 낮음 → **작성** |
+| TikTok Shop/Etsy/Target Plus/Faire seller insurance | 벤더 | 낮음 → **비교 허브 작성** |
+| life insurance after stroke/TIA | 영국 사이트·MoneyGeek | 중간 → **작성** |
+| life insurance with epilepsy | Policygenius·MoneyGeek | 중간~강함 → 발작 없는 기간 롱테일로 **작성** |
+| life insurance with AFib | — | 기존 heart-disease 글에 섹션 있음 → 중복, 제외 |
+| life insurance for visa holders | Guardian·Policygenius·SelectQuote | 중간~강함 → 보류 |
+| remote employee in another state WC | 로펌·IRMI·주정부 FAQ | 중간 → 다음 후보 |
+| nanny/household WC | GTM·HomeWork Solutions | 중간~강함 → 보류 |
+| short-term rental permit insurance requirement [city] | 시 조례 PDF만 | 낮음, 도시별 검증 작업량 큼 → **다음 신규 클러스터 후보** |
+| IRMAA 2027 | 전망 사이트 포화 | 제외 |
+
+## 작업 (11/3) — 신규 5개
+1. **신규 클러스터: 이커머스 셀러 보험**
+   - blog/amazon-seller-insurance-requirements-2026 — 11/2 시행(9/3 공지): 11개 enhanced safety 카테고리 리스팅 1개라도 있으면 매출 무관 $1M/$1M. 그 외 $10K/월 → 30일 규정 유지. 증권 요건(CGL/umbrella/excess, occurrence, 공제 ≤$10K, AI "Amazon.com Services LLC and its affiliates and assignees", 명의 일치), 중국 본토 셀러 AIA 강제, 45일 유예(셀러 서비스 업체 보도, 공지엔 없음), 비용 범위·단가당 보험료 표, 체크리스트.
+   - blog/walmart-marketplace-insurance-requirements — $100K GMV/12개월 또는 요청 시, $1M/$2M, COI 문구 2가지(Walmart Inc. 702 SW 8th Street 주소 / AI), Amazon 비교, 거절 사유. 출처: Walmart Marketplace Learn.
+   - blog/marketplace-seller-insurance-requirements (허브) — Amazon·Walmart·Target Plus($5M, Zentail 가이드 인용)·TikTok Shop(전원 의무 아님)·Faire·Etsy·eBay·Shopify 비교, COI 문구 표, 모든 채널 한 증권 구성(1M/2M, blanket AI, CG 20 15 vendors).
+2. **생명보험 질환 클러스터 확장**
+   - blog/life-insurance-after-stroke-tia — 유형별 대기(TIA 3~6개월, 허혈성 6~12개월, 출혈성 ~2년), 경과 시간별 결과, 심사 요소, 테이블 비용(25%/table), 기존 증권 전환권, 대안.
+   - blog/life-insurance-with-epilepsy — 발작 유형·무발작 기간별 등급(2년 Standard, 5년 Preferred), SUDEP 7~17%(Gen Re), 약물 수, 장애보험은 5년 무발작 기준.
+3. 배선: blog/index 카드 5, llms.txt "### New Guides (November 2026)" 신설, sitemap 5, 사이드바 링크(additional-insured·COI·contracts·business 계산기 / heart·BP·depression·sleep apnea·table-rating), 홈 가이드 갱신.
+4. **article.py에 date/month 인자 추가**(기본값 10/14 그대로). 이전에 10/14로 찍혀 있던 schedule-rating(10/20)·owner-officer(10/26)·cost-per-employee(11/2) 날짜 바로잡음. 앞으로 신규 글은 `build(..., date='YYYY-MM-DD', month='Month YYYY')`.
+- 검증: 477파일, json/균형/링크/FAQ 0, 390/1280 넘침 0.
+
+## 다음
+1. 11/9 데이터: 셀러 3개·질환 2개 첫 반응, 비용 허브·TX 주택.
+2. 셀러 클러스터 확장 후보: 카테고리별(보충제·어린이·리튬배터리) Amazon 요건 롱테일, product recall insurance, TikTok Shop 의무화 공지 나오면 갱신.
+3. STR 도시별 보험 요건 클러스터(도시 조례 직접 확인 필요).
+4. 이월: WC 최대치 ND·WV·WI·WY, NY 2026.7.1; renters·business 수작업 재작성; Utah DOPL aggregate.
+
 # MyInsuranceCalc.com 인수인계 (2026-11-02 — 26회차)
 
 ## 데이터 (Bing 11/2, GSC ~10/31, GA4 10/5~11/1)
