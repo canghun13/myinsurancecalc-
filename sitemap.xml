@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://myinsurancecalc.com/</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://myinsurancecalc.com/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://myinsurancecalc.com/tools/life-insurance.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://myinsurancecalc.com/tools/term-vs-whole.html</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://myinsurancecalc.com/tools/table-rating-calculator.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -24,7 +24,7 @@
   <url><loc>https://myinsurancecalc.com/tools/ev-insurance.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://myinsurancecalc.com/tools/car-insurance.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://myinsurancecalc.com/tools/dwelling-coverage.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://myinsurancecalc.com/blog/</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/blog/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/how-much-life-insurance-do-i-need.html</loc><lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/term-vs-whole-life-insurance.html</loc><lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/freelancer-insurance-guide.html</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -255,57 +255,57 @@
   <url><loc>https://myinsurancecalc.com/states/life-insurance/west-virginia.html</loc><lastmod>2026-10-06</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/states/life-insurance/wisconsin.html</loc><lastmod>2026-10-06</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/states/life-insurance/wyoming.html</loc><lastmod>2026-10-06</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/</loc><lastmod>2026-10-14</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/alabama.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/alaska.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/arizona.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/arkansas.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/california.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/colorado.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/connecticut.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/delaware.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/florida.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/georgia.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/hawaii.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/idaho.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/illinois.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/indiana.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/iowa.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/kansas.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/kentucky.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/louisiana.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/maine.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/maryland.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/massachusetts.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/michigan.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/minnesota.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/mississippi.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/missouri.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/montana.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/nebraska.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/nevada.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-hampshire.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-jersey.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-mexico.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-york.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/north-carolina.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/north-dakota.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/ohio.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/oklahoma.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/oregon.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/pennsylvania.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/rhode-island.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/south-carolina.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/south-dakota.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/tennessee.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/texas.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/utah.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/vermont.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/virginia.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/washington.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/west-virginia.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/wisconsin.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/states/health-insurance/wyoming.html</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/alabama.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/alaska.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/arizona.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/arkansas.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/california.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/colorado.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/connecticut.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/delaware.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/florida.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/georgia.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/hawaii.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/idaho.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/illinois.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/indiana.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/iowa.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/kansas.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/kentucky.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/louisiana.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/maine.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/maryland.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/massachusetts.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/michigan.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/minnesota.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/mississippi.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/missouri.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/montana.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/nebraska.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/nevada.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-hampshire.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-jersey.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-mexico.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/new-york.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/north-carolina.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/north-dakota.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/ohio.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/oklahoma.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/oregon.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/pennsylvania.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/rhode-island.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/south-carolina.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/south-dakota.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/tennessee.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/texas.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/utah.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/vermont.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/virginia.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/washington.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/west-virginia.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/wisconsin.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/states/health-insurance/wyoming.html</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/states/workers-comp/</loc><lastmod>2026-11-02</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://myinsurancecalc.com/states/workers-comp/alabama.html</loc><lastmod>2026-11-02</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/states/workers-comp/alaska.html</loc><lastmod>2026-11-02</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
@@ -462,18 +462,19 @@
   <url><loc>https://myinsurancecalc.com/blog/aca-subsidies-for-immigrants-2027.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/health-insurance-h1b-e2-visa-holders-2027.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/health-coverage-refugees-asylees-tps-2027.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/blog/medicare-advantage-plan-discontinued-2027.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/blog/medicare-advantage-plan-discontinued-2027.html</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/isnetworld-avetta-insurance-requirements.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/certificate-of-insurance-for-movers.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/how-old-can-a-roof-be-for-insurance.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/unknown-roof-age-insurance.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/new-jersey-e-bike-insurance-requirement.html</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/workers-comp-schedule-rating.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://myinsurancecalc.com/blog/workers-comp-owner-officer-payroll-limits.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/blog/workers-comp-owner-officer-payroll-limits.html</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/workers-comp-cost-per-employee-by-state.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/amazon-seller-insurance-requirements-2026.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/walmart-marketplace-insurance-requirements.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/marketplace-seller-insurance-requirements.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/life-insurance-after-stroke-tia.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://myinsurancecalc.com/blog/life-insurance-with-epilepsy.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://myinsurancecalc.com/blog/health-insurance-company-leaving-marketplace-2027.html</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

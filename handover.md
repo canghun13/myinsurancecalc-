@@ -1,3 +1,28 @@
+# MyInsuranceCalc.com 인수인계 (2026-11-09 — 28회차)
+
+## 데이터 (Bing 11/9, GSC ~11/7, GA4 10/12~11/8)
+- Bing 노출 36,682→38,042, 클릭 228→272. pilots 32,115/2(비인간 그대로).
+- **사장·임원 급여 허브 45→359 노출, 클릭 3→15, 순위 3.9** — WI·TN·NJ·MS·CO 최소 급여, 텍사스 "급여 안 받아도 되나($7,800)" 질문 → 이번에 섹션+FAQ 추가.
+- health MA 32→123(쿼리: "매사추세츠 나이별 월 보험료", "24세 여성", "부부"), MI 52→100, WA 161→201, IL 38→68, NH 2→17. 전 주에 걸쳐 "[주] 가족 4인/나이별 평균 보험료" 쿼리 반복 → 이번에 50개 주 대응.
+- WC NV 42→75(클릭 8), OH 44→70, MA 33→58. EMR 691/15, table-rating 183/8.
+- 11/3 신규 5개(셀러 3·질환 2)·비용 허브: Bing 페이지 보고서엔 아직 없음, GA4 각 1~2뷰.
+- Google: 노출 거의 0(지난 3개월 쿼리 대부분 순위 60~90). 발견됨-미색인 30, 크롤링됨-미색인 7 — 변화 없음. 유입은 Bing·DDG·Yahoo가 전부.
+
+## 작업 (11/9)
+1. **health 50개 주: "2027 Health Insurance Costs in [State] by Age (Before Subsidies)" 섹션 + FAQ** — KFF 2027 평균 benchmark(40세, 11/6 OR·CA 정정 반영) + 2026 대비 변화·순위 + 연방 기본 연령곡선으로 21/26/30/35/40/45/50/55/60/64세, 부부, 4인 가족(40세 2명+15세 미만 2명). 예외: NY·VT(연령 무관, 1인/부부만), MA(2:1 자체 곡선, 40세·부부만), AL·MN·MS·OR·UT(자체 곡선 → '근사치' 주석). 담배 할증 주별 문구. 생성기: /home/claude/gen/health27.py (있으면 skip).
+2. **health 50개 주 기존 템플릿 수치 교체** — 상단 지표 박스·"Average Health Insurance Costs" 표·meta description의 옛 추정치(예: NY $518, VT $562)를 KFF 2027 값으로, 도시별 표는 같은 비율로 재조정. TX FAQ·보조금 예시 주석 정리(2026 예시는 그대로, 2027 값 별도 표기).
+3. **states/health-insurance/ 인덱스**: 카드 문구를 2027 40세 값으로, 51개 주 표(40세·변화율·4인 가족) 추가. 알래스카 "최고"→2위, 버몬트 최고, 뉴멕시코 '저가 시장' 문구 삭제.
+4. **신규: blog/health-insurance-company-leaving-marketplace-2027** — 2027 철수 보험사 주별 표(Cigna 11개 주, Molina, Medica, CareSource, PacificSource, Providence, BSW, Ambetter, UHC GA, Cox MO, ConnectiCare, Mending, UCare), 아무것도 안 하면(HealthCare.gov 다른 보험사로 자동 배정 / 콜로라도는 Cigna 자동배정 안 함 / 직접가입은 1/1 무보험), 마감(12/15·1/15·전후 60일 SEP), 대체 플랜 고르는 법. 철수 정보 없던 NC·TX·AR·UT·SC 주 페이지에 보강 + FAQ, FL Molina '불확실'→철수로 수정, 29개 해당 주 페이지에서 허브 링크. **KY Molina는 출처 간 충돌(주 페이지엔 2027 요율 신청 보험사로 나옴) → 허브에 '보도 기준, 통지서 확인' 단서.**
+5. 사장·임원 급여 허브: "Officers Who Draw Little or No Salary" 섹션 + FAQ(최소 급여 미만/무급이면 최소액으로 과금, TX $7,800·TN $67,600, TX는 산재 자체가 선택).
+- WC 최대치 ND·WV·WI·WY: 이번에도 기관 원문 확인 실패(WI는 2025.1.1 기준 $1,326만 확인 — 2026 값 미확인이라 미기재).
+- 검증: 478파일, json/균형/링크/FAQ 0, 390/1280 넘침 0.
+
+## 다음
+1. 11/16 데이터: health 주별 '나이별' 섹션 반응(오픈등록 1/15까지 핵심 시즌), 철수 허브, 사장 급여 허브 순위 유지.
+2. KY Molina 2027 참여 여부 확인 → 허브·KY 페이지 정리.
+3. 후보: WC 신체부위별 보상 주수(body part schedule) 클러스터 — "body part values in workers comp in delaware 2026" 등 근로자 쪽 쿼리, 로펌 경쟁(중간). STR 도시별 요건, Amazon 카테고리별 롱테일.
+4. 이월: WC 최대치 ND·WV·WI·WY, NY 2026.7.1; renters·business 수작업 재작성; Utah DOPL aggregate.
+
 # MyInsuranceCalc.com 인수인계 (2026-11-03 — 27회차, 신규 키워드 회차)
 
 ## 키워드 조사 (구글 자동완성 차단 → WebSearch SERP 구성으로 경쟁 판정)
